@@ -110,16 +110,16 @@ const zipIgnoreGlob = [
 
 // >>>>> Translation options.
 // Your text domain here.
-const textDomain = 'WPGULP';
+const textDomain = 'drunkenux';
 
 // Name of the translation file.
-const translationFile = 'WPGULP.pot';
+const translationFile = 'drunkenux.pot';
 
 // Where to save the translation files.
 const translationDestination = './languages';
 
 // Package name.
-const packageName = 'WPGULP';
+const packageName = 'drunkenux';
 
 // Where can users report bugs.
 const bugReport = 'https://drunkenux.com/talk-to-us/';
