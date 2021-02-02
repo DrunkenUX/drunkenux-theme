@@ -14,7 +14,7 @@
  * For more information on hooks, actions, and filters,
  * @link https://developer.wordpress.org/plugins/
  *
- * @package WordPress
+ * @package Drunken UX
  * @subpackage drunkenux-theme
  * @since Drunken UX Theme 2.0
  */
