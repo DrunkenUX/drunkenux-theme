@@ -46,6 +46,7 @@
 		"cache-clear": "gulp clearCache"
 	},
 	"dependencies": {
+		"plyr": "^3.6.4",
 		"uswds": "^2.10.0"
 	}
 }
