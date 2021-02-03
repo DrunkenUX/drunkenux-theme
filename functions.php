@@ -18,3 +18,10 @@
  * @subpackage drunkenux-theme
  * @since Drunken UX Theme 2.0
  */
+
+namespace dux;
+
+require_once( 'inc/vars.php' );
+require_once( 'inc/post-types.php' );
+require_once( 'inc/theme-functions.php' );
+require_once( 'inc/hooks.php' );
