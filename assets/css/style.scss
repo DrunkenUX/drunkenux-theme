@@ -7,3 +7,12 @@ Version: 2.0
 Text Domain: drunkenux
 GitHub Theme URI: DrunkenUX/drunkenux-theme
 */
+
+// USWDS Defaults
+//@import "~uswds-theme-general";
+//@import "~uswds-theme-typography";
+//@import "~uswds-theme-spacing";
+//@import "~uswds-theme-color";
+//@import "~uswds-theme-utilities";
+@import "uswds";
+//@import "~uswds-theme-custom-styles";
