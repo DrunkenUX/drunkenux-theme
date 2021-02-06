@@ -1,5 +1,5 @@
 <?php
-namespace dux;
+//namespace Dux;
 
 // Register Custom Post Type
 function register_cpt_advertiser() {
