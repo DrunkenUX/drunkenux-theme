@@ -1,5 +1,5 @@
 <?php
-//namespace Dux;
+namespace Dux;
 
 // Action functions
 

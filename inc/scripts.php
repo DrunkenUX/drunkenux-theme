@@ -1,4 +1,6 @@
 <?php
+namespace Dux;
+
 function enqueue_scripts() {
 /* 
   $custom_js_path    = get_stylesheet_directory_uri() . '/assets/js/custom' . $min_suffix . '.js';
