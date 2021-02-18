@@ -42,31 +42,33 @@ function action_add_gtm_head() {
 
 // Register block template for podcast CPT
 function action_register_template_podcast() {
-  $post_type_object = get_post_type_object( 'podcast' );
-  $post_type_object->template = array(
-    array( 'core/paragraph', array(
-      'placeholder' => 'Add show summary...'
-    ) ),
-    array( 'core/more' ),
-    array( 'core/heading', array(
-      'content' => 'Followup Resources'
-    ) ),
-    array( 'core/list', array(
-      'placeholder' => 'Add supporting article links...'
-    ) ),
-    array( 'core/heading', array(
-      'content' => 'Transcript'
-    ) ),
-    array( 'core/paragraph', array(
-      'content' => 'The following is a machine-generated transcript of this episode. It will contain errors until it has been reviewed and edited, and we apologize for the difficulty that may cause for screen readers. Do you want to help us speed up our transcribing process? Consider <a href="/talk-to-us/advertise/">sponsoring an episode</a>.'
-    ) ),
-    array( 'core/html', array(
-      'content' => '<p style="text-align:center;"><button id="transcript-toggle" class="butn small"><span>Show</span><span style="display: none;">Hide</span> Full Transcript</button></p>
-<div id="transcript">
-  Add formatted HTML transcript...
-</div>'
-    ) )
-  );
+  if ( isset( $ss_podcasting ) ) {
+    $post_type_object = get_post_type_object( 'podcast' );
+    $post_type_object->template = array(
+      array( 'core/paragraph', array(
+        'placeholder' => 'Add show summary...'
+      ) ),
+      array( 'core/more' ),
+      array( 'core/heading', array(
+        'content' => 'Followup Resources'
+      ) ),
+      array( 'core/list', array(
+        'placeholder' => 'Add supporting article links...'
+      ) ),
+      array( 'core/heading', array(
+        'content' => 'Transcript'
+      ) ),
+      array( 'core/paragraph', array(
+        'content' => 'The following is a machine-generated transcript of this episode. It will contain errors until it has been reviewed and edited, and we apologize for the difficulty that may cause for screen readers. Do you want to help us speed up our transcribing process? Consider <a href="/talk-to-us/advertise/">sponsoring an episode</a>.'
+      ) ),
+      array( 'core/html', array(
+        'content' => '<p style="text-align:center;"><button id="transcript-toggle" class="butn small"><span>Show</span><span style="display: none;">Hide</span> Full Transcript</button></p>
+  <div id="transcript">
+    Add formatted HTML transcript...
+  </div>'
+      ) )
+    );
+  }
 }
 
 // ***** FILTER FUNCTIONS *****
