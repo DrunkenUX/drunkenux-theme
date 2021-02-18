@@ -1,7 +1,22 @@
 <?php
+/**
+ * drunkenux-theme functions and definitions
+ *
+ * Utility functions for the site
+ *
+ * @package Drunken UX
+ * @subpackage drunkenux-theme
+ * @since Drunken UX Theme 2.0
+ * 
+ * TABLE OF CONTENTS
+ *  1. Action Functions
+ *  2. Filter Functions
+ *  3. Other Functions
+ */
+
 namespace Dux;
 
-// Action functions
+// ***** ACTION FUNCTIONS *****
 
 // Output iframe noscript GTM include
 function action_add_gtm_body() {
@@ -54,7 +69,7 @@ function action_register_template_podcast() {
   );
 }
 
-// Filter functions
+// ***** FILTER FUNCTIONS *****
 
 // Attaches sponsor message to page content (consider changing this to a block or template part)
 function filter_add_advertiser( $content ) {
@@ -66,7 +81,7 @@ function filter_add_advertiser( $content ) {
   return $content;
 }
 
-// Other functions
+// ***** OTHER FUNCTIONS *****
 
 // Generate ad markup for podcast episode pages
 function dux_render_ad() {
