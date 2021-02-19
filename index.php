@@ -24,15 +24,21 @@ $latest_post = get_posts( array(
     'sort_order' => 'DESC'
 ) );
 
-if( ! empty( $latest_post ) ):
+if( !empty( $latest_post ) ):
     foreach( $latest_post as $post ):
         setup_postdata( $post );
-        echo the_title();
-
         $featured_id = get_the_ID();
+        $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
+
+        echo the_title(); ?>
+
+<audio id="player" controls>
+    <source type="audio/mpeg" src="<?php echo $audio_url; ?>">
+</audio>
+
+    <?php
     endforeach;
 endif;
 wp_reset_postdata();
 
-echo '<p>' . $featured_id . '</p>';
 get_footer();
