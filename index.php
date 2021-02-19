@@ -14,6 +14,25 @@
  * @since Drunken UX Theme 2.0
  */
 
- get_header(); 
- 
- get_footer();
+get_header(); 
+
+$latest_post = get_posts( array(
+    'numberposts' => 1,
+    'orderby'    => 'date',
+    'post_status' => 'publish',
+    'post_type' => 'podcast',
+    'sort_order' => 'DESC'
+) );
+
+if( ! empty( $latest_post ) ):
+    foreach( $latest_post as $post ):
+        setup_postdata( $post );
+        echo the_title();
+
+        $featured_id = get_the_ID();
+    endforeach;
+endif;
+wp_reset_postdata();
+
+echo '<p>' . $featured_id . '</p>';
+get_footer();
