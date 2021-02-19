@@ -29,6 +29,7 @@ add_filter( 'the_content', __NAMESPACE__ . '\filter_add_advertiser' );
 
 // ***** THEME SUPPORT *****
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'title-tag' );
 
 // ***** REMOVE ACTIONS *****
 remove_action( 'wp_head', 'wp_generator' );
