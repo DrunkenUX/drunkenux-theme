@@ -61,6 +61,7 @@ const cache = require('gulp-cache'); // Cache files in stream for later use.
 const remember = require('gulp-remember'); //  Adds all the files it has ever seen back into the stream.
 const plumber = require('gulp-plumber'); // Prevent pipe breaking caused by errors from gulp plugins.
 const beep = require('beepbeep');
+const webpack = require('webpack-stream');
 const zip = require('gulp-zip'); // Zip plugin or theme file.
 
 /**
@@ -217,6 +218,7 @@ gulp.task('stylesRTL', () => {
 gulp.task('vendorsJS', () => {
 	return gulp
 		.src(config.jsVendorSRC, {since: gulp.lastRun('vendorsJS')}) // Only run on changed files.
+		.pipe(webpack())
 		.pipe(plumber(errorHandler))
 		.pipe(
 			babel({
