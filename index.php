@@ -30,7 +30,9 @@ if( !empty( $latest_post ) ):
         $featured_id = get_the_ID();
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
 
-        echo the_title(); ?>
+        echo '<h2><a href="' . get_the_permalink() . '" title="View shownotes for ' . get_the_title() . '">' . get_the_title() . '</a></h2>'; 
+        echo get_the_post_thumbnail(); 
+        ?>
 
 <audio id="player" controls>
     <source type="audio/mpeg" src="<?php echo $audio_url; ?>">
