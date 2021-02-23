@@ -122,7 +122,7 @@ gulp.task('styles', () => {
 		.pipe(
 			sass({
 				errLogToConsole: config.errLogToConsole,
-				includePaths: ['node_modules/uswds/dist/scss/'],
+				includePaths: ['node_modules/'],
 				outputStyle: config.outputStyle,
 				precision: config.precision
 			})
