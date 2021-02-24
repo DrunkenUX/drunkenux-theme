@@ -42,5 +42,11 @@ if( !empty( $latest_post ) ):
     endforeach;
 endif;
 wp_reset_postdata();
+?>
 
+<section>
+    <h2>Your Hosts</h2>
+</section>
+
+<?php
 get_footer();
