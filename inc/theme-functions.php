@@ -40,6 +40,11 @@ function action_add_gtm_head() {
 <!-- End Google Tag Manager -->";
 }
 
+// Register custom navigation menus
+function action_register_menus() {  
+  register_nav_menus( ['header-menu' => 'Header Menu'] );
+}
+
 // Register block template for podcast CPT
 function action_register_template_podcast() {
   if ( isset( $ss_podcasting ) ) {

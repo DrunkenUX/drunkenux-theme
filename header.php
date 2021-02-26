@@ -24,6 +24,15 @@
 
 <header>
 	<h1>The Drunken UX Podcast</h1>
+
+	<nav>
+	<?php
+	wp_nav_menu( [
+		'theme_location' => 'header-menu',
+		'container' => false,
+	] );
+	?>
+	</nav>
 </header>
 
 <div id="page" class="site">
