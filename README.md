@@ -4,7 +4,6 @@ WordPress theme for drunkenux.com
 ## Development
 Building them CSS and JS is managed via the WPGulp framework. [Reference their documentation](https://github.com/ahmadawais/WPGulp/blob/master/readme.md) for full instructions.
 
-<<<<<<< HEAD
 ### Set up a local dev environment
 
 1. Clone this repo to your computer
@@ -18,12 +17,3 @@ Building them CSS and JS is managed via the WPGulp framework. [Reference their d
 9. Open a terminal and cd to your repo directory
 10. `npm install`
 11. `npm start` to start a Gulp task to watch and build files
-=======
- 1. Setup a local wordpress instance, for example, using [Local](https://localwp.com/)
- 2. Clone this repo somewhere
- 3. Symlink the local repo into `.../wp-content/themes` of Local instance
- 4. Get updraft backup from site (vanilla: install the Seriously Simple Podcasting plugin)
- 5. `npm install` in the repo directory to install the node packages
- 6. `npm start` to watch the assets and auto-build
- 7. Edit!
->>>>>>> 475a2d7b87f2574d1c071cd1a8189b7d9525d98a
