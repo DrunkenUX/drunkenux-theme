@@ -17,3 +17,7 @@ Building the CSS and JS is managed via the WPGulp framework. [Reference their do
 9. Open a terminal and cd to your repo directory
 10. `npm install`
 11. `npm start` to start a Gulp task to watch and build files
+
+### Accessibility
+
+When developing locally, the theme will load the [a11y.css](https://ffoodd.github.io/a11y.css/index.html) accessibility linting CSS to highlight possible issues with markup.
