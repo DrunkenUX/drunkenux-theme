@@ -14,7 +14,7 @@
  * @since Drunken UX Theme 2.0
  */
 
-get_header(); 
+get_header();
 
 $latest_post = get_posts( array(
     'numberposts' => 1,
@@ -30,8 +30,8 @@ if( !empty( $latest_post ) ):
         $featured_id = get_the_ID();
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
 
-        echo '<h2><a href="' . get_the_permalink() . '" title="View shownotes for ' . get_the_title() . '">' . get_the_title() . '</a></h2>'; 
-        echo get_the_post_thumbnail(); 
+        echo '<h2><a href="' . get_the_permalink() . '" title="View shownotes for ' . get_the_title() . '">' . get_the_title() . '</a></h2>';
+        echo get_the_post_thumbnail();
         ?>
 
 <audio id="player" controls>
