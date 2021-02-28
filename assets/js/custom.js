@@ -16,7 +16,7 @@ function toggleHide(el) {
 }
 
 var transcriptButton = document.getElementById('transcript-toggle');
-transcriptButton.addEventListener(click, function () {
+if (!Object.is(transcriptButton, undefined)) transcriptButton.addEventListener(click, function () {
   var label = this.getElementsByTagName('span');
   var transcript = document.getElementById('transcript');
   toggleHide(label);
