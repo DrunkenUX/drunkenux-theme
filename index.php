@@ -16,7 +16,7 @@
 
 get_header();
 
-$latest_post = get_posts( array(
+$latest_ep = get_posts( array(
     'numberposts' => 1,
     'orderby'    => 'date',
     'post_status' => 'publish',
@@ -24,8 +24,8 @@ $latest_post = get_posts( array(
     'sort_order' => 'DESC'
 ) );
 
-if( !empty( $latest_post ) ):
-    foreach( $latest_post as $post ):
+if( !empty( $latest_ep ) ):
+    foreach( $latest_ep as $post ):
         setup_postdata( $post );
         $featured_id = get_the_ID();
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
@@ -46,6 +46,37 @@ wp_reset_postdata();
 
 <section>
     <h2>Your Hosts</h2>
+</section>
+
+<section>
+    <h2>From the Blog</h2> 
+
+    <ul>
+    <?php
+    $latest_posts = get_posts( array(
+        'numberposts' => 4,
+        'orderby'    => 'date',
+        'post_status' => 'publish',
+        'post_type' => 'post',
+        'sort_order' => 'DESC'
+    ) );
+
+    if( !empty( $latest_posts ) ):
+        foreach( $latest_posts as $post ):
+            setup_postdata( $post );
+            ?>
+    
+        <li>
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+            <a href="<?php echo the_permalink(); ?>" title="Read the post: <?php echo the_title(); ?>"><?php echo the_title(); ?></a>
+        </li>
+    
+        <?php
+        endforeach;
+    endif;
+    wp_reset_postdata();
+    ?>
+    </ul>
 </section>
 
 <?php
