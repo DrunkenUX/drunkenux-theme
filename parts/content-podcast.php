@@ -30,6 +30,7 @@ $explicit  = get_post_meta( get_the_ID(), 'explicit', true );
     <?php 
 	the_content();
 
+	// Display episode sponsor
 	$ad = get_field( 'advertiser' );
 	if( $ad ):
 		foreach( $ad as $adObj ):
