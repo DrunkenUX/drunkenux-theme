@@ -27,7 +27,25 @@ $explicit  = get_post_meta( get_the_ID(), 'explicit', true );
 		</audio>
 	</header>
 
-    <?php the_content(); ?>
+    <?php 
+	the_content();
+
+	$ad = get_field( 'advertiser' );
+	if( $ad ):
+		foreach( $ad as $adObj ):
+			$ad_content = apply_filters('the_content', $adObj->post_content);
+			$ad_link = get_field( 'link', $adObj->ID );
+			$ad_img = get_the_post_thumbnail( $adObj->ID, 'full', array( 'title' => get_the_title( $adObj->ID ) ) );
+		endforeach;
+		?>
+	<div class="ad">'
+		<?php echo $ad_content; ?>
+		<a href="<?php echo $ad_link; ?>">'
+		<?php echo $ad_img; ?>
+	</div><!-- .ad -->
+	<?php
+	endif;
+  	?>
 
     <div class="meta">
         <?php the_tags( 'Tagged with:' ); ?>
