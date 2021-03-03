@@ -39,8 +39,9 @@ $explicit  = get_post_meta( get_the_ID(), 'explicit', true );
 			$ad_img = get_the_post_thumbnail( $adObj->ID, 'full', array( 'title' => 'Visit our sponsor, ' . get_the_title( $adObj->ID ) ) );
 		endforeach;
 		?>
-	<div class="ad">'
+	<div class="ad">
 		<?php echo $ad_content; ?>
+
 		<a href="<?php echo $ad_link; ?>" title="<?php the_title( $adObj->ID ); ?>">
 			<?php echo $ad_img; ?>
 		</a>
