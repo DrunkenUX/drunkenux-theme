@@ -19,6 +19,7 @@ var transcriptButton = document.getElementById('transcript-toggle');
 if (!Object.is(transcriptButton, undefined) && !Object.is(transcriptButton, null)) transcriptButton.addEventListener('click', function () {
   var label = this.getElementsByTagName('span');
   var transcript = document.getElementById('transcript');
-  toggleHide(label);
+  toggleHide(label[0]);
+  toggleHide(label[1]);
   transcript.classList.toggle('open');
 });
