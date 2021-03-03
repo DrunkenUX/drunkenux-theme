@@ -1,0 +1,90 @@
+/* Transcript Reveal */
+#transcript {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+
+	&::after {
+    background:-webkit-linear-gradient(rgba( 255, 255, 255, 0), rgba(255, 255, 255, 1) ); /* For Safari */
+    background:linear-gradient( rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) );
+    bottom:0;
+    content: ' ';
+    height:50px;
+    position:absolute;
+    width:100%;
+  }
+
+	&.open {
+	  height: auto;
+
+		&::after {
+		  content: none;
+		}
+	}
+
+	+ p {
+		margin: 1rem 0;
+		text-align: center;
+	}
+}
+
+/* Transcript Chat */
+.chat {
+  background: url(https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y) no-repeat top right;
+  background-size: 60px 60px;
+  padding-right: 50px;
+  text-align: right;
+
+	> p {
+  	background-color: #f5f5f5;
+    border-radius: 30px;
+  	display: block;
+  	height: auto;
+  	margin: 40px;
+    padding: 1em;
+    position: relative;
+
+		&:after{
+  		border: 23px solid;
+  		border-color: #f5f5f5 transparent transparent;
+  		bottom: auto;
+  		content: ' ';
+  		height: 0;
+      left: auto;
+  		position: absolute;
+      right: -20px;
+  	  top: 0;
+  		width: 0;
+  	}
+  }
+}
+
+.chat.michael {
+  background: url(img/fienen-chat.png) no-repeat top left;
+  padding-left: 50px;
+  text-align: left;
+
+	> p {
+		background-color: lightyellow;
+
+		&:after{
+			border-color: lightyellow transparent transparent;
+			border-top-left-radius: 0;
+			left: -20px;
+			right: auto;
+		}
+	}
+}
+
+.chat.aaron {
+  background: url(img/hill-chat.png) no-repeat top right;
+
+	> p {
+		background-color: #cfd8dc;
+
+		&:after {
+			border-color: #cfd8dc transparent transparent;
+			border-top-right-radius: 0;
+		}
+	}
+}

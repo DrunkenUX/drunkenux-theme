@@ -208,6 +208,24 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute !important;width:1px;word-wrap:normal !important;word-break:normal}
 .skip-link:focus{background-color:#f1f1f1;border-radius:3px;-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,0.6);box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;-webkit-clip-path:none;clip-path:none;color:#21759b;display:block;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 audio{width:80vw}
+#transcript{height:200px;overflow:hidden;position:relative}
+#transcript::after{background:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0)),to(white));background:linear-gradient(rgba(255,255,255,0),white);bottom:0;content:' ';height:50px;position:absolute;width:100%}
+#transcript.open{height:auto}
+#transcript.open::after{content:none}
+#transcript+p{margin:1rem 0;text-align:center}
+.chat{background:url(https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y) no-repeat top right;background-size:60px 60px;padding-right:50px;text-align:right}
+.chat>p{background-color:#f5f5f5;border-radius:30px;display:block;height:auto;margin:40px;padding:1em;position:relative}
+.chat>p:after{border:23px solid;border-color:#f5f5f5 transparent transparent;bottom:auto;content:' ';height:0;left:auto;position:absolute;right:-20px;top:0;width:0}
+.chat.michael{background:url(img/fienen-chat.png) no-repeat top left;padding-left:50px;text-align:left}
+.chat.michael>p{background-color:lightyellow}
+.chat.michael>p:after{border-color:lightyellow transparent transparent;border-top-left-radius:0;left:-20px;right:auto}
+.chat.aaron{background:url(img/hill-chat.png) no-repeat top right}
+.chat.aaron>p{background-color:#cfd8dc}
+.chat.aaron>p:after{border-color:#cfd8dc transparent transparent;border-top-right-radius:0}
+.codeneric_uam_image{max-width:100%}
+.sidebar .caldera-grid .col-sm-6{width:100%}
+.sidebar .caldera-grid .radio-inline{display:block;margin-left:10px}
+.caldera-grid .radio-inline input[type=radio]{height:100%;vertical-align:middle}
 @media(min-width:480px){.plyr__captions{font-size:15px;font-size:var(--plyr-font-size-base,15px);padding:calc(10px * 2);padding:calc(var(--plyr-control-spacing,10px) * 2)}
 .plyr--video .plyr__controls{padding:10px;padding:var(--plyr-control-spacing,10px);padding-top:calc(10px * 3.5);padding-top:calc(var(--plyr-control-spacing,10px) * 3.5)}
 }@media(min-width:768px){.plyr__captions{font-size:18px;font-size:var(--plyr-font-size-large,18px)}

@@ -8,16 +8,12 @@ Text Domain: drunkenux
 GitHub Theme URI: DrunkenUX/drunkenux-theme
 */
 
-// USWDS Defaults
-//@import "~uswds-theme-general";
-//@import "~uswds-theme-typography";
-//@import "~uswds-theme-spacing";
-//@import "~uswds-theme-color";
-//@import "~uswds-theme-utilities";
-//@import "uswds";
-//@import "~uswds-theme-custom-styles";
+// Vendor CSS
 @import "plyr/dist/plyr";
 
+// Theme CSS
 @import "defaults";
 @import "accessibility";
 @import "media";
+@import "transcripts";
+@import "wp-plugins";
