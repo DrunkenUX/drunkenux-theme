@@ -43,6 +43,7 @@ function action_add_gtm_head() {
 // Register custom navigation menus
 function action_register_menus() {  
   register_nav_menus( ['header-menu' => 'Header Menu'] );
+  register_nav_menus( ['episode-sidebar' => 'Episode Sidebar'] );
 }
 
 // Register block template for podcast CPT
