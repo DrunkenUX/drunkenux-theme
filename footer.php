@@ -16,7 +16,12 @@
   </div><!-- #content.site-content -->
 </div><!-- #page.site -->
 
-<footer></footer>
+<footer>
+  <small id="copyright">&copy; Copyright 2018 - <?php echo date('Y'); ?> - Fienen LLC</small>
+  <small id="disclaimer">
+    The Drunken UX Podcast is a product of Fienen, LLC The Drunken UX Podcast is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.
+  </small>
+</footer>
 
 <?php wp_footer(); ?>
 
