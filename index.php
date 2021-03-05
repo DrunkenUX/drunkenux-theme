@@ -18,10 +18,10 @@ get_header();
 
 $latest_ep = get_posts( array(
     'numberposts' => 1,
-    'orderby'    => 'date',
+    'orderby'     => 'date',
     'post_status' => 'publish',
-    'post_type' => 'podcast',
-    'sort_order' => 'DESC'
+    'post_type'   => 'podcast',
+    'sort_order'  => 'DESC'
 ) );
 
 if( !empty( $latest_ep ) ):
@@ -31,7 +31,7 @@ if( !empty( $latest_ep ) ):
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
 
         echo '<h2><a href="' . get_the_permalink() . '" title="View shownotes for ' . get_the_title() . '">' . get_the_title() . '</a></h2>';
-        echo get_the_post_thumbnail();
+        echo get_the_post_thumbnail( get_the_ID(), 'medium', array( 'alt' => 'Listen to ' . get_the_title() ) );
         ?>
 
 <audio id="player" controls>
@@ -55,10 +55,10 @@ wp_reset_postdata();
     <?php
     $latest_posts = get_posts( array(
         'numberposts' => 4,
-        'orderby'    => 'date',
+        'orderby'     => 'date',
         'post_status' => 'publish',
-        'post_type' => 'post',
-        'sort_order' => 'DESC'
+        'post_type'   => 'post',
+        'sort_order'  => 'DESC'
     ) );
 
     if( !empty( $latest_posts ) ):
@@ -67,7 +67,7 @@ wp_reset_postdata();
             ?>
     
         <li>
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, null, 'This article is written by' . get_the_author_meta( 'display_name' ) ); ?>
             <a href="<?php echo the_permalink(); ?>" title="Read the post: <?php echo the_title(); ?>"><?php echo the_title(); ?></a>
         </li>
     
