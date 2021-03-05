@@ -205,6 +205,7 @@ html{font-size:62.5%}
 body{font-size:1.6rem;margin:0}
 footer{background-color:gray;color:#fff;-webkit-column-gap:2rem;-moz-column-gap:2rem;column-gap:2rem;display:grid;grid-template-columns:1fr 2fr;padding:2rem 4rem}
 header{background:gray}
+header nav{display:none}
 img{height:auto;max-width:100%}
 main{margin:0 4rem}
 body::after{bottom:auto !important;left:auto !important;right:1rem !important;top:2.5rem !important}

@@ -40,6 +40,8 @@
 		<<?php echo $logo_tag; ?> class="screen-reader-text"><?php bloginfo( 'name' ); ?></<?php echo $logo_tag; ?>>
 	</a>
 
+	<button id="menu-toggle" type="button">Menu</button>
+
 	<nav>
 	<?php
 	wp_nav_menu( [

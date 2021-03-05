@@ -6,20 +6,29 @@
  * @see    https://github.com/nefe/You-Dont-Need-jQuery#8.2
  * @author Michael Fienen <fienen@gmail.com>
  * @param  {HTMLElement} el - Element you want to show or hide
+ * @param  {String} display - Display property value to set on element. Default: 'block'
  */
 function toggleHide(el) {
+  var display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'block';
+
   if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
-    el.style.display = '' | 'inline' | 'inline-block' | 'inline-table' | 'block';
+    el.style.display = display;
   } else {
     el.style.display = 'none';
   }
-}
+} // Menu visibility toggle
+
+
+var navButton = document.getElementById('menu-toggle');
+if (!Object.is(navButton, undefined) && !Object.is(navButton, null)) navButton.addEventListener('click', function () {
+  toggleHide(this.nextElementSibling);
+}); // Transcript visibility toggle
 
 var transcriptButton = document.getElementById('transcript-toggle');
 if (!Object.is(transcriptButton, undefined) && !Object.is(transcriptButton, null)) transcriptButton.addEventListener('click', function () {
   var label = this.getElementsByTagName('span');
   var transcript = document.getElementById('transcript');
-  toggleHide(label[0]);
-  toggleHide(label[1]);
+  toggleHide(label[0], 'inline');
+  toggleHide(label[1], 'inline');
   transcript.classList.toggle('open');
 });
