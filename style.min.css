@@ -210,6 +210,7 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 .ad{border-top:1px solid #eee;margin-top:2rem;text-align:center}
 .ad img{display:inline}
 audio{width:80vw}
+.plyr{--plyr-control-icon-size:4.4rem}
 #transcript{height:200px;overflow:hidden;position:relative}
 #transcript::after{background:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0)),to(white));background:linear-gradient(rgba(255,255,255,0),white);bottom:0;content:' ';height:50px;position:absolute;width:100%}
 #transcript.open{height:auto}
