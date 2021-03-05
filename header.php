@@ -35,7 +35,10 @@
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'drunkenux' ); ?></a>
 
 <header>
-	<h1>The Drunken UX Podcast</h1>
+	<a id="logo" href="/" title="Return to the Drunken UX homepage">
+		<?php $logo_tag = ( is_home() || is_front_page() ) ? 'h1' : 'span'; ?>
+		<<?php echo $logo_tag; ?> class="screen-reader-text"><?php bloginfo( 'name' ); ?></<?php echo $logo_tag; ?>>
+	</a>
 
 	<nav>
 	<?php
