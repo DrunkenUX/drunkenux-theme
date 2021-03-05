@@ -1,0 +1,12 @@
+#page {
+    margin: 0 4rem;
+}
+
+.copyright {
+    display: block;
+    grid-column: 1 / 2;
+}
+
+footer .widgets {
+    grid-column: 2 / 3;
+}

@@ -7,6 +7,19 @@ body {
     margin: 0;
 }
 
+footer {
+    background-color: gray; // temporary
+    color: #fff;
+    column-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 2rem 4rem;
+}
+
+header {
+    background: gray; // temporary
+}
+
 img {
     height: auto;
     max-width: 100%;
