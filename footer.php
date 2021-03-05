@@ -11,10 +11,7 @@
  * @since Drunken UX Theme 2.0
  */
 ?>
-      </main>
-    </div><!-- #primary.content-area -->
-  </div><!-- #content.site-content -->
-</div><!-- #page.site -->
+</main>
 
 <footer>
   <small class="copyright">&copy; 2018-<?php echo date('Y'); ?> Fienen, LLC</small>
