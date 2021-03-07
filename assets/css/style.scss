@@ -11,6 +11,9 @@ GitHub Theme URI: DrunkenUX/drunkenux-theme
 // Vendor CSS
 @import "plyr/dist/plyr";
 
+// Settings and config
+@import "settings";
+
 // Theme CSS
 @import "defaults";
 @import "accessibility";

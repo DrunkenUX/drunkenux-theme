@@ -24,14 +24,20 @@ if( !empty( $latest_ep ) ):
         ?>
 <section id="latest_episode">
     <div class="background-image" style="background-image:url('<?php echo esc_url($latest_ep_banner['url']); ?>');"></div>
+	<div class="label-latest">Latest Episode</div>
+
         <?php
         setup_postdata( $post );
         $featured_id = get_the_ID();
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
+		?>
 
-        echo '<h2><a href="' . get_the_permalink() . '" title="View shownotes for ' . get_the_title() . '">' . get_the_title() . '</a></h2>';
-        echo get_the_post_thumbnail( get_the_ID(), 'medium', array( 'alt' => 'Listen to ' . get_the_title() ) );
-        ?>
+    <h2><a href="<?php the_permalink(); ?>" title="View shownotes for <?php the_title(); ?>"><?php the_title(); ?></a></h2>';
+
+	<picture>
+		<source srcset="<?php echo esc_url($latest_ep_banner['url']); ?>" media="all">
+		<img src="<?php echo esc_url($latest_ep_banner['url']); ?>" alt="Listen to <?php get_the_title(); ?>">
+	</picture>
 
     <audio id="player" controls>
         <source type="audio/mpeg" src="<?php echo $audio_url; ?>">
