@@ -1,3 +1,37 @@
+#latest_episode {
+    overflow: hidden;
+    padding: 3rem 4rem;
+    position: relative;
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .background-image {
+        --blur: 10px;
+        background-position: center;
+        background-size: cover;
+        filter: blur(var(--blur));
+        -webkit-filter: blur(var(--blur));
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+
+        &::before {
+            background-color: rgba(#fff, .5);
+            content: ' ';
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
+
 .copyright {
     display: block;
     grid-column: 1 / 2;

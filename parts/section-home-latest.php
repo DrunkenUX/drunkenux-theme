@@ -19,6 +19,12 @@ $latest_ep = get_posts( array(
 
 if( !empty( $latest_ep ) ):
     foreach( $latest_ep as $post ):
+        $latest_ep_banner = get_field('cmb_thst_feature_post_img_id');
+        //echo $latest_ep_banner;
+        ?>
+<section id="latest_episode">
+    <div class="background-image" style="background-image:url('<?php echo esc_url($latest_ep_banner['url']); ?>');"></div>
+        <?php
         setup_postdata( $post );
         $featured_id = get_the_ID();
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
@@ -27,10 +33,10 @@ if( !empty( $latest_ep ) ):
         echo get_the_post_thumbnail( get_the_ID(), 'medium', array( 'alt' => 'Listen to ' . get_the_title() ) );
         ?>
 
-<audio id="player" controls>
-    <source type="audio/mpeg" src="<?php echo $audio_url; ?>">
-</audio>
-
+    <audio id="player" controls>
+        <source type="audio/mpeg" src="<?php echo $audio_url; ?>">
+    </audio>
+</section>
     <?php
     endforeach;
 endif;
