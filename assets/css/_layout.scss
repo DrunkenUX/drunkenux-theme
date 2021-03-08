@@ -1,6 +1,5 @@
-#latest_episode {
+#latest-episode {
     overflow: hidden;
-    padding: 3rem 4rem;
     position: relative;
 
     > * {
@@ -8,11 +7,45 @@
         z-index: 1;
     }
 
+    a {
+        color: #000;
+        display: block;
+
+        &:hover {
+            outline: solid .5rem #e42920;
+        }
+    }
+
 	h2 {
 		background-color: #fff;
+        @include boxshadow();
 		display: inline-block;
+        font-size: clamp(1.6rem, 3vw, 3.2rem);
+        font-style: italic;
+        margin: 0 0 2rem;
+        max-width: 100%;
 		padding: 2rem 3rem;
+        text-align: left;
 	}
+
+    picture {
+        @include respond-to('medium') {
+            @include boxshadow();
+            display: flex;
+            height: 45vw;
+            justify-content: center;
+            max-height: 56rem;
+            max-width: 72rem;
+            overflow: hidden;
+            width: 65vw;
+
+            img {
+                height: 100%;
+                max-width: min-content;
+                width: auto;
+            }
+        }
+    }
 
     .background-image {
         --blur: 10px;
@@ -35,6 +68,40 @@
             height: 100%;
             position: absolute;
             width: 100%;
+        }
+    }
+
+    .banner {
+        margin-bottom: 2rem;
+        position: relative;
+        text-align: right;
+    }
+
+    .banner-image {
+        display: inline-block;
+    }
+
+    .label-latest {
+        background-color: #e42920;
+        color: #fff;
+        display: block;
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: bold;
+        padding: .7rem 1rem;
+        position: relative;
+        width: max-content;
+    }
+    
+    .title-group {
+        max-width: 80%;
+        position: absolute;
+        text-align: left;
+        top: 25%;
+        z-index: 2;
+
+        @include respond-to('large') {
+            top: 30%;
         }
     }
 }

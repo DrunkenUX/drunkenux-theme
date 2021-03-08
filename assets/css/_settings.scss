@@ -1,3 +1,9 @@
 $breakpoint-small: 320px;
 $breakpoint-medium: 768px;
 $breakpoint-large: 1200px;
+
+$breakpoints: (
+  'small':  320px,
+  'medium': 768px,
+  'large':  1200px
+) !default;
