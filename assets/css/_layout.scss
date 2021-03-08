@@ -12,7 +12,7 @@
         display: block;
 
         &:hover h2 {
-            outline: solid .5rem #e42920;
+            outline: solid .5rem map-get($colors, red);
         }
     }
 
@@ -81,7 +81,7 @@
     }
 
     .label-latest {
-        background-color: #e42920;
+        background-color: map-get($colors, red);
         color: #fff;
         display: block;
         font-size: 1rem;
@@ -91,7 +91,7 @@
         position: relative;
         width: max-content;
     }
-    
+
     .title-group {
         max-width: 80%;
         position: absolute;

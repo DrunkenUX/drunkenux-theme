@@ -9,7 +9,7 @@ function enqueue_scripts() {
   // CSS
   wp_enqueue_style('main', $styles_css_path, null, null);
 	if( DEV ) {
-    wp_enqueue_style('a11y', get_stylesheet_directory_uri() . '/assets/css/a11y.css', null, null);
+    //wp_enqueue_style('a11y', get_stylesheet_directory_uri() . '/assets/css/a11y.css', null, null);
   }
 
   // JavaScript

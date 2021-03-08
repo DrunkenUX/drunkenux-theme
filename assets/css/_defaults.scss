@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+a {
+	color: map-get($colors, red);
+}
+
 footer {
     background-color: gray; // temporary
     color: #fff;
@@ -18,11 +22,19 @@ footer {
 }
 
 header {
-    background: gray; // temporary
+    height: 10rem;
+	overflow: visible;
+	position: relative;
+	text-align: right;
+	z-index: 3;
 
     nav {
         display: none;
     }
+
+	* {
+		display: inline-block;
+	}
 }
 
 img {

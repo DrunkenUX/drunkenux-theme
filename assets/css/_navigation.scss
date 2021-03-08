@@ -1,7 +1,9 @@
 #logo {
     background: url('assets/svg/logo.svg') no-repeat;
     background-size: cover;
-    display: block;
-    height: 12.8rem;
-    width: 12.8rem;
+    display: inline-block;
+    height: 20rem;
+	left: 0;
+	position: absolute;
+    width: 20rem;
 }
