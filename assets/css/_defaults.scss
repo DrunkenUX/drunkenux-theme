@@ -39,10 +39,6 @@ header {
 	text-align: right;
 	z-index: 3;
 
-    nav {
-        display: none;
-    }
-
 	* {
 		display: inline-block;
 	}
@@ -51,6 +47,37 @@ header {
 img {
     height: auto;
     max-width: 100%;
+}
+
+nav {
+    background-color: #fff;
+    display: none;
+    margin-bottom: -1rem;
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    width: 100%;
+    z-index: -1;
+
+    li {
+        display: block;
+        font-size: 2rem;
+
+        &:not(:last-child)::after {
+            background-color: gray;
+            content: ' ';
+            display: block;
+            height: 1px;
+            margin: 0 auto;
+            width: 6rem;
+        }
+
+        a {
+            display: block;
+            padding: 4rem 0;
+            width: 100%;
+        }
+    }
 }
 
 section {

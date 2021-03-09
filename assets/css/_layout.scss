@@ -11,8 +11,12 @@
         color: #000;
         display: block;
 
-        &:hover h2 {
-            outline: solid .5rem map-get($colors, red);
+        &:hover,
+        &:focus,
+        &:active {
+            h2 {
+                outline: solid .5rem map-get($colors, red);
+            }
         }
     }
 

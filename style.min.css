@@ -214,9 +214,12 @@ a{color:#e42920}
 button,.button{background-color:#e42920;border:0;color:#fff;cursor:pointer;display:inline-block;padding:2rem 3rem;text-decoration:none}
 footer{background-color:gray;color:#fff;-webkit-column-gap:2rem;-moz-column-gap:2rem;column-gap:2rem;display:grid;grid-template-columns:1fr 2fr;padding:2rem 4rem}
 header{min-height:10rem;overflow:visible;position:relative;text-align:right;z-index:3}
-header nav{display:none}
 header *{display:inline-block}
 img{height:auto;max-width:100%}
+nav{background-color:#fff;display:none;margin-bottom:-1rem;position:absolute;text-align:center;top:100%;width:100%;z-index:-1}
+nav li{display:block;font-size:2rem}
+nav li:not(:last-child)::after{background-color:gray;content:' ';display:block;height:1px;margin:0 auto;width:6rem}
+nav li a{display:block;padding:4rem 0;width:100%}
 section{margin:0 auto;max-width:120rem;padding:6rem 4rem}
 body::after{bottom:auto !important;left:auto !important;right:1rem !important;top:2.5rem !important}
 .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute !important;width:1px;word-wrap:normal !important;word-break:normal}
@@ -226,7 +229,7 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 #latest-episode{overflow:hidden;position:relative}
 #latest-episode>*{position:relative;z-index:1}
 #latest-episode a{color:#000;display:block}
-#latest-episode a:hover h2{outline:solid .5rem #e42920}
+#latest-episode a:hover h2,#latest-episode a:focus h2,#latest-episode a:active h2{outline:solid .5rem #e42920}
 #latest-episode h2{background-color:#fff;-webkit-box-shadow:-5px 5px 15px rgba(0,0,0,0.5);box-shadow:-5px 5px 15px rgba(0,0,0,0.5);display:inline-block;font-size:clamp(1.6rem,3vw,3.2rem);font-style:italic;margin:0 0 2rem;max-width:100%;padding:2rem 3rem;text-align:left}
 #latest-episode .background-image{--blur:10px;background-position:center;background-size:cover;filter:blur(var(--blur));-webkit-filter:blur(var(--blur));height:100%;left:0;position:absolute;top:0;-webkit-transform:scale(1.1);transform:scale(1.1);width:100%;z-index:0}
 #latest-episode .background-image::before{background-color:rgba(255,255,255,0.75);content:' ';display:block;height:100%;position:absolute;width:100%}
