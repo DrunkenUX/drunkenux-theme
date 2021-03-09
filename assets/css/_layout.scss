@@ -66,7 +66,8 @@
         z-index: 0;
 
         &::before {
-            background-color: rgba(#fff, .75);
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgb(255,255,255) 0%, rgb(255,255,255) 10%, rgba(255,255,255,0.25) 50%, rgb(255,255,255) 90%, rgb(255,255,255) 100%);
             content: ' ';
             display: block;
             height: 100%;
