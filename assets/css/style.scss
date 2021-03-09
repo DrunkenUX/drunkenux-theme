@@ -16,10 +16,10 @@ GitHub Theme URI: DrunkenUX/drunkenux-theme
 @import "mixins";
 
 // Theme CSS
+@import "reset";
 @import "defaults";
 @import "accessibility";
 @import "advertisers";
-@import "buttons";
 @import "layout";
 @import "media";
 @import "navigation";

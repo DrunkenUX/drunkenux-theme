@@ -12,6 +12,17 @@ a {
 	color: map-get($colors, red);
 }
 
+button {
+	background-color: map-get($colors, red);
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	padding: 2rem 3rem;
+	text-decoration: none;
+}
+
+
 footer {
     background-color: gray; // temporary
     color: #fff;
@@ -22,7 +33,7 @@ footer {
 }
 
 header {
-    height: 10rem;
+    min-height: 10rem;
 	overflow: visible;
 	position: relative;
 	text-align: right;

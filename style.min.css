@@ -1,10 +1,10 @@
 .plyr{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-box-align:center;-ms-flex-align:center;align-items:center;direction:ltr;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;font-family:inherit;font-family:var(--plyr-font-family,inherit);font-variant-numeric:tabular-nums;font-weight:400;font-weight:var(--plyr-font-weight-regular,400);line-height:1.7;line-height:var(--plyr-line-height,1.7);max-width:100%;min-width:200px;position:relative;text-shadow:none;-webkit-transition:-webkit-box-shadow .3s ease;transition:-webkit-box-shadow .3s ease;transition:box-shadow .3s ease;transition:box-shadow .3s ease,-webkit-box-shadow .3s ease;z-index:0}
 .plyr audio,.plyr iframe,.plyr video{display:block;height:100%;width:100%}
-.plyr button{font:inherit;line-height:inherit;width:auto}
+.plyr button,.plyr .button{font:inherit;line-height:inherit;width:auto}
 .plyr:focus{outline:0}
 .plyr--full-ui{-webkit-box-sizing:border-box;box-sizing:border-box}
 .plyr--full-ui *,.plyr--full-ui ::after,.plyr--full-ui ::before{-webkit-box-sizing:inherit;box-sizing:inherit}
-.plyr--full-ui a,.plyr--full-ui button,.plyr--full-ui input,.plyr--full-ui label{-ms-touch-action:manipulation;touch-action:manipulation}
+.plyr--full-ui a,.plyr--full-ui button,.plyr--full-ui .button,.plyr--full-ui input,.plyr--full-ui label{-ms-touch-action:manipulation;touch-action:manipulation}
 .plyr__badge{background:#4a5464;background:var(--plyr-badge-background,#4a5464);border-radius:2px;border-radius:var(--plyr-badge-border-radius,2px);color:#fff;color:var(--plyr-badge-text-color,#fff);font-size:9px;font-size:var(--plyr-font-size-badge,9px);line-height:1;padding:3px 4px}
 .plyr--full-ui ::-webkit-media-text-track-container{display:none}
 .plyr__captions{-webkit-animation:plyr-fade-in .3s ease;animation:plyr-fade-in .3s ease;bottom:0;display:none;font-size:13px;font-size:var(--plyr-font-size-small,13px);left:0;padding:10px;padding:var(--plyr-control-spacing,10px);position:absolute;text-align:center;-webkit-transition:-webkit-transform .4s ease-in-out;transition:-webkit-transform .4s ease-in-out;transition:transform .4s ease-in-out;transition:transform .4s ease-in-out,-webkit-transform .4s ease-in-out;width:100%}
@@ -201,11 +201,19 @@ a.plyr__control::after,a.plyr__control::before{display:none}
 .plyr--no-transition{-webkit-transition:none !important;transition:none !important}
 .plyr__sr-only{clip:rect(1px,1px,1px,1px);overflow:hidden;border:0 !important;height:1px !important;padding:0 !important;position:absolute !important;width:1px !important}
 .plyr [hidden]{display:none !important}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
 html{font-size:62.5%}
 body{font-family:sans-serif;font-size:1.6rem;margin:0}
 a{color:#e42920}
+button,.button{background-color:#e42920;border:0;color:#fff;cursor:pointer;display:inline-block;padding:2rem 3rem;text-decoration:none}
 footer{background-color:gray;color:#fff;-webkit-column-gap:2rem;-moz-column-gap:2rem;column-gap:2rem;display:grid;grid-template-columns:1fr 2fr;padding:2rem 4rem}
-header{height:10rem;overflow:visible;position:relative;text-align:right;z-index:3}
+header{min-height:10rem;overflow:visible;position:relative;text-align:right;z-index:3}
 header nav{display:none}
 header *{display:inline-block}
 img{height:auto;max-width:100%}
@@ -215,7 +223,6 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 .skip-link:focus{background-color:#f1f1f1;border-radius:3px;-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,0.6);box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;-webkit-clip-path:none;clip-path:none;color:#21759b;display:block;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 .ad{border-top:1px solid #eee;margin-top:2rem;text-align:center}
 .ad img{display:inline}
-button,.button{background-color:#e42920;border:0;color:#fff;display:inline-block;padding:2rem 3rem;text-decoration:none}
 #latest-episode{overflow:hidden;position:relative}
 #latest-episode>*{position:relative;z-index:1}
 #latest-episode a{color:#000;display:block}
