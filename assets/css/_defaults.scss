@@ -24,12 +24,14 @@ button {
 
 
 footer {
-    background-color: gray; // temporary
-    color: #fff;
-    column-gap: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 2rem 4rem;
+    padding: 5rem auto;
+	text-align: center;
+
+	> * {
+		margin: 0 auto;
+    	max-width: 120rem;
+		padding: 0 4rem;
+	}
 }
 
 header {

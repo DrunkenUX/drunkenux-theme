@@ -212,7 +212,8 @@ html{font-size:62.5%}
 body{font-family:sans-serif;font-size:1.6rem;margin:0}
 a{color:#e42920}
 button,.button{background-color:#e42920;border:0;color:#fff;cursor:pointer;display:inline-block;padding:2rem 3rem;text-decoration:none}
-footer{background-color:gray;color:#fff;-webkit-column-gap:2rem;-moz-column-gap:2rem;column-gap:2rem;display:grid;grid-template-columns:1fr 2fr;padding:2rem 4rem}
+footer{padding:5rem auto;text-align:center}
+footer>*{margin:0 auto;max-width:120rem;padding:0 4rem}
 header{min-height:10rem;overflow:visible;position:relative;text-align:right;z-index:3}
 header *{display:inline-block}
 img{height:auto;max-width:100%}
@@ -226,6 +227,7 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 .skip-link:focus{background-color:#f1f1f1;border-radius:3px;-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,0.6);box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;-webkit-clip-path:none;clip-path:none;color:#21759b;display:block;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 .ad{border-top:1px solid #eee;margin-top:2rem;text-align:center}
 .ad img{display:inline}
+footer>.widgets{margin-bottom:5rem}
 #latest-episode{overflow:hidden;position:relative}
 #latest-episode>*{position:relative;z-index:1}
 #latest-episode a{color:#000;display:block}
@@ -238,6 +240,7 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 #latest-episode .label-latest{background-color:#e42920;color:#fff;display:block;font-size:1rem;font-style:italic;font-weight:bold;padding:.7rem 1rem;position:relative;width:-webkit-max-content;width:-moz-max-content;width:max-content}
 #latest-episode .title-group{max-width:80%;position:absolute;text-align:left;top:25%;z-index:2}
 .copyright{display:block;grid-column:1 / 2}
+.disclaimer{font-style:italic}
 footer .widgets{grid-column:2 / 3}
 audio{width:80vw}
 .plyr{--plyr-control-icon-size:4.4rem;-webkit-box-shadow:-5px 5px 15px rgba(0,0,0,0.5);box-shadow:-5px 5px 15px rgba(0,0,0,0.5)}
