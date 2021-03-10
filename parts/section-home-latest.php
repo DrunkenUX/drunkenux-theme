@@ -30,24 +30,24 @@ if( !empty( $latest_ep ) ):
         $featured_id = get_the_ID();
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
 		?>
-    
+
     <section class="banner">
-        <div class="title-group">
-            <div class="label-latest">Latest Episode</div>
-
-            <a href="<?php the_permalink(); ?>" title="View shownotes for <?php the_title(); ?>"><h2><?php the_title(); ?></h2></a>
-
-            <audio id="player" controls>
-                <source type="audio/mpeg" src="<?php echo $audio_url; ?>">
-            </audio>
-        </div><!-- .title-group -->
-
-        <div class="banner-image">
+		<div class="banner-image">
             <picture>
                 <source srcset="<?php echo esc_url($latest_ep_banner['url']); ?>" media="all">
                 <img src="<?php echo esc_url($latest_ep_banner['url']); ?>" alt="Listen to <?php the_title(); ?>">
             </picture>
         </div><!-- .banner-image -->
+
+        <div class="title-group">
+            <div class="label-latest">Latest Episode</div>
+
+            <a href="<?php the_permalink(); ?>" title="View shownotes for <?php the_title(); ?>"><h2><?php the_title(); ?></h2></a>
+		</div><!-- .title-group -->
+
+		<audio id="player" controls>
+			<source type="audio/mpeg" src="<?php echo $audio_url; ?>">
+		</audio>
     </section><!-- .banner -->
 </div><!-- #latest-episode -->
     <?php

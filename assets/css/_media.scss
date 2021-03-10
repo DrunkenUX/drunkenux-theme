@@ -1,9 +1,11 @@
-audio {
-    width: 80vw;
-}
-
 // Customizations for Plyr
 .plyr {
     --plyr-control-icon-size: 4.4rem;
-    @include boxshadow();
+
+	grid-column: 1 / 10;
+	grid-row: 3 / 4;
+
+	.plyr__controls {
+		@include boxshadow();
+	}
 }

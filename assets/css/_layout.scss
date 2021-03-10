@@ -4,12 +4,7 @@ footer > .widgets {
 
 #latest-episode {
     overflow: hidden;
-    position: relative;
-
-    > * {
-        position: relative;
-        z-index: 1;
-    }
+	position: relative;
 
     a {
         color: #000;
@@ -37,22 +32,20 @@ footer > .widgets {
 	}
 
     picture {
-        @include respond-to('medium') {
+		height: 100%;
+
+        //@include respond-to('medium') {
             @include boxshadow();
             display: flex;
-            height: 45vw;
             justify-content: center;
-            max-height: 56rem;
-            max-width: 72rem;
             overflow: hidden;
-            width: 65vw;
 
             img {
                 height: 100%;
                 max-width: min-content;
                 width: auto;
             }
-        }
+        //}
     }
 
     .background-image {
@@ -81,14 +74,19 @@ footer > .widgets {
     }
 
     .banner {
+		display: grid;
+		grid-template-columns: repeat(10, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		height: 56.25vw;
         position: relative;
-        text-align: right;
     }
 
     .banner-image {
         -webkit-clip-path: polygon(25% 0, 100% 0, 100% 90%, 75% 100%, 0 100%, 0 10%);
         clip-path: polygon(25% 0, 100% 0, 100% 90%, 75% 100%, 0 100%, 0 10%);
-        display: inline-block;
+		grid-column: 5 / 11;
+		grid-row: 2 / 4;
+		width: 100%;
     }
 
     .label-latest {
@@ -104,15 +102,9 @@ footer > .widgets {
     }
 
     .title-group {
-        max-width: 80%;
-        position: absolute;
-        text-align: left;
-        top: 25%;
-        z-index: 2;
-
-        @include respond-to('large') {
-            top: 30%;
-        }
+		grid-column: 1 / 8;
+        grid-row: 2 / 3;
+		z-index: 1;
     }
 }
 
