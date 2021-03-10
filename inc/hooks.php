@@ -7,7 +7,7 @@
  * @package Drunken UX
  * @subpackage drunkenux-theme
  * @since Drunken UX Theme 2.0
- * 
+ *
  * TABLE OF CONTENTS
  *  1. Actions
  *  2. Filters
@@ -24,6 +24,7 @@ add_action( 'wp_head', __NAMESPACE__ . '\action_add_gtm_head' );
 add_action( 'init', __NAMESPACE__ . '\register_cpt_advertiser' );
 add_action( 'init', __NAMESPACE__ . '\action_register_menus' );
 add_action( 'init', __NAMESPACE__ . '\action_register_template_podcast', 100 );
+add_action( 'init', __NAMESPACE__ . '\action_register_sidebars' );
 
 // ***** FILTERS *****
 add_filter( 'the_content', __NAMESPACE__ . '\filter_add_advertiser' );

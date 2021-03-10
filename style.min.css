@@ -241,6 +241,7 @@ footer>.widgets{margin-bottom:5rem}
 #latest-episode .title-group{max-width:80%;position:absolute;text-align:left;top:25%;z-index:2}
 .copyright{display:block;grid-column:1 / 2}
 .disclaimer{font-style:italic}
+.hide{display:none}
 footer .widgets{grid-column:2 / 3}
 audio{width:80vw}
 .plyr{--plyr-control-icon-size:4.4rem;-webkit-box-shadow:-5px 5px 15px rgba(0,0,0,0.5);box-shadow:-5px 5px 15px rgba(0,0,0,0.5)}

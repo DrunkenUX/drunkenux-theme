@@ -7,7 +7,7 @@
  * @package Drunken UX
  * @subpackage drunkenux-theme
  * @since Drunken UX Theme 2.0
- * 
+ *
  * TABLE OF CONTENTS
  *  1. Action Functions
  *  2. Filter Functions
@@ -41,7 +41,7 @@ function action_add_gtm_head() {
 }
 
 // Register custom navigation menus
-function action_register_menus() {  
+function action_register_menus() {
   register_nav_menus( ['header-menu' => 'Header Menu'] );
   register_nav_menus( ['episode-sidebar' => 'Episode Sidebar'] );
 }
@@ -77,6 +77,18 @@ function action_register_template_podcast() {
   }
 }
 
+// Create sidebar regions
+function action_register_sidebars() {
+	register_sidebar( array(
+		'name'          => 'Site Footer',
+		'id'            => 'footer',
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="hide">',
+		'after_title'   => '</div>',
+	) );
+}
+
 // ***** FILTER FUNCTIONS *****
 
 // Attaches sponsor message to page content (consider changing this to a block or template part)
@@ -94,7 +106,7 @@ function filter_add_advertiser( $content ) {
 // Generate ad markup for podcast episode pages
 function dux_render_ad() {
   $ad = get_field( 'advertiser' );
-  
+
   if( $ad ):
     foreach( $ad as $adObj ):
       $ad_content = apply_filters('the_content', $adObj->post_content);

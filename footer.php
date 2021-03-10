@@ -14,11 +14,11 @@
 </main>
 
 <footer>
+<?php if ( is_active_sidebar( 'footer' ) ) : ?>
   <div class="widgets">
-    <small class="disclaimer">
-      The Drunken UX Podcast is a product of Fienen, LLC. The Drunken UX Podcast is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.
-    </small>
-  </div>
+		<?php dynamic_sidebar( 'footer' ); ?>
+  </div><!-- .widgets -->
+<?php endif; ?>
 
 	<small class="copyright">&copy; 2018-<?php echo date('Y'); ?> Fienen, LLC</small>
 </footer>
