@@ -82,6 +82,8 @@
     }
 
     .banner-image {
+        -webkit-clip-path: polygon(25% 0, 100% 0, 100% 90%, 75% 100%, 0 100%, 0 10%); 
+        clip-path: polygon(25% 0, 100% 0, 100% 90%, 75% 100%, 0 100%, 0 10%);
         display: inline-block;
     }
 

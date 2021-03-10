@@ -234,7 +234,7 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 #latest-episode .background-image{--blur:10px;background-position:center;background-size:cover;filter:blur(var(--blur));-webkit-filter:blur(var(--blur));height:100%;left:0;position:absolute;top:0;-webkit-transform:scale(1.1);transform:scale(1.1);width:100%;z-index:0}
 #latest-episode .background-image::before{background:rgba(255,255,255,0.66);background:-webkit-gradient(linear,left bottom,left top,from(white),color-stop(10%,white),color-stop(50%,rgba(255,255,255,0.25)),color-stop(90%,white),to(white));background:linear-gradient(0,white 0,white 10%,rgba(255,255,255,0.25) 50%,white 90%,white 100%);content:' ';display:block;height:100%;position:absolute;width:100%}
 #latest-episode .banner{position:relative;text-align:right}
-#latest-episode .banner-image{display:inline-block}
+#latest-episode .banner-image{-webkit-clip-path:polygon(25% 0,100% 0,100% 90%,75% 100%,0 100%,0 10%);clip-path:polygon(25% 0,100% 0,100% 90%,75% 100%,0 100%,0 10%);display:inline-block}
 #latest-episode .label-latest{background-color:#e42920;color:#fff;display:block;font-size:1rem;font-style:italic;font-weight:bold;padding:.7rem 1rem;position:relative;width:-webkit-max-content;width:-moz-max-content;width:max-content}
 #latest-episode .title-group{max-width:80%;position:absolute;text-align:left;top:25%;z-index:2}
 .copyright{display:block;grid-column:1 / 2}
