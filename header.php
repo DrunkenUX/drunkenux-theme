@@ -29,7 +29,7 @@
 	<meta name="theme-color" content="#ffffff">
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('img-loading'); ?>>
 <?php wp_body_open(); ?>
 
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'drunkenux' ); ?></a>

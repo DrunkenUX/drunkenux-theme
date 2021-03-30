@@ -5,6 +5,10 @@
 	grid-column: 1 / 4;
 	grid-row: 4 / 5;
 
+	@include respond-to('large') {
+		grid-column: 1 / 4;
+	}
+
 	.plyr__controls {
 		@include boxshadow();
 	}

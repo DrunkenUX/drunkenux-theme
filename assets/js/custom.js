@@ -16,8 +16,13 @@ function toggleHide(el) {
   } else {
     el.style.display = 'none';
   }
-} // Menu visibility toggle
+} // Pause homepage animation until image is loaded
 
+
+var bannerImg = document.querySelector(".banner-image img");
+bannerImg && bannerImg.addEventListener("load", function () {
+  document.body.classList.remove('img-loading');
+}); // Menu visibility toggle
 
 var navButton = document.getElementById('menu-toggle');
 if (!Object.is(navButton, undefined) && !Object.is(navButton, null)) navButton.addEventListener('click', function () {

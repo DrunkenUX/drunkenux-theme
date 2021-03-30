@@ -14,8 +14,12 @@ function toggleHide(el, display = 'block') {
   }
 }
 
+// Pause homepage animation until image is loaded
+const bannerImg = document.querySelector(".banner-image img");
+bannerImg && bannerImg.addEventListener("load", function() { document.body.classList.remove('img-loading') });
+
 // Menu visibility toggle
-let navButton = document.getElementById('menu-toggle');
+const navButton = document.getElementById('menu-toggle');
 if(!Object.is(navButton, undefined) && !Object.is(navButton, null)) navButton.addEventListener('click', function() {
   toggleHide(this.nextElementSibling);
 });
