@@ -2,8 +2,8 @@
 .plyr {
     --plyr-control-icon-size: 4.4rem;
 
-	grid-column: 1 / 10;
-	grid-row: 3 / 4;
+	grid-column: 1 / 4;
+	grid-row: 4 / 5;
 
 	.plyr__controls {
 		@include boxshadow();
