@@ -49,6 +49,6 @@
 	},
 	"dependencies": {
 		"plyr": "^3.6.4",
-		"uswds": "^2.10.0"
+		"typeturajs": "^2.0.0"
 	}
 }
