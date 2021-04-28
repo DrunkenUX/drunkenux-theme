@@ -37,3 +37,4 @@ if (!Object.is(transcriptButton, undefined) && !Object.is(transcriptButton, null
   toggleHide(label[1], 'inline');
   transcript.classList.toggle('open');
 });
+var player = new Plyr('#player');
