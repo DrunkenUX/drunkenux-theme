@@ -20,10 +20,12 @@ footer > .widgets {
     }
 
 	h2 {
+        --tt-key: headline;
 		background-color: #fff;
         @include boxshadow();
 		display: inline-block;
-        font-size: clamp(1.6rem, 3vw, 3.2rem);
+        font-size: 1.6rem;
+        //font-size: clamp(1.6rem, 3vw, 3.2rem);
         font-style: italic;
         margin: 0 0 2rem;
         max-width: 100%;

@@ -26,3 +26,12 @@
   .img-loading * {
     animation-play-state: paused !important;
   }
+
+  @keyframes headline {
+    0% {
+        font-size: 1.6rem;
+    }
+    100% {
+        font-size: 3.2rem;
+    }
+}
