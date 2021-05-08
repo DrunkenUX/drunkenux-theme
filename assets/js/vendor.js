@@ -1,273 +1,198 @@
 "use strict";
 
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 !function (e) {
   var t = {};
 
-  function n(i) {
-    if (t[i]) return t[i].exports;
-    var a = t[i] = {
-      i: i,
+  function i(s) {
+    if (t[s]) return t[s].exports;
+    var n = t[s] = {
+      i: s,
       l: !1,
       exports: {}
     };
-    return e[i].call(a.exports, a, a.exports, n), a.l = !0, a.exports;
+    return e[s].call(n.exports, n, n.exports, i), n.l = !0, n.exports;
   }
 
-  n.m = e, n.c = t, n.d = function (e, t, i) {
-    n.o(e, t) || Object.defineProperty(e, t, {
+  i.m = e, i.c = t, i.d = function (e, t, s) {
+    i.o(e, t) || Object.defineProperty(e, t, {
       enumerable: !0,
-      get: i
+      get: s
     });
-  }, n.r = function (e) {
+  }, i.r = function (e) {
     "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
       value: "Module"
     }), Object.defineProperty(e, "__esModule", {
       value: !0
     });
-  }, n.t = function (e, t) {
-    if (1 & t && (e = n(e)), 8 & t) return e;
+  }, i.t = function (e, t) {
+    if (1 & t && (e = i(e)), 8 & t) return e;
     if (4 & t && "object" == _typeof(e) && e && e.__esModule) return e;
-    var i = Object.create(null);
-    if (n.r(i), Object.defineProperty(i, "default", {
+    var s = Object.create(null);
+    if (i.r(s), Object.defineProperty(s, "default", {
       enumerable: !0,
       value: e
-    }), 2 & t && "string" != typeof e) for (var a in e) {
-      n.d(i, a, function (t) {
+    }), 2 & t && "string" != typeof e) for (var n in e) {
+      i.d(s, n, function (t) {
         return e[t];
-      }.bind(null, a));
+      }.bind(null, n));
     }
-    return i;
-  }, n.n = function (e) {
+    return s;
+  }, i.n = function (e) {
     var t = e && e.__esModule ? function () {
       return e.default;
     } : function () {
       return e;
     };
-    return n.d(t, "a", t), t;
-  }, n.o = function (e, t) {
+    return i.d(t, "a", t), t;
+  }, i.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, n.p = "", n(n.s = 1);
-}([function (e, t, n) {
+  }, i.p = "", i(i.s = 1);
+}([function (e, t, i) {
   (function (t) {
     "object" == (typeof navigator === "undefined" ? "undefined" : _typeof(navigator)) && (e.exports = function () {
       "use strict";
 
-      function e(t) {
-        return (e = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (e) {
-          return _typeof(e);
-        } : function (e) {
-          return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : _typeof(e);
-        })(t);
-      }
-
-      function n(e, t) {
-        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-      }
-
-      function i(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var i = t[n];
-          i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i);
-        }
-      }
-
-      function a(e, t, n) {
-        return t && i(e.prototype, t), n && i(e, n), e;
-      }
-
-      function r(e, t, n) {
+      function e(e, t, i) {
         return t in e ? Object.defineProperty(e, t, {
-          value: n,
+          value: i,
           enumerable: !0,
           configurable: !0,
           writable: !0
-        }) : e[t] = n, e;
+        }) : e[t] = i, e;
       }
 
-      function o(e, t) {
-        var n = Object.keys(e);
+      function i(e, t) {
+        for (var i = 0; i < t.length; i++) {
+          var s = t[i];
+          s.enumerable = s.enumerable || !1, s.configurable = !0, "value" in s && (s.writable = !0), Object.defineProperty(e, s.key, s);
+        }
+      }
+
+      function s(e, t, i) {
+        return t in e ? Object.defineProperty(e, t, {
+          value: i,
+          enumerable: !0,
+          configurable: !0,
+          writable: !0
+        }) : e[t] = i, e;
+      }
+
+      function n(e, t) {
+        var i = Object.keys(e);
 
         if (Object.getOwnPropertySymbols) {
-          var i = Object.getOwnPropertySymbols(e);
-          t && (i = i.filter(function (t) {
+          var s = Object.getOwnPropertySymbols(e);
+          t && (s = s.filter(function (t) {
             return Object.getOwnPropertyDescriptor(e, t).enumerable;
-          })), n.push.apply(n, i);
-        }
-
-        return n;
-      }
-
-      function s(e) {
-        for (var t = 1; t < arguments.length; t++) {
-          var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? o(Object(n), !0).forEach(function (t) {
-            r(e, t, n[t]);
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : o(Object(n)).forEach(function (t) {
-            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
-          });
-        }
-
-        return e;
-      }
-
-      function l(e, t) {
-        return function (e) {
-          if (Array.isArray(e)) return e;
-        }(e) || function (e, t) {
-          if ("undefined" != typeof Symbol && Symbol.iterator in Object(e)) {
-            var n = [],
-                i = !0,
-                a = !1,
-                r = void 0;
-
-            try {
-              for (var o, s = e[Symbol.iterator](); !(i = (o = s.next()).done) && (n.push(o.value), !t || n.length !== t); i = !0) {
-                ;
-              }
-            } catch (e) {
-              a = !0, r = e;
-            } finally {
-              try {
-                i || null == s.return || s.return();
-              } finally {
-                if (a) throw r;
-              }
-            }
-
-            return n;
-          }
-        }(e, t) || u(e, t) || function () {
-          throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-        }();
-      }
-
-      function c(e) {
-        return function (e) {
-          if (Array.isArray(e)) return d(e);
-        }(e) || function (e) {
-          if ("undefined" != typeof Symbol && Symbol.iterator in Object(e)) return Array.from(e);
-        }(e) || u(e) || function () {
-          throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-        }();
-      }
-
-      function u(e, t) {
-        if (e) {
-          if ("string" == typeof e) return d(e, t);
-          var n = Object.prototype.toString.call(e).slice(8, -1);
-          return "Object" === n && e.constructor && (n = e.constructor.name), "Map" === n || "Set" === n ? Array.from(e) : "Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n) ? d(e, t) : void 0;
-        }
-      }
-
-      function d(e, t) {
-        (null == t || t > e.length) && (t = e.length);
-
-        for (var n = 0, i = new Array(t); n < t; n++) {
-          i[n] = e[n];
+          })), i.push.apply(i, s);
         }
 
         return i;
       }
 
-      function h(e, t) {
-        for (var n = 0; n < t.length; n++) {
-          var i = t[n];
-          i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i);
-        }
-      }
-
-      function p(e, t, n) {
-        return t in e ? Object.defineProperty(e, t, {
-          value: n,
-          enumerable: !0,
-          configurable: !0,
-          writable: !0
-        }) : e[t] = n, e;
-      }
-
-      function m(e, t) {
-        var n = Object.keys(e);
-
-        if (Object.getOwnPropertySymbols) {
-          var i = Object.getOwnPropertySymbols(e);
-          t && (i = i.filter(function (t) {
-            return Object.getOwnPropertyDescriptor(e, t).enumerable;
-          })), n.push.apply(n, i);
-        }
-
-        return n;
-      }
-
-      function f(e) {
+      function a(e) {
         for (var t = 1; t < arguments.length; t++) {
-          var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? m(Object(n), !0).forEach(function (t) {
-            p(e, t, n[t]);
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : m(Object(n)).forEach(function (t) {
-            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
+          var i = null != arguments[t] ? arguments[t] : {};
+          t % 2 ? n(Object(i), !0).forEach(function (t) {
+            s(e, t, i[t]);
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(i)) : n(Object(i)).forEach(function (t) {
+            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(i, t));
           });
         }
 
         return e;
       }
 
-      var g = {
+      var l = {
         addCSS: !0,
         thumbWidth: 15,
         watch: !0
       };
 
-      function y(e, t) {
+      function o(e, t) {
         return function () {
           return Array.from(document.querySelectorAll(t)).includes(this);
         }.call(e, t);
       }
 
-      var b,
-          v,
-          w,
-          k = function k(e) {
+      var r = function r(e) {
         return null != e ? e.constructor : null;
       },
-          T = function T(e, t) {
+          c = function c(e, t) {
         return !!(e && t && e instanceof t);
       },
-          C = function C(e) {
-        return k(e) === String;
+          h = function h(e) {
+        return r(e) === String;
       },
-          A = function A(e) {
+          u = function u(e) {
         return Array.isArray(e);
       },
-          S = function S(e) {
-        return T(e, NodeList);
+          d = function d(e) {
+        return c(e, NodeList);
       },
-          P = C,
-          E = A,
-          M = S,
-          x = function x(e) {
-        return T(e, Element);
+          m = h,
+          p = u,
+          g = d,
+          f = function f(e) {
+        return c(e, Element);
       },
-          N = function N(e) {
-        return T(e, Event);
+          b = function b(e) {
+        return c(e, Event);
       },
-          I = function I(e) {
+          y = function y(e) {
         return function (e) {
           return null == e;
-        }(e) || (C(e) || A(e) || S(e)) && !e.length || function (e) {
-          return k(e) === Object;
+        }(e) || (h(e) || u(e) || d(e)) && !e.length || function (e) {
+          return r(e) === Object;
         }(e) && !Object.keys(e).length;
       },
-          O = function () {
-        function e(t, n) {
+          v = function () {
+        function e(t, i) {
           (function (e, t) {
             if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-          })(this, e), x(t) ? this.element = t : P(t) && (this.element = document.querySelector(t)), x(this.element) && I(this.element.rangeTouch) && (this.config = f({}, g, {}, n), this.init());
+          })(this, e), f(t) ? this.element = t : m(t) && (this.element = document.querySelector(t)), f(this.element) && y(this.element.rangeTouch) && (this.config = a({}, l, {}, i), this.init());
         }
 
-        return function (e, t, n) {
-          t && h(e.prototype, t), n && h(e, n);
+        return function (e, t, s) {
+          t && i(e.prototype, t), s && i(e, s);
         }(e, [{
           key: "init",
           value: function value() {
@@ -282,9 +207,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           key: "listeners",
           value: function value(e) {
             var t = this,
-                n = e ? "addEventListener" : "removeEventListener";
+                i = e ? "addEventListener" : "removeEventListener";
             ["touchstart", "touchmove", "touchend"].forEach(function (e) {
-              t.element[n](e, function (e) {
+              t.element[i](e, function (e) {
                 return t.set(e);
               }, !1);
             });
@@ -292,53 +217,53 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "get",
           value: function value(t) {
-            if (!e.enabled || !N(t)) return null;
-            var n,
-                i = t.target,
-                a = t.changedTouches[0],
-                r = parseFloat(i.getAttribute("min")) || 0,
-                o = parseFloat(i.getAttribute("max")) || 100,
-                s = parseFloat(i.getAttribute("step")) || 1,
-                l = i.getBoundingClientRect(),
-                c = 100 / l.width * (this.config.thumbWidth / 2) / 100;
-            return 0 > (n = 100 / l.width * (a.clientX - l.left)) ? n = 0 : 100 < n && (n = 100), 50 > n ? n -= (100 - 2 * n) * c : 50 < n && (n += 2 * (n - 50) * c), r + function (e, t) {
+            if (!e.enabled || !b(t)) return null;
+            var i,
+                s = t.target,
+                n = t.changedTouches[0],
+                a = parseFloat(s.getAttribute("min")) || 0,
+                l = parseFloat(s.getAttribute("max")) || 100,
+                o = parseFloat(s.getAttribute("step")) || 1,
+                r = s.getBoundingClientRect(),
+                c = 100 / r.width * (this.config.thumbWidth / 2) / 100;
+            return 0 > (i = 100 / r.width * (n.clientX - r.left)) ? i = 0 : 100 < i && (i = 100), 50 > i ? i -= (100 - 2 * i) * c : 50 < i && (i += 2 * (i - 50) * c), a + function (e, t) {
               if (1 > t) {
-                var n = function (e) {
+                var i = function (e) {
                   var t = "".concat(e).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
                   return t ? Math.max(0, (t[1] ? t[1].length : 0) - (t[2] ? +t[2] : 0)) : 0;
                 }(t);
 
-                return parseFloat(e.toFixed(n));
+                return parseFloat(e.toFixed(i));
               }
 
               return Math.round(e / t) * t;
-            }(n / 100 * (o - r), s);
+            }(i / 100 * (l - a), o);
           }
         }, {
           key: "set",
           value: function value(t) {
-            e.enabled && N(t) && !t.target.disabled && (t.preventDefault(), t.target.value = this.get(t), function (e, t) {
+            e.enabled && b(t) && !t.target.disabled && (t.preventDefault(), t.target.value = this.get(t), function (e, t) {
               if (e && t) {
-                var n = new Event(t, {
+                var i = new Event(t, {
                   bubbles: !0
                 });
-                e.dispatchEvent(n);
+                e.dispatchEvent(i);
               }
             }(t.target, "touchend" === t.type ? "change" : "input"));
           }
         }], [{
           key: "setup",
           value: function value(t) {
-            var n = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {},
-                i = null;
-            if (I(t) || P(t) ? i = Array.from(document.querySelectorAll(P(t) ? t : 'input[type="range"]')) : x(t) ? i = [t] : M(t) ? i = Array.from(t) : E(t) && (i = t.filter(x)), I(i)) return null;
-            var a = f({}, g, {}, n);
+            var i = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {},
+                s = null;
+            if (y(t) || m(t) ? s = Array.from(document.querySelectorAll(m(t) ? t : 'input[type="range"]')) : f(t) ? s = [t] : g(t) ? s = Array.from(t) : p(t) && (s = t.filter(f)), y(s)) return null;
+            var n = a({}, l, {}, i);
 
-            if (P(t) && a.watch) {
-              var r = new MutationObserver(function (n) {
-                Array.from(n).forEach(function (n) {
-                  Array.from(n.addedNodes).forEach(function (n) {
-                    x(n) && y(n, t) && new e(n, a);
+            if (m(t) && n.watch) {
+              var r = new MutationObserver(function (i) {
+                Array.from(i).forEach(function (i) {
+                  Array.from(i.addedNodes).forEach(function (i) {
+                    f(i) && o(i, t) && new e(i, n);
                   });
                 });
               });
@@ -348,8 +273,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               });
             }
 
-            return i.map(function (t) {
-              return new e(t, n);
+            return s.map(function (t) {
+              return new e(t, i);
             });
           }
         }, {
@@ -358,81 +283,89 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             return "ontouchstart" in document.documentElement;
           }
         }]), e;
-      }(),
-          L = function L(e) {
+      }();
+
+      var w = function w(e) {
         return null != e ? e.constructor : null;
       },
-          _ = function _(e, t) {
+          T = function T(e, t) {
         return Boolean(e && t && e instanceof t);
       },
-          j = function j(e) {
+          k = function k(e) {
         return null == e;
       },
-          D = function D(e) {
-        return L(e) === Object;
+          C = function C(e) {
+        return w(e) === Object;
       },
-          q = function q(e) {
-        return L(e) === String;
+          A = function A(e) {
+        return w(e) === String;
       },
-          F = function F(e) {
-        return L(e) === Function;
+          S = function S(e) {
+        return w(e) === Function;
       },
-          H = function H(e) {
+          E = function E(e) {
         return Array.isArray(e);
       },
+          P = function P(e) {
+        return T(e, NodeList);
+      },
+          x = function x(e) {
+        return k(e) || (A(e) || E(e) || P(e)) && !e.length || C(e) && !Object.keys(e).length;
+      };
+
+      var M = k,
+          N = C,
+          I = function I(e) {
+        return w(e) === Number && !Number.isNaN(e);
+      },
+          L = A,
+          _ = function _(e) {
+        return w(e) === Boolean;
+      },
+          O = S,
+          j = E,
+          q = P,
+          D = function D(e) {
+        return null !== e && "object" == _typeof(e) && 1 === e.nodeType && "object" == _typeof(e.style) && "object" == _typeof(e.ownerDocument);
+      },
+          F = function F(e) {
+        return T(e, Event);
+      },
+          H = function H(e) {
+        return T(e, KeyboardEvent);
+      },
           R = function R(e) {
-        return _(e, NodeList);
+        return T(e, TextTrack) || !k(e) && A(e.kind);
       },
-          V = function V(e) {
-        return j(e) || (q(e) || H(e) || R(e)) && !e.length || D(e) && !Object.keys(e).length;
-      },
-          B = j,
-          U = D,
-          W = function W(e) {
-        return L(e) === Number && !Number.isNaN(e);
-      },
-          z = q,
-          K = function K(e) {
-        return L(e) === Boolean;
-      },
-          Y = F,
-          Q = H,
-          X = R,
-          $ = function $(t) {
-        return null !== t && "object" === e(t) && 1 === t.nodeType && "object" === e(t.style) && "object" === e(t.ownerDocument);
-      },
-          J = function J(e) {
-        return _(e, Event);
-      },
-          G = function G(e) {
-        return _(e, KeyboardEvent);
-      },
-          Z = function Z(e) {
-        return _(e, TextTrack) || !j(e) && q(e.kind);
-      },
-          ee = function ee(e) {
-        if (_(e, window.URL)) return !0;
-        if (!q(e)) return !1;
+          $ = function $(e) {
+        if (T(e, window.URL)) return !0;
+        if (!A(e)) return !1;
         var t = e;
-        e.startsWith("http://") && e.startsWith("https://") || (t = "http://".concat(e));
+        e.startsWith("http://") && e.startsWith("https://") || (t = "http://" + e);
 
         try {
-          return !V(new URL(t).hostname);
+          return !x(new URL(t).hostname);
         } catch (e) {
           return !1;
         }
       },
-          te = V,
-          ne = (b = document.createElement("span"), v = {
-        WebkitTransition: "webkitTransitionEnd",
-        MozTransition: "transitionend",
-        OTransition: "oTransitionEnd otransitionend",
-        transition: "transitionend"
-      }, w = Object.keys(v).find(function (e) {
-        return void 0 !== b.style[e];
-      }), !!z(w) && v[w]);
+          V = x;
 
-      function ie(e, t) {
+      var B = function () {
+        var e = document.createElement("span"),
+            t = {
+          WebkitTransition: "webkitTransitionEnd",
+          MozTransition: "transitionend",
+          OTransition: "oTransitionEnd otransitionend",
+          transition: "transitionend"
+        },
+            i = Object.keys(t).find(function (t) {
+          return void 0 !== e.style[t];
+        });
+        return !!L(i) && t[i];
+      }();
+
+      function U(e, t) {
         setTimeout(function () {
           try {
             e.hidden = !0, e.offsetHeight, e.hidden = !1;
@@ -440,586 +373,637 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, t);
       }
 
-      var ae = {
-        isIE:
-        /* @cc_on!@ */
-        !!document.documentMode,
+      var W = {
+        isIE: Boolean(window.document.documentMode),
         isEdge: window.navigator.userAgent.includes("Edge"),
         isWebkit: "WebkitAppearance" in document.documentElement.style && !/Edge/.test(navigator.userAgent),
         isIPhone: /(iPhone|iPod)/gi.test(navigator.platform),
         isIos: /(iPad|iPhone|iPod)/gi.test(navigator.platform)
       };
 
-      function re(e, t) {
+      function z(e, t) {
         return t.split(".").reduce(function (e, t) {
           return e && e[t];
         }, e);
       }
 
-      function oe() {
-        for (var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}, t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), i = 1; i < t; i++) {
-          n[i - 1] = arguments[i];
+      function K() {
+        var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        for (var _len = arguments.length, t = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          t[_key - 1] = arguments[_key];
         }
 
-        if (!n.length) return e;
-        var a = n.shift();
-        return U(a) ? (Object.keys(a).forEach(function (t) {
-          U(a[t]) ? (Object.keys(e).includes(t) || Object.assign(e, r({}, t, {})), oe(e[t], a[t])) : Object.assign(e, r({}, t, a[t]));
-        }), oe.apply(void 0, [e].concat(n))) : e;
+        if (!t.length) return e;
+        var i = t.shift();
+        return N(i) ? (Object.keys(i).forEach(function (t) {
+          N(i[t]) ? (Object.keys(e).includes(t) || Object.assign(e, _defineProperty({}, t, {})), K(e[t], i[t])) : Object.assign(e, _defineProperty({}, t, i[t]));
+        }), K.apply(void 0, [e].concat(t))) : e;
       }
 
-      function se(e, t) {
-        var n = e.length ? e : [e];
-        Array.from(n).reverse().forEach(function (e, n) {
-          var i = n > 0 ? t.cloneNode(!0) : t,
-              a = e.parentNode,
-              r = e.nextSibling;
-          i.appendChild(e), r ? a.insertBefore(i, r) : a.appendChild(i);
+      function Y(e, t) {
+        var i = e.length ? e : [e];
+        Array.from(i).reverse().forEach(function (e, i) {
+          var s = i > 0 ? t.cloneNode(!0) : t,
+              n = e.parentNode,
+              a = e.nextSibling;
+          s.appendChild(e), a ? n.insertBefore(s, a) : n.appendChild(s);
         });
       }
 
-      function le(e, t) {
-        $(e) && !te(t) && Object.entries(t).filter(function (e) {
-          var t = l(e, 2)[1];
-          return !B(t);
-        }).forEach(function (t) {
-          var n = l(t, 2),
-              i = n[0],
-              a = n[1];
-          return e.setAttribute(i, a);
+      function Q(e, t) {
+        D(e) && !V(t) && Object.entries(t).filter(function (_ref) {
+          var _ref2 = _slicedToArray(_ref, 2),
+              e = _ref2[1];
+
+          return !M(e);
+        }).forEach(function (_ref3) {
+          var _ref4 = _slicedToArray(_ref3, 2),
+              t = _ref4[0],
+              i = _ref4[1];
+
+          return e.setAttribute(t, i);
         });
       }
 
-      function ce(e, t, n) {
-        var i = document.createElement(e);
-        return U(t) && le(i, t), z(n) && (i.innerText = n), i;
+      function X(e, t, i) {
+        var s = document.createElement(e);
+        return N(t) && Q(s, t), L(i) && (s.innerText = i), s;
       }
 
-      function ue(e, t, n, i) {
-        $(t) && t.appendChild(ce(e, n, i));
+      function J(e, t, i, s) {
+        D(t) && t.appendChild(X(e, i, s));
       }
 
-      function de(e) {
-        X(e) || Q(e) ? Array.from(e).forEach(de) : $(e) && $(e.parentNode) && e.parentNode.removeChild(e);
+      function G(e) {
+        q(e) || j(e) ? Array.from(e).forEach(G) : D(e) && D(e.parentNode) && e.parentNode.removeChild(e);
       }
 
-      function he(e) {
-        if ($(e)) for (var t = e.childNodes.length; t > 0;) {
+      function Z(e) {
+        if (!D(e)) return;
+        var t = e.childNodes.length;
+
+        for (; t > 0;) {
           e.removeChild(e.lastChild), t -= 1;
         }
       }
 
-      function pe(e, t) {
-        return $(t) && $(t.parentNode) && $(e) ? (t.parentNode.replaceChild(e, t), e) : null;
+      function ee(e, t) {
+        return D(t) && D(t.parentNode) && D(e) ? (t.parentNode.replaceChild(e, t), e) : null;
       }
 
-      function me(e, t) {
-        if (!z(e) || te(e)) return {};
-        var n = {},
-            i = oe({}, t);
+      function te(e, t) {
+        if (!L(e) || V(e)) return {};
+        var i = {},
+            s = K({}, t);
         return e.split(",").forEach(function (e) {
           var t = e.trim(),
-              a = t.replace(".", ""),
-              r = t.replace(/[[\]]/g, "").split("="),
-              o = l(r, 1)[0],
-              s = r.length > 1 ? r[1].replace(/["']/g, "") : "";
+              n = t.replace(".", ""),
+              a = t.replace(/[[\]]/g, "").split("="),
+              _a = _slicedToArray(a, 1),
+              l = _a[0],
+              o = a.length > 1 ? a[1].replace(/["']/g, "") : "";
 
           switch (t.charAt(0)) {
             case ".":
-              z(i.class) ? n.class = "".concat(i.class, " ").concat(a) : n.class = a;
+              L(s.class) ? i.class = "".concat(s.class, " ").concat(n) : i.class = n;
               break;
 
             case "#":
-              n.id = t.replace("#", "");
+              i.id = t.replace("#", "");
               break;
 
             case "[":
-              n[o] = s;
+              i[l] = o;
           }
-        }), oe(i, n);
+        }), K(s, i);
       }
 
-      function fe(e, t) {
-        if ($(e)) {
-          var n = t;
-          K(n) || (n = !e.hidden), e.hidden = n;
-        }
+      function ie(e, t) {
+        if (!D(e)) return;
+        var i = t;
+        _(i) || (i = !e.hidden), e.hidden = i;
       }
 
-      function ge(e, t, n) {
-        if (X(e)) return Array.from(e).map(function (e) {
-          return ge(e, t, n);
+      function se(e, t, i) {
+        if (q(e)) return Array.from(e).map(function (e) {
+          return se(e, t, i);
         });
 
-        if ($(e)) {
-          var i = "toggle";
-          return void 0 !== n && (i = n ? "add" : "remove"), e.classList[i](t), e.classList.contains(t);
+        if (D(e)) {
+          var _s2 = "toggle";
+          return void 0 !== i && (_s2 = i ? "add" : "remove"), e.classList[_s2](t), e.classList.contains(t);
         }
 
         return !1;
       }
 
-      function ye(e, t) {
-        return $(e) && e.classList.contains(t);
+      function ne(e, t) {
+        return D(e) && e.classList.contains(t);
       }
 
-      function be(e, t) {
-        var n = Element.prototype;
-        return (n.matches || n.webkitMatchesSelector || n.mozMatchesSelector || n.msMatchesSelector || function () {
+      function ae(e, t) {
+        var _Element = Element,
+            i = _Element.prototype;
+        return (i.matches || i.webkitMatchesSelector || i.mozMatchesSelector || i.msMatchesSelector || function () {
           return Array.from(document.querySelectorAll(t)).includes(this);
         }).call(e, t);
       }
 
-      function ve(e) {
+      function le(e) {
         return this.elements.container.querySelectorAll(e);
       }
 
-      function we(e) {
+      function oe(e) {
         return this.elements.container.querySelector(e);
       }
 
-      function ke() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null,
-            t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-        $(e) && (e.focus({
+      function re() {
+        var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+        D(e) && (e.focus({
           preventScroll: !0
-        }), t && ge(e, this.config.classNames.tabFocus));
+        }), t && se(e, this.config.classNames.tabFocus));
       }
 
-      var Te,
-          Ce = {
+      var ce = {
         "audio/ogg": "vorbis",
         "audio/wav": "1",
         "video/webm": "vp8, vorbis",
         "video/mp4": "avc1.42E01E, mp4a.40.2",
         "video/ogg": "theora"
       },
-          Ae = {
+          he = {
         audio: "canPlayType" in document.createElement("audio"),
         video: "canPlayType" in document.createElement("video"),
-        check: function check(e, t, n) {
-          var i = ae.isIPhone && n && Ae.playsinline,
-              a = Ae[e] || "html5" !== t;
+        check: function check(e, t, i) {
+          var s = W.isIPhone && i && he.playsinline,
+              n = he[e] || "html5" !== t;
           return {
-            api: a,
-            ui: a && Ae.rangeInput && ("video" !== e || !ae.isIPhone || i)
+            api: n,
+            ui: n && he.rangeInput && ("video" !== e || !W.isIPhone || s)
           };
         },
-        pip: !(ae.isIPhone || !Y(ce("video").webkitSetPresentationMode) && (!document.pictureInPictureEnabled || ce("video").disablePictureInPicture)),
-        airplay: Y(window.WebKitPlaybackTargetAvailabilityEvent),
+        pip: !(W.isIPhone || !O(X("video").webkitSetPresentationMode) && (!document.pictureInPictureEnabled || X("video").disablePictureInPicture)),
+        airplay: O(window.WebKitPlaybackTargetAvailabilityEvent),
         playsinline: "playsInline" in document.createElement("video"),
         mime: function mime(e) {
-          if (te(e)) return !1;
-          var t = l(e.split("/"), 1)[0],
-              n = e;
+          if (V(e)) return !1;
+
+          var _e$split = e.split("/"),
+              _e$split2 = _slicedToArray(_e$split, 1),
+              t = _e$split2[0];
+
+          var i = e;
           if (!this.isHTML5 || t !== this.type) return !1;
-          Object.keys(Ce).includes(n) && (n += '; codecs="'.concat(Ce[e], '"'));
+          Object.keys(ce).includes(i) && (i += "; codecs=\"".concat(ce[e], "\""));
 
           try {
-            return Boolean(n && this.media.canPlayType(n).replace(/no/, ""));
+            return Boolean(i && this.media.canPlayType(i).replace(/no/, ""));
           } catch (e) {
             return !1;
           }
         },
         textTracks: "textTracks" in document.createElement("video"),
-        rangeInput: (Te = document.createElement("input"), Te.type = "range", "range" === Te.type),
+        rangeInput: function () {
+          var e = document.createElement("input");
+          return e.type = "range", "range" === e.type;
+        }(),
         touch: "ontouchstart" in document.documentElement,
-        transitions: !1 !== ne,
+        transitions: !1 !== B,
         reducedMotion: "matchMedia" in window && window.matchMedia("(prefers-reduced-motion)").matches
       },
-          Se = function () {
+          ue = function () {
         var e = !1;
 
         try {
-          var t = Object.defineProperty({}, "passive", {
+          var _t = Object.defineProperty({}, "passive", {
             get: function get() {
               return e = !0, null;
             }
           });
-          window.addEventListener("test", null, t), window.removeEventListener("test", null, t);
+
+          window.addEventListener("test", null, _t), window.removeEventListener("test", null, _t);
         } catch (e) {}
 
         return e;
       }();
 
-      function Pe(e, t, n) {
-        var i = this,
-            a = arguments.length > 3 && void 0 !== arguments[3] && arguments[3],
-            r = !(arguments.length > 4 && void 0 !== arguments[4]) || arguments[4],
-            o = arguments.length > 5 && void 0 !== arguments[5] && arguments[5];
+      function de(e, t, i) {
+        var _this = this;
 
-        if (e && "addEventListener" in e && !te(t) && Y(n)) {
-          var s = t.split(" "),
-              l = o;
-          Se && (l = {
-            passive: r,
-            capture: o
-          }), s.forEach(function (t) {
-            i && i.eventListeners && a && i.eventListeners.push({
-              element: e,
-              type: t,
-              callback: n,
-              options: l
-            }), e[a ? "addEventListener" : "removeEventListener"](t, n, l);
-          });
-        }
+        var s = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : !1;
+        var n = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : !0;
+        var a = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : !1;
+        if (!e || !("addEventListener" in e) || V(t) || !O(i)) return;
+        var l = t.split(" ");
+        var o = a;
+        ue && (o = {
+          passive: n,
+          capture: a
+        }), l.forEach(function (t) {
+          _this && _this.eventListeners && s && _this.eventListeners.push({
+            element: e,
+            type: t,
+            callback: i,
+            options: o
+          }), e[s ? "addEventListener" : "removeEventListener"](t, i, o);
+        });
       }
 
-      function Ee(e) {
-        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "",
-            n = arguments.length > 2 ? arguments[2] : void 0,
-            i = !(arguments.length > 3 && void 0 !== arguments[3]) || arguments[3],
-            a = arguments.length > 4 && void 0 !== arguments[4] && arguments[4];
-        Pe.call(this, e, t, n, !0, i, a);
+      function me(e) {
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+        var i = arguments.length > 2 ? arguments[2] : undefined;
+        var s = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : !0;
+        var n = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : !1;
+        de.call(this, e, t, i, !0, s, n);
       }
 
-      function Me(e) {
-        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "",
-            n = arguments.length > 2 ? arguments[2] : void 0,
-            i = !(arguments.length > 3 && void 0 !== arguments[3]) || arguments[3],
-            a = arguments.length > 4 && void 0 !== arguments[4] && arguments[4];
-        Pe.call(this, e, t, n, !1, i, a);
+      function pe(e) {
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+        var i = arguments.length > 2 ? arguments[2] : undefined;
+        var s = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : !0;
+        var n = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : !1;
+        de.call(this, e, t, i, !1, s, n);
       }
 
-      function xe(e) {
-        var t = this,
-            n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "",
-            i = arguments.length > 2 ? arguments[2] : void 0,
-            a = !(arguments.length > 3 && void 0 !== arguments[3]) || arguments[3],
-            r = arguments.length > 4 && void 0 !== arguments[4] && arguments[4],
-            o = function o() {
-          Me(e, n, o, a, r);
+      function ge(e) {
+        var _this2 = this;
 
-          for (var s = arguments.length, l = new Array(s), c = 0; c < s; c++) {
-            l[c] = arguments[c];
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+        var i = arguments.length > 2 ? arguments[2] : undefined;
+        var s = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : !0;
+        var n = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : !1;
+
+        var a = function a() {
+          for (var _len2 = arguments.length, l = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            l[_key2] = arguments[_key2];
           }
 
-          i.apply(t, l);
+          pe(e, t, a, s, n), i.apply(_this2, l);
         };
 
-        Pe.call(this, e, n, o, !0, a, r);
+        de.call(this, e, t, a, !0, s, n);
       }
 
-      function Ne(e) {
-        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "",
-            n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
-            i = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
-
-        if ($(e) && !te(t)) {
-          var a = new CustomEvent(t, {
-            bubbles: n,
-            detail: s(s({}, i), {}, {
-              plyr: this
-            })
-          });
-          e.dispatchEvent(a);
-        }
+      function fe(e) {
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+        var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : !1;
+        var s = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+        if (!D(e) || V(t)) return;
+        var n = new CustomEvent(t, {
+          bubbles: i,
+          detail: _objectSpread(_objectSpread({}, s), {}, {
+            plyr: this
+          })
+        });
+        e.dispatchEvent(n);
       }
 
-      function Ie() {
+      function be() {
         this && this.eventListeners && (this.eventListeners.forEach(function (e) {
           var t = e.element,
-              n = e.type,
-              i = e.callback,
-              a = e.options;
-          t.removeEventListener(n, i, a);
+              i = e.type,
+              s = e.callback,
+              n = e.options;
+          t.removeEventListener(i, s, n);
         }), this.eventListeners = []);
       }
 
-      function Oe() {
-        var e = this;
-        return new Promise(function (t) {
-          return e.ready ? setTimeout(t, 0) : Ee.call(e, e.elements.container, "ready", t);
+      function ye() {
+        var _this3 = this;
+
+        return new Promise(function (e) {
+          return _this3.ready ? setTimeout(e, 0) : me.call(_this3, _this3.elements.container, "ready", e);
         }).then(function () {});
       }
 
-      function Le(e) {
+      function ve(e) {
         (function (e) {
-          return _(e, Promise) && F(e.then);
+          return T(e, Promise) && S(e.then);
         })(e) && e.then(null, function () {});
       }
 
-      function _e(e) {
-        return !!(Q(e) || z(e) && e.includes(":")) && (Q(e) ? e : e.split(":")).map(Number).every(W);
+      function we(e) {
+        return j(e) ? e.filter(function (t, i) {
+          return e.indexOf(t) === i;
+        }) : e;
       }
 
-      function je(e) {
-        if (!Q(e) || !e.every(W)) return null;
-
-        var t = l(e, 2),
-            n = t[0],
-            i = t[1],
-            a = function e(t, n) {
-          return 0 === n ? t : e(n, t % n);
-        }(n, i);
-
-        return [n / a, i / a];
+      function Te(e, t) {
+        return j(e) && e.length ? e.reduce(function (e, i) {
+          return Math.abs(i - t) < Math.abs(e - t) ? i : e;
+        }) : null;
       }
 
-      function De(e) {
-        var t = function t(e) {
-          return _e(e) ? e.split(":").map(Number) : null;
+      var ke = [[1, 1], [4, 3], [3, 4], [5, 4], [4, 5], [3, 2], [2, 3], [16, 10], [10, 16], [16, 9], [9, 16], [21, 9], [9, 21], [32, 9], [9, 32]].reduce(function (e, _ref5) {
+        var _ref6 = _slicedToArray(_ref5, 2),
+            t = _ref6[0],
+            i = _ref6[1];
+
+        return _objectSpread(_objectSpread({}, e), {}, _defineProperty({}, t / i, [t, i]));
+      }, {});
+
+      function Ce(e) {
+        return !!(j(e) || L(e) && e.includes(":")) && (j(e) ? e : e.split(":")).map(Number).every(I);
+      }
+
+      function Ae(e) {
+        if (!j(e) || !e.every(I)) return null;
+
+        var _e2 = _slicedToArray(e, 2),
+            t = _e2[0],
+            i = _e2[1],
+            s = function s(e, t) {
+          return 0 === t ? e : s(t, e % t);
         },
-            n = t(e);
+            n = s(t, i);
 
-        if (null === n && (n = t(this.config.ratio)), null === n && !te(this.embed) && Q(this.embed.ratio) && (n = this.embed.ratio), null === n && this.isHTML5) {
-          var i = this.media;
-          n = je([i.videoWidth, i.videoHeight]);
+        return [t / n, i / n];
+      }
+
+      function Se(e) {
+        var _this$embed;
+
+        var t = function t(e) {
+          return Ce(e) ? e.split(":").map(Number) : null;
+        };
+
+        var i = t(e);
+
+        if (null === i && (i = t(this.config.ratio)), null === i && !V(this.embed) && j(this.embed.ratio) && (_this$embed = this.embed, i = _this$embed.ratio, _this$embed), null === i && this.isHTML5) {
+          var _this$media = this.media,
+              _e3 = _this$media.videoWidth,
+              _t2 = _this$media.videoHeight;
+          i = Ae([_e3, _t2]);
         }
 
-        return n;
+        return i;
       }
 
-      function qe(e) {
+      function Ee(e) {
         if (!this.isVideo) return {};
         var t = this.elements.wrapper,
-            n = De.call(this, e),
-            i = l(Q(n) ? n : [0, 0], 2),
-            a = 100 / i[0] * i[1];
+            i = Se.call(this, e);
+        if (!j(i)) return {};
 
-        if (t.style.paddingBottom = "".concat(a, "%"), this.isVimeo && !this.config.vimeo.premium && this.supported.ui) {
-          var r = 100 / this.media.offsetWidth * parseInt(window.getComputedStyle(this.media).paddingBottom, 10),
-              o = (r - a) / (r / 50);
-          this.fullscreen.active ? t.style.paddingBottom = null : this.media.style.transform = "translateY(-".concat(o, "%)");
-        } else this.isHTML5 && t.classList.toggle(this.config.classNames.videoFixedRatio, null !== n);
+        var _i2 = _slicedToArray(i, 2),
+            s = _i2[0],
+            n = _i2[1],
+            a = 100 / s * n;
+
+        if (window.CSS && window.CSS.supports("aspect-ratio: ".concat(s, "/").concat(n)) ? t.style.aspectRatio = "".concat(s, "/").concat(n) : t.style.paddingBottom = a + "%", this.isVimeo && !this.config.vimeo.premium && this.supported.ui) {
+          var _e4 = 100 / this.media.offsetWidth * parseInt(window.getComputedStyle(this.media).paddingBottom, 10),
+              _i3 = (_e4 - a) / (_e4 / 50);
+
+          this.fullscreen.active ? t.style.paddingBottom = null : this.media.style.transform = "translateY(-".concat(_i3, "%)");
+        } else this.isHTML5 && t.classList.toggle(this.config.classNames.videoFixedRatio, null !== i);
 
         return {
           padding: a,
-          ratio: n
+          ratio: i
         };
       }
 
-      var Fe = {
+      function Pe(e, t) {
+        var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : .05;
+        var s = e / t,
+            n = Te(Object.keys(ke), s);
+        return Math.abs(n - s) <= i ? ke[n] : [e, t];
+      }
+
+      var xe = {
         getSources: function getSources() {
-          var e = this;
-          return this.isHTML5 ? Array.from(this.media.querySelectorAll("source")).filter(function (t) {
-            var n = t.getAttribute("type");
-            return !!te(n) || Ae.mime.call(e, n);
+          var _this4 = this;
+
+          return this.isHTML5 ? Array.from(this.media.querySelectorAll("source")).filter(function (e) {
+            var t = e.getAttribute("type");
+            return !!V(t) || he.mime.call(_this4, t);
           }) : [];
         },
         getQualityOptions: function getQualityOptions() {
-          return this.config.quality.forced ? this.config.quality.options : Fe.getSources.call(this).map(function (e) {
+          return this.config.quality.forced ? this.config.quality.options : xe.getSources.call(this).map(function (e) {
             return Number(e.getAttribute("size"));
           }).filter(Boolean);
         },
         setup: function setup() {
-          if (this.isHTML5) {
-            var e = this;
-            e.options.speed = e.config.speed.options, te(this.config.ratio) || qe.call(e), Object.defineProperty(e.media, "quality", {
-              get: function get() {
-                var t = Fe.getSources.call(e).find(function (t) {
-                  return t.getAttribute("src") === e.source;
-                });
-                return t && Number(t.getAttribute("size"));
-              },
-              set: function set(t) {
-                if (e.quality !== t) {
-                  if (e.config.quality.forced && Y(e.config.quality.onChange)) e.config.quality.onChange(t);else {
-                    var n = Fe.getSources.call(e).find(function (e) {
-                      return Number(e.getAttribute("size")) === t;
-                    });
-                    if (!n) return;
-                    var i = e.media,
-                        a = i.currentTime,
-                        r = i.paused,
-                        o = i.preload,
-                        s = i.readyState,
-                        l = i.playbackRate;
-                    e.media.src = n.getAttribute("src"), ("none" !== o || s) && (e.once("loadedmetadata", function () {
-                      e.speed = l, e.currentTime = a, r || Le(e.play());
-                    }), e.media.load());
-                  }
-                  Ne.call(e, e.media, "qualitychange", !1, {
-                    quality: t
+          if (!this.isHTML5) return;
+          var e = this;
+          e.options.speed = e.config.speed.options, V(this.config.ratio) || Ee.call(e), Object.defineProperty(e.media, "quality", {
+            get: function get() {
+              var t = xe.getSources.call(e).find(function (t) {
+                return t.getAttribute("src") === e.source;
+              });
+              return t && Number(t.getAttribute("size"));
+            },
+            set: function set(t) {
+              if (e.quality !== t) {
+                if (e.config.quality.forced && O(e.config.quality.onChange)) e.config.quality.onChange(t);else {
+                  var _i4 = xe.getSources.call(e).find(function (e) {
+                    return Number(e.getAttribute("size")) === t;
                   });
+
+                  if (!_i4) return;
+                  var _e$media = e.media,
+                      _s3 = _e$media.currentTime,
+                      _n2 = _e$media.paused,
+                      _a2 = _e$media.preload,
+                      _l = _e$media.readyState,
+                      _o = _e$media.playbackRate;
+                  e.media.src = _i4.getAttribute("src"), ("none" !== _a2 || _l) && (e.once("loadedmetadata", function () {
+                    e.speed = _o, e.currentTime = _s3, _n2 || ve(e.play());
+                  }), e.media.load());
                 }
+                fe.call(e, e.media, "qualitychange", !1, {
+                  quality: t
+                });
               }
-            });
-          }
+            }
+          });
         },
         cancelRequests: function cancelRequests() {
-          this.isHTML5 && (de(Fe.getSources.call(this)), this.media.setAttribute("src", this.config.blankVideo), this.media.load(), this.debug.log("Cancelled network requests"));
+          this.isHTML5 && (G(xe.getSources.call(this)), this.media.setAttribute("src", this.config.blankVideo), this.media.load(), this.debug.log("Cancelled network requests"));
         }
       };
 
-      function He(e) {
-        return Q(e) ? e.filter(function (t, n) {
-          return e.indexOf(t) === n;
-        }) : e;
-      }
-
-      function Re(e) {
-        for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), i = 1; i < t; i++) {
-          n[i - 1] = arguments[i];
+      function Me(e) {
+        for (var _len3 = arguments.length, t = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+          t[_key3 - 1] = arguments[_key3];
         }
 
-        return te(e) ? e : e.toString().replace(/{(\d+)}/g, function (e, t) {
-          return n[t].toString();
+        return V(e) ? e : e.toString().replace(/{(\d+)}/g, function (e, i) {
+          return t[i].toString();
         });
       }
 
-      var Ve = function Ve() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "",
-            t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "",
-            n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : "";
-        return e.replace(new RegExp(t.toString().replace(/([.*+?^=!:${}()|[\]/\\])/g, "\\$1"), "g"), n.toString());
+      var Ne = function Ne() {
+        var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+        var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
+        return e.replace(new RegExp(t.toString().replace(/([.*+?^=!:${}()|[\]/\\])/g, "\\$1"), "g"), i.toString());
       },
-          Be = function Be() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+          Ie = function Ie() {
+        var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
         return e.toString().replace(/\w\S*/g, function (e) {
           return e.charAt(0).toUpperCase() + e.substr(1).toLowerCase();
         });
       };
 
-      function Ue() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "",
-            t = e.toString();
-        return t = Ve(t, "-", " "), t = Ve(t, "_", " "), t = Be(t), Ve(t, " ", "");
-      }
-
-      function We(e) {
+      function Le(e) {
         var t = document.createElement("div");
         return t.appendChild(e), t.innerHTML;
       }
 
-      var ze = {
+      var _e = {
         pip: "PIP",
         airplay: "AirPlay",
         html5: "HTML5",
         vimeo: "Vimeo",
         youtube: "YouTube"
       },
-          Ke = function Ke() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "",
-            t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-        if (te(e) || te(t)) return "";
-        var n = re(t.i18n, e);
-        if (te(n)) return Object.keys(ze).includes(e) ? ze[e] : "";
-        var i = {
-          "{seektime}": t.seekTime,
-          "{title}": t.title
-        };
-        return Object.entries(i).forEach(function (e) {
-          var t = l(e, 2),
-              i = t[0],
-              a = t[1];
-          n = Ve(n, i, a);
-        }), n;
-      },
-          Ye = function () {
-        function e(t) {
-          var i = this;
-          n(this, e), r(this, "get", function (t) {
-            if (!e.supported || !i.enabled) return null;
-            var n = window.localStorage.getItem(i.key);
-            if (te(n)) return null;
-            var a = JSON.parse(n);
-            return z(t) && t.length ? a[t] : a;
-          }), r(this, "set", function (t) {
-            if (e.supported && i.enabled && U(t)) {
-              var n = i.get();
-              te(n) && (n = {}), oe(n, t), window.localStorage.setItem(i.key, JSON.stringify(n));
-            }
+          Oe = {
+        get: function get() {
+          var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          if (V(e) || V(t)) return "";
+          var i = z(t.i18n, e);
+          if (V(i)) return Object.keys(_e).includes(e) ? _e[e] : "";
+          var s = {
+            "{seektime}": t.seekTime,
+            "{title}": t.title
+          };
+          return Object.entries(s).forEach(function (_ref7) {
+            var _ref8 = _slicedToArray(_ref7, 2),
+                e = _ref8[0],
+                t = _ref8[1];
+
+            i = Ne(i, e, t);
+          }), i;
+        }
+      };
+
+      var je = /*#__PURE__*/function () {
+        function je(t) {
+          var _this5 = this;
+
+          _classCallCheck(this, je);
+
+          e(this, "get", function (e) {
+            if (!je.supported || !_this5.enabled) return null;
+            var t = window.localStorage.getItem(_this5.key);
+            if (V(t)) return null;
+            var i = JSON.parse(t);
+            return L(e) && e.length ? i[e] : i;
+          }), e(this, "set", function (e) {
+            if (!je.supported || !_this5.enabled) return;
+            if (!N(e)) return;
+
+            var t = _this5.get();
+
+            V(t) && (t = {}), K(t, e), window.localStorage.setItem(_this5.key, JSON.stringify(t));
           }), this.enabled = t.config.storage.enabled, this.key = t.config.storage.key;
         }
 
-        return a(e, null, [{
+        _createClass(je, null, [{
           key: "supported",
           get: function get() {
             try {
               if (!("localStorage" in window)) return !1;
-              var e = "___test";
-              return window.localStorage.setItem(e, e), window.localStorage.removeItem(e), !0;
+              var _e5 = "___test";
+              return window.localStorage.setItem(_e5, _e5), window.localStorage.removeItem(_e5), !0;
             } catch (e) {
               return !1;
             }
           }
-        }]), e;
+        }]);
+
+        return je;
       }();
 
-      function Qe(e) {
-        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "text";
-        return new Promise(function (n, i) {
+      function qe(e) {
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "text";
+        return new Promise(function (i, s) {
           try {
-            var a = new XMLHttpRequest();
-            if (!("withCredentials" in a)) return;
-            a.addEventListener("load", function () {
+            var _s4 = new XMLHttpRequest();
+
+            if (!("withCredentials" in _s4)) return;
+            _s4.addEventListener("load", function () {
               if ("text" === t) try {
-                n(JSON.parse(a.responseText));
+                i(JSON.parse(_s4.responseText));
               } catch (e) {
-                n(a.responseText);
-              } else n(a.response);
-            }), a.addEventListener("error", function () {
-              throw new Error(a.status);
-            }), a.open("GET", e, !0), a.responseType = t, a.send();
+                i(_s4.responseText);
+              } else i(_s4.response);
+            }), _s4.addEventListener("error", function () {
+              throw new Error(_s4.status);
+            }), _s4.open("GET", e, !0), _s4.responseType = t, _s4.send();
           } catch (e) {
-            i(e);
+            s(e);
           }
         });
       }
 
-      function Xe(e, t) {
-        if (z(e)) {
-          var n = "cache",
-              i = z(t),
-              a = function a() {
-            return null !== document.getElementById(t);
-          },
-              r = function r(e, t) {
-            e.innerHTML = t, i && a() || document.body.insertAdjacentElement("afterbegin", e);
-          };
+      function De(e, t) {
+        if (!L(e)) return;
+        var i = L(t);
+        var s = !1;
 
-          if (!i || !a()) {
-            var o = Ye.supported,
-                s = document.createElement("div");
+        var n = function n() {
+          return null !== document.getElementById(t);
+        },
+            a = function a(e, t) {
+          e.innerHTML = t, i && n() || document.body.insertAdjacentElement("afterbegin", e);
+        };
 
-            if (s.setAttribute("hidden", ""), i && s.setAttribute("id", t), o) {
-              var l = window.localStorage.getItem("".concat(n, "-").concat(t));
+        if (!i || !n()) {
+          var _n3 = je.supported,
+              _l2 = document.createElement("div");
 
-              if (null !== l) {
-                var c = JSON.parse(l);
-                r(s, c.content);
-              }
+          if (_l2.setAttribute("hidden", ""), i && _l2.setAttribute("id", t), _n3) {
+            var _e6 = window.localStorage.getItem("cache-" + t);
+
+            if (s = null !== _e6, s) {
+              var _t3 = JSON.parse(_e6);
+
+              a(_l2, _t3.content);
             }
-
-            Qe(e).then(function (e) {
-              te(e) || (o && window.localStorage.setItem("".concat(n, "-").concat(t), JSON.stringify({
-                content: e
-              })), r(s, e));
-            }).catch(function () {});
           }
+
+          qe(e).then(function (e) {
+            V(e) || (_n3 && window.localStorage.setItem("cache-" + t, JSON.stringify({
+              content: e
+            })), a(_l2, e));
+          }).catch(function () {});
         }
       }
 
-      var $e = function $e(e) {
+      var Fe = function Fe(e) {
         return Math.trunc(e / 60 / 60 % 60, 10);
-      },
-          Je = function Je(e) {
-        return Math.trunc(e / 60 % 60, 10);
-      },
-          Ge = function Ge(e) {
-        return Math.trunc(e % 60, 10);
       };
 
-      function Ze() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0,
-            t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-            n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
-        if (!W(e)) return Ze(void 0, t, n);
+      function He() {
+        var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+        var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : !1;
+        if (!I(e)) return He(void 0, t, i);
 
-        var i = function i(e) {
-          return "0".concat(e).slice(-2);
-        },
-            a = $e(e),
-            r = Je(e),
-            o = Ge(e);
+        var s = function s(e) {
+          return ("0" + e).slice(-2);
+        };
 
-        return a = t || a > 0 ? "".concat(a, ":") : "", "".concat(n && e > 0 ? "-" : "").concat(a).concat(i(r), ":").concat(i(o));
+        var n = Fe(e);
+        var a = (l = e, Math.trunc(l / 60 % 60, 10));
+        var l;
+
+        var o = function (e) {
+          return Math.trunc(e % 60, 10);
+        }(e);
+
+        return n = t || n > 0 ? n + ":" : "", "".concat(i && e > 0 ? "-" : "").concat(n).concat(s(a), ":").concat(s(o));
       }
 
-      var et = {
+      var Re = {
         getIconUrl: function getIconUrl() {
-          var e = new URL(this.config.iconUrl, window.location).host !== window.location.host || ae.isIE && !window.svg4everybody;
+          var e = new URL(this.config.iconUrl, window.location).host !== window.location.host || W.isIE && !window.svg4everybody;
           return {
             url: this.config.iconUrl,
             cors: e
@@ -1027,68 +1011,75 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         },
         findElements: function findElements() {
           try {
-            return this.elements.controls = we.call(this, this.config.selectors.controls.wrapper), this.elements.buttons = {
-              play: ve.call(this, this.config.selectors.buttons.play),
-              pause: we.call(this, this.config.selectors.buttons.pause),
-              restart: we.call(this, this.config.selectors.buttons.restart),
-              rewind: we.call(this, this.config.selectors.buttons.rewind),
-              fastForward: we.call(this, this.config.selectors.buttons.fastForward),
-              mute: we.call(this, this.config.selectors.buttons.mute),
-              pip: we.call(this, this.config.selectors.buttons.pip),
-              airplay: we.call(this, this.config.selectors.buttons.airplay),
-              settings: we.call(this, this.config.selectors.buttons.settings),
-              captions: we.call(this, this.config.selectors.buttons.captions),
-              fullscreen: we.call(this, this.config.selectors.buttons.fullscreen)
-            }, this.elements.progress = we.call(this, this.config.selectors.progress), this.elements.inputs = {
-              seek: we.call(this, this.config.selectors.inputs.seek),
-              volume: we.call(this, this.config.selectors.inputs.volume)
+            return this.elements.controls = oe.call(this, this.config.selectors.controls.wrapper), this.elements.buttons = {
+              play: le.call(this, this.config.selectors.buttons.play),
+              pause: oe.call(this, this.config.selectors.buttons.pause),
+              restart: oe.call(this, this.config.selectors.buttons.restart),
+              rewind: oe.call(this, this.config.selectors.buttons.rewind),
+              fastForward: oe.call(this, this.config.selectors.buttons.fastForward),
+              mute: oe.call(this, this.config.selectors.buttons.mute),
+              pip: oe.call(this, this.config.selectors.buttons.pip),
+              airplay: oe.call(this, this.config.selectors.buttons.airplay),
+              settings: oe.call(this, this.config.selectors.buttons.settings),
+              captions: oe.call(this, this.config.selectors.buttons.captions),
+              fullscreen: oe.call(this, this.config.selectors.buttons.fullscreen)
+            }, this.elements.progress = oe.call(this, this.config.selectors.progress), this.elements.inputs = {
+              seek: oe.call(this, this.config.selectors.inputs.seek),
+              volume: oe.call(this, this.config.selectors.inputs.volume)
             }, this.elements.display = {
-              buffer: we.call(this, this.config.selectors.display.buffer),
-              currentTime: we.call(this, this.config.selectors.display.currentTime),
-              duration: we.call(this, this.config.selectors.display.duration)
-            }, $(this.elements.progress) && (this.elements.display.seekTooltip = this.elements.progress.querySelector(".".concat(this.config.classNames.tooltip))), !0;
+              buffer: oe.call(this, this.config.selectors.display.buffer),
+              currentTime: oe.call(this, this.config.selectors.display.currentTime),
+              duration: oe.call(this, this.config.selectors.display.duration)
+            }, D(this.elements.progress) && (this.elements.display.seekTooltip = this.elements.progress.querySelector("." + this.config.classNames.tooltip)), !0;
           } catch (e) {
             return this.debug.warn("It looks like there is a problem with your custom controls HTML", e), this.toggleNativeControls(!0), !1;
           }
         },
         createIcon: function createIcon(e, t) {
-          var n = "http://www.w3.org/2000/svg",
-              i = et.getIconUrl.call(this),
-              a = "".concat(i.cors ? "" : i.url, "#").concat(this.config.iconPrefix),
-              r = document.createElementNS(n, "svg");
-          le(r, oe(t, {
+          var i = "http://www.w3.org/2000/svg",
+              s = Re.getIconUrl.call(this),
+              n = "".concat(s.cors ? "" : s.url, "#").concat(this.config.iconPrefix),
+              a = document.createElementNS(i, "svg");
+          Q(a, K(t, {
             "aria-hidden": "true",
             focusable: "false"
           }));
-          var o = document.createElementNS(n, "use"),
-              s = "".concat(a, "-").concat(e);
-          return "href" in o && o.setAttributeNS("http://www.w3.org/1999/xlink", "href", s), o.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", s), r.appendChild(o), r;
+          var l = document.createElementNS(i, "use"),
+              o = "".concat(n, "-").concat(e);
+          return "href" in l && l.setAttributeNS("http://www.w3.org/1999/xlink", "href", o), l.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", o), a.appendChild(l), a;
         },
         createLabel: function createLabel(e) {
-          var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-              n = Ke(e, this.config),
-              i = s(s({}, t), {}, {
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          var i = Oe.get(e, this.config);
+          return X("span", _objectSpread(_objectSpread({}, t), {}, {
             class: [t.class, this.config.classNames.hidden].filter(Boolean).join(" ")
-          });
-          return ce("span", i, n);
+          }), i);
         },
         createBadge: function createBadge(e) {
-          if (te(e)) return null;
-          var t = ce("span", {
+          if (V(e)) return null;
+          var t = X("span", {
             class: this.config.classNames.menu.value
           });
-          return t.appendChild(ce("span", {
+          return t.appendChild(X("span", {
             class: this.config.classNames.menu.badge
           }, e)), t;
         },
         createButton: function createButton(e, t) {
-          var n = this,
-              i = oe({}, t),
-              a = function () {
-            var e = (arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "").toString();
-            return (e = Ue(e)).charAt(0).toLowerCase() + e.slice(1);
-          }(e),
-              r = {
+          var _this6 = this;
+
+          var i = K({}, t);
+
+          var s = function () {
+            var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+            var t = e.toString();
+            return t = function () {
+              var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+              var t = e.toString();
+              return t = Ne(t, "-", " "), t = Ne(t, "_", " "), t = Ie(t), Ne(t, " ", "");
+            }(t), t.charAt(0).toLowerCase() + t.slice(1);
+          }(e);
+
+          var n = {
             element: "button",
             toggle: !1,
             label: null,
@@ -1098,49 +1089,49 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           };
 
           switch (["element", "icon", "label"].forEach(function (e) {
-            Object.keys(i).includes(e) && (r[e] = i[e], delete i[e]);
-          }), "button" !== r.element || Object.keys(i).includes("type") || (i.type = "button"), Object.keys(i).includes("class") ? i.class.split(" ").some(function (e) {
-            return e === n.config.classNames.control;
-          }) || oe(i, {
+            Object.keys(i).includes(e) && (n[e] = i[e], delete i[e]);
+          }), "button" !== n.element || Object.keys(i).includes("type") || (i.type = "button"), Object.keys(i).includes("class") ? i.class.split(" ").some(function (e) {
+            return e === _this6.config.classNames.control;
+          }) || K(i, {
             class: "".concat(i.class, " ").concat(this.config.classNames.control)
           }) : i.class = this.config.classNames.control, e) {
             case "play":
-              r.toggle = !0, r.label = "play", r.labelPressed = "pause", r.icon = "play", r.iconPressed = "pause";
+              n.toggle = !0, n.label = "play", n.labelPressed = "pause", n.icon = "play", n.iconPressed = "pause";
               break;
 
             case "mute":
-              r.toggle = !0, r.label = "mute", r.labelPressed = "unmute", r.icon = "volume", r.iconPressed = "muted";
+              n.toggle = !0, n.label = "mute", n.labelPressed = "unmute", n.icon = "volume", n.iconPressed = "muted";
               break;
 
             case "captions":
-              r.toggle = !0, r.label = "enableCaptions", r.labelPressed = "disableCaptions", r.icon = "captions-off", r.iconPressed = "captions-on";
+              n.toggle = !0, n.label = "enableCaptions", n.labelPressed = "disableCaptions", n.icon = "captions-off", n.iconPressed = "captions-on";
               break;
 
             case "fullscreen":
-              r.toggle = !0, r.label = "enterFullscreen", r.labelPressed = "exitFullscreen", r.icon = "enter-fullscreen", r.iconPressed = "exit-fullscreen";
+              n.toggle = !0, n.label = "enterFullscreen", n.labelPressed = "exitFullscreen", n.icon = "enter-fullscreen", n.iconPressed = "exit-fullscreen";
               break;
 
             case "play-large":
-              i.class += " ".concat(this.config.classNames.control, "--overlaid"), a = "play", r.label = "play", r.icon = "play";
+              i.class += " ".concat(this.config.classNames.control, "--overlaid"), s = "play", n.label = "play", n.icon = "play";
               break;
 
             default:
-              te(r.label) && (r.label = a), te(r.icon) && (r.icon = e);
+              V(n.label) && (n.label = s), V(n.icon) && (n.icon = e);
           }
 
-          var o = ce(r.element);
-          return r.toggle ? (o.appendChild(et.createIcon.call(this, r.iconPressed, {
+          var a = X(n.element);
+          return n.toggle ? (a.appendChild(Re.createIcon.call(this, n.iconPressed, {
             class: "icon--pressed"
-          })), o.appendChild(et.createIcon.call(this, r.icon, {
+          })), a.appendChild(Re.createIcon.call(this, n.icon, {
             class: "icon--not-pressed"
-          })), o.appendChild(et.createLabel.call(this, r.labelPressed, {
+          })), a.appendChild(Re.createLabel.call(this, n.labelPressed, {
             class: "label--pressed"
-          })), o.appendChild(et.createLabel.call(this, r.label, {
+          })), a.appendChild(Re.createLabel.call(this, n.label, {
             class: "label--not-pressed"
-          }))) : (o.appendChild(et.createIcon.call(this, r.icon)), o.appendChild(et.createLabel.call(this, r.label))), oe(i, me(this.config.selectors.buttons[a], i)), le(o, i), "play" === a ? (Q(this.elements.buttons[a]) || (this.elements.buttons[a] = []), this.elements.buttons[a].push(o)) : this.elements.buttons[a] = o, o;
+          }))) : (a.appendChild(Re.createIcon.call(this, n.icon)), a.appendChild(Re.createLabel.call(this, n.label))), K(i, te(this.config.selectors.buttons[s], i)), Q(a, i), "play" === s ? (j(this.elements.buttons[s]) || (this.elements.buttons[s] = []), this.elements.buttons[s].push(a)) : this.elements.buttons[s] = a, a;
         },
         createRange: function createRange(e, t) {
-          var n = ce("input", oe(me(this.config.selectors.inputs[e]), {
+          var i = X("input", K(te(this.config.selectors.inputs[e]), {
             type: "range",
             min: 0,
             max: 100,
@@ -1148,15 +1139,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             value: 0,
             autocomplete: "off",
             role: "slider",
-            "aria-label": Ke(e, this.config),
+            "aria-label": Oe.get(e, this.config),
             "aria-valuemin": 0,
             "aria-valuemax": 100,
             "aria-valuenow": 0
           }, t));
-          return this.elements.inputs[e] = n, et.updateRangeFill.call(this, n), O.setup(n), n;
+          return this.elements.inputs[e] = i, Re.updateRangeFill.call(this, i), v.setup(i), i;
         },
         createProgress: function createProgress(e, t) {
-          var n = ce("progress", oe(me(this.config.selectors.display[e]), {
+          var i = X("progress", K(te(this.config.selectors.display[e]), {
             min: 0,
             max: 100,
             value: 0,
@@ -1165,777 +1156,796 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }, t));
 
           if ("volume" !== e) {
-            n.appendChild(ce("span", null, "0"));
-            var i = {
+            i.appendChild(X("span", null, "0"));
+
+            var _t4 = {
               played: "played",
               buffer: "buffered"
             }[e],
-                a = i ? Ke(i, this.config) : "";
-            n.innerText = "% ".concat(a.toLowerCase());
+                _s5 = _t4 ? Oe.get(_t4, this.config) : "";
+
+            i.innerText = "% " + _s5.toLowerCase();
           }
 
-          return this.elements.display[e] = n, n;
-        },
-        createTime: function createTime(e, t) {
-          var n = me(this.config.selectors.display[e], t),
-              i = ce("div", oe(n, {
-            class: "".concat(n.class ? n.class : "", " ").concat(this.config.classNames.display.time, " ").trim(),
-            "aria-label": Ke(e, this.config)
-          }), "00:00");
           return this.elements.display[e] = i, i;
         },
+        createTime: function createTime(e, t) {
+          var i = te(this.config.selectors.display[e], t),
+              s = X("div", K(i, {
+            class: "".concat(i.class ? i.class : "", " ").concat(this.config.classNames.display.time, " ").trim(),
+            "aria-label": Oe.get(e, this.config)
+          }), "00:00");
+          return this.elements.display[e] = s, s;
+        },
         bindMenuItemShortcuts: function bindMenuItemShortcuts(e, t) {
-          var n = this;
-          Ee.call(this, e, "keydown keyup", function (i) {
-            if ([32, 38, 39, 40].includes(i.which) && (i.preventDefault(), i.stopPropagation(), "keydown" !== i.type)) {
-              var a,
-                  r = be(e, '[role="menuitemradio"]');
-              !r && [32, 39].includes(i.which) ? et.showMenuPanel.call(n, t, !0) : 32 !== i.which && (40 === i.which || r && 39 === i.which ? (a = e.nextElementSibling, $(a) || (a = e.parentNode.firstElementChild)) : (a = e.previousElementSibling, $(a) || (a = e.parentNode.lastElementChild)), ke.call(n, a, !0));
+          var _this7 = this;
+
+          me.call(this, e, "keydown keyup", function (i) {
+            if (![32, 38, 39, 40].includes(i.which)) return;
+            if (i.preventDefault(), i.stopPropagation(), "keydown" === i.type) return;
+            var s = ae(e, '[role="menuitemradio"]');
+            if (!s && [32, 39].includes(i.which)) Re.showMenuPanel.call(_this7, t, !0);else {
+              var _t5;
+
+              32 !== i.which && (40 === i.which || s && 39 === i.which ? (_t5 = e.nextElementSibling, D(_t5) || (_t5 = e.parentNode.firstElementChild)) : (_t5 = e.previousElementSibling, D(_t5) || (_t5 = e.parentNode.lastElementChild)), re.call(_this7, _t5, !0));
             }
-          }, !1), Ee.call(this, e, "keyup", function (e) {
-            13 === e.which && et.focusFirstMenuItem.call(n, null, !0);
+          }, !1), me.call(this, e, "keyup", function (e) {
+            13 === e.which && Re.focusFirstMenuItem.call(_this7, null, !0);
           });
         },
-        createMenuItem: function createMenuItem(e) {
-          var t = this,
-              n = e.value,
-              i = e.list,
-              a = e.type,
-              r = e.title,
-              o = e.badge,
-              s = void 0 === o ? null : o,
-              l = e.checked,
-              c = void 0 !== l && l,
-              u = me(this.config.selectors.inputs[a]),
-              d = ce("button", oe(u, {
+        createMenuItem: function createMenuItem(_ref9) {
+          var _this8 = this;
+
+          var e = _ref9.value,
+              t = _ref9.list,
+              i = _ref9.type,
+              s = _ref9.title,
+              _ref9$badge = _ref9.badge,
+              n = _ref9$badge === void 0 ? null : _ref9$badge,
+              _ref9$checked = _ref9.checked,
+              a = _ref9$checked === void 0 ? !1 : _ref9$checked;
+          var l = te(this.config.selectors.inputs[i]),
+              o = X("button", K(l, {
             type: "button",
             role: "menuitemradio",
-            class: "".concat(this.config.classNames.control, " ").concat(u.class ? u.class : "").trim(),
-            "aria-checked": c,
-            value: n
+            class: "".concat(this.config.classNames.control, " ").concat(l.class ? l.class : "").trim(),
+            "aria-checked": a,
+            value: e
           })),
-              h = ce("span");
-          h.innerHTML = r, $(s) && h.appendChild(s), d.appendChild(h), Object.defineProperty(d, "checked", {
+              r = X("span");
+          r.innerHTML = s, D(n) && r.appendChild(n), o.appendChild(r), Object.defineProperty(o, "checked", {
             enumerable: !0,
             get: function get() {
-              return "true" === d.getAttribute("aria-checked");
+              return "true" === o.getAttribute("aria-checked");
             },
             set: function set(e) {
-              e && Array.from(d.parentNode.children).filter(function (e) {
-                return be(e, '[role="menuitemradio"]');
+              e && Array.from(o.parentNode.children).filter(function (e) {
+                return ae(e, '[role="menuitemradio"]');
               }).forEach(function (e) {
                 return e.setAttribute("aria-checked", "false");
-              }), d.setAttribute("aria-checked", e ? "true" : "false");
+              }), o.setAttribute("aria-checked", e ? "true" : "false");
             }
-          }), this.listeners.bind(d, "click keyup", function (e) {
-            if (!G(e) || 32 === e.which) {
-              switch (e.preventDefault(), e.stopPropagation(), d.checked = !0, a) {
+          }), this.listeners.bind(o, "click keyup", function (t) {
+            if (!H(t) || 32 === t.which) {
+              switch (t.preventDefault(), t.stopPropagation(), o.checked = !0, i) {
                 case "language":
-                  t.currentTrack = Number(n);
+                  _this8.currentTrack = Number(e);
                   break;
 
                 case "quality":
-                  t.quality = n;
+                  _this8.quality = e;
                   break;
 
                 case "speed":
-                  t.speed = parseFloat(n);
+                  _this8.speed = parseFloat(e);
               }
 
-              et.showMenuPanel.call(t, "home", G(e));
+              Re.showMenuPanel.call(_this8, "home", H(t));
             }
-          }, a, !1), et.bindMenuItemShortcuts.call(this, d, a), i.appendChild(d);
+          }, i, !1), Re.bindMenuItemShortcuts.call(this, o, i), t.appendChild(o);
         },
         formatTime: function formatTime() {
-          var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0,
-              t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-          if (!W(e)) return e;
-          var n = $e(this.duration) > 0;
-          return Ze(e, n, t);
+          var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+          return I(e) ? He(e, Fe(this.duration) > 0, t) : e;
         },
         updateTimeDisplay: function updateTimeDisplay() {
-          var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null,
-              t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0,
-              n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
-          $(e) && W(t) && (e.innerText = et.formatTime(t, n));
+          var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+          var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : !1;
+          D(e) && I(t) && (e.innerText = Re.formatTime(t, i));
         },
         updateVolume: function updateVolume() {
-          this.supported.ui && ($(this.elements.inputs.volume) && et.setRange.call(this, this.elements.inputs.volume, this.muted ? 0 : this.volume), $(this.elements.buttons.mute) && (this.elements.buttons.mute.pressed = this.muted || 0 === this.volume));
+          this.supported.ui && (D(this.elements.inputs.volume) && Re.setRange.call(this, this.elements.inputs.volume, this.muted ? 0 : this.volume), D(this.elements.buttons.mute) && (this.elements.buttons.mute.pressed = this.muted || 0 === this.volume));
         },
         setRange: function setRange(e) {
-          var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0;
-          $(e) && (e.value = t, et.updateRangeFill.call(this, e));
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+          D(e) && (e.value = t, Re.updateRangeFill.call(this, e));
         },
         updateProgress: function updateProgress(e) {
-          var t = this;
+          var _this9 = this;
 
-          if (this.supported.ui && J(e)) {
-            var n,
-                i,
-                a = 0;
-            if (e) switch (e.type) {
-              case "timeupdate":
-              case "seeking":
-              case "seeked":
-                n = this.currentTime, i = this.duration, a = 0 === n || 0 === i || Number.isNaN(n) || Number.isNaN(i) ? 0 : (n / i * 100).toFixed(2), "timeupdate" === e.type && et.setRange.call(this, this.elements.inputs.seek, a);
-                break;
+          if (!this.supported.ui || !F(e)) return;
+          var t = 0;
 
-              case "playing":
-              case "progress":
-                !function (e, n) {
-                  var i = W(n) ? n : 0,
-                      a = $(e) ? e : t.elements.display.buffer;
+          var i = function i(e, t) {
+            var i = I(t) ? t : 0,
+                s = D(e) ? e : _this9.elements.display.buffer;
 
-                  if ($(a)) {
-                    a.value = i;
-                    var r = a.getElementsByTagName("span")[0];
-                    $(r) && (r.childNodes[0].nodeValue = i);
-                  }
-                }(this.elements.display.buffer, 100 * this.buffered);
+            if (D(s)) {
+              s.value = i;
+              var _e7 = s.getElementsByTagName("span")[0];
+              D(_e7) && (_e7.childNodes[0].nodeValue = i);
             }
+          };
+
+          if (e) switch (e.type) {
+            case "timeupdate":
+            case "seeking":
+            case "seeked":
+              s = this.currentTime, n = this.duration, t = 0 === s || 0 === n || Number.isNaN(s) || Number.isNaN(n) ? 0 : (s / n * 100).toFixed(2), "timeupdate" === e.type && Re.setRange.call(this, this.elements.inputs.seek, t);
+              break;
+
+            case "playing":
+            case "progress":
+              i(this.elements.display.buffer, 100 * this.buffered);
           }
+          var s, n;
         },
         updateRangeFill: function updateRangeFill(e) {
-          var t = J(e) ? e.target : e;
+          var t = F(e) ? e.target : e;
 
-          if ($(t) && "range" === t.getAttribute("type")) {
-            if (be(t, this.config.selectors.inputs.seek)) {
+          if (D(t) && "range" === t.getAttribute("type")) {
+            if (ae(t, this.config.selectors.inputs.seek)) {
               t.setAttribute("aria-valuenow", this.currentTime);
-              var n = et.formatTime(this.currentTime),
-                  i = et.formatTime(this.duration),
-                  a = Ke("seekLabel", this.config);
-              t.setAttribute("aria-valuetext", a.replace("{currentTime}", n).replace("{duration}", i));
-            } else if (be(t, this.config.selectors.inputs.volume)) {
-              var r = 100 * t.value;
-              t.setAttribute("aria-valuenow", r), t.setAttribute("aria-valuetext", "".concat(r.toFixed(1), "%"));
+
+              var _e8 = Re.formatTime(this.currentTime),
+                  _i5 = Re.formatTime(this.duration),
+                  _s6 = Oe.get("seekLabel", this.config);
+
+              t.setAttribute("aria-valuetext", _s6.replace("{currentTime}", _e8).replace("{duration}", _i5));
+            } else if (ae(t, this.config.selectors.inputs.volume)) {
+              var _e9 = 100 * t.value;
+
+              t.setAttribute("aria-valuenow", _e9), t.setAttribute("aria-valuetext", _e9.toFixed(1) + "%");
             } else t.setAttribute("aria-valuenow", t.value);
 
-            ae.isWebkit && t.style.setProperty("--value", "".concat(t.value / t.max * 100, "%"));
+            W.isWebkit && t.style.setProperty("--value", t.value / t.max * 100 + "%");
           }
         },
         updateSeekTooltip: function updateSeekTooltip(e) {
-          var t = this;
+          var _this10 = this;
 
-          if (this.config.tooltips.seek && $(this.elements.inputs.seek) && $(this.elements.display.seekTooltip) && 0 !== this.duration) {
-            var n = "".concat(this.config.classNames.tooltip, "--visible"),
-                i = function i(e) {
-              return ge(t.elements.display.seekTooltip, n, e);
-            };
+          if (!this.config.tooltips.seek || !D(this.elements.inputs.seek) || !D(this.elements.display.seekTooltip) || 0 === this.duration) return;
 
-            if (this.touch) i(!1);else {
-              var a = 0,
-                  r = this.elements.progress.getBoundingClientRect();
-              if (J(e)) a = 100 / r.width * (e.pageX - r.left);else {
-                if (!ye(this.elements.display.seekTooltip, n)) return;
-                a = parseFloat(this.elements.display.seekTooltip.style.left, 10);
-              }
-              a < 0 ? a = 0 : a > 100 && (a = 100), et.updateTimeDisplay.call(this, this.elements.display.seekTooltip, this.duration / 100 * a), this.elements.display.seekTooltip.style.left = "".concat(a, "%"), J(e) && ["mouseenter", "mouseleave"].includes(e.type) && i("mouseenter" === e.type);
-            }
+          var t = this.config.classNames.tooltip + "--visible",
+              i = function i(e) {
+            return se(_this10.elements.display.seekTooltip, t, e);
+          };
+
+          if (this.touch) return void i(!1);
+          var s = 0;
+          var n = this.elements.progress.getBoundingClientRect();
+          if (F(e)) s = 100 / n.width * (e.pageX - n.left);else {
+            if (!ne(this.elements.display.seekTooltip, t)) return;
+            s = parseFloat(this.elements.display.seekTooltip.style.left, 10);
           }
+          s < 0 ? s = 0 : s > 100 && (s = 100), Re.updateTimeDisplay.call(this, this.elements.display.seekTooltip, this.duration / 100 * s), this.elements.display.seekTooltip.style.left = s + "%", F(e) && ["mouseenter", "mouseleave"].includes(e.type) && i("mouseenter" === e.type);
         },
         timeUpdate: function timeUpdate(e) {
-          var t = !$(this.elements.display.duration) && this.config.invertTime;
-          et.updateTimeDisplay.call(this, this.elements.display.currentTime, t ? this.duration - this.currentTime : this.currentTime, t), e && "timeupdate" === e.type && this.media.seeking || et.updateProgress.call(this, e);
+          var t = !D(this.elements.display.duration) && this.config.invertTime;
+          Re.updateTimeDisplay.call(this, this.elements.display.currentTime, t ? this.duration - this.currentTime : this.currentTime, t), e && "timeupdate" === e.type && this.media.seeking || Re.updateProgress.call(this, e);
         },
         durationUpdate: function durationUpdate() {
-          if (this.supported.ui && (this.config.invertTime || !this.currentTime)) {
-            if (this.duration >= Math.pow(2, 32)) return fe(this.elements.display.currentTime, !0), void fe(this.elements.progress, !0);
-            $(this.elements.inputs.seek) && this.elements.inputs.seek.setAttribute("aria-valuemax", this.duration);
-            var e = $(this.elements.display.duration);
-            !e && this.config.displayDuration && this.paused && et.updateTimeDisplay.call(this, this.elements.display.currentTime, this.duration), e && et.updateTimeDisplay.call(this, this.elements.display.duration, this.duration), et.updateSeekTooltip.call(this);
-          }
+          if (!this.supported.ui || !this.config.invertTime && this.currentTime) return;
+          if (this.duration >= Math.pow(2, 32)) return ie(this.elements.display.currentTime, !0), void ie(this.elements.progress, !0);
+          D(this.elements.inputs.seek) && this.elements.inputs.seek.setAttribute("aria-valuemax", this.duration);
+          var e = D(this.elements.display.duration);
+          !e && this.config.displayDuration && this.paused && Re.updateTimeDisplay.call(this, this.elements.display.currentTime, this.duration), e && Re.updateTimeDisplay.call(this, this.elements.display.duration, this.duration), Re.updateSeekTooltip.call(this);
         },
         toggleMenuButton: function toggleMenuButton(e, t) {
-          fe(this.elements.settings.buttons[e], !t);
+          ie(this.elements.settings.buttons[e], !t);
         },
-        updateSetting: function updateSetting(e, t, n) {
-          var i = this.elements.settings.panels[e],
-              a = null,
-              r = t;
-          if ("captions" === e) a = this.currentTrack;else {
-            if (a = te(n) ? this[e] : n, te(a) && (a = this.config[e].default), !te(this.options[e]) && !this.options[e].includes(a)) return void this.debug.warn("Unsupported value of '".concat(a, "' for ").concat(e));
-            if (!this.config[e].options.includes(a)) return void this.debug.warn("Disabled value of '".concat(a, "' for ").concat(e));
+        updateSetting: function updateSetting(e, t, i) {
+          var s = this.elements.settings.panels[e];
+          var n = null,
+              a = t;
+          if ("captions" === e) n = this.currentTrack;else {
+            if (n = V(i) ? this[e] : i, V(n) && (n = this.config[e].default), !V(this.options[e]) && !this.options[e].includes(n)) return void this.debug.warn("Unsupported value of '".concat(n, "' for ").concat(e));
+            if (!this.config[e].options.includes(n)) return void this.debug.warn("Disabled value of '".concat(n, "' for ").concat(e));
           }
-
-          if ($(r) || (r = i && i.querySelector('[role="menu"]')), $(r)) {
-            this.elements.settings.buttons[e].querySelector(".".concat(this.config.classNames.menu.value)).innerHTML = et.getLabel.call(this, e, a);
-            var o = r && r.querySelector('[value="'.concat(a, '"]'));
-            $(o) && (o.checked = !0);
-          }
+          if (D(a) || (a = s && s.querySelector('[role="menu"]')), !D(a)) return;
+          this.elements.settings.buttons[e].querySelector("." + this.config.classNames.menu.value).innerHTML = Re.getLabel.call(this, e, n);
+          var l = a && a.querySelector("[value=\"".concat(n, "\"]"));
+          D(l) && (l.checked = !0);
         },
         getLabel: function getLabel(e, t) {
           switch (e) {
             case "speed":
-              return 1 === t ? Ke("normal", this.config) : "".concat(t, "&times;");
+              return 1 === t ? Oe.get("normal", this.config) : t + "&times;";
 
             case "quality":
-              if (W(t)) {
-                var n = Ke("qualityLabel.".concat(t), this.config);
-                return n.length ? n : "".concat(t, "p");
+              if (I(t)) {
+                var _e10 = Oe.get("qualityLabel." + t, this.config);
+
+                return _e10.length ? _e10 : t + "p";
               }
 
-              return Be(t);
+              return Ie(t);
 
             case "captions":
-              return it.getLabel.call(this);
+              return Be.getLabel.call(this);
 
             default:
               return null;
           }
         },
         setQualityMenu: function setQualityMenu(e) {
-          var t = this;
+          var _this11 = this;
 
-          if ($(this.elements.settings.panels.quality)) {
-            var n = "quality",
-                i = this.elements.settings.panels.quality.querySelector('[role="menu"]');
-            Q(e) && (this.options.quality = He(e).filter(function (e) {
-              return t.config.quality.options.includes(e);
-            }));
-            var a = !te(this.options.quality) && this.options.quality.length > 1;
+          if (!D(this.elements.settings.panels.quality)) return;
+          var t = "quality",
+              i = this.elements.settings.panels.quality.querySelector('[role="menu"]');
+          j(e) && (this.options.quality = we(e).filter(function (e) {
+            return _this11.config.quality.options.includes(e);
+          }));
+          var s = !V(this.options.quality) && this.options.quality.length > 1;
+          if (Re.toggleMenuButton.call(this, t, s), Z(i), Re.checkMenu.call(this), !s) return;
 
-            if (et.toggleMenuButton.call(this, n, a), he(i), et.checkMenu.call(this), a) {
-              var r = function r(e) {
-                var n = Ke("qualityBadge.".concat(e), t.config);
-                return n.length ? et.createBadge.call(t, n) : null;
-              };
+          var n = function n(e) {
+            var t = Oe.get("qualityBadge." + e, _this11.config);
+            return t.length ? Re.createBadge.call(_this11, t) : null;
+          };
 
-              this.options.quality.sort(function (e, n) {
-                var i = t.config.quality.options;
-                return i.indexOf(e) > i.indexOf(n) ? 1 : -1;
-              }).forEach(function (e) {
-                et.createMenuItem.call(t, {
-                  value: e,
-                  list: i,
-                  type: n,
-                  title: et.getLabel.call(t, "quality", e),
-                  badge: r(e)
-                });
-              }), et.updateSetting.call(this, n, i);
-            }
-          }
+          this.options.quality.sort(function (e, t) {
+            var i = _this11.config.quality.options;
+            return i.indexOf(e) > i.indexOf(t) ? 1 : -1;
+          }).forEach(function (e) {
+            Re.createMenuItem.call(_this11, {
+              value: e,
+              list: i,
+              type: t,
+              title: Re.getLabel.call(_this11, "quality", e),
+              badge: n(e)
+            });
+          }), Re.updateSetting.call(this, t, i);
         },
         setCaptionsMenu: function setCaptionsMenu() {
-          var e = this;
+          var _this12 = this;
 
-          if ($(this.elements.settings.panels.captions)) {
-            var t = "captions",
-                n = this.elements.settings.panels.captions.querySelector('[role="menu"]'),
-                i = it.getTracks.call(this),
-                a = Boolean(i.length);
-
-            if (et.toggleMenuButton.call(this, t, a), he(n), et.checkMenu.call(this), a) {
-              var r = i.map(function (t, i) {
-                return {
-                  value: i,
-                  checked: e.captions.toggled && e.currentTrack === i,
-                  title: it.getLabel.call(e, t),
-                  badge: t.language && et.createBadge.call(e, t.language.toUpperCase()),
-                  list: n,
-                  type: "language"
-                };
-              });
-              r.unshift({
-                value: -1,
-                checked: !this.captions.toggled,
-                title: Ke("disabled", this.config),
-                list: n,
-                type: "language"
-              }), r.forEach(et.createMenuItem.bind(this)), et.updateSetting.call(this, t, n);
-            }
-          }
+          if (!D(this.elements.settings.panels.captions)) return;
+          var e = "captions",
+              t = this.elements.settings.panels.captions.querySelector('[role="menu"]'),
+              i = Be.getTracks.call(this),
+              s = Boolean(i.length);
+          if (Re.toggleMenuButton.call(this, e, s), Z(t), Re.checkMenu.call(this), !s) return;
+          var n = i.map(function (e, i) {
+            return {
+              value: i,
+              checked: _this12.captions.toggled && _this12.currentTrack === i,
+              title: Be.getLabel.call(_this12, e),
+              badge: e.language && Re.createBadge.call(_this12, e.language.toUpperCase()),
+              list: t,
+              type: "language"
+            };
+          });
+          n.unshift({
+            value: -1,
+            checked: !this.captions.toggled,
+            title: Oe.get("disabled", this.config),
+            list: t,
+            type: "language"
+          }), n.forEach(Re.createMenuItem.bind(this)), Re.updateSetting.call(this, e, t);
         },
         setSpeedMenu: function setSpeedMenu() {
-          var e = this;
+          var _this13 = this;
 
-          if ($(this.elements.settings.panels.speed)) {
-            var t = "speed",
-                n = this.elements.settings.panels.speed.querySelector('[role="menu"]');
-            this.options.speed = this.options.speed.filter(function (t) {
-              return t >= e.minimumSpeed && t <= e.maximumSpeed;
+          if (!D(this.elements.settings.panels.speed)) return;
+          var e = "speed",
+              t = this.elements.settings.panels.speed.querySelector('[role="menu"]');
+          this.options.speed = this.options.speed.filter(function (e) {
+            return e >= _this13.minimumSpeed && e <= _this13.maximumSpeed;
+          });
+          var i = !V(this.options.speed) && this.options.speed.length > 1;
+          Re.toggleMenuButton.call(this, e, i), Z(t), Re.checkMenu.call(this), i && (this.options.speed.forEach(function (i) {
+            Re.createMenuItem.call(_this13, {
+              value: i,
+              list: t,
+              type: e,
+              title: Re.getLabel.call(_this13, "speed", i)
             });
-            var i = !te(this.options.speed) && this.options.speed.length > 1;
-            et.toggleMenuButton.call(this, t, i), he(n), et.checkMenu.call(this), i && (this.options.speed.forEach(function (i) {
-              et.createMenuItem.call(e, {
-                value: i,
-                list: n,
-                type: t,
-                title: et.getLabel.call(e, "speed", i)
-              });
-            }), et.updateSetting.call(this, t, n));
-          }
+          }), Re.updateSetting.call(this, e, t));
         },
         checkMenu: function checkMenu() {
           var e = this.elements.settings.buttons,
-              t = !te(e) && Object.values(e).some(function (e) {
+              t = !V(e) && Object.values(e).some(function (e) {
             return !e.hidden;
           });
-          fe(this.elements.settings.menu, !t);
+          ie(this.elements.settings.menu, !t);
         },
         focusFirstMenuItem: function focusFirstMenuItem(e) {
-          var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-
-          if (!this.elements.settings.popup.hidden) {
-            var n = e;
-            $(n) || (n = Object.values(this.elements.settings.panels).find(function (e) {
-              return !e.hidden;
-            }));
-            var i = n.querySelector('[role^="menuitem"]');
-            ke.call(this, i, t);
-          }
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+          if (this.elements.settings.popup.hidden) return;
+          var i = e;
+          D(i) || (i = Object.values(this.elements.settings.panels).find(function (e) {
+            return !e.hidden;
+          }));
+          var s = i.querySelector('[role^="menuitem"]');
+          re.call(this, s, t);
         },
         toggleMenu: function toggleMenu(e) {
           var t = this.elements.settings.popup,
-              n = this.elements.buttons.settings;
+              i = this.elements.buttons.settings;
+          if (!D(t) || !D(i)) return;
+          var s = t.hidden;
+          var n = s;
+          if (_(e)) n = e;else if (H(e) && 27 === e.which) n = !1;else if (F(e)) {
+            var _s7 = O(e.composedPath) ? e.composedPath()[0] : e.target,
+                _a3 = t.contains(_s7);
 
-          if ($(t) && $(n)) {
-            var i = t.hidden,
-                a = i;
-            if (K(e)) a = e;else if (G(e) && 27 === e.which) a = !1;else if (J(e)) {
-              var r = Y(e.composedPath) ? e.composedPath()[0] : e.target,
-                  o = t.contains(r);
-              if (o || !o && e.target !== n && a) return;
-            }
-            n.setAttribute("aria-expanded", a), fe(t, !a), ge(this.elements.container, this.config.classNames.menu.open, a), a && G(e) ? et.focusFirstMenuItem.call(this, null, !0) : a || i || ke.call(this, n, G(e));
+            if (_a3 || !_a3 && e.target !== i && n) return;
           }
+          i.setAttribute("aria-expanded", n), ie(t, !n), se(this.elements.container, this.config.classNames.menu.open, n), n && H(e) ? Re.focusFirstMenuItem.call(this, null, !0) : n || s || re.call(this, i, H(e));
         },
         getMenuSize: function getMenuSize(e) {
           var t = e.cloneNode(!0);
           t.style.position = "absolute", t.style.opacity = 0, t.removeAttribute("hidden"), e.parentNode.appendChild(t);
-          var n = t.scrollWidth,
-              i = t.scrollHeight;
-          return de(t), {
-            width: n,
-            height: i
+          var i = t.scrollWidth,
+              s = t.scrollHeight;
+          return G(t), {
+            width: i,
+            height: s
           };
         },
         showMenuPanel: function showMenuPanel() {
-          var e = this,
-              t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "",
-              n = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-              i = this.elements.container.querySelector("#plyr-settings-".concat(this.id, "-").concat(t));
+          var _this14 = this;
 
-          if ($(i)) {
-            var a = i.parentNode,
-                r = Array.from(a.children).find(function (e) {
-              return !e.hidden;
-            });
+          var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+          var i = this.elements.container.querySelector("#plyr-settings-".concat(this.id, "-").concat(e));
+          if (!D(i)) return;
+          var s = i.parentNode,
+              n = Array.from(s.children).find(function (e) {
+            return !e.hidden;
+          });
 
-            if (Ae.transitions && !Ae.reducedMotion) {
-              a.style.width = "".concat(r.scrollWidth, "px"), a.style.height = "".concat(r.scrollHeight, "px");
+          if (he.transitions && !he.reducedMotion) {
+            s.style.width = n.scrollWidth + "px", s.style.height = n.scrollHeight + "px";
 
-              var o = et.getMenuSize.call(this, i),
-                  s = function t(n) {
-                n.target === a && ["width", "height"].includes(n.propertyName) && (a.style.width = "", a.style.height = "", Me.call(e, a, ne, t));
-              };
+            var _e11 = Re.getMenuSize.call(this, i),
+                _t6 = function _t6(e) {
+              e.target === s && ["width", "height"].includes(e.propertyName) && (s.style.width = "", s.style.height = "", pe.call(_this14, s, B, _t6));
+            };
 
-              Ee.call(this, a, ne, s), a.style.width = "".concat(o.width, "px"), a.style.height = "".concat(o.height, "px");
-            }
-
-            fe(r, !0), fe(i, !1), et.focusFirstMenuItem.call(this, i, n);
+            me.call(this, s, B, _t6), s.style.width = _e11.width + "px", s.style.height = _e11.height + "px";
           }
+
+          ie(n, !0), ie(i, !1), Re.focusFirstMenuItem.call(this, i, t);
         },
         setDownloadUrl: function setDownloadUrl() {
           var e = this.elements.buttons.download;
-          $(e) && e.setAttribute("href", this.download);
+          D(e) && e.setAttribute("href", this.download);
         },
         create: function create(e) {
-          var t = this,
-              n = et.bindMenuItemShortcuts,
-              i = et.createButton,
-              a = et.createProgress,
-              r = et.createRange,
-              o = et.createTime,
-              s = et.setQualityMenu,
-              l = et.setSpeedMenu,
-              c = et.showMenuPanel;
-          this.elements.controls = null, Q(this.config.controls) && this.config.controls.includes("play-large") && this.elements.container.appendChild(i.call(this, "play-large"));
-          var u = ce("div", me(this.config.selectors.controls.wrapper));
-          this.elements.controls = u;
-          var d = {
+          var _this15 = this;
+
+          var t = Re.bindMenuItemShortcuts,
+              i = Re.createButton,
+              s = Re.createProgress,
+              n = Re.createRange,
+              a = Re.createTime,
+              l = Re.setQualityMenu,
+              o = Re.setSpeedMenu,
+              r = Re.showMenuPanel;
+          this.elements.controls = null, j(this.config.controls) && this.config.controls.includes("play-large") && this.elements.container.appendChild(i.call(this, "play-large"));
+          var c = X("div", te(this.config.selectors.controls.wrapper));
+          this.elements.controls = c;
+          var h = {
             class: "plyr__controls__item"
           };
-          return He(Q(this.config.controls) ? this.config.controls : []).forEach(function (s) {
-            if ("restart" === s && u.appendChild(i.call(t, "restart", d)), "rewind" === s && u.appendChild(i.call(t, "rewind", d)), "play" === s && u.appendChild(i.call(t, "play", d)), "fast-forward" === s && u.appendChild(i.call(t, "fast-forward", d)), "progress" === s) {
-              var l = ce("div", {
-                class: "".concat(d.class, " plyr__progress__container")
+          return we(j(this.config.controls) ? this.config.controls : []).forEach(function (l) {
+            if ("restart" === l && c.appendChild(i.call(_this15, "restart", h)), "rewind" === l && c.appendChild(i.call(_this15, "rewind", h)), "play" === l && c.appendChild(i.call(_this15, "play", h)), "fast-forward" === l && c.appendChild(i.call(_this15, "fast-forward", h)), "progress" === l) {
+              var _t7 = X("div", {
+                class: h.class + " plyr__progress__container"
               }),
-                  h = ce("div", me(t.config.selectors.progress));
+                  _i6 = X("div", te(_this15.config.selectors.progress));
 
-              if (h.appendChild(r.call(t, "seek", {
-                id: "plyr-seek-".concat(e.id)
-              })), h.appendChild(a.call(t, "buffer")), t.config.tooltips.seek) {
-                var p = ce("span", {
-                  class: t.config.classNames.tooltip
+              if (_i6.appendChild(n.call(_this15, "seek", {
+                id: "plyr-seek-" + e.id
+              })), _i6.appendChild(s.call(_this15, "buffer")), _this15.config.tooltips.seek) {
+                var _e12 = X("span", {
+                  class: _this15.config.classNames.tooltip
                 }, "00:00");
-                h.appendChild(p), t.elements.display.seekTooltip = p;
+
+                _i6.appendChild(_e12), _this15.elements.display.seekTooltip = _e12;
               }
 
-              t.elements.progress = h, l.appendChild(t.elements.progress), u.appendChild(l);
+              _this15.elements.progress = _i6, _t7.appendChild(_this15.elements.progress), c.appendChild(_t7);
             }
 
-            if ("current-time" === s && u.appendChild(o.call(t, "currentTime", d)), "duration" === s && u.appendChild(o.call(t, "duration", d)), "mute" === s || "volume" === s) {
-              var m = t.elements.volume;
+            if ("current-time" === l && c.appendChild(a.call(_this15, "currentTime", h)), "duration" === l && c.appendChild(a.call(_this15, "duration", h)), "mute" === l || "volume" === l) {
+              var _t8 = _this15.elements.volume;
 
-              if ($(m) && u.contains(m) || (m = ce("div", oe({}, d, {
-                class: "".concat(d.class, " plyr__volume").trim()
-              })), t.elements.volume = m, u.appendChild(m)), "mute" === s && m.appendChild(i.call(t, "mute")), "volume" === s && !ae.isIos) {
-                var f = {
+              if (D(_t8) && c.contains(_t8) || (_t8 = X("div", K({}, h, {
+                class: (h.class + " plyr__volume").trim()
+              })), _this15.elements.volume = _t8, c.appendChild(_t8)), "mute" === l && _t8.appendChild(i.call(_this15, "mute")), "volume" === l && !W.isIos) {
+                var _i7 = {
                   max: 1,
                   step: .05,
-                  value: t.config.volume
+                  value: _this15.config.volume
                 };
-                m.appendChild(r.call(t, "volume", oe(f, {
-                  id: "plyr-volume-".concat(e.id)
+
+                _t8.appendChild(n.call(_this15, "volume", K(_i7, {
+                  id: "plyr-volume-" + e.id
                 })));
               }
             }
 
-            if ("captions" === s && u.appendChild(i.call(t, "captions", d)), "settings" === s && !te(t.config.settings)) {
-              var g = ce("div", oe({}, d, {
-                class: "".concat(d.class, " plyr__menu").trim(),
+            if ("captions" === l && c.appendChild(i.call(_this15, "captions", h)), "settings" === l && !V(_this15.config.settings)) {
+              var _s8 = X("div", K({}, h, {
+                class: (h.class + " plyr__menu").trim(),
                 hidden: ""
               }));
-              g.appendChild(i.call(t, "settings", {
+
+              _s8.appendChild(i.call(_this15, "settings", {
                 "aria-haspopup": !0,
-                "aria-controls": "plyr-settings-".concat(e.id),
+                "aria-controls": "plyr-settings-" + e.id,
                 "aria-expanded": !1
               }));
-              var y = ce("div", {
+
+              var _n4 = X("div", {
                 class: "plyr__menu__container",
-                id: "plyr-settings-".concat(e.id),
+                id: "plyr-settings-" + e.id,
                 hidden: ""
               }),
-                  b = ce("div"),
-                  v = ce("div", {
+                  _a4 = X("div"),
+                  _l3 = X("div", {
                 id: "plyr-settings-".concat(e.id, "-home")
               }),
-                  w = ce("div", {
+                  _o2 = X("div", {
                 role: "menu"
               });
-              v.appendChild(w), b.appendChild(v), t.elements.settings.panels.home = v, t.config.settings.forEach(function (i) {
-                var a = ce("button", oe(me(t.config.selectors.buttons.settings), {
+
+              _l3.appendChild(_o2), _a4.appendChild(_l3), _this15.elements.settings.panels.home = _l3, _this15.config.settings.forEach(function (i) {
+                var s = X("button", K(te(_this15.config.selectors.buttons.settings), {
                   type: "button",
-                  class: "".concat(t.config.classNames.control, " ").concat(t.config.classNames.control, "--forward"),
+                  class: "".concat(_this15.config.classNames.control, " ").concat(_this15.config.classNames.control, "--forward"),
                   role: "menuitem",
                   "aria-haspopup": !0,
                   hidden: ""
                 }));
-                n.call(t, a, i), Ee.call(t, a, "click", function () {
-                  c.call(t, i, !1);
+                t.call(_this15, s, i), me.call(_this15, s, "click", function () {
+                  r.call(_this15, i, !1);
                 });
-                var r = ce("span", null, Ke(i, t.config)),
-                    o = ce("span", {
-                  class: t.config.classNames.menu.value
+                var n = X("span", null, Oe.get(i, _this15.config)),
+                    l = X("span", {
+                  class: _this15.config.classNames.menu.value
                 });
-                o.innerHTML = e[i], r.appendChild(o), a.appendChild(r), w.appendChild(a);
-                var s = ce("div", {
+                l.innerHTML = e[i], n.appendChild(l), s.appendChild(n), _o2.appendChild(s);
+                var c = X("div", {
                   id: "plyr-settings-".concat(e.id, "-").concat(i),
                   hidden: ""
                 }),
-                    l = ce("button", {
+                    h = X("button", {
                   type: "button",
-                  class: "".concat(t.config.classNames.control, " ").concat(t.config.classNames.control, "--back")
+                  class: "".concat(_this15.config.classNames.control, " ").concat(_this15.config.classNames.control, "--back")
                 });
-                l.appendChild(ce("span", {
+                h.appendChild(X("span", {
                   "aria-hidden": !0
-                }, Ke(i, t.config))), l.appendChild(ce("span", {
-                  class: t.config.classNames.hidden
-                }, Ke("menuBack", t.config))), Ee.call(t, s, "keydown", function (e) {
-                  37 === e.which && (e.preventDefault(), e.stopPropagation(), c.call(t, "home", !0));
-                }, !1), Ee.call(t, l, "click", function () {
-                  c.call(t, "home", !1);
-                }), s.appendChild(l), s.appendChild(ce("div", {
+                }, Oe.get(i, _this15.config))), h.appendChild(X("span", {
+                  class: _this15.config.classNames.hidden
+                }, Oe.get("menuBack", _this15.config))), me.call(_this15, c, "keydown", function (e) {
+                  37 === e.which && (e.preventDefault(), e.stopPropagation(), r.call(_this15, "home", !0));
+                }, !1), me.call(_this15, h, "click", function () {
+                  r.call(_this15, "home", !1);
+                }), c.appendChild(h), c.appendChild(X("div", {
                   role: "menu"
-                })), b.appendChild(s), t.elements.settings.buttons[i] = a, t.elements.settings.panels[i] = s;
-              }), y.appendChild(b), g.appendChild(y), u.appendChild(g), t.elements.settings.popup = y, t.elements.settings.menu = g;
+                })), _a4.appendChild(c), _this15.elements.settings.buttons[i] = s, _this15.elements.settings.panels[i] = c;
+              }), _n4.appendChild(_a4), _s8.appendChild(_n4), c.appendChild(_s8), _this15.elements.settings.popup = _n4, _this15.elements.settings.menu = _s8;
             }
 
-            if ("pip" === s && Ae.pip && u.appendChild(i.call(t, "pip", d)), "airplay" === s && Ae.airplay && u.appendChild(i.call(t, "airplay", d)), "download" === s) {
-              var k = oe({}, d, {
+            if ("pip" === l && he.pip && c.appendChild(i.call(_this15, "pip", h)), "airplay" === l && he.airplay && c.appendChild(i.call(_this15, "airplay", h)), "download" === l) {
+              var _e13 = K({}, h, {
                 element: "a",
-                href: t.download,
+                href: _this15.download,
                 target: "_blank"
               });
-              t.isHTML5 && (k.download = "");
-              var T = t.config.urls.download;
-              !ee(T) && t.isEmbed && oe(k, {
-                icon: "logo-".concat(t.provider),
-                label: t.provider
-              }), u.appendChild(i.call(t, "download", k));
+
+              _this15.isHTML5 && (_e13.download = "");
+              var _t9 = _this15.config.urls.download;
+              !$(_t9) && _this15.isEmbed && K(_e13, {
+                icon: "logo-" + _this15.provider,
+                label: _this15.provider
+              }), c.appendChild(i.call(_this15, "download", _e13));
             }
 
-            "fullscreen" === s && u.appendChild(i.call(t, "fullscreen", d));
-          }), this.isHTML5 && s.call(this, Fe.getQualityOptions.call(this)), l.call(this), u;
+            "fullscreen" === l && c.appendChild(i.call(_this15, "fullscreen", h));
+          }), this.isHTML5 && l.call(this, xe.getQualityOptions.call(this)), o.call(this), c;
         },
         inject: function inject() {
-          var e = this;
+          var _this16 = this;
 
           if (this.config.loadSprite) {
-            var t = et.getIconUrl.call(this);
-            t.cors && Xe(t.url, "sprite-plyr");
+            var _e14 = Re.getIconUrl.call(this);
+
+            _e14.cors && De(_e14.url, "sprite-plyr");
           }
 
           this.id = Math.floor(1e4 * Math.random());
-          var n = null;
+          var e = null;
           this.elements.controls = null;
-          var i,
-              a,
-              r = {
+          var t = {
             id: this.id,
             seektime: this.config.seekTime,
             title: this.config.title
-          },
-              o = !0;
+          };
+          var i,
+              s = !0;
 
-          if (Y(this.config.controls) && (this.config.controls = this.config.controls.call(this, r)), this.config.controls || (this.config.controls = []), $(this.config.controls) || z(this.config.controls) ? n = this.config.controls : (n = et.create.call(this, {
+          if (O(this.config.controls) && (this.config.controls = this.config.controls.call(this, t)), this.config.controls || (this.config.controls = []), D(this.config.controls) || L(this.config.controls) ? e = this.config.controls : (e = Re.create.call(this, {
             id: this.id,
             seektime: this.config.seekTime,
             speed: this.speed,
             quality: this.quality,
-            captions: it.getLabel.call(this)
-          }), o = !1), o && z(this.config.controls) && (i = n, Object.entries(r).forEach(function (e) {
-            var t = l(e, 2),
-                n = t[0],
-                a = t[1];
-            i = Ve(i, "{".concat(n, "}"), a);
-          }), n = i), z(this.config.selectors.controls.container) && (a = document.querySelector(this.config.selectors.controls.container)), $(a) || (a = this.elements.container), a[$(n) ? "insertAdjacentElement" : "insertAdjacentHTML"]("afterbegin", n), $(this.elements.controls) || et.findElements.call(this), !te(this.elements.buttons)) {
-            var s = function s(t) {
-              var n = e.config.classNames.controlPressed;
-              Object.defineProperty(t, "pressed", {
+            captions: Be.getLabel.call(this)
+          }), s = !1), s && L(this.config.controls) && (e = function (e) {
+            var i = e;
+            return Object.entries(t).forEach(function (_ref10) {
+              var _ref11 = _slicedToArray(_ref10, 2),
+                  e = _ref11[0],
+                  t = _ref11[1];
+
+              i = Ne(i, "{".concat(e, "}"), t);
+            }), i;
+          }(e)), L(this.config.selectors.controls.container) && (i = document.querySelector(this.config.selectors.controls.container)), D(i) || (i = this.elements.container), i[D(e) ? "insertAdjacentElement" : "insertAdjacentHTML"]("afterbegin", e), D(this.elements.controls) || Re.findElements.call(this), !V(this.elements.buttons)) {
+            var _e15 = function _e15(e) {
+              var t = _this16.config.classNames.controlPressed;
+              Object.defineProperty(e, "pressed", {
                 enumerable: !0,
                 get: function get() {
-                  return ye(t, n);
+                  return ne(e, t);
                 },
                 set: function set() {
-                  var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-                  ge(t, n, e);
+                  var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
+                  se(e, t, i);
                 }
               });
             };
 
-            Object.values(this.elements.buttons).filter(Boolean).forEach(function (e) {
-              Q(e) || X(e) ? Array.from(e).filter(Boolean).forEach(s) : s(e);
+            Object.values(this.elements.buttons).filter(Boolean).forEach(function (t) {
+              j(t) || q(t) ? Array.from(t).filter(Boolean).forEach(_e15) : _e15(t);
             });
           }
 
-          if (ae.isEdge && ie(a), this.config.tooltips.controls) {
-            var c = this.config,
-                u = c.classNames,
-                d = c.selectors,
-                h = "".concat(d.controls.wrapper, " ").concat(d.labels, " .").concat(u.hidden),
-                p = ve.call(this, h);
-            Array.from(p).forEach(function (t) {
-              ge(t, e.config.classNames.hidden, !1), ge(t, e.config.classNames.tooltip, !0);
+          if (W.isEdge && U(i), this.config.tooltips.controls) {
+            var _this$config = this.config,
+                _e16 = _this$config.classNames,
+                _t10 = _this$config.selectors,
+                _i8 = "".concat(_t10.controls.wrapper, " ").concat(_t10.labels, " .").concat(_e16.hidden),
+                _s9 = le.call(this, _i8);
+
+            Array.from(_s9).forEach(function (e) {
+              se(e, _this16.config.classNames.hidden, !1), se(e, _this16.config.classNames.tooltip, !0);
             });
           }
         }
       };
 
-      function tt(e) {
-        var t = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1],
-            n = e;
+      function $e(e) {
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !0;
+        var i = e;
 
         if (t) {
-          var i = document.createElement("a");
-          i.href = n, n = i.href;
+          var _e17 = document.createElement("a");
+
+          _e17.href = i, i = _e17.href;
         }
 
         try {
-          return new URL(n);
+          return new URL(i);
         } catch (e) {
           return null;
         }
       }
 
-      function nt(e) {
+      function Ve(e) {
         var t = new URLSearchParams();
-        return U(e) && Object.entries(e).forEach(function (e) {
-          var n = l(e, 2),
-              i = n[0],
-              a = n[1];
-          t.set(i, a);
+        return N(e) && Object.entries(e).forEach(function (_ref12) {
+          var _ref13 = _slicedToArray(_ref12, 2),
+              e = _ref13[0],
+              i = _ref13[1];
+
+          t.set(e, i);
         }), t;
       }
 
-      var it = {
+      var Be = {
         setup: function setup() {
-          if (this.supported.ui) if (!this.isVideo || this.isYouTube || this.isHTML5 && !Ae.textTracks) Q(this.config.controls) && this.config.controls.includes("settings") && this.config.settings.includes("captions") && et.setCaptionsMenu.call(this);else {
-            if ($(this.elements.captions) || (this.elements.captions = ce("div", me(this.config.selectors.captions)), function (e, t) {
-              $(e) && $(t) && t.parentNode.insertBefore(e, t.nextSibling);
-            }(this.elements.captions, this.elements.wrapper)), ae.isIE && window.URL) {
-              var e = this.media.querySelectorAll("track");
-              Array.from(e).forEach(function (e) {
-                var t = e.getAttribute("src"),
-                    n = tt(t);
-                null !== n && n.hostname !== window.location.href.hostname && ["http:", "https:"].includes(n.protocol) && Qe(t, "blob").then(function (t) {
-                  e.setAttribute("src", window.URL.createObjectURL(t));
-                }).catch(function () {
-                  de(e);
-                });
+          var _i9, _i10, _this$config$captions;
+
+          if (!this.supported.ui) return;
+          if (!this.isVideo || this.isYouTube || this.isHTML5 && !he.textTracks) return void (j(this.config.controls) && this.config.controls.includes("settings") && this.config.settings.includes("captions") && Re.setCaptionsMenu.call(this));
+          var e, t;
+
+          if (D(this.elements.captions) || (this.elements.captions = X("div", te(this.config.selectors.captions)), e = this.elements.captions, t = this.elements.wrapper, D(e) && D(t) && t.parentNode.insertBefore(e, t.nextSibling)), W.isIE && window.URL) {
+            var _e18 = this.media.querySelectorAll("track");
+
+            Array.from(_e18).forEach(function (e) {
+              var t = e.getAttribute("src"),
+                  i = $e(t);
+              null !== i && i.hostname !== window.location.href.hostname && ["http:", "https:"].includes(i.protocol) && qe(t, "blob").then(function (t) {
+                e.setAttribute("src", window.URL.createObjectURL(t));
+              }).catch(function () {
+                G(e);
               });
-            }
-
-            var t = He((navigator.languages || [navigator.language || navigator.userLanguage || "en"]).map(function (e) {
-              return e.split("-")[0];
-            })),
-                n = (this.storage.get("language") || this.config.captions.language || "auto").toLowerCase();
-            "auto" === n && (n = l(t, 1)[0]);
-            var i = this.storage.get("captions");
-
-            if (K(i) || (i = this.config.captions.active), Object.assign(this.captions, {
-              toggled: !1,
-              active: i,
-              language: n,
-              languages: t
-            }), this.isHTML5) {
-              var a = this.config.captions.update ? "addtrack removetrack" : "removetrack";
-              Ee.call(this, this.media.textTracks, a, it.update.bind(this));
-            }
-
-            setTimeout(it.update.bind(this), 0);
+            });
           }
+
+          var i = we((navigator.languages || [navigator.language || navigator.userLanguage || "en"]).map(function (e) {
+            return e.split("-")[0];
+          }));
+          var s = (this.storage.get("language") || this.config.captions.language || "auto").toLowerCase();
+          "auto" === s && (_i9 = i, _i10 = _slicedToArray(_i9, 1), s = _i10[0], _i9);
+          var n = this.storage.get("captions");
+
+          if (_(n) || (_this$config$captions = this.config.captions, n = _this$config$captions.active, _this$config$captions), Object.assign(this.captions, {
+            toggled: !1,
+            active: n,
+            language: s,
+            languages: i
+          }), this.isHTML5) {
+            var _e19 = this.config.captions.update ? "addtrack removetrack" : "removetrack";
+
+            me.call(this, this.media.textTracks, _e19, Be.update.bind(this));
+          }
+
+          setTimeout(Be.update.bind(this), 0);
         },
         update: function update() {
-          var e = this,
-              t = it.getTracks.call(this, !0),
-              n = this.captions,
-              i = n.active,
-              a = n.language,
-              r = n.meta,
-              o = n.currentTrackNode,
-              s = Boolean(t.find(function (e) {
-            return e.language === a;
+          var _this17 = this;
+
+          var e = Be.getTracks.call(this, !0),
+              _this$captions = this.captions,
+              t = _this$captions.active,
+              i = _this$captions.language,
+              s = _this$captions.meta,
+              n = _this$captions.currentTrackNode,
+              a = Boolean(e.find(function (e) {
+            return e.language === i;
           }));
-          this.isHTML5 && this.isVideo && t.filter(function (e) {
-            return !r.get(e);
-          }).forEach(function (t) {
-            e.debug.log("Track added", t), r.set(t, {
-              default: "showing" === t.mode
-            }), "showing" === t.mode && (t.mode = "hidden"), Ee.call(e, t, "cuechange", function () {
-              return it.updateCues.call(e);
+          this.isHTML5 && this.isVideo && e.filter(function (e) {
+            return !s.get(e);
+          }).forEach(function (e) {
+            _this17.debug.log("Track added", e), s.set(e, {
+              default: "showing" === e.mode
+            }), "showing" === e.mode && (e.mode = "hidden"), me.call(_this17, e, "cuechange", function () {
+              return Be.updateCues.call(_this17);
             });
-          }), (s && this.language !== a || !t.includes(o)) && (it.setLanguage.call(this, a), it.toggle.call(this, i && s)), ge(this.elements.container, this.config.classNames.captions.enabled, !te(t)), Q(this.config.controls) && this.config.controls.includes("settings") && this.config.settings.includes("captions") && et.setCaptionsMenu.call(this);
+          }), (a && this.language !== i || !e.includes(n)) && (Be.setLanguage.call(this, i), Be.toggle.call(this, t && a)), se(this.elements.container, this.config.classNames.captions.enabled, !V(e)), j(this.config.controls) && this.config.controls.includes("settings") && this.config.settings.includes("captions") && Re.setCaptionsMenu.call(this);
         },
         toggle: function toggle(e) {
-          var t = this,
-              n = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
+          var _this18 = this;
 
-          if (this.supported.ui) {
-            var i = this.captions.toggled,
-                a = this.config.classNames.captions.active,
-                r = B(e) ? !i : e;
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !0;
+          if (!this.supported.ui) return;
+          var i = this.captions.toggled,
+              s = this.config.classNames.captions.active,
+              n = M(e) ? !i : e;
 
-            if (r !== i) {
-              if (n || (this.captions.active = r, this.storage.set({
-                captions: r
-              })), !this.language && r && !n) {
-                var o = it.getTracks.call(this),
-                    s = it.findTrack.call(this, [this.captions.language].concat(c(this.captions.languages)), !0);
-                return this.captions.language = s.language, void it.set.call(this, o.indexOf(s));
-              }
+          if (n !== i) {
+            if (t || (this.captions.active = n, this.storage.set({
+              captions: n
+            })), !this.language && n && !t) {
+              var _e20 = Be.getTracks.call(this),
+                  _t11 = Be.findTrack.call(this, [this.captions.language].concat(_toConsumableArray(this.captions.languages)), !0);
 
-              this.elements.buttons.captions && (this.elements.buttons.captions.pressed = r), ge(this.elements.container, a, r), this.captions.toggled = r, et.updateSetting.call(this, "captions"), Ne.call(this, this.media, r ? "captionsenabled" : "captionsdisabled");
+              return this.captions.language = _t11.language, void Be.set.call(this, _e20.indexOf(_t11));
             }
 
-            setTimeout(function () {
-              r && t.captions.toggled && (t.captions.currentTrackNode.mode = "hidden");
-            });
+            this.elements.buttons.captions && (this.elements.buttons.captions.pressed = n), se(this.elements.container, s, n), this.captions.toggled = n, Re.updateSetting.call(this, "captions"), fe.call(this, this.media, n ? "captionsenabled" : "captionsdisabled");
           }
+
+          setTimeout(function () {
+            n && _this18.captions.toggled && (_this18.captions.currentTrackNode.mode = "hidden");
+          });
         },
         set: function set(e) {
-          var t = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1],
-              n = it.getTracks.call(this);
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !0;
+          var i = Be.getTracks.call(this);
           if (-1 !== e) {
-            if (W(e)) {
-              if (e in n) {
+            if (I(e)) {
+              if (e in i) {
                 if (this.captions.currentTrack !== e) {
                   this.captions.currentTrack = e;
-                  var i = n[e],
-                      a = i || {},
-                      r = a.language;
-                  this.captions.currentTrackNode = i, et.updateSetting.call(this, "captions"), t || (this.captions.language = r, this.storage.set({
-                    language: r
-                  })), this.isVimeo && this.embed.enableTextTrack(r), Ne.call(this, this.media, "languagechange");
+
+                  var _s10 = i[e],
+                      _ref14 = _s10 || {},
+                      _n5 = _ref14.language;
+
+                  this.captions.currentTrackNode = _s10, Re.updateSetting.call(this, "captions"), t || (this.captions.language = _n5, this.storage.set({
+                    language: _n5
+                  })), this.isVimeo && this.embed.enableTextTrack(_n5), fe.call(this, this.media, "languagechange");
                 }
 
-                it.toggle.call(this, !0, t), this.isHTML5 && this.isVideo && it.updateCues.call(this);
+                Be.toggle.call(this, !0, t), this.isHTML5 && this.isVideo && Be.updateCues.call(this);
               } else this.debug.warn("Track not found", e);
             } else this.debug.warn("Invalid caption argument", e);
-          } else it.toggle.call(this, !1, t);
+          } else Be.toggle.call(this, !1, t);
         },
         setLanguage: function setLanguage(e) {
-          var t = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
-
-          if (z(e)) {
-            var n = e.toLowerCase();
-            this.captions.language = n;
-            var i = it.getTracks.call(this),
-                a = it.findTrack.call(this, [n]);
-            it.set.call(this, i.indexOf(a), t);
-          } else this.debug.warn("Invalid language argument", e);
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !0;
+          if (!L(e)) return void this.debug.warn("Invalid language argument", e);
+          var i = e.toLowerCase();
+          this.captions.language = i;
+          var s = Be.getTracks.call(this),
+              n = Be.findTrack.call(this, [i]);
+          Be.set.call(this, s.indexOf(n), t);
         },
         getTracks: function getTracks() {
-          var e = this,
-              t = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
-              n = Array.from((this.media || {}).textTracks || []);
-          return n.filter(function (n) {
-            return !e.isHTML5 || t || e.captions.meta.has(n);
+          var _this19 = this;
+
+          var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
+          return Array.from((this.media || {}).textTracks || []).filter(function (t) {
+            return !_this19.isHTML5 || e || _this19.captions.meta.has(t);
           }).filter(function (e) {
             return ["captions", "subtitles"].includes(e.kind);
           });
         },
         findTrack: function findTrack(e) {
-          var t,
-              n = this,
-              i = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-              a = it.getTracks.call(this),
-              r = function r(e) {
-            return Number((n.captions.meta.get(e) || {}).default);
+          var _this20 = this;
+
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+
+          var i = Be.getTracks.call(this),
+              s = function s(e) {
+            return Number((_this20.captions.meta.get(e) || {}).default);
           },
-              o = Array.from(a).sort(function (e, t) {
-            return r(t) - r(e);
+              n = Array.from(i).sort(function (e, t) {
+            return s(t) - s(e);
           });
 
+          var a;
           return e.every(function (e) {
-            return !(t = o.find(function (t) {
+            return a = n.find(function (t) {
               return t.language === e;
-            }));
-          }), t || (i ? o[0] : void 0);
+            }), !a;
+          }), a || (t ? n[0] : void 0);
         },
         getCurrentTrack: function getCurrentTrack() {
-          return it.getTracks.call(this)[this.currentTrack];
+          return Be.getTracks.call(this)[this.currentTrack];
         },
         getLabel: function getLabel(e) {
           var t = e;
-          return !Z(t) && Ae.textTracks && this.captions.toggled && (t = it.getCurrentTrack.call(this)), Z(t) ? te(t.label) ? te(t.language) ? Ke("enabled", this.config) : e.language.toUpperCase() : t.label : Ke("disabled", this.config);
+          return !R(t) && he.textTracks && this.captions.toggled && (t = Be.getCurrentTrack.call(this)), R(t) ? V(t.label) ? V(t.language) ? Oe.get("enabled", this.config) : e.language.toUpperCase() : t.label : Oe.get("disabled", this.config);
         },
         updateCues: function updateCues(e) {
-          if (this.supported.ui) if ($(this.elements.captions)) {
-            if (B(e) || Array.isArray(e)) {
-              var t = e;
+          if (!this.supported.ui) return;
+          if (!D(this.elements.captions)) return void this.debug.warn("No captions element to render to");
+          if (!M(e) && !Array.isArray(e)) return void this.debug.warn("updateCues: Invalid input", e);
+          var t = e;
 
-              if (!t) {
-                var n = it.getCurrentTrack.call(this);
-                t = Array.from((n || {}).activeCues || []).map(function (e) {
-                  return e.getCueAsHTML();
-                }).map(We);
-              }
+          if (!t) {
+            var _e21 = Be.getCurrentTrack.call(this);
 
-              var i = t.map(function (e) {
-                return e.trim();
-              }).join("\n");
+            t = Array.from((_e21 || {}).activeCues || []).map(function (e) {
+              return e.getCueAsHTML();
+            }).map(Le);
+          }
 
-              if (i !== this.elements.captions.innerHTML) {
-                he(this.elements.captions);
-                var a = ce("span", me(this.config.selectors.caption));
-                a.innerHTML = i, this.elements.captions.appendChild(a), Ne.call(this, this.media, "cuechange");
-              }
-            } else this.debug.warn("updateCues: Invalid input", e);
-          } else this.debug.warn("No captions element to render to");
+          var i = t.map(function (e) {
+            return e.trim();
+          }).join("\n");
+
+          if (i !== this.elements.captions.innerHTML) {
+            Z(this.elements.captions);
+
+            var _e22 = X("span", te(this.config.selectors.caption));
+
+            _e22.innerHTML = i, this.elements.captions.appendChild(_e22), fe.call(this, this.media, "cuechange");
+          }
         }
       },
-          at = {
+          Ue = {
         enabled: !0,
         title: "",
         debug: !1,
@@ -1956,7 +1966,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         disableContextMenu: !0,
         loadSprite: !0,
         iconPrefix: "plyr",
-        iconUrl: "https://cdn.plyr.io/3.6.4/plyr.svg",
+        iconUrl: "https://cdn.plyr.io/3.6.7/plyr.svg",
         blankVideo: "https://cdn.plyr.io/static/blank.mp4",
         quality: {
           default: 576,
@@ -2209,132 +2219,154 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           noCookie: !1
         }
       },
-          rt = "picture-in-picture",
-          ot = {
+          We = "picture-in-picture",
+          ze = {
         html5: "html5",
         youtube: "youtube",
         vimeo: "vimeo"
       },
-          st = function st() {},
-          lt = function () {
-        function e() {
-          var t = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-          n(this, e), this.enabled = window.console && t, this.enabled && this.log("Debugging enabled");
+          Ke = function Ke() {};
+
+      var Ye = /*#__PURE__*/function () {
+        function Ye() {
+          var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
+
+          _classCallCheck(this, Ye);
+
+          this.enabled = window.console && e, this.enabled && this.log("Debugging enabled");
         }
 
-        return a(e, [{
+        _createClass(Ye, [{
           key: "log",
           get: function get() {
-            return this.enabled ? Function.prototype.bind.call(console.log, console) : st;
+            return this.enabled ? Function.prototype.bind.call(console.log, console) : Ke;
           }
         }, {
           key: "warn",
           get: function get() {
-            return this.enabled ? Function.prototype.bind.call(console.warn, console) : st;
+            return this.enabled ? Function.prototype.bind.call(console.warn, console) : Ke;
           }
         }, {
           key: "error",
           get: function get() {
-            return this.enabled ? Function.prototype.bind.call(console.error, console) : st;
+            return this.enabled ? Function.prototype.bind.call(console.error, console) : Ke;
           }
-        }]), e;
-      }(),
-          ct = function () {
-        function e(t) {
-          var i = this;
-          n(this, e), r(this, "onChange", function () {
-            if (i.enabled) {
-              var e = i.player.elements.buttons.fullscreen;
-              $(e) && (e.pressed = i.active);
-              var t = i.target === i.player.media ? i.target : i.player.elements.container;
-              Ne.call(i.player, t, i.active ? "enterfullscreen" : "exitfullscreen", !0);
-            }
-          }), r(this, "toggleFallback", function () {
-            var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+        }]);
 
-            if (e ? i.scrollPosition = {
+        return Ye;
+      }();
+
+      var Qe = /*#__PURE__*/function () {
+        function Qe(t) {
+          var _this21 = this;
+
+          _classCallCheck(this, Qe);
+
+          e(this, "onChange", function () {
+            if (!_this21.enabled) return;
+            var e = _this21.player.elements.buttons.fullscreen;
+            D(e) && (e.pressed = _this21.active);
+            var t = _this21.target === _this21.player.media ? _this21.target : _this21.player.elements.container;
+            fe.call(_this21.player, t, _this21.active ? "enterfullscreen" : "exitfullscreen", !0);
+          }), e(this, "toggleFallback", function () {
+            var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
+
+            if (e ? _this21.scrollPosition = {
               x: window.scrollX || 0,
               y: window.scrollY || 0
-            } : window.scrollTo(i.scrollPosition.x, i.scrollPosition.y), document.body.style.overflow = e ? "hidden" : "", ge(i.target, i.player.config.classNames.fullscreen.fallback, e), ae.isIos) {
-              var t = document.head.querySelector('meta[name="viewport"]'),
-                  n = "viewport-fit=cover";
-              t || (t = document.createElement("meta")).setAttribute("name", "viewport");
-              var a = z(t.content) && t.content.includes(n);
-              e ? (i.cleanupViewport = !a, a || (t.content += ",".concat(n))) : i.cleanupViewport && (t.content = t.content.split(",").filter(function (e) {
-                return e.trim() !== n;
+            } : window.scrollTo(_this21.scrollPosition.x, _this21.scrollPosition.y), document.body.style.overflow = e ? "hidden" : "", se(_this21.target, _this21.player.config.classNames.fullscreen.fallback, e), W.isIos) {
+              var _t12 = document.head.querySelector('meta[name="viewport"]');
+
+              var _i11 = "viewport-fit=cover";
+              _t12 || (_t12 = document.createElement("meta"), _t12.setAttribute("name", "viewport"));
+
+              var _s11 = L(_t12.content) && _t12.content.includes(_i11);
+
+              e ? (_this21.cleanupViewport = !_s11, _s11 || (_t12.content += "," + _i11)) : _this21.cleanupViewport && (_t12.content = _t12.content.split(",").filter(function (e) {
+                return e.trim() !== _i11;
               }).join(","));
             }
 
-            i.onChange();
-          }), r(this, "trapFocus", function (e) {
-            if (!ae.isIos && i.active && "Tab" === e.key && 9 === e.keyCode) {
-              var t = document.activeElement,
-                  n = ve.call(i.player, "a[href], button:not(:disabled), input:not(:disabled), [tabindex]"),
-                  a = l(n, 1)[0],
-                  r = n[n.length - 1];
-              t !== r || e.shiftKey ? t === a && e.shiftKey && (r.focus(), e.preventDefault()) : (a.focus(), e.preventDefault());
-            }
-          }), r(this, "update", function () {
-            var t;
-            i.enabled ? (t = i.forceFallback ? "Fallback (forced)" : e.native ? "Native" : "Fallback", i.player.debug.log("".concat(t, " fullscreen enabled"))) : i.player.debug.log("Fullscreen not supported and fallback disabled"), ge(i.player.elements.container, i.player.config.classNames.fullscreen.enabled, i.enabled);
-          }), r(this, "enter", function () {
-            i.enabled && (ae.isIos && i.player.config.fullscreen.iosNative ? i.player.isVimeo ? i.player.embed.requestFullscreen() : i.target.webkitEnterFullscreen() : !e.native || i.forceFallback ? i.toggleFallback(!0) : i.prefix ? te(i.prefix) || i.target["".concat(i.prefix, "Request").concat(i.property)]() : i.target.requestFullscreen({
+            _this21.onChange();
+          }), e(this, "trapFocus", function (e) {
+            if (W.isIos || !_this21.active || "Tab" !== e.key || 9 !== e.keyCode) return;
+
+            var t = document.activeElement,
+                i = le.call(_this21.player, "a[href], button:not(:disabled), input:not(:disabled), [tabindex]"),
+                _i12 = _slicedToArray(i, 1),
+                s = _i12[0],
+                n = i[i.length - 1];
+
+            t !== n || e.shiftKey ? t === s && e.shiftKey && (n.focus(), e.preventDefault()) : (s.focus(), e.preventDefault());
+          }), e(this, "update", function () {
+            if (_this21.enabled) {
+              var _e23;
+
+              _e23 = _this21.forceFallback ? "Fallback (forced)" : Qe.native ? "Native" : "Fallback", _this21.player.debug.log(_e23 + " fullscreen enabled");
+            } else _this21.player.debug.log("Fullscreen not supported and fallback disabled");
+
+            se(_this21.player.elements.container, _this21.player.config.classNames.fullscreen.enabled, _this21.enabled);
+          }), e(this, "enter", function () {
+            _this21.enabled && (W.isIos && _this21.player.config.fullscreen.iosNative ? _this21.player.isVimeo ? _this21.player.embed.requestFullscreen() : _this21.target.webkitEnterFullscreen() : !Qe.native || _this21.forceFallback ? _this21.toggleFallback(!0) : _this21.prefix ? V(_this21.prefix) || _this21.target["".concat(_this21.prefix, "Request").concat(_this21.property)]() : _this21.target.requestFullscreen({
               navigationUI: "hide"
             }));
-          }), r(this, "exit", function () {
-            if (i.enabled) if (ae.isIos && i.player.config.fullscreen.iosNative) i.target.webkitExitFullscreen(), Le(i.player.play());else if (!e.native || i.forceFallback) i.toggleFallback(!1);else if (i.prefix) {
-              if (!te(i.prefix)) {
-                var t = "moz" === i.prefix ? "Cancel" : "Exit";
-                document["".concat(i.prefix).concat(t).concat(i.property)]();
+          }), e(this, "exit", function () {
+            if (_this21.enabled) if (W.isIos && _this21.player.config.fullscreen.iosNative) _this21.target.webkitExitFullscreen(), ve(_this21.player.play());else if (!Qe.native || _this21.forceFallback) _this21.toggleFallback(!1);else if (_this21.prefix) {
+              if (!V(_this21.prefix)) {
+                var _e24 = "moz" === _this21.prefix ? "Cancel" : "Exit";
+
+                document["".concat(_this21.prefix).concat(_e24).concat(_this21.property)]();
               }
             } else (document.cancelFullScreen || document.exitFullscreen).call(document);
-          }), r(this, "toggle", function () {
-            i.active ? i.exit() : i.enter();
-          }), this.player = t, this.prefix = e.prefix, this.property = e.property, this.scrollPosition = {
+          }), e(this, "toggle", function () {
+            _this21.active ? _this21.exit() : _this21.enter();
+          }), this.player = t, this.prefix = Qe.prefix, this.property = Qe.property, this.scrollPosition = {
             x: 0,
             y: 0
           }, this.forceFallback = "force" === t.config.fullscreen.fallback, this.player.elements.fullscreen = t.config.fullscreen.container && function (e, t) {
-            return (Element.prototype.closest || function () {
+            var _Element2 = Element,
+                i = _Element2.prototype;
+            return (i.closest || function () {
               var e = this;
 
               do {
-                if (be.matches(e, t)) return e;
+                if (ae.matches(e, t)) return e;
                 e = e.parentElement || e.parentNode;
               } while (null !== e && 1 === e.nodeType);
 
               return null;
             }).call(e, t);
-          }(this.player.elements.container, t.config.fullscreen.container), Ee.call(this.player, document, "ms" === this.prefix ? "MSFullscreenChange" : "".concat(this.prefix, "fullscreenchange"), function () {
-            i.onChange();
-          }), Ee.call(this.player, this.player.elements.container, "dblclick", function (e) {
-            $(i.player.elements.controls) && i.player.elements.controls.contains(e.target) || i.player.listeners.proxy(e, i.toggle, "fullscreen");
-          }), Ee.call(this, this.player.elements.container, "keydown", function (e) {
-            return i.trapFocus(e);
+          }(this.player.elements.container, t.config.fullscreen.container), me.call(this.player, document, "ms" === this.prefix ? "MSFullscreenChange" : this.prefix + "fullscreenchange", function () {
+            _this21.onChange();
+          }), me.call(this.player, this.player.elements.container, "dblclick", function (e) {
+            D(_this21.player.elements.controls) && _this21.player.elements.controls.contains(e.target) || _this21.player.listeners.proxy(e, _this21.toggle, "fullscreen");
+          }), me.call(this, this.player.elements.container, "keydown", function (e) {
+            return _this21.trapFocus(e);
           }), this.update();
         }
 
-        return a(e, [{
+        _createClass(Qe, [{
           key: "usingNative",
           get: function get() {
-            return e.native && !this.forceFallback;
+            return Qe.native && !this.forceFallback;
           }
         }, {
           key: "enabled",
           get: function get() {
-            return (e.native || this.player.config.fullscreen.fallback) && this.player.config.fullscreen.enabled && this.player.supported.ui && this.player.isVideo;
+            return (Qe.native || this.player.config.fullscreen.fallback) && this.player.config.fullscreen.enabled && this.player.supported.ui && this.player.isVideo;
           }
         }, {
           key: "active",
           get: function get() {
             if (!this.enabled) return !1;
-            if (!e.native || this.forceFallback) return ye(this.target, this.player.config.classNames.fullscreen.fallback);
-            var t = this.prefix ? document["".concat(this.prefix).concat(this.property, "Element")] : document.fullscreenElement;
-            return t && t.shadowRoot ? t === this.target.getRootNode().host : t === this.target;
+            if (!Qe.native || this.forceFallback) return ne(this.target, this.player.config.classNames.fullscreen.fallback);
+            var e = this.prefix ? document["".concat(this.prefix).concat(this.property, "Element")] : document.fullscreenElement;
+            return e && e.shadowRoot ? e === this.target.getRootNode().host : e === this.target;
           }
         }, {
           key: "target",
           get: function get() {
-            return ae.isIos && this.player.config.fullscreen.iosNative ? this.player.media : this.player.elements.fullscreen || this.player.elements.container;
+            return W.isIos && this.player.config.fullscreen.iosNative ? this.player.media : this.player.elements.fullscreen || this.player.elements.container;
           }
         }], [{
           key: "native",
@@ -2344,10 +2376,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "prefix",
           get: function get() {
-            if (Y(document.exitFullscreen)) return "";
+            if (O(document.exitFullscreen)) return "";
             var e = "";
             return ["webkit", "moz", "ms"].some(function (t) {
-              return !(!Y(document["".concat(t, "ExitFullscreen")]) && !Y(document["".concat(t, "CancelFullScreen")]) || (e = t, 0));
+              return !(!O(document[t + "ExitFullscreen"]) && !O(document[t + "CancelFullScreen"]) || (e = t, 0));
             }), e;
           }
         }, {
@@ -2355,372 +2387,396 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           get: function get() {
             return "moz" === this.prefix ? "FullScreen" : "Fullscreen";
           }
-        }]), e;
+        }]);
+
+        return Qe;
       }();
 
-      function ut(e) {
-        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1;
-        return new Promise(function (n, i) {
-          var a = new Image(),
-              r = function r() {
-            delete a.onload, delete a.onerror, (a.naturalWidth >= t ? n : i)(a);
+      function Xe(e) {
+        var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+        return new Promise(function (i, s) {
+          var n = new Image(),
+              a = function a() {
+            delete n.onload, delete n.onerror, (n.naturalWidth >= t ? i : s)(n);
           };
 
-          Object.assign(a, {
-            onload: r,
-            onerror: r,
+          Object.assign(n, {
+            onload: a,
+            onerror: a,
             src: e
           });
         });
       }
 
-      var dt = {
+      var Je = {
         addStyleHook: function addStyleHook() {
-          ge(this.elements.container, this.config.selectors.container.replace(".", ""), !0), ge(this.elements.container, this.config.classNames.uiSupported, this.supported.ui);
+          se(this.elements.container, this.config.selectors.container.replace(".", ""), !0), se(this.elements.container, this.config.classNames.uiSupported, this.supported.ui);
         },
         toggleNativeControls: function toggleNativeControls() {
-          var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+          var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
           e && this.isHTML5 ? this.media.setAttribute("controls", "") : this.media.removeAttribute("controls");
         },
         build: function build() {
-          var e = this;
-          if (this.listeners.media(), !this.supported.ui) return this.debug.warn("Basic support only for ".concat(this.provider, " ").concat(this.type)), void dt.toggleNativeControls.call(this, !0);
-          $(this.elements.controls) || (et.inject.call(this), this.listeners.controls()), dt.toggleNativeControls.call(this), this.isHTML5 && it.setup.call(this), this.volume = null, this.muted = null, this.loop = null, this.quality = null, this.speed = null, et.updateVolume.call(this), et.timeUpdate.call(this), dt.checkPlaying.call(this), ge(this.elements.container, this.config.classNames.pip.supported, Ae.pip && this.isHTML5 && this.isVideo), ge(this.elements.container, this.config.classNames.airplay.supported, Ae.airplay && this.isHTML5), ge(this.elements.container, this.config.classNames.isIos, ae.isIos), ge(this.elements.container, this.config.classNames.isTouch, this.touch), this.ready = !0, setTimeout(function () {
-            Ne.call(e, e.media, "ready");
-          }, 0), dt.setTitle.call(this), this.poster && dt.setPoster.call(this, this.poster, !1).catch(function () {}), this.config.duration && et.durationUpdate.call(this);
+          var _this22 = this;
+
+          if (this.listeners.media(), !this.supported.ui) return this.debug.warn("Basic support only for ".concat(this.provider, " ").concat(this.type)), void Je.toggleNativeControls.call(this, !0);
+          D(this.elements.controls) || (Re.inject.call(this), this.listeners.controls()), Je.toggleNativeControls.call(this), this.isHTML5 && Be.setup.call(this), this.volume = null, this.muted = null, this.loop = null, this.quality = null, this.speed = null, Re.updateVolume.call(this), Re.timeUpdate.call(this), Je.checkPlaying.call(this), se(this.elements.container, this.config.classNames.pip.supported, he.pip && this.isHTML5 && this.isVideo), se(this.elements.container, this.config.classNames.airplay.supported, he.airplay && this.isHTML5), se(this.elements.container, this.config.classNames.isIos, W.isIos), se(this.elements.container, this.config.classNames.isTouch, this.touch), this.ready = !0, setTimeout(function () {
+            fe.call(_this22, _this22.media, "ready");
+          }, 0), Je.setTitle.call(this), this.poster && Je.setPoster.call(this, this.poster, !1).catch(function () {}), this.config.duration && Re.durationUpdate.call(this);
         },
         setTitle: function setTitle() {
-          var e = Ke("play", this.config);
+          var e = Oe.get("play", this.config);
 
-          if (z(this.config.title) && !te(this.config.title) && (e += ", ".concat(this.config.title)), Array.from(this.elements.buttons.play || []).forEach(function (t) {
+          if (L(this.config.title) && !V(this.config.title) && (e += ", " + this.config.title), Array.from(this.elements.buttons.play || []).forEach(function (t) {
             t.setAttribute("aria-label", e);
           }), this.isEmbed) {
-            var t = we.call(this, "iframe");
-            if (!$(t)) return;
-            var n = te(this.config.title) ? "video" : this.config.title,
-                i = Ke("frameTitle", this.config);
-            t.setAttribute("title", i.replace("{title}", n));
+            var _e25 = oe.call(this, "iframe");
+
+            if (!D(_e25)) return;
+
+            var _t13 = V(this.config.title) ? "video" : this.config.title,
+                _i13 = Oe.get("frameTitle", this.config);
+
+            _e25.setAttribute("title", _i13.replace("{title}", _t13));
           }
         },
         togglePoster: function togglePoster(e) {
-          ge(this.elements.container, this.config.classNames.posterEnabled, e);
+          se(this.elements.container, this.config.classNames.posterEnabled, e);
         },
         setPoster: function setPoster(e) {
-          var t = this,
-              n = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
-          return n && this.poster ? Promise.reject(new Error("Poster already set")) : (this.media.setAttribute("data-poster", e), this.elements.poster.removeAttribute("hidden"), Oe.call(this).then(function () {
-            return ut(e);
-          }).catch(function (n) {
-            throw e === t.poster && dt.togglePoster.call(t, !1), n;
+          var _this23 = this;
+
+          var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !0;
+          return t && this.poster ? Promise.reject(new Error("Poster already set")) : (this.media.setAttribute("data-poster", e), this.elements.poster.removeAttribute("hidden"), ye.call(this).then(function () {
+            return Xe(e);
+          }).catch(function (t) {
+            throw e === _this23.poster && Je.togglePoster.call(_this23, !1), t;
           }).then(function () {
-            if (e !== t.poster) throw new Error("setPoster cancelled by later call to setPoster");
+            if (e !== _this23.poster) throw new Error("setPoster cancelled by later call to setPoster");
           }).then(function () {
-            return Object.assign(t.elements.poster.style, {
+            return Object.assign(_this23.elements.poster.style, {
               backgroundImage: "url('".concat(e, "')"),
               backgroundSize: ""
-            }), dt.togglePoster.call(t, !0), e;
+            }), Je.togglePoster.call(_this23, !0), e;
           }));
         },
         checkPlaying: function checkPlaying(e) {
-          var t = this;
-          ge(this.elements.container, this.config.classNames.playing, this.playing), ge(this.elements.container, this.config.classNames.paused, this.paused), ge(this.elements.container, this.config.classNames.stopped, this.stopped), Array.from(this.elements.buttons.play || []).forEach(function (e) {
+          var _this24 = this;
+
+          se(this.elements.container, this.config.classNames.playing, this.playing), se(this.elements.container, this.config.classNames.paused, this.paused), se(this.elements.container, this.config.classNames.stopped, this.stopped), Array.from(this.elements.buttons.play || []).forEach(function (e) {
             Object.assign(e, {
-              pressed: t.playing
-            }), e.setAttribute("aria-label", Ke(t.playing ? "pause" : "play", t.config));
-          }), J(e) && "timeupdate" === e.type || dt.toggleControls.call(this);
+              pressed: _this24.playing
+            }), e.setAttribute("aria-label", Oe.get(_this24.playing ? "pause" : "play", _this24.config));
+          }), F(e) && "timeupdate" === e.type || Je.toggleControls.call(this);
         },
         checkLoading: function checkLoading(e) {
-          var t = this;
+          var _this25 = this;
+
           this.loading = ["stalled", "waiting"].includes(e.type), clearTimeout(this.timers.loading), this.timers.loading = setTimeout(function () {
-            ge(t.elements.container, t.config.classNames.loading, t.loading), dt.toggleControls.call(t);
+            se(_this25.elements.container, _this25.config.classNames.loading, _this25.loading), Je.toggleControls.call(_this25);
           }, this.loading ? 250 : 0);
         },
         toggleControls: function toggleControls(e) {
           var t = this.elements.controls;
 
           if (t && this.config.hideControls) {
-            var n = this.touch && this.lastSeekTime + 2e3 > Date.now();
-            this.toggleControls(Boolean(e || this.loading || this.paused || t.pressed || t.hover || n));
+            var _i14 = this.touch && this.lastSeekTime + 2e3 > Date.now();
+
+            this.toggleControls(Boolean(e || this.loading || this.paused || t.pressed || t.hover || _i14));
           }
         },
         migrateStyles: function migrateStyles() {
-          var e = this;
-          Object.values(s({}, this.media.style)).filter(function (e) {
-            return !te(e) && z(e) && e.startsWith("--plyr");
-          }).forEach(function (t) {
-            e.elements.container.style.setProperty(t, e.media.style.getPropertyValue(t)), e.media.style.removeProperty(t);
-          }), te(this.media.style) && this.media.removeAttribute("style");
-        }
-      },
-          ht = function () {
-        function e(t) {
-          var i = this;
-          n(this, e), r(this, "firstTouch", function () {
-            var e = i.player,
-                t = e.elements;
-            e.touch = !0, ge(t.container, e.config.classNames.isTouch, !0);
-          }), r(this, "setTabFocus", function (e) {
-            var t = i.player,
-                n = t.elements;
+          var _this26 = this;
 
-            if (clearTimeout(i.focusTimer), "keydown" !== e.type || 9 === e.which) {
-              "keydown" === e.type && (i.lastKeyDown = e.timeStamp);
-              var a,
-                  r = e.timeStamp - i.lastKeyDown <= 20;
-              ("focus" !== e.type || r) && (a = t.config.classNames.tabFocus, ge(ve.call(t, ".".concat(a)), a, !1), "focusout" !== e.type && (i.focusTimer = setTimeout(function () {
-                var e = document.activeElement;
-                n.container.contains(e) && ge(document.activeElement, t.config.classNames.tabFocus, !0);
-              }, 10)));
-            }
-          }), r(this, "global", function () {
-            var e = !(arguments.length > 0 && void 0 !== arguments[0]) || arguments[0],
-                t = i.player;
-            t.config.keyboard.global && Pe.call(t, window, "keydown keyup", i.handleKey, e, !1), Pe.call(t, document.body, "click", i.toggleMenu, e), xe.call(t, document.body, "touchstart", i.firstTouch), Pe.call(t, document.body, "keydown focus blur focusout", i.setTabFocus, e, !1, !0);
-          }), r(this, "container", function () {
-            var e = i.player,
+          Object.values(_objectSpread({}, this.media.style)).filter(function (e) {
+            return !V(e) && L(e) && e.startsWith("--plyr");
+          }).forEach(function (e) {
+            _this26.elements.container.style.setProperty(e, _this26.media.style.getPropertyValue(e)), _this26.media.style.removeProperty(e);
+          }), V(this.media.style) && this.media.removeAttribute("style");
+        }
+      };
+
+      var Ge = /*#__PURE__*/function () {
+        function Ge(t) {
+          var _this27 = this;
+
+          _classCallCheck(this, Ge);
+
+          e(this, "firstTouch", function () {
+            var e = _this27.player,
+                t = e.elements;
+            e.touch = !0, se(t.container, e.config.classNames.isTouch, !0);
+          }), e(this, "setTabFocus", function (e) {
+            var t = _this27.player,
+                i = t.elements;
+            if (clearTimeout(_this27.focusTimer), "keydown" === e.type && 9 !== e.which) return;
+            "keydown" === e.type && (_this27.lastKeyDown = e.timeStamp);
+            var s = e.timeStamp - _this27.lastKeyDown <= 20;
+            ("focus" !== e.type || s) && (function () {
+              var e = t.config.classNames.tabFocus;
+              se(le.call(t, "." + e), e, !1);
+            }(), "focusout" !== e.type && (_this27.focusTimer = setTimeout(function () {
+              var e = document.activeElement;
+              i.container.contains(e) && se(document.activeElement, t.config.classNames.tabFocus, !0);
+            }, 10)));
+          }), e(this, "global", function () {
+            var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !0;
+            var t = _this27.player;
+            t.config.keyboard.global && de.call(t, window, "keydown keyup", _this27.handleKey, e, !1), de.call(t, document.body, "click", _this27.toggleMenu, e), ge.call(t, document.body, "touchstart", _this27.firstTouch), de.call(t, document.body, "keydown focus blur focusout", _this27.setTabFocus, e, !1, !0);
+          }), e(this, "container", function () {
+            var e = _this27.player,
                 t = e.config,
-                n = e.elements,
-                a = e.timers;
-            !t.keyboard.global && t.keyboard.focused && Ee.call(e, n.container, "keydown keyup", i.handleKey, !1), Ee.call(e, n.container, "mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen", function (t) {
-              var i = n.controls;
-              i && "enterfullscreen" === t.type && (i.pressed = !1, i.hover = !1);
-              var r = 0;
-              ["touchstart", "touchmove", "mousemove"].includes(t.type) && (dt.toggleControls.call(e, !0), r = e.touch ? 3e3 : 2e3), clearTimeout(a.controls), a.controls = setTimeout(function () {
-                return dt.toggleControls.call(e, !1);
-              }, r);
+                i = e.elements,
+                s = e.timers;
+            !t.keyboard.global && t.keyboard.focused && me.call(e, i.container, "keydown keyup", _this27.handleKey, !1), me.call(e, i.container, "mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen", function (t) {
+              var n = i.controls;
+              n && "enterfullscreen" === t.type && (n.pressed = !1, n.hover = !1);
+              var a = 0;
+              ["touchstart", "touchmove", "mousemove"].includes(t.type) && (Je.toggleControls.call(e, !0), a = e.touch ? 3e3 : 2e3), clearTimeout(s.controls), s.controls = setTimeout(function () {
+                return Je.toggleControls.call(e, !1);
+              }, a);
             });
 
-            var r = function r(t) {
-              if (!t) return qe.call(e);
-              var i = n.container.getBoundingClientRect(),
-                  a = i.width,
-                  r = i.height;
-              return qe.call(e, "".concat(a, ":").concat(r));
+            var n = function n(t) {
+              if (!t) return Ee.call(e);
+              var s = i.container.getBoundingClientRect(),
+                  n = s.width,
+                  a = s.height;
+              return Ee.call(e, "".concat(n, ":").concat(a));
             },
-                o = function o() {
-              clearTimeout(a.resized), a.resized = setTimeout(r, 50);
+                a = function a() {
+              clearTimeout(s.resized), s.resized = setTimeout(n, 50);
             };
 
-            Ee.call(e, n.container, "enterfullscreen exitfullscreen", function (t) {
-              var i = e.fullscreen,
-                  a = i.target,
-                  s = i.usingNative;
+            me.call(e, i.container, "enterfullscreen exitfullscreen", function (t) {
+              var _e$fullscreen = e.fullscreen,
+                  s = _e$fullscreen.target,
+                  l = _e$fullscreen.usingNative;
+              if (s !== i.container) return;
+              if (!e.isEmbed && V(e.config.ratio)) return;
 
-              if (a === n.container && (e.isEmbed || !te(e.config.ratio))) {
-                var c = "enterfullscreen" === t.type,
-                    u = r(c);
-                u.padding, function (t, n, i) {
-                  if (e.isVimeo && !e.config.vimeo.premium) {
-                    var a = e.elements.wrapper.firstChild,
-                        r = l(t, 2)[1],
-                        o = l(De.call(e), 2),
-                        s = o[0],
-                        c = o[1];
-                    a.style.maxWidth = i ? "".concat(r / c * s, "px") : null, a.style.margin = i ? "0 auto" : null;
-                  }
-                }(u.ratio, 0, c), c && setTimeout(function () {
-                  return ie(n.container);
-                }, 100), s || (c ? Ee.call(e, window, "resize", o) : Me.call(e, window, "resize", o));
-              }
+              var o = "enterfullscreen" === t.type,
+                  _n6 = n(o),
+                  r = _n6.padding,
+                  c = _n6.ratio;
+
+              (function (t, i, s) {
+                if (!e.isVimeo || e.config.vimeo.premium) return;
+
+                var n = e.elements.wrapper.firstChild,
+                    _t14 = _slicedToArray(t, 2),
+                    a = _t14[1],
+                    _Se$call = Se.call(e),
+                    _Se$call2 = _slicedToArray(_Se$call, 2),
+                    l = _Se$call2[0],
+                    o = _Se$call2[1];
+
+                n.style.maxWidth = s ? a / o * l + "px" : null, n.style.margin = s ? "0 auto" : null;
+              })(c, 0, o), o && setTimeout(function () {
+                return U(i.container);
+              }, 100), l || (o ? me.call(e, window, "resize", a) : pe.call(e, window, "resize", a));
             });
-          }), r(this, "media", function () {
-            var e = i.player,
+          }), e(this, "media", function () {
+            var e = _this27.player,
                 t = e.elements;
 
-            if (Ee.call(e, e.media, "timeupdate seeking seeked", function (t) {
-              return et.timeUpdate.call(e, t);
-            }), Ee.call(e, e.media, "durationchange loadeddata loadedmetadata", function (t) {
-              return et.durationUpdate.call(e, t);
-            }), Ee.call(e, e.media, "ended", function () {
+            if (me.call(e, e.media, "timeupdate seeking seeked", function (t) {
+              return Re.timeUpdate.call(e, t);
+            }), me.call(e, e.media, "durationchange loadeddata loadedmetadata", function (t) {
+              return Re.durationUpdate.call(e, t);
+            }), me.call(e, e.media, "ended", function () {
               e.isHTML5 && e.isVideo && e.config.resetOnEnd && (e.restart(), e.pause());
-            }), Ee.call(e, e.media, "progress playing seeking seeked", function (t) {
-              return et.updateProgress.call(e, t);
-            }), Ee.call(e, e.media, "volumechange", function (t) {
-              return et.updateVolume.call(e, t);
-            }), Ee.call(e, e.media, "playing play pause ended emptied timeupdate", function (t) {
-              return dt.checkPlaying.call(e, t);
-            }), Ee.call(e, e.media, "waiting canplay seeked playing", function (t) {
-              return dt.checkLoading.call(e, t);
+            }), me.call(e, e.media, "progress playing seeking seeked", function (t) {
+              return Re.updateProgress.call(e, t);
+            }), me.call(e, e.media, "volumechange", function (t) {
+              return Re.updateVolume.call(e, t);
+            }), me.call(e, e.media, "playing play pause ended emptied timeupdate", function (t) {
+              return Je.checkPlaying.call(e, t);
+            }), me.call(e, e.media, "waiting canplay seeked playing", function (t) {
+              return Je.checkLoading.call(e, t);
             }), e.supported.ui && e.config.clickToPlay && !e.isAudio) {
-              var n = we.call(e, ".".concat(e.config.classNames.video));
-              if (!$(n)) return;
-              Ee.call(e, t.container, "click", function (a) {
-                ([t.container, n].includes(a.target) || n.contains(a.target)) && (e.touch && e.config.hideControls || (e.ended ? (i.proxy(a, e.restart, "restart"), i.proxy(a, function () {
-                  Le(e.play());
-                }, "play")) : i.proxy(a, function () {
-                  Le(e.togglePlay());
+              var _i15 = oe.call(e, "." + e.config.classNames.video);
+
+              if (!D(_i15)) return;
+              me.call(e, t.container, "click", function (s) {
+                ([t.container, _i15].includes(s.target) || _i15.contains(s.target)) && (e.touch && e.config.hideControls || (e.ended ? (_this27.proxy(s, e.restart, "restart"), _this27.proxy(s, function () {
+                  ve(e.play());
+                }, "play")) : _this27.proxy(s, function () {
+                  ve(e.togglePlay());
                 }, "play")));
               });
             }
 
-            e.supported.ui && e.config.disableContextMenu && Ee.call(e, t.wrapper, "contextmenu", function (e) {
+            e.supported.ui && e.config.disableContextMenu && me.call(e, t.wrapper, "contextmenu", function (e) {
               e.preventDefault();
-            }, !1), Ee.call(e, e.media, "volumechange", function () {
+            }, !1), me.call(e, e.media, "volumechange", function () {
               e.storage.set({
                 volume: e.volume,
                 muted: e.muted
               });
-            }), Ee.call(e, e.media, "ratechange", function () {
-              et.updateSetting.call(e, "speed"), e.storage.set({
+            }), me.call(e, e.media, "ratechange", function () {
+              Re.updateSetting.call(e, "speed"), e.storage.set({
                 speed: e.speed
               });
-            }), Ee.call(e, e.media, "qualitychange", function (t) {
-              et.updateSetting.call(e, "quality", null, t.detail.quality);
-            }), Ee.call(e, e.media, "ready qualitychange", function () {
-              et.setDownloadUrl.call(e);
+            }), me.call(e, e.media, "qualitychange", function (t) {
+              Re.updateSetting.call(e, "quality", null, t.detail.quality);
+            }), me.call(e, e.media, "ready qualitychange", function () {
+              Re.setDownloadUrl.call(e);
             });
-            var a = e.config.events.concat(["keyup", "keydown"]).join(" ");
-            Ee.call(e, e.media, a, function (n) {
-              var i = n.detail,
-                  a = void 0 === i ? {} : i;
-              "error" === n.type && (a = e.media.error), Ne.call(e, t.container, n.type, !0, a);
+            var i = e.config.events.concat(["keyup", "keydown"]).join(" ");
+            me.call(e, e.media, i, function (i) {
+              var _i$detail = i.detail,
+                  s = _i$detail === void 0 ? {} : _i$detail;
+              "error" === i.type && (s = e.media.error), fe.call(e, t.container, i.type, !0, s);
             });
-          }), r(this, "proxy", function (e, t, n) {
-            var a = i.player,
-                r = a.config.listeners[n],
-                o = !0;
-            Y(r) && (o = r.call(a, e)), !1 !== o && Y(t) && t.call(a, e);
-          }), r(this, "bind", function (e, t, n, a) {
-            var r = !(arguments.length > 4 && void 0 !== arguments[4]) || arguments[4],
-                o = i.player,
-                s = o.config.listeners[a],
-                l = Y(s);
-            Ee.call(o, e, t, function (e) {
-              return i.proxy(e, n, a);
-            }, r && !l);
-          }), r(this, "controls", function () {
-            var e = i.player,
+          }), e(this, "proxy", function (e, t, i) {
+            var s = _this27.player,
+                n = s.config.listeners[i];
+            var a = !0;
+            O(n) && (a = n.call(s, e)), !1 !== a && O(t) && t.call(s, e);
+          }), e(this, "bind", function (e, t, i, s) {
+            var n = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : !0;
+            var a = _this27.player,
+                l = a.config.listeners[s],
+                o = O(l);
+            me.call(a, e, t, function (e) {
+              return _this27.proxy(e, i, s);
+            }, n && !o);
+          }), e(this, "controls", function () {
+            var e = _this27.player,
                 t = e.elements,
-                n = ae.isIE ? "change" : "input";
+                i = W.isIE ? "change" : "input";
 
             if (t.buttons.play && Array.from(t.buttons.play).forEach(function (t) {
-              i.bind(t, "click", function () {
-                Le(e.togglePlay());
+              _this27.bind(t, "click", function () {
+                ve(e.togglePlay());
               }, "play");
-            }), i.bind(t.buttons.restart, "click", e.restart, "restart"), i.bind(t.buttons.rewind, "click", function () {
+            }), _this27.bind(t.buttons.restart, "click", e.restart, "restart"), _this27.bind(t.buttons.rewind, "click", function () {
               e.lastSeekTime = Date.now(), e.rewind();
-            }, "rewind"), i.bind(t.buttons.fastForward, "click", function () {
+            }, "rewind"), _this27.bind(t.buttons.fastForward, "click", function () {
               e.lastSeekTime = Date.now(), e.forward();
-            }, "fastForward"), i.bind(t.buttons.mute, "click", function () {
+            }, "fastForward"), _this27.bind(t.buttons.mute, "click", function () {
               e.muted = !e.muted;
-            }, "mute"), i.bind(t.buttons.captions, "click", function () {
+            }, "mute"), _this27.bind(t.buttons.captions, "click", function () {
               return e.toggleCaptions();
-            }), i.bind(t.buttons.download, "click", function () {
-              Ne.call(e, e.media, "download");
-            }, "download"), i.bind(t.buttons.fullscreen, "click", function () {
+            }), _this27.bind(t.buttons.download, "click", function () {
+              fe.call(e, e.media, "download");
+            }, "download"), _this27.bind(t.buttons.fullscreen, "click", function () {
               e.fullscreen.toggle();
-            }, "fullscreen"), i.bind(t.buttons.pip, "click", function () {
+            }, "fullscreen"), _this27.bind(t.buttons.pip, "click", function () {
               e.pip = "toggle";
-            }, "pip"), i.bind(t.buttons.airplay, "click", e.airplay, "airplay"), i.bind(t.buttons.settings, "click", function (t) {
-              t.stopPropagation(), t.preventDefault(), et.toggleMenu.call(e, t);
-            }, null, !1), i.bind(t.buttons.settings, "keyup", function (t) {
-              var n = t.which;
-              [13, 32].includes(n) && (13 !== n ? (t.preventDefault(), t.stopPropagation(), et.toggleMenu.call(e, t)) : et.focusFirstMenuItem.call(e, null, !0));
-            }, null, !1), i.bind(t.settings.menu, "keydown", function (t) {
-              27 === t.which && et.toggleMenu.call(e, t);
-            }), i.bind(t.inputs.seek, "mousedown mousemove", function (e) {
-              var n = t.progress.getBoundingClientRect(),
-                  i = 100 / n.width * (e.pageX - n.left);
-              e.currentTarget.setAttribute("seek-value", i);
-            }), i.bind(t.inputs.seek, "mousedown mouseup keydown keyup touchstart touchend", function (t) {
-              var n = t.currentTarget,
-                  i = t.keyCode ? t.keyCode : t.which,
-                  a = "play-on-seeked";
+            }, "pip"), _this27.bind(t.buttons.airplay, "click", e.airplay, "airplay"), _this27.bind(t.buttons.settings, "click", function (t) {
+              t.stopPropagation(), t.preventDefault(), Re.toggleMenu.call(e, t);
+            }, null, !1), _this27.bind(t.buttons.settings, "keyup", function (t) {
+              var i = t.which;
+              [13, 32].includes(i) && (13 !== i ? (t.preventDefault(), t.stopPropagation(), Re.toggleMenu.call(e, t)) : Re.focusFirstMenuItem.call(e, null, !0));
+            }, null, !1), _this27.bind(t.settings.menu, "keydown", function (t) {
+              27 === t.which && Re.toggleMenu.call(e, t);
+            }), _this27.bind(t.inputs.seek, "mousedown mousemove", function (e) {
+              var i = t.progress.getBoundingClientRect(),
+                  s = 100 / i.width * (e.pageX - i.left);
+              e.currentTarget.setAttribute("seek-value", s);
+            }), _this27.bind(t.inputs.seek, "mousedown mouseup keydown keyup touchstart touchend", function (t) {
+              var i = t.currentTarget,
+                  s = t.keyCode ? t.keyCode : t.which,
+                  n = "play-on-seeked";
+              if (H(t) && 39 !== s && 37 !== s) return;
+              e.lastSeekTime = Date.now();
+              var a = i.hasAttribute(n),
+                  l = ["mouseup", "touchend", "keyup"].includes(t.type);
+              a && l ? (i.removeAttribute(n), ve(e.play())) : !l && e.playing && (i.setAttribute(n, ""), e.pause());
+            }), W.isIos) {
+              var _t15 = le.call(e, 'input[type="range"]');
 
-              if (!G(t) || 39 === i || 37 === i) {
-                e.lastSeekTime = Date.now();
-                var r = n.hasAttribute(a),
-                    o = ["mouseup", "touchend", "keyup"].includes(t.type);
-                r && o ? (n.removeAttribute(a), Le(e.play())) : !o && e.playing && (n.setAttribute(a, ""), e.pause());
-              }
-            }), ae.isIos) {
-              var a = ve.call(e, 'input[type="range"]');
-              Array.from(a).forEach(function (e) {
-                return i.bind(e, n, function (e) {
-                  return ie(e.target);
+              Array.from(_t15).forEach(function (e) {
+                return _this27.bind(e, i, function (e) {
+                  return U(e.target);
                 });
               });
             }
 
-            i.bind(t.inputs.seek, n, function (t) {
-              var n = t.currentTarget,
-                  i = n.getAttribute("seek-value");
-              te(i) && (i = n.value), n.removeAttribute("seek-value"), e.currentTime = i / n.max * e.duration;
-            }, "seek"), i.bind(t.progress, "mouseenter mouseleave mousemove", function (t) {
-              return et.updateSeekTooltip.call(e, t);
-            }), i.bind(t.progress, "mousemove touchmove", function (t) {
-              var n = e.previewThumbnails;
-              n && n.loaded && n.startMove(t);
-            }), i.bind(t.progress, "mouseleave touchend click", function () {
+            _this27.bind(t.inputs.seek, i, function (t) {
+              var i = t.currentTarget;
+              var s = i.getAttribute("seek-value");
+              V(s) && (s = i.value), i.removeAttribute("seek-value"), e.currentTime = s / i.max * e.duration;
+            }, "seek"), _this27.bind(t.progress, "mouseenter mouseleave mousemove", function (t) {
+              return Re.updateSeekTooltip.call(e, t);
+            }), _this27.bind(t.progress, "mousemove touchmove", function (t) {
+              var i = e.previewThumbnails;
+              i && i.loaded && i.startMove(t);
+            }), _this27.bind(t.progress, "mouseleave touchend click", function () {
               var t = e.previewThumbnails;
               t && t.loaded && t.endMove(!1, !0);
-            }), i.bind(t.progress, "mousedown touchstart", function (t) {
-              var n = e.previewThumbnails;
-              n && n.loaded && n.startScrubbing(t);
-            }), i.bind(t.progress, "mouseup touchend", function (t) {
-              var n = e.previewThumbnails;
-              n && n.loaded && n.endScrubbing(t);
-            }), ae.isWebkit && Array.from(ve.call(e, 'input[type="range"]')).forEach(function (t) {
-              i.bind(t, "input", function (t) {
-                return et.updateRangeFill.call(e, t.target);
+            }), _this27.bind(t.progress, "mousedown touchstart", function (t) {
+              var i = e.previewThumbnails;
+              i && i.loaded && i.startScrubbing(t);
+            }), _this27.bind(t.progress, "mouseup touchend", function (t) {
+              var i = e.previewThumbnails;
+              i && i.loaded && i.endScrubbing(t);
+            }), W.isWebkit && Array.from(le.call(e, 'input[type="range"]')).forEach(function (t) {
+              _this27.bind(t, "input", function (t) {
+                return Re.updateRangeFill.call(e, t.target);
               });
-            }), e.config.toggleInvert && !$(t.display.duration) && i.bind(t.display.currentTime, "click", function () {
-              0 !== e.currentTime && (e.config.invertTime = !e.config.invertTime, et.timeUpdate.call(e));
-            }), i.bind(t.inputs.volume, n, function (t) {
+            }), e.config.toggleInvert && !D(t.display.duration) && _this27.bind(t.display.currentTime, "click", function () {
+              0 !== e.currentTime && (e.config.invertTime = !e.config.invertTime, Re.timeUpdate.call(e));
+            }), _this27.bind(t.inputs.volume, i, function (t) {
               e.volume = t.target.value;
-            }, "volume"), i.bind(t.controls, "mouseenter mouseleave", function (n) {
-              t.controls.hover = !e.touch && "mouseenter" === n.type;
+            }, "volume"), _this27.bind(t.controls, "mouseenter mouseleave", function (i) {
+              t.controls.hover = !e.touch && "mouseenter" === i.type;
             }), t.fullscreen && Array.from(t.fullscreen.children).filter(function (e) {
               return !e.contains(t.container);
-            }).forEach(function (n) {
-              i.bind(n, "mouseenter mouseleave", function (n) {
-                t.controls.hover = !e.touch && "mouseenter" === n.type;
+            }).forEach(function (i) {
+              _this27.bind(i, "mouseenter mouseleave", function (i) {
+                t.controls.hover = !e.touch && "mouseenter" === i.type;
               });
-            }), i.bind(t.controls, "mousedown mouseup touchstart touchend touchcancel", function (e) {
+            }), _this27.bind(t.controls, "mousedown mouseup touchstart touchend touchcancel", function (e) {
               t.controls.pressed = ["mousedown", "touchstart"].includes(e.type);
-            }), i.bind(t.controls, "focusin", function () {
-              var n = e.config,
-                  a = e.timers;
-              ge(t.controls, n.classNames.noTransition, !0), dt.toggleControls.call(e, !0), setTimeout(function () {
-                ge(t.controls, n.classNames.noTransition, !1);
+            }), _this27.bind(t.controls, "focusin", function () {
+              var i = e.config,
+                  s = e.timers;
+              se(t.controls, i.classNames.noTransition, !0), Je.toggleControls.call(e, !0), setTimeout(function () {
+                se(t.controls, i.classNames.noTransition, !1);
               }, 0);
-              var r = i.touch ? 3e3 : 4e3;
-              clearTimeout(a.controls), a.controls = setTimeout(function () {
-                return dt.toggleControls.call(e, !1);
-              }, r);
-            }), i.bind(t.inputs.volume, "wheel", function (t) {
-              var n = t.webkitDirectionInvertedFromDevice,
-                  i = l([t.deltaX, -t.deltaY].map(function (e) {
-                return n ? -e : e;
-              }), 2),
-                  a = i[0],
-                  r = i[1],
-                  o = Math.sign(Math.abs(a) > Math.abs(r) ? a : r);
-              e.increaseVolume(o / 50);
-              var s = e.media.volume;
-              (1 === o && s < 1 || -1 === o && s > 0) && t.preventDefault();
+              var n = _this27.touch ? 3e3 : 4e3;
+              clearTimeout(s.controls), s.controls = setTimeout(function () {
+                return Je.toggleControls.call(e, !1);
+              }, n);
+            }), _this27.bind(t.inputs.volume, "wheel", function (t) {
+              var i = t.webkitDirectionInvertedFromDevice,
+                  _map = [t.deltaX, -t.deltaY].map(function (e) {
+                return i ? -e : e;
+              }),
+                  _map2 = _slicedToArray(_map, 2),
+                  s = _map2[0],
+                  n = _map2[1],
+                  a = Math.sign(Math.abs(s) > Math.abs(n) ? s : n);
+
+              e.increaseVolume(a / 50);
+              var l = e.media.volume;
+              (1 === a && l < 1 || -1 === a && l > 0) && t.preventDefault();
             }, "volume", !1);
           }), this.player = t, this.lastKey = null, this.focusTimer = null, this.lastKeyDown = null, this.handleKey = this.handleKey.bind(this), this.toggleMenu = this.toggleMenu.bind(this), this.setTabFocus = this.setTabFocus.bind(this), this.firstTouch = this.firstTouch.bind(this);
         }
 
-        return a(e, [{
+        _createClass(Ge, [{
           key: "handleKey",
-          value: function value(e) {
+          value: function handleKey(e) {
             var t = this.player,
-                n = t.elements,
-                i = e.keyCode ? e.keyCode : e.which,
-                a = "keydown" === e.type,
-                r = a && i === this.lastKey;
-            if (!(e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) && W(i)) if (a) {
-              var o = document.activeElement;
+                i = t.elements,
+                s = e.keyCode ? e.keyCode : e.which,
+                n = "keydown" === e.type,
+                a = n && s === this.lastKey;
+            if (!(e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) && I(s)) if (n) {
+              var _n7 = document.activeElement;
 
-              if ($(o)) {
-                var s = t.config.selectors.editable;
-                if (o !== n.inputs.seek && be(o, s)) return;
-                if (32 === e.which && be(o, 'button, [role^="menuitem"]')) return;
+              if (D(_n7)) {
+                var _s12 = t.config.selectors.editable,
+                    _a5 = i.inputs.seek;
+                if (_n7 !== _a5 && ae(_n7, _s12)) return;
+                if (32 === e.which && ae(_n7, 'button, [role^="menuitem"]')) return;
               }
 
-              switch ([32, 37, 38, 39, 40, 48, 49, 50, 51, 52, 53, 54, 56, 57, 67, 70, 73, 75, 76, 77, 79].includes(i) && (e.preventDefault(), e.stopPropagation()), i) {
+              switch ([32, 37, 38, 39, 40, 48, 49, 50, 51, 52, 53, 54, 56, 57, 67, 70, 73, 75, 76, 77, 79].includes(s) && (e.preventDefault(), e.stopPropagation()), s) {
                 case 48:
                 case 49:
                 case 50:
@@ -2731,12 +2787,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                 case 55:
                 case 56:
                 case 57:
-                  r || (t.currentTime = t.duration / 10 * (i - 48));
+                  a || (t.currentTime = t.duration / 10 * (s - 48));
                   break;
 
                 case 32:
                 case 75:
-                  r || Le(t.togglePlay());
+                  a || ve(t.togglePlay());
                   break;
 
                 case 38:
@@ -2748,7 +2804,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                   break;
 
                 case 77:
-                  r || (t.muted = !t.muted);
+                  a || (t.muted = !t.muted);
                   break;
 
                 case 39:
@@ -2764,759 +2820,738 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                   break;
 
                 case 67:
-                  r || t.toggleCaptions();
+                  a || t.toggleCaptions();
                   break;
 
                 case 76:
                   t.loop = !t.loop;
               }
 
-              27 === i && !t.fullscreen.usingNative && t.fullscreen.active && t.fullscreen.toggle(), this.lastKey = i;
+              27 === s && !t.fullscreen.usingNative && t.fullscreen.active && t.fullscreen.toggle(), this.lastKey = s;
             } else this.lastKey = null;
           }
         }, {
           key: "toggleMenu",
-          value: function value(e) {
-            et.toggleMenu.call(this.player, e);
+          value: function toggleMenu(e) {
+            Re.toggleMenu.call(this.player, e);
           }
-        }]), e;
+        }]);
+
+        return Ge;
       }();
 
       "undefined" != typeof globalThis ? globalThis : "undefined" != typeof window ? window : void 0 !== t || "undefined" != typeof self && self;
 
-      var pt = function (e, t) {
+      var Ze = function (e, t) {
         return function (e, t) {
           e.exports = function () {
             var e = function e() {},
                 t = {},
-                n = {},
-                i = {};
+                i = {},
+                s = {};
 
-            function a(e, t) {
+            function n(e, t) {
               if (e) {
-                var a = i[e];
-                if (n[e] = t, a) for (; a.length;) {
-                  a[0](e, t), a.splice(0, 1);
+                var n = s[e];
+                if (i[e] = t, n) for (; n.length;) {
+                  n[0](e, t), n.splice(0, 1);
                 }
               }
             }
 
-            function r(t, n) {
+            function a(t, i) {
               t.call && (t = {
                 success: t
-              }), n.length ? (t.error || e)(n) : (t.success || e)(t);
+              }), i.length ? (t.error || e)(i) : (t.success || e)(t);
             }
 
-            function o(t, n, i, a) {
-              var r,
-                  s,
-                  l = document,
-                  c = i.async,
-                  u = (i.numRetries || 0) + 1,
-                  d = i.before || e,
-                  h = t.replace(/[\?|#].*$/, ""),
-                  p = t.replace(/^(css|img)!/, "");
-              a = a || 0, /(^css!|\.css$)/.test(h) ? ((s = l.createElement("link")).rel = "stylesheet", s.href = p, (r = "hideFocus" in s) && s.relList && (r = 0, s.rel = "preload", s.as = "style")) : /(^img!|\.(png|gif|jpg|svg|webp)$)/.test(h) ? (s = l.createElement("img")).src = p : ((s = l.createElement("script")).src = t, s.async = void 0 === c || c), s.onload = s.onerror = s.onbeforeload = function (e) {
-                var l = e.type[0];
-                if (r) try {
-                  s.sheet.cssText.length || (l = "e");
+            function l(t, i, s, n) {
+              var a,
+                  o,
+                  r = document,
+                  c = s.async,
+                  h = (s.numRetries || 0) + 1,
+                  u = s.before || e,
+                  d = t.replace(/[\?|#].*$/, ""),
+                  m = t.replace(/^(css|img)!/, "");
+              n = n || 0, /(^css!|\.css$)/.test(d) ? ((o = r.createElement("link")).rel = "stylesheet", o.href = m, (a = "hideFocus" in o) && o.relList && (a = 0, o.rel = "preload", o.as = "style")) : /(^img!|\.(png|gif|jpg|svg|webp)$)/.test(d) ? (o = r.createElement("img")).src = m : ((o = r.createElement("script")).src = t, o.async = void 0 === c || c), o.onload = o.onerror = o.onbeforeload = function (e) {
+                var r = e.type[0];
+                if (a) try {
+                  o.sheet.cssText.length || (r = "e");
                 } catch (e) {
-                  18 != e.code && (l = "e");
+                  18 != e.code && (r = "e");
                 }
 
-                if ("e" == l) {
-                  if ((a += 1) < u) return o(t, n, i, a);
-                } else if ("preload" == s.rel && "style" == s.as) return s.rel = "stylesheet";
+                if ("e" == r) {
+                  if ((n += 1) < h) return l(t, i, s, n);
+                } else if ("preload" == o.rel && "style" == o.as) return o.rel = "stylesheet";
 
-                n(t, l, e.defaultPrevented);
-              }, !1 !== d(t, s) && l.head.appendChild(s);
+                i(t, r, e.defaultPrevented);
+              }, !1 !== u(t, o) && r.head.appendChild(o);
             }
 
-            function s(e, t, n) {
-              var i,
-                  a,
-                  r = (e = e.push ? e : [e]).length,
-                  s = r,
-                  l = [];
+            function o(e, t, i) {
+              var s,
+                  n,
+                  a = (e = e.push ? e : [e]).length,
+                  o = a,
+                  r = [];
 
-              for (i = function i(e, n, _i) {
-                if ("e" == n && l.push(e), "b" == n) {
-                  if (!_i) return;
-                  l.push(e);
+              for (s = function s(e, i, _s13) {
+                if ("e" == i && r.push(e), "b" == i) {
+                  if (!_s13) return;
+                  r.push(e);
                 }
 
-                --r || t(l);
-              }, a = 0; a < s; a++) {
-                o(e[a], i, n);
+                --a || t(r);
+              }, n = 0; n < o; n++) {
+                l(e[n], s, i);
               }
             }
 
-            function l(e, n, i) {
-              var o, l;
+            function r(e, i, s) {
+              var l, r;
 
-              if (n && n.trim && (o = n), l = (o ? i : n) || {}, o) {
-                if (o in t) throw "LoadJS";
-                t[o] = !0;
+              if (i && i.trim && (l = i), r = (l ? s : i) || {}, l) {
+                if (l in t) throw "LoadJS";
+                t[l] = !0;
               }
 
-              function c(t, n) {
-                s(e, function (e) {
-                  r(l, e), t && r({
+              function c(t, i) {
+                o(e, function (e) {
+                  a(r, e), t && a({
                     success: t,
-                    error: n
-                  }, e), a(o, e);
-                }, l);
+                    error: i
+                  }, e), n(l, e);
+                }, r);
               }
 
-              if (l.returnPromise) return new Promise(c);
+              if (r.returnPromise) return new Promise(c);
               c();
             }
 
-            return l.ready = function (e, t) {
+            return r.ready = function (e, t) {
               return function (e, t) {
                 e = e.push ? e : [e];
-                var a,
-                    r,
-                    o,
-                    s = [],
-                    l = e.length,
-                    c = l;
+                var n,
+                    a,
+                    l,
+                    o = [],
+                    r = e.length,
+                    c = r;
 
-                for (a = function a(e, n) {
-                  n.length && s.push(e), --c || t(s);
-                }; l--;) {
-                  r = e[l], (o = n[r]) ? a(r, o) : (i[r] = i[r] || []).push(a);
+                for (n = function n(e, i) {
+                  i.length && o.push(e), --c || t(o);
+                }; r--;) {
+                  a = e[r], (l = i[a]) ? n(a, l) : (s[a] = s[a] || []).push(n);
                 }
               }(e, function (e) {
-                r(t, e);
-              }), l;
-            }, l.done = function (e) {
-              a(e, []);
-            }, l.reset = function () {
-              t = {}, n = {}, i = {};
-            }, l.isDefined = function (e) {
+                a(t, e);
+              }), r;
+            }, r.done = function (e) {
+              n(e, []);
+            }, r.reset = function () {
+              t = {}, i = {}, s = {};
+            }, r.isDefined = function (e) {
               return e in t;
-            }, l;
+            }, r;
           }();
         }(t = {
           exports: {}
         }), t.exports;
       }();
 
-      function mt(e) {
-        return new Promise(function (t, n) {
-          pt(e, {
+      function et(e) {
+        return new Promise(function (t, i) {
+          Ze(e, {
             success: t,
-            error: n
+            error: i
           });
         });
       }
 
-      function ft(e) {
-        e && !this.embed.hasPlayed && (this.embed.hasPlayed = !0), this.media.paused === e && (this.media.paused = !e, Ne.call(this, this.media, e ? "play" : "pause"));
+      function tt(e) {
+        e && !this.embed.hasPlayed && (this.embed.hasPlayed = !0), this.media.paused === e && (this.media.paused = !e, fe.call(this, this.media, e ? "play" : "pause"));
       }
 
-      var gt = {
+      var it = {
         setup: function setup() {
           var e = this;
-          ge(e.elements.wrapper, e.config.classNames.embed, !0), e.options.speed = e.config.speed.options, qe.call(e), U(window.Vimeo) ? gt.ready.call(e) : mt(e.config.urls.vimeo.sdk).then(function () {
-            gt.ready.call(e);
+          se(e.elements.wrapper, e.config.classNames.embed, !0), e.options.speed = e.config.speed.options, Ee.call(e), N(window.Vimeo) ? it.ready.call(e) : et(e.config.urls.vimeo.sdk).then(function () {
+            it.ready.call(e);
           }).catch(function (t) {
             e.debug.warn("Vimeo SDK (player.js) failed to load", t);
           });
         },
         ready: function ready() {
+          var _this28 = this;
+
           var e = this,
-              t = this,
-              n = t.config.vimeo,
-              i = n.premium,
-              a = n.referrerPolicy,
-              r = function (e, t) {
-            if (null == e) return {};
+              t = e.config.vimeo,
+              i = t.premium,
+              s = t.referrerPolicy,
+              n = _objectWithoutProperties(t, ["premium", "referrerPolicy"]);
 
-            var n,
-                i,
-                a = function (e, t) {
-              if (null == e) return {};
-              var n,
-                  i,
-                  a = {},
-                  r = Object.keys(e);
-
-              for (i = 0; i < r.length; i++) {
-                n = r[i], t.indexOf(n) >= 0 || (a[n] = e[n]);
-              }
-
-              return a;
-            }(e, t);
-
-            if (Object.getOwnPropertySymbols) {
-              var r = Object.getOwnPropertySymbols(e);
-
-              for (i = 0; i < r.length; i++) {
-                n = r[i], t.indexOf(n) >= 0 || Object.prototype.propertyIsEnumerable.call(e, n) && (a[n] = e[n]);
-              }
-            }
-
-            return a;
-          }(n, ["premium", "referrerPolicy"]);
-
-          i && Object.assign(r, {
+          i && Object.assign(n, {
             controls: !1,
             sidedock: !1
           });
-          var o = nt(s({
-            loop: t.config.loop.active,
-            autoplay: t.autoplay,
-            muted: t.muted,
+          var a = Ve(_objectSpread({
+            loop: e.config.loop.active,
+            autoplay: e.autoplay,
+            muted: e.muted,
             gesture: "media",
             playsinline: !this.config.fullscreen.iosNative
-          }, r)),
-              c = t.media.getAttribute("src");
-          te(c) && (c = t.media.getAttribute(t.config.attributes.embed.id));
-          var u,
-              d = te(u = c) ? null : W(Number(u)) ? u : u.match(/^.*(vimeo.com\/|video\/)(\d+).*/) ? RegExp.$2 : u,
-              h = ce("iframe"),
-              p = Re(t.config.urls.vimeo.iframe, d, o);
-          if (h.setAttribute("src", p), h.setAttribute("allowfullscreen", ""), h.setAttribute("allow", ["autoplay", "fullscreen", "picture-in-picture"].join("; ")), te(a) || h.setAttribute("referrerPolicy", a), i || !n.customControls) h.setAttribute("data-poster", t.poster), t.media = pe(h, t.media);else {
-            var m = ce("div", {
-              class: t.config.classNames.embedContainer,
-              "data-poster": t.poster
+          }, n));
+          var l = e.media.getAttribute("src");
+          V(l) && (l = e.media.getAttribute(e.config.attributes.embed.id));
+          var o = V(r = l) ? null : I(Number(r)) ? r : r.match(/^.*(vimeo.com\/|video\/)(\d+).*/) ? RegExp.$2 : r;
+          var r;
+          var c = X("iframe"),
+              h = Me(e.config.urls.vimeo.iframe, o, a);
+          if (c.setAttribute("src", h), c.setAttribute("allowfullscreen", ""), c.setAttribute("allow", ["autoplay", "fullscreen", "picture-in-picture", "encrypted-media", "accelerometer", "gyroscope"].join("; ")), V(s) || c.setAttribute("referrerPolicy", s), i || !t.customControls) c.setAttribute("data-poster", e.poster), e.media = ee(c, e.media);else {
+            var _t16 = X("div", {
+              class: e.config.classNames.embedContainer,
+              "data-poster": e.poster
             });
-            m.appendChild(h), t.media = pe(m, t.media);
+
+            _t16.appendChild(c), e.media = ee(_t16, e.media);
           }
-          n.customControls || Qe(Re(t.config.urls.vimeo.api, p)).then(function (e) {
-            !te(e) && e.thumbnail_url && dt.setPoster.call(t, e.thumbnail_url).catch(function () {});
-          }), t.embed = new window.Vimeo.Player(h, {
-            autopause: t.config.autopause,
-            muted: t.muted
-          }), t.media.paused = !0, t.media.currentTime = 0, t.supported.ui && t.embed.disableTextTrack(), t.media.play = function () {
-            return ft.call(t, !0), t.embed.play();
-          }, t.media.pause = function () {
-            return ft.call(t, !1), t.embed.pause();
-          }, t.media.stop = function () {
-            t.pause(), t.currentTime = 0;
+          t.customControls || qe(Me(e.config.urls.vimeo.api, h)).then(function (t) {
+            !V(t) && t.thumbnail_url && Je.setPoster.call(e, t.thumbnail_url).catch(function () {});
+          }), e.embed = new window.Vimeo.Player(c, {
+            autopause: e.config.autopause,
+            muted: e.muted
+          }), e.media.paused = !0, e.media.currentTime = 0, e.supported.ui && e.embed.disableTextTrack(), e.media.play = function () {
+            return tt.call(e, !0), e.embed.play();
+          }, e.media.pause = function () {
+            return tt.call(e, !1), e.embed.pause();
+          }, e.media.stop = function () {
+            e.pause(), e.currentTime = 0;
           };
-          var f = t.media.currentTime;
-          Object.defineProperty(t.media, "currentTime", {
+          var u = e.media.currentTime;
+          Object.defineProperty(e.media, "currentTime", {
             get: function get() {
-              return f;
+              return u;
             },
-            set: function set(e) {
-              var n = t.embed,
-                  i = t.media,
-                  a = t.paused,
-                  r = t.volume,
-                  o = a && !n.hasPlayed;
-              i.seeking = !0, Ne.call(t, i, "seeking"), Promise.resolve(o && n.setVolume(0)).then(function () {
-                return n.setCurrentTime(e);
+            set: function set(t) {
+              var i = e.embed,
+                  s = e.media,
+                  n = e.paused,
+                  a = e.volume,
+                  l = n && !i.hasPlayed;
+              s.seeking = !0, fe.call(e, s, "seeking"), Promise.resolve(l && i.setVolume(0)).then(function () {
+                return i.setCurrentTime(t);
               }).then(function () {
-                return o && n.pause();
+                return l && i.pause();
               }).then(function () {
-                return o && n.setVolume(r);
+                return l && i.setVolume(a);
               }).catch(function () {});
             }
           });
-          var g = t.config.speed.selected;
-          Object.defineProperty(t.media, "playbackRate", {
+          var d = e.config.speed.selected;
+          Object.defineProperty(e.media, "playbackRate", {
+            get: function get() {
+              return d;
+            },
+            set: function set(t) {
+              e.embed.setPlaybackRate(t).then(function () {
+                d = t, fe.call(e, e.media, "ratechange");
+              }).catch(function () {
+                e.options.speed = [1];
+              });
+            }
+          });
+          var m = e.config.volume;
+          Object.defineProperty(e.media, "volume", {
+            get: function get() {
+              return m;
+            },
+            set: function set(t) {
+              e.embed.setVolume(t).then(function () {
+                m = t, fe.call(e, e.media, "volumechange");
+              });
+            }
+          });
+          var p = e.config.muted;
+          Object.defineProperty(e.media, "muted", {
+            get: function get() {
+              return p;
+            },
+            set: function set(t) {
+              var i = !!_(t) && t;
+              e.embed.setVolume(i ? 0 : e.config.volume).then(function () {
+                p = i, fe.call(e, e.media, "volumechange");
+              });
+            }
+          });
+          var g,
+              f = e.config.loop;
+          Object.defineProperty(e.media, "loop", {
+            get: function get() {
+              return f;
+            },
+            set: function set(t) {
+              var i = _(t) ? t : e.config.loop.active;
+              e.embed.setLoop(i).then(function () {
+                f = i;
+              });
+            }
+          }), e.embed.getVideoUrl().then(function (t) {
+            g = t, Re.setDownloadUrl.call(e);
+          }).catch(function (e) {
+            _this28.debug.warn(e);
+          }), Object.defineProperty(e.media, "currentSrc", {
             get: function get() {
               return g;
-            },
-            set: function set(e) {
-              t.embed.setPlaybackRate(e).then(function () {
-                g = e, Ne.call(t, t.media, "ratechange");
-              }).catch(function () {
-                t.options.speed = [1];
-              });
             }
-          });
-          var y = t.config.volume;
-          Object.defineProperty(t.media, "volume", {
+          }), Object.defineProperty(e.media, "ended", {
             get: function get() {
-              return y;
-            },
-            set: function set(e) {
-              t.embed.setVolume(e).then(function () {
-                y = e, Ne.call(t, t.media, "volumechange");
-              });
+              return e.currentTime === e.duration;
             }
-          });
-          var b = t.config.muted;
-          Object.defineProperty(t.media, "muted", {
-            get: function get() {
-              return b;
-            },
-            set: function set(e) {
-              var n = !!K(e) && e;
-              t.embed.setVolume(n ? 0 : t.config.volume).then(function () {
-                b = n, Ne.call(t, t.media, "volumechange");
-              });
-            }
-          });
-          var v,
-              w = t.config.loop;
-          Object.defineProperty(t.media, "loop", {
-            get: function get() {
-              return w;
-            },
-            set: function set(e) {
-              var n = K(e) ? e : t.config.loop.active;
-              t.embed.setLoop(n).then(function () {
-                w = n;
-              });
-            }
-          }), t.embed.getVideoUrl().then(function (e) {
-            v = e, et.setDownloadUrl.call(t);
-          }).catch(function (t) {
-            e.debug.warn(t);
-          }), Object.defineProperty(t.media, "currentSrc", {
-            get: function get() {
-              return v;
-            }
-          }), Object.defineProperty(t.media, "ended", {
-            get: function get() {
-              return t.currentTime === t.duration;
-            }
-          }), Promise.all([t.embed.getVideoWidth(), t.embed.getVideoHeight()]).then(function (n) {
-            var i = l(n, 2),
-                a = i[0],
-                r = i[1];
-            t.embed.ratio = [a, r], qe.call(e);
-          }), t.embed.setAutopause(t.config.autopause).then(function (e) {
-            t.config.autopause = e;
-          }), t.embed.getVideoTitle().then(function (n) {
-            t.config.title = n, dt.setTitle.call(e);
-          }), t.embed.getCurrentTime().then(function (e) {
-            f = e, Ne.call(t, t.media, "timeupdate");
-          }), t.embed.getDuration().then(function (e) {
-            t.media.duration = e, Ne.call(t, t.media, "durationchange");
-          }), t.embed.getTextTracks().then(function (e) {
-            t.media.textTracks = e, it.setup.call(t);
-          }), t.embed.on("cuechange", function (e) {
-            var n = e.cues,
-                i = (void 0 === n ? [] : n).map(function (e) {
+          }), Promise.all([e.embed.getVideoWidth(), e.embed.getVideoHeight()]).then(function (t) {
+            var _t17 = _slicedToArray(t, 2),
+                i = _t17[0],
+                s = _t17[1];
+
+            e.embed.ratio = Pe(i, s), Ee.call(_this28);
+          }), e.embed.setAutopause(e.config.autopause).then(function (t) {
+            e.config.autopause = t;
+          }), e.embed.getVideoTitle().then(function (t) {
+            e.config.title = t, Je.setTitle.call(_this28);
+          }), e.embed.getCurrentTime().then(function (t) {
+            u = t, fe.call(e, e.media, "timeupdate");
+          }), e.embed.getDuration().then(function (t) {
+            e.media.duration = t, fe.call(e, e.media, "durationchange");
+          }), e.embed.getTextTracks().then(function (t) {
+            e.media.textTracks = t, Be.setup.call(e);
+          }), e.embed.on("cuechange", function (_ref15) {
+            var _ref15$cues = _ref15.cues,
+                t = _ref15$cues === void 0 ? [] : _ref15$cues;
+            var i = t.map(function (e) {
               return function (e) {
                 var t = document.createDocumentFragment(),
-                    n = document.createElement("div");
-                return t.appendChild(n), n.innerHTML = e, t.firstChild.innerText;
+                    i = document.createElement("div");
+                return t.appendChild(i), i.innerHTML = e, t.firstChild.innerText;
               }(e.text);
             });
-            it.updateCues.call(t, i);
-          }), t.embed.on("loaded", function () {
-            t.embed.getPaused().then(function (e) {
-              ft.call(t, !e), e || Ne.call(t, t.media, "playing");
-            }), $(t.embed.element) && t.supported.ui && t.embed.element.setAttribute("tabindex", -1);
-          }), t.embed.on("bufferstart", function () {
-            Ne.call(t, t.media, "waiting");
-          }), t.embed.on("bufferend", function () {
-            Ne.call(t, t.media, "playing");
-          }), t.embed.on("play", function () {
-            ft.call(t, !0), Ne.call(t, t.media, "playing");
-          }), t.embed.on("pause", function () {
-            ft.call(t, !1);
-          }), t.embed.on("timeupdate", function (e) {
-            t.media.seeking = !1, f = e.seconds, Ne.call(t, t.media, "timeupdate");
-          }), t.embed.on("progress", function (e) {
-            t.media.buffered = e.percent, Ne.call(t, t.media, "progress"), 1 === parseInt(e.percent, 10) && Ne.call(t, t.media, "canplaythrough"), t.embed.getDuration().then(function (e) {
-              e !== t.media.duration && (t.media.duration = e, Ne.call(t, t.media, "durationchange"));
+            Be.updateCues.call(e, i);
+          }), e.embed.on("loaded", function () {
+            e.embed.getPaused().then(function (t) {
+              tt.call(e, !t), t || fe.call(e, e.media, "playing");
+            }), D(e.embed.element) && e.supported.ui && e.embed.element.setAttribute("tabindex", -1);
+          }), e.embed.on("bufferstart", function () {
+            fe.call(e, e.media, "waiting");
+          }), e.embed.on("bufferend", function () {
+            fe.call(e, e.media, "playing");
+          }), e.embed.on("play", function () {
+            tt.call(e, !0), fe.call(e, e.media, "playing");
+          }), e.embed.on("pause", function () {
+            tt.call(e, !1);
+          }), e.embed.on("timeupdate", function (t) {
+            e.media.seeking = !1, u = t.seconds, fe.call(e, e.media, "timeupdate");
+          }), e.embed.on("progress", function (t) {
+            e.media.buffered = t.percent, fe.call(e, e.media, "progress"), 1 === parseInt(t.percent, 10) && fe.call(e, e.media, "canplaythrough"), e.embed.getDuration().then(function (t) {
+              t !== e.media.duration && (e.media.duration = t, fe.call(e, e.media, "durationchange"));
             });
-          }), t.embed.on("seeked", function () {
-            t.media.seeking = !1, Ne.call(t, t.media, "seeked");
-          }), t.embed.on("ended", function () {
-            t.media.paused = !0, Ne.call(t, t.media, "ended");
-          }), t.embed.on("error", function (e) {
-            t.media.error = e, Ne.call(t, t.media, "error");
-          }), n.customControls && setTimeout(function () {
-            return dt.build.call(t);
+          }), e.embed.on("seeked", function () {
+            e.media.seeking = !1, fe.call(e, e.media, "seeked");
+          }), e.embed.on("ended", function () {
+            e.media.paused = !0, fe.call(e, e.media, "ended");
+          }), e.embed.on("error", function (t) {
+            e.media.error = t, fe.call(e, e.media, "error");
+          }), t.customControls && setTimeout(function () {
+            return Je.build.call(e);
           }, 0);
         }
       };
 
-      function yt(e) {
-        e && !this.embed.hasPlayed && (this.embed.hasPlayed = !0), this.media.paused === e && (this.media.paused = !e, Ne.call(this, this.media, e ? "play" : "pause"));
+      function st(e) {
+        e && !this.embed.hasPlayed && (this.embed.hasPlayed = !0), this.media.paused === e && (this.media.paused = !e, fe.call(this, this.media, e ? "play" : "pause"));
       }
 
-      function bt(e) {
+      function nt(e) {
         return e.noCookie ? "https://www.youtube-nocookie.com" : "http:" === window.location.protocol ? "http://www.youtube.com" : void 0;
       }
 
-      var vt,
-          wt = {
+      var at = {
         setup: function setup() {
-          var e = this;
-          if (ge(this.elements.wrapper, this.config.classNames.embed, !0), U(window.YT) && Y(window.YT.Player)) wt.ready.call(this);else {
-            var t = window.onYouTubeIframeAPIReady;
+          var _this29 = this;
+
+          if (se(this.elements.wrapper, this.config.classNames.embed, !0), N(window.YT) && O(window.YT.Player)) at.ready.call(this);else {
+            var _e26 = window.onYouTubeIframeAPIReady;
             window.onYouTubeIframeAPIReady = function () {
-              Y(t) && t(), wt.ready.call(e);
-            }, mt(this.config.urls.youtube.sdk).catch(function (t) {
-              e.debug.warn("YouTube API failed to load", t);
+              O(_e26) && _e26(), at.ready.call(_this29);
+            }, et(this.config.urls.youtube.sdk).catch(function (e) {
+              _this29.debug.warn("YouTube API failed to load", e);
             });
           }
         },
         getTitle: function getTitle(e) {
-          var t = this;
-          Qe(Re(this.config.urls.youtube.api, e)).then(function (e) {
-            if (U(e)) {
-              var n = e.title,
-                  i = e.height,
-                  a = e.width;
-              t.config.title = n, dt.setTitle.call(t), t.embed.ratio = [a, i];
+          var _this30 = this;
+
+          qe(Me(this.config.urls.youtube.api, e)).then(function (e) {
+            if (N(e)) {
+              var _t18 = e.title,
+                  _i16 = e.height,
+                  _s14 = e.width;
+              _this30.config.title = _t18, Je.setTitle.call(_this30), _this30.embed.ratio = Pe(_s14, _i16);
             }
 
-            qe.call(t);
+            Ee.call(_this30);
           }).catch(function () {
-            qe.call(t);
+            Ee.call(_this30);
           });
         },
         ready: function ready() {
           var e = this,
               t = e.config.youtube,
-              n = e.media && e.media.getAttribute("id");
+              i = e.media && e.media.getAttribute("id");
+          if (!V(i) && i.startsWith("youtube-")) return;
+          var s = e.media.getAttribute("src");
+          V(s) && (s = e.media.getAttribute(this.config.attributes.embed.id));
+          var n = V(a = s) ? null : a.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/) ? RegExp.$2 : a;
+          var a;
+          var l = X("div", {
+            id: "".concat(e.provider, "-").concat(Math.floor(1e4 * Math.random())),
+            "data-poster": t.customControls ? e.poster : void 0
+          });
 
-          if (te(n) || !n.startsWith("youtube-")) {
-            var i = e.media.getAttribute("src");
-            te(i) && (i = e.media.getAttribute(this.config.attributes.embed.id));
-            var a,
-                r,
-                o = te(a = i) ? null : a.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/) ? RegExp.$2 : a,
-                s = ce("div", {
-              id: (r = e.provider, "".concat(r, "-").concat(Math.floor(1e4 * Math.random()))),
-              "data-poster": t.customControls ? e.poster : void 0
-            });
-
-            if (e.media = pe(s, e.media), t.customControls) {
-              var l = function l(e) {
-                return "https://i.ytimg.com/vi/".concat(o, "/").concat(e, "default.jpg");
-              };
-
-              ut(l("maxres"), 121).catch(function () {
-                return ut(l("sd"), 121);
-              }).catch(function () {
-                return ut(l("hq"));
-              }).then(function (t) {
-                return dt.setPoster.call(e, t.src);
-              }).then(function (t) {
-                t.includes("maxres") || (e.elements.poster.style.backgroundSize = "cover");
-              }).catch(function () {});
-            }
-
-            e.embed = new window.YT.Player(e.media, {
-              videoId: o,
-              host: bt(t),
-              playerVars: oe({}, {
-                autoplay: e.config.autoplay ? 1 : 0,
-                hl: e.config.hl,
-                controls: e.supported.ui && t.customControls ? 0 : 1,
-                disablekb: 1,
-                playsinline: e.config.fullscreen.iosNative ? 0 : 1,
-                cc_load_policy: e.captions.active ? 1 : 0,
-                cc_lang_pref: e.config.captions.language,
-                widget_referrer: window ? window.location.href : null
-              }, t),
-              events: {
-                onError: function onError(t) {
-                  if (!e.media.error) {
-                    var n = t.data,
-                        i = {
-                      2: "The request contains an invalid parameter value. For example, this error occurs if you specify a video ID that does not have 11 characters, or if the video ID contains invalid characters, such as exclamation points or asterisks.",
-                      5: "The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.",
-                      100: "The video requested was not found. This error occurs when a video has been removed (for any reason) or has been marked as private.",
-                      101: "The owner of the requested video does not allow it to be played in embedded players.",
-                      150: "The owner of the requested video does not allow it to be played in embedded players."
-                    }[n] || "An unknown error occured";
-                    e.media.error = {
-                      code: n,
-                      message: i
-                    }, Ne.call(e, e.media, "error");
-                  }
-                },
-                onPlaybackRateChange: function onPlaybackRateChange(t) {
-                  var n = t.target;
-                  e.media.playbackRate = n.getPlaybackRate(), Ne.call(e, e.media, "ratechange");
-                },
-                onReady: function onReady(n) {
-                  if (!Y(e.media.play)) {
-                    var i = n.target;
-                    wt.getTitle.call(e, o), e.media.play = function () {
-                      yt.call(e, !0), i.playVideo();
-                    }, e.media.pause = function () {
-                      yt.call(e, !1), i.pauseVideo();
-                    }, e.media.stop = function () {
-                      i.stopVideo();
-                    }, e.media.duration = i.getDuration(), e.media.paused = !0, e.media.currentTime = 0, Object.defineProperty(e.media, "currentTime", {
-                      get: function get() {
-                        return Number(i.getCurrentTime());
-                      },
-                      set: function set(t) {
-                        e.paused && !e.embed.hasPlayed && e.embed.mute(), e.media.seeking = !0, Ne.call(e, e.media, "seeking"), i.seekTo(t);
-                      }
-                    }), Object.defineProperty(e.media, "playbackRate", {
-                      get: function get() {
-                        return i.getPlaybackRate();
-                      },
-                      set: function set(e) {
-                        i.setPlaybackRate(e);
-                      }
-                    });
-                    var a = e.config.volume;
-                    Object.defineProperty(e.media, "volume", {
-                      get: function get() {
-                        return a;
-                      },
-                      set: function set(t) {
-                        a = t, i.setVolume(100 * a), Ne.call(e, e.media, "volumechange");
-                      }
-                    });
-                    var r = e.config.muted;
-                    Object.defineProperty(e.media, "muted", {
-                      get: function get() {
-                        return r;
-                      },
-                      set: function set(t) {
-                        var n = K(t) ? t : r;
-                        r = n, i[n ? "mute" : "unMute"](), i.setVolume(100 * a), Ne.call(e, e.media, "volumechange");
-                      }
-                    }), Object.defineProperty(e.media, "currentSrc", {
-                      get: function get() {
-                        return i.getVideoUrl();
-                      }
-                    }), Object.defineProperty(e.media, "ended", {
-                      get: function get() {
-                        return e.currentTime === e.duration;
-                      }
-                    });
-                    var s = i.getAvailablePlaybackRates();
-                    e.options.speed = s.filter(function (t) {
-                      return e.config.speed.options.includes(t);
-                    }), e.supported.ui && t.customControls && e.media.setAttribute("tabindex", -1), Ne.call(e, e.media, "timeupdate"), Ne.call(e, e.media, "durationchange"), clearInterval(e.timers.buffering), e.timers.buffering = setInterval(function () {
-                      e.media.buffered = i.getVideoLoadedFraction(), (null === e.media.lastBuffered || e.media.lastBuffered < e.media.buffered) && Ne.call(e, e.media, "progress"), e.media.lastBuffered = e.media.buffered, 1 === e.media.buffered && (clearInterval(e.timers.buffering), Ne.call(e, e.media, "canplaythrough"));
-                    }, 200), t.customControls && setTimeout(function () {
-                      return dt.build.call(e);
-                    }, 50);
-                  }
-                },
-                onStateChange: function onStateChange(n) {
-                  var i = n.target;
-
-                  switch (clearInterval(e.timers.playing), e.media.seeking && [1, 2].includes(n.data) && (e.media.seeking = !1, Ne.call(e, e.media, "seeked")), n.data) {
-                    case -1:
-                      Ne.call(e, e.media, "timeupdate"), e.media.buffered = i.getVideoLoadedFraction(), Ne.call(e, e.media, "progress");
-                      break;
-
-                    case 0:
-                      yt.call(e, !1), e.media.loop ? (i.stopVideo(), i.playVideo()) : Ne.call(e, e.media, "ended");
-                      break;
-
-                    case 1:
-                      t.customControls && !e.config.autoplay && e.media.paused && !e.embed.hasPlayed ? e.media.pause() : (yt.call(e, !0), Ne.call(e, e.media, "playing"), e.timers.playing = setInterval(function () {
-                        Ne.call(e, e.media, "timeupdate");
-                      }, 50), e.media.duration !== i.getDuration() && (e.media.duration = i.getDuration(), Ne.call(e, e.media, "durationchange")));
-                      break;
-
-                    case 2:
-                      e.muted || e.embed.unMute(), yt.call(e, !1);
-                      break;
-
-                    case 3:
-                      Ne.call(e, e.media, "waiting");
-                  }
-
-                  Ne.call(e, e.elements.container, "statechange", !1, {
-                    code: n.data
-                  });
-                }
-              }
-            });
-          }
-        }
-      },
-          kt = {
-        setup: function setup() {
-          this.media ? (ge(this.elements.container, this.config.classNames.type.replace("{0}", this.type), !0), ge(this.elements.container, this.config.classNames.provider.replace("{0}", this.provider), !0), this.isEmbed && ge(this.elements.container, this.config.classNames.type.replace("{0}", "video"), !0), this.isVideo && (this.elements.wrapper = ce("div", {
-            class: this.config.classNames.video
-          }), se(this.media, this.elements.wrapper), this.elements.poster = ce("div", {
-            class: this.config.classNames.poster,
-            hidden: ""
-          }), this.elements.wrapper.appendChild(this.elements.poster)), this.isHTML5 ? Fe.setup.call(this) : this.isYouTube ? wt.setup.call(this) : this.isVimeo && gt.setup.call(this)) : this.debug.warn("No media element found!");
-        }
-      },
-          Tt = function () {
-        function e(t) {
-          var i = this;
-          n(this, e), r(this, "load", function () {
-            i.enabled && (U(window.google) && U(window.google.ima) ? i.ready() : mt(i.player.config.urls.googleIMA.sdk).then(function () {
-              i.ready();
-            }).catch(function () {
-              i.trigger("error", new Error("Google IMA SDK failed to load"));
-            }));
-          }), r(this, "ready", function () {
-            var e;
-            i.enabled || ((e = i).manager && e.manager.destroy(), e.elements.displayContainer && e.elements.displayContainer.destroy(), e.elements.container.remove()), i.startSafetyTimer(12e3, "ready()"), i.managerPromise.then(function () {
-              i.clearSafetyTimer("onAdsManagerLoaded()");
-            }), i.listeners(), i.setupIMA();
-          }), r(this, "setupIMA", function () {
-            i.elements.container = ce("div", {
-              class: i.player.config.classNames.ads
-            }), i.player.elements.container.appendChild(i.elements.container), google.ima.settings.setVpaidMode(google.ima.ImaSdkSettings.VpaidMode.ENABLED), google.ima.settings.setLocale(i.player.config.ads.language), google.ima.settings.setDisableCustomPlaybackForIOS10Plus(i.player.config.playsinline), i.elements.displayContainer = new google.ima.AdDisplayContainer(i.elements.container, i.player.media), i.loader = new google.ima.AdsLoader(i.elements.displayContainer), i.loader.addEventListener(google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED, function (e) {
-              return i.onAdsManagerLoaded(e);
-            }, !1), i.loader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, function (e) {
-              return i.onAdError(e);
-            }, !1), i.requestAds();
-          }), r(this, "requestAds", function () {
-            var e = i.player.elements.container;
-
-            try {
-              var t = new google.ima.AdsRequest();
-              t.adTagUrl = i.tagUrl, t.linearAdSlotWidth = e.offsetWidth, t.linearAdSlotHeight = e.offsetHeight, t.nonLinearAdSlotWidth = e.offsetWidth, t.nonLinearAdSlotHeight = e.offsetHeight, t.forceNonLinearFullSlot = !1, t.setAdWillPlayMuted(!i.player.muted), i.loader.requestAds(t);
-            } catch (e) {
-              i.onAdError(e);
-            }
-          }), r(this, "pollCountdown", function () {
-            var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-            if (!e) return clearInterval(i.countdownTimer), void i.elements.container.removeAttribute("data-badge-text");
-
-            var t = function t() {
-              var e = Ze(Math.max(i.manager.getRemainingTime(), 0)),
-                  t = "".concat(Ke("advertisement", i.player.config), " - ").concat(e);
-              i.elements.container.setAttribute("data-badge-text", t);
+          if (e.media = ee(l, e.media), t.customControls) {
+            var _t19 = function _t19(e) {
+              return "https://i.ytimg.com/vi/".concat(n, "/").concat(e, "default.jpg");
             };
 
-            i.countdownTimer = setInterval(t, 100);
-          }), r(this, "onAdsManagerLoaded", function (e) {
-            if (i.enabled) {
-              var t = new google.ima.AdsRenderingSettings();
-              t.restoreCustomPlaybackStateOnAdBreakComplete = !0, t.enablePreloading = !0, i.manager = e.getAdsManager(i.player, t), i.cuePoints = i.manager.getCuePoints(), i.manager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, function (e) {
-                return i.onAdError(e);
-              }), Object.keys(google.ima.AdEvent.Type).forEach(function (e) {
-                i.manager.addEventListener(google.ima.AdEvent.Type[e], function (e) {
-                  return i.onAdEvent(e);
-                });
-              }), i.trigger("loaded");
-            }
-          }), r(this, "addCuePoints", function () {
-            te(i.cuePoints) || i.cuePoints.forEach(function (e) {
-              if (0 !== e && -1 !== e && e < i.player.duration) {
-                var t = i.player.elements.progress;
+            Xe(_t19("maxres"), 121).catch(function () {
+              return Xe(_t19("sd"), 121);
+            }).catch(function () {
+              return Xe(_t19("hq"));
+            }).then(function (t) {
+              return Je.setPoster.call(e, t.src);
+            }).then(function (t) {
+              t.includes("maxres") || (e.elements.poster.style.backgroundSize = "cover");
+            }).catch(function () {});
+          }
 
-                if ($(t)) {
-                  var n = 100 / i.player.duration * e,
-                      a = ce("span", {
-                    class: i.player.config.classNames.cues
+          e.embed = new window.YT.Player(e.media, {
+            videoId: n,
+            host: nt(t),
+            playerVars: K({}, {
+              autoplay: e.config.autoplay ? 1 : 0,
+              hl: e.config.hl,
+              controls: e.supported.ui && t.customControls ? 0 : 1,
+              disablekb: 1,
+              playsinline: e.config.fullscreen.iosNative ? 0 : 1,
+              cc_load_policy: e.captions.active ? 1 : 0,
+              cc_lang_pref: e.config.captions.language,
+              widget_referrer: window ? window.location.href : null
+            }, t),
+            events: {
+              onError: function onError(t) {
+                if (!e.media.error) {
+                  var _i17 = t.data,
+                      _s15 = {
+                    2: "The request contains an invalid parameter value. For example, this error occurs if you specify a video ID that does not have 11 characters, or if the video ID contains invalid characters, such as exclamation points or asterisks.",
+                    5: "The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.",
+                    100: "The video requested was not found. This error occurs when a video has been removed (for any reason) or has been marked as private.",
+                    101: "The owner of the requested video does not allow it to be played in embedded players.",
+                    150: "The owner of the requested video does not allow it to be played in embedded players."
+                  }[_i17] || "An unknown error occured";
+
+                  e.media.error = {
+                    code: _i17,
+                    message: _s15
+                  }, fe.call(e, e.media, "error");
+                }
+              },
+              onPlaybackRateChange: function onPlaybackRateChange(t) {
+                var i = t.target;
+                e.media.playbackRate = i.getPlaybackRate(), fe.call(e, e.media, "ratechange");
+              },
+              onReady: function onReady(i) {
+                if (O(e.media.play)) return;
+                var s = i.target;
+                at.getTitle.call(e, n), e.media.play = function () {
+                  st.call(e, !0), s.playVideo();
+                }, e.media.pause = function () {
+                  st.call(e, !1), s.pauseVideo();
+                }, e.media.stop = function () {
+                  s.stopVideo();
+                }, e.media.duration = s.getDuration(), e.media.paused = !0, e.media.currentTime = 0, Object.defineProperty(e.media, "currentTime", {
+                  get: function get() {
+                    return Number(s.getCurrentTime());
+                  },
+                  set: function set(t) {
+                    e.paused && !e.embed.hasPlayed && e.embed.mute(), e.media.seeking = !0, fe.call(e, e.media, "seeking"), s.seekTo(t);
+                  }
+                }), Object.defineProperty(e.media, "playbackRate", {
+                  get: function get() {
+                    return s.getPlaybackRate();
+                  },
+                  set: function set(e) {
+                    s.setPlaybackRate(e);
+                  }
+                });
+                var a = e.config.volume;
+                Object.defineProperty(e.media, "volume", {
+                  get: function get() {
+                    return a;
+                  },
+                  set: function set(t) {
+                    a = t, s.setVolume(100 * a), fe.call(e, e.media, "volumechange");
+                  }
+                });
+                var l = e.config.muted;
+                Object.defineProperty(e.media, "muted", {
+                  get: function get() {
+                    return l;
+                  },
+                  set: function set(t) {
+                    var i = _(t) ? t : l;
+                    l = i, s[i ? "mute" : "unMute"](), s.setVolume(100 * a), fe.call(e, e.media, "volumechange");
+                  }
+                }), Object.defineProperty(e.media, "currentSrc", {
+                  get: function get() {
+                    return s.getVideoUrl();
+                  }
+                }), Object.defineProperty(e.media, "ended", {
+                  get: function get() {
+                    return e.currentTime === e.duration;
+                  }
+                });
+                var o = s.getAvailablePlaybackRates();
+                e.options.speed = o.filter(function (t) {
+                  return e.config.speed.options.includes(t);
+                }), e.supported.ui && t.customControls && e.media.setAttribute("tabindex", -1), fe.call(e, e.media, "timeupdate"), fe.call(e, e.media, "durationchange"), clearInterval(e.timers.buffering), e.timers.buffering = setInterval(function () {
+                  e.media.buffered = s.getVideoLoadedFraction(), (null === e.media.lastBuffered || e.media.lastBuffered < e.media.buffered) && fe.call(e, e.media, "progress"), e.media.lastBuffered = e.media.buffered, 1 === e.media.buffered && (clearInterval(e.timers.buffering), fe.call(e, e.media, "canplaythrough"));
+                }, 200), t.customControls && setTimeout(function () {
+                  return Je.build.call(e);
+                }, 50);
+              },
+              onStateChange: function onStateChange(i) {
+                var s = i.target;
+
+                switch (clearInterval(e.timers.playing), e.media.seeking && [1, 2].includes(i.data) && (e.media.seeking = !1, fe.call(e, e.media, "seeked")), i.data) {
+                  case -1:
+                    fe.call(e, e.media, "timeupdate"), e.media.buffered = s.getVideoLoadedFraction(), fe.call(e, e.media, "progress");
+                    break;
+
+                  case 0:
+                    st.call(e, !1), e.media.loop ? (s.stopVideo(), s.playVideo()) : fe.call(e, e.media, "ended");
+                    break;
+
+                  case 1:
+                    t.customControls && !e.config.autoplay && e.media.paused && !e.embed.hasPlayed ? e.media.pause() : (st.call(e, !0), fe.call(e, e.media, "playing"), e.timers.playing = setInterval(function () {
+                      fe.call(e, e.media, "timeupdate");
+                    }, 50), e.media.duration !== s.getDuration() && (e.media.duration = s.getDuration(), fe.call(e, e.media, "durationchange")));
+                    break;
+
+                  case 2:
+                    e.muted || e.embed.unMute(), st.call(e, !1);
+                    break;
+
+                  case 3:
+                    fe.call(e, e.media, "waiting");
+                }
+
+                fe.call(e, e.elements.container, "statechange", !1, {
+                  code: i.data
+                });
+              }
+            }
+          });
+        }
+      },
+          lt = {
+        setup: function setup() {
+          this.media ? (se(this.elements.container, this.config.classNames.type.replace("{0}", this.type), !0), se(this.elements.container, this.config.classNames.provider.replace("{0}", this.provider), !0), this.isEmbed && se(this.elements.container, this.config.classNames.type.replace("{0}", "video"), !0), this.isVideo && (this.elements.wrapper = X("div", {
+            class: this.config.classNames.video
+          }), Y(this.media, this.elements.wrapper), this.elements.poster = X("div", {
+            class: this.config.classNames.poster
+          }), this.elements.wrapper.appendChild(this.elements.poster)), this.isHTML5 ? xe.setup.call(this) : this.isYouTube ? at.setup.call(this) : this.isVimeo && it.setup.call(this)) : this.debug.warn("No media element found!");
+        }
+      };
+
+      var ot = /*#__PURE__*/function () {
+        function ot(t) {
+          var _this31 = this;
+
+          _classCallCheck(this, ot);
+
+          e(this, "load", function () {
+            _this31.enabled && (N(window.google) && N(window.google.ima) ? _this31.ready() : et(_this31.player.config.urls.googleIMA.sdk).then(function () {
+              _this31.ready();
+            }).catch(function () {
+              _this31.trigger("error", new Error("Google IMA SDK failed to load"));
+            }));
+          }), e(this, "ready", function () {
+            var e;
+            _this31.enabled || ((e = _this31).manager && e.manager.destroy(), e.elements.displayContainer && e.elements.displayContainer.destroy(), e.elements.container.remove()), _this31.startSafetyTimer(12e3, "ready()"), _this31.managerPromise.then(function () {
+              _this31.clearSafetyTimer("onAdsManagerLoaded()");
+            }), _this31.listeners(), _this31.setupIMA();
+          }), e(this, "setupIMA", function () {
+            _this31.elements.container = X("div", {
+              class: _this31.player.config.classNames.ads
+            }), _this31.player.elements.container.appendChild(_this31.elements.container), google.ima.settings.setVpaidMode(google.ima.ImaSdkSettings.VpaidMode.ENABLED), google.ima.settings.setLocale(_this31.player.config.ads.language), google.ima.settings.setDisableCustomPlaybackForIOS10Plus(_this31.player.config.playsinline), _this31.elements.displayContainer = new google.ima.AdDisplayContainer(_this31.elements.container, _this31.player.media), _this31.loader = new google.ima.AdsLoader(_this31.elements.displayContainer), _this31.loader.addEventListener(google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED, function (e) {
+              return _this31.onAdsManagerLoaded(e);
+            }, !1), _this31.loader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, function (e) {
+              return _this31.onAdError(e);
+            }, !1), _this31.requestAds();
+          }), e(this, "requestAds", function () {
+            var e = _this31.player.elements.container;
+
+            try {
+              var _t20 = new google.ima.AdsRequest();
+
+              _t20.adTagUrl = _this31.tagUrl, _t20.linearAdSlotWidth = e.offsetWidth, _t20.linearAdSlotHeight = e.offsetHeight, _t20.nonLinearAdSlotWidth = e.offsetWidth, _t20.nonLinearAdSlotHeight = e.offsetHeight, _t20.forceNonLinearFullSlot = !1, _t20.setAdWillPlayMuted(!_this31.player.muted), _this31.loader.requestAds(_t20);
+            } catch (e) {
+              _this31.onAdError(e);
+            }
+          }), e(this, "pollCountdown", function () {
+            var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
+            if (!e) return clearInterval(_this31.countdownTimer), void _this31.elements.container.removeAttribute("data-badge-text");
+            _this31.countdownTimer = setInterval(function () {
+              var e = He(Math.max(_this31.manager.getRemainingTime(), 0)),
+                  t = "".concat(Oe.get("advertisement", _this31.player.config), " - ").concat(e);
+
+              _this31.elements.container.setAttribute("data-badge-text", t);
+            }, 100);
+          }), e(this, "onAdsManagerLoaded", function (e) {
+            if (!_this31.enabled) return;
+            var t = new google.ima.AdsRenderingSettings();
+            t.restoreCustomPlaybackStateOnAdBreakComplete = !0, t.enablePreloading = !0, _this31.manager = e.getAdsManager(_this31.player, t), _this31.cuePoints = _this31.manager.getCuePoints(), _this31.manager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, function (e) {
+              return _this31.onAdError(e);
+            }), Object.keys(google.ima.AdEvent.Type).forEach(function (e) {
+              _this31.manager.addEventListener(google.ima.AdEvent.Type[e], function (e) {
+                return _this31.onAdEvent(e);
+              });
+            }), _this31.trigger("loaded");
+          }), e(this, "addCuePoints", function () {
+            V(_this31.cuePoints) || _this31.cuePoints.forEach(function (e) {
+              if (0 !== e && -1 !== e && e < _this31.player.duration) {
+                var _t21 = _this31.player.elements.progress;
+
+                if (D(_t21)) {
+                  var _i18 = 100 / _this31.player.duration * e,
+                      _s16 = X("span", {
+                    class: _this31.player.config.classNames.cues
                   });
-                  a.style.left = "".concat(n.toString(), "%"), t.appendChild(a);
+
+                  _s16.style.left = _i18.toString() + "%", _t21.appendChild(_s16);
                 }
               }
             });
-          }), r(this, "onAdEvent", function (e) {
-            var t = i.player.elements.container,
-                n = e.getAd(),
-                a = e.getAdData();
+          }), e(this, "onAdEvent", function (e) {
+            var t = _this31.player.elements.container,
+                i = e.getAd(),
+                s = e.getAdData();
 
             switch (function (e) {
-              Ne.call(i.player, i.player.media, "ads".concat(e.replace(/_/g, "").toLowerCase()));
+              fe.call(_this31.player, _this31.player.media, "ads" + e.replace(/_/g, "").toLowerCase());
             }(e.type), e.type) {
               case google.ima.AdEvent.Type.LOADED:
-                i.trigger("loaded"), i.pollCountdown(!0), n.isLinear() || (n.width = t.offsetWidth, n.height = t.offsetHeight);
+                _this31.trigger("loaded"), _this31.pollCountdown(!0), i.isLinear() || (i.width = t.offsetWidth, i.height = t.offsetHeight);
                 break;
 
               case google.ima.AdEvent.Type.STARTED:
-                i.manager.setVolume(i.player.volume);
+                _this31.manager.setVolume(_this31.player.volume);
+
                 break;
 
               case google.ima.AdEvent.Type.ALL_ADS_COMPLETED:
-                i.player.ended ? i.loadAds() : i.loader.contentComplete();
+                _this31.player.ended ? _this31.loadAds() : _this31.loader.contentComplete();
                 break;
 
               case google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED:
-                i.pauseContent();
+                _this31.pauseContent();
+
                 break;
 
               case google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED:
-                i.pollCountdown(), i.resumeContent();
+                _this31.pollCountdown(), _this31.resumeContent();
                 break;
 
               case google.ima.AdEvent.Type.LOG:
-                a.adError && i.player.debug.warn("Non-fatal ad error: ".concat(a.adError.getMessage()));
+                s.adError && _this31.player.debug.warn("Non-fatal ad error: " + s.adError.getMessage());
             }
-          }), r(this, "onAdError", function (e) {
-            i.cancel(), i.player.debug.warn("Ads error", e);
-          }), r(this, "listeners", function () {
-            var e,
-                t = i.player.elements.container;
-            i.player.on("canplay", function () {
-              i.addCuePoints();
-            }), i.player.on("ended", function () {
-              i.loader.contentComplete();
-            }), i.player.on("timeupdate", function () {
-              e = i.player.currentTime;
-            }), i.player.on("seeked", function () {
-              var t = i.player.currentTime;
-              te(i.cuePoints) || i.cuePoints.forEach(function (n, a) {
-                e < n && n < t && (i.manager.discardAdBreak(), i.cuePoints.splice(a, 1));
+          }), e(this, "onAdError", function (e) {
+            _this31.cancel(), _this31.player.debug.warn("Ads error", e);
+          }), e(this, "listeners", function () {
+            var e = _this31.player.elements.container;
+            var t;
+            _this31.player.on("canplay", function () {
+              _this31.addCuePoints();
+            }), _this31.player.on("ended", function () {
+              _this31.loader.contentComplete();
+            }), _this31.player.on("timeupdate", function () {
+              t = _this31.player.currentTime;
+            }), _this31.player.on("seeked", function () {
+              var e = _this31.player.currentTime;
+              V(_this31.cuePoints) || _this31.cuePoints.forEach(function (i, s) {
+                t < i && i < e && (_this31.manager.discardAdBreak(), _this31.cuePoints.splice(s, 1));
               });
             }), window.addEventListener("resize", function () {
-              i.manager && i.manager.resize(t.offsetWidth, t.offsetHeight, google.ima.ViewMode.NORMAL);
+              _this31.manager && _this31.manager.resize(e.offsetWidth, e.offsetHeight, google.ima.ViewMode.NORMAL);
             });
-          }), r(this, "play", function () {
-            var e = i.player.elements.container;
-            i.managerPromise || i.resumeContent(), i.managerPromise.then(function () {
-              i.manager.setVolume(i.player.volume), i.elements.displayContainer.initialize();
+          }), e(this, "play", function () {
+            var e = _this31.player.elements.container;
+            _this31.managerPromise || _this31.resumeContent(), _this31.managerPromise.then(function () {
+              _this31.manager.setVolume(_this31.player.volume), _this31.elements.displayContainer.initialize();
 
               try {
-                i.initialized || (i.manager.init(e.offsetWidth, e.offsetHeight, google.ima.ViewMode.NORMAL), i.manager.start()), i.initialized = !0;
+                _this31.initialized || (_this31.manager.init(e.offsetWidth, e.offsetHeight, google.ima.ViewMode.NORMAL), _this31.manager.start()), _this31.initialized = !0;
               } catch (e) {
-                i.onAdError(e);
+                _this31.onAdError(e);
               }
             }).catch(function () {});
-          }), r(this, "resumeContent", function () {
-            i.elements.container.style.zIndex = "", i.playing = !1, Le(i.player.media.play());
-          }), r(this, "pauseContent", function () {
-            i.elements.container.style.zIndex = 3, i.playing = !0, i.player.media.pause();
-          }), r(this, "cancel", function () {
-            i.initialized && i.resumeContent(), i.trigger("error"), i.loadAds();
-          }), r(this, "loadAds", function () {
-            i.managerPromise.then(function () {
-              i.manager && i.manager.destroy(), i.managerPromise = new Promise(function (e) {
-                i.on("loaded", e), i.player.debug.log(i.manager);
-              }), i.initialized = !1, i.requestAds();
+          }), e(this, "resumeContent", function () {
+            _this31.elements.container.style.zIndex = "", _this31.playing = !1, ve(_this31.player.media.play());
+          }), e(this, "pauseContent", function () {
+            _this31.elements.container.style.zIndex = 3, _this31.playing = !0, _this31.player.media.pause();
+          }), e(this, "cancel", function () {
+            _this31.initialized && _this31.resumeContent(), _this31.trigger("error"), _this31.loadAds();
+          }), e(this, "loadAds", function () {
+            _this31.managerPromise.then(function () {
+              _this31.manager && _this31.manager.destroy(), _this31.managerPromise = new Promise(function (e) {
+                _this31.on("loaded", e), _this31.player.debug.log(_this31.manager);
+              }), _this31.initialized = !1, _this31.requestAds();
             }).catch(function () {});
-          }), r(this, "trigger", function (e) {
-            for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), a = 1; a < t; a++) {
-              n[a - 1] = arguments[a];
+          }), e(this, "trigger", function (e) {
+            for (var _len4 = arguments.length, t = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
+              t[_key4 - 1] = arguments[_key4];
             }
 
-            var r = i.events[e];
-            Q(r) && r.forEach(function (e) {
-              Y(e) && e.apply(i, n);
+            var i = _this31.events[e];
+            j(i) && i.forEach(function (e) {
+              O(e) && e.apply(_this31, t);
             });
-          }), r(this, "on", function (e, t) {
-            return Q(i.events[e]) || (i.events[e] = []), i.events[e].push(t), i;
-          }), r(this, "startSafetyTimer", function (e, t) {
-            i.player.debug.log("Safety timer invoked from: ".concat(t)), i.safetyTimer = setTimeout(function () {
-              i.cancel(), i.clearSafetyTimer("startSafetyTimer()");
+          }), e(this, "on", function (e, t) {
+            return j(_this31.events[e]) || (_this31.events[e] = []), _this31.events[e].push(t), _this31;
+          }), e(this, "startSafetyTimer", function (e, t) {
+            _this31.player.debug.log("Safety timer invoked from: " + t), _this31.safetyTimer = setTimeout(function () {
+              _this31.cancel(), _this31.clearSafetyTimer("startSafetyTimer()");
             }, e);
-          }), r(this, "clearSafetyTimer", function (e) {
-            B(i.safetyTimer) || (i.player.debug.log("Safety timer cleared from: ".concat(e)), clearTimeout(i.safetyTimer), i.safetyTimer = null);
+          }), e(this, "clearSafetyTimer", function (e) {
+            M(_this31.safetyTimer) || (_this31.player.debug.log("Safety timer cleared from: " + e), clearTimeout(_this31.safetyTimer), _this31.safetyTimer = null);
           }), this.player = t, this.config = t.config.ads, this.playing = !1, this.initialized = !1, this.elements = {
             container: null,
             displayContainer: null
           }, this.manager = null, this.loader = null, this.cuePoints = null, this.events = {}, this.safetyTimer = null, this.countdownTimer = null, this.managerPromise = new Promise(function (e, t) {
-            i.on("loaded", e), i.on("error", t);
+            _this31.on("loaded", e), _this31.on("error", t);
           }), this.load();
         }
 
-        return a(e, [{
+        _createClass(ot, [{
           key: "enabled",
           get: function get() {
             var e = this.config;
-            return this.player.isHTML5 && this.player.isVideo && e.enabled && (!te(e.publisherId) || ee(e.tagUrl));
+            return this.player.isHTML5 && this.player.isVideo && e.enabled && (!V(e.publisherId) || $(e.tagUrl));
           }
         }, {
           key: "tagUrl",
           get: function get() {
             var e = this.config;
-            if (ee(e.tagUrl)) return e.tagUrl;
-            var t = {
+            return $(e.tagUrl) ? e.tagUrl : "https://go.aniview.com/api/adserver6/vast/?" + Ve({
               AV_PUBLISHERID: "58c25bb0073ef448b1087ad6",
               AV_CHANNELID: "5a0458dc28a06145e4519d21",
               AV_URL: window.location.hostname,
@@ -3524,244 +3559,267 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               AV_WIDTH: 640,
               AV_HEIGHT: 480,
               AV_CDIM2: e.publisherId
-            };
-            return "".concat("https://go.aniview.com/api/adserver6/vast/", "?").concat(nt(t));
-          }
-        }]), e;
-      }(),
-          Ct = function Ct(e, t) {
-        var n = {};
-        return e > t.width / t.height ? (n.width = t.width, n.height = 1 / e * t.width) : (n.height = t.height, n.width = e * t.height), n;
-      },
-          At = function () {
-        function e(t) {
-          var i = this;
-          n(this, e), r(this, "load", function () {
-            i.player.elements.display.seekTooltip && (i.player.elements.display.seekTooltip.hidden = i.enabled), i.enabled && i.getThumbnails().then(function () {
-              i.enabled && (i.render(), i.determineContainerAutoSizing(), i.loaded = !0);
             });
-          }), r(this, "getThumbnails", function () {
-            return new Promise(function (e) {
-              var t = i.player.config.previewThumbnails.src;
-              if (te(t)) throw new Error("Missing previewThumbnails.src config attribute");
+          }
+        }]);
 
-              var n = function n() {
-                i.thumbnails.sort(function (e, t) {
+        return ot;
+      }();
+
+      var rt = function rt(e) {
+        var t = [];
+        return e.split(/\r\n\r\n|\n\n|\r\r/).forEach(function (e) {
+          var i = {};
+          e.split(/\r\n|\n|\r/).forEach(function (e) {
+            if (I(i.startTime)) {
+              if (!V(e.trim()) && V(i.text)) {
+                var _t23, _t24, _t22$1$split, _t22$1$split2;
+
+                var _t22 = e.trim().split("#xywh=");
+
+                (_t23 = _t22, _t24 = _slicedToArray(_t23, 1), i.text = _t24[0], _t23), _t22[1] && (_t22$1$split = _t22[1].split(","), _t22$1$split2 = _slicedToArray(_t22$1$split, 4), i.x = _t22$1$split2[0], i.y = _t22$1$split2[1], i.w = _t22$1$split2[2], i.h = _t22$1$split2[3], _t22$1$split);
+              }
+            } else {
+              var _t25 = e.match(/([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})( ?--> ?)([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})/);
+
+              _t25 && (i.startTime = 60 * Number(_t25[1] || 0) * 60 + 60 * Number(_t25[2]) + Number(_t25[3]) + Number("0." + _t25[4]), i.endTime = 60 * Number(_t25[6] || 0) * 60 + 60 * Number(_t25[7]) + Number(_t25[8]) + Number("0." + _t25[9]));
+            }
+          }), i.text && t.push(i);
+        }), t;
+      },
+          ct = function ct(e, t) {
+        var i = {};
+        return e > t.width / t.height ? (i.width = t.width, i.height = 1 / e * t.width) : (i.height = t.height, i.width = e * t.height), i;
+      };
+
+      var ht = /*#__PURE__*/function () {
+        function ht(t) {
+          var _this32 = this;
+
+          _classCallCheck(this, ht);
+
+          e(this, "load", function () {
+            _this32.player.elements.display.seekTooltip && (_this32.player.elements.display.seekTooltip.hidden = _this32.enabled), _this32.enabled && _this32.getThumbnails().then(function () {
+              _this32.enabled && (_this32.render(), _this32.determineContainerAutoSizing(), _this32.loaded = !0);
+            });
+          }), e(this, "getThumbnails", function () {
+            return new Promise(function (e) {
+              var t = _this32.player.config.previewThumbnails.src;
+              if (V(t)) throw new Error("Missing previewThumbnails.src config attribute");
+
+              var i = function i() {
+                _this32.thumbnails.sort(function (e, t) {
                   return e.height - t.height;
-                }), i.player.debug.log("Preview thumbnails", i.thumbnails), e();
+                }), _this32.player.debug.log("Preview thumbnails", _this32.thumbnails), e();
               };
 
-              if (Y(t)) t(function (e) {
-                i.thumbnails = e, n();
+              if (O(t)) t(function (e) {
+                _this32.thumbnails = e, i();
               });else {
-                var a = (z(t) ? [t] : t).map(function (e) {
-                  return i.getThumbnail(e);
+                var _e27 = (L(t) ? [t] : t).map(function (e) {
+                  return _this32.getThumbnail(e);
                 });
-                Promise.all(a).then(n);
+
+                Promise.all(_e27).then(i);
               }
             });
-          }), r(this, "getThumbnail", function (e) {
+          }), e(this, "getThumbnail", function (e) {
             return new Promise(function (t) {
-              Qe(e).then(function (n) {
-                var a,
-                    r,
-                    o = {
-                  frames: (a = n, r = [], a.split(/\r\n\r\n|\n\n|\r\r/).forEach(function (e) {
-                    var t = {};
-                    e.split(/\r\n|\n|\r/).forEach(function (e) {
-                      if (W(t.startTime)) {
-                        if (!te(e.trim()) && te(t.text)) {
-                          var n = e.trim().split("#xywh="),
-                              i = l(n, 1);
-
-                          if (t.text = i[0], n[1]) {
-                            var a = l(n[1].split(","), 4);
-                            t.x = a[0], t.y = a[1], t.w = a[2], t.h = a[3];
-                          }
-                        }
-                      } else {
-                        var r = e.match(/([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})( ?--> ?)([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})/);
-                        r && (t.startTime = 60 * Number(r[1] || 0) * 60 + 60 * Number(r[2]) + Number(r[3]) + Number("0.".concat(r[4])), t.endTime = 60 * Number(r[6] || 0) * 60 + 60 * Number(r[7]) + Number(r[8]) + Number("0.".concat(r[9])));
-                      }
-                    }), t.text && r.push(t);
-                  }), r),
+              qe(e).then(function (i) {
+                var s = {
+                  frames: rt(i),
                   height: null,
                   urlPrefix: ""
                 };
-                o.frames[0].text.startsWith("/") || o.frames[0].text.startsWith("http://") || o.frames[0].text.startsWith("https://") || (o.urlPrefix = e.substring(0, e.lastIndexOf("/") + 1));
-                var s = new Image();
-                s.onload = function () {
-                  o.height = s.naturalHeight, o.width = s.naturalWidth, i.thumbnails.push(o), t();
-                }, s.src = o.urlPrefix + o.frames[0].text;
+                s.frames[0].text.startsWith("/") || s.frames[0].text.startsWith("http://") || s.frames[0].text.startsWith("https://") || (s.urlPrefix = e.substring(0, e.lastIndexOf("/") + 1));
+                var n = new Image();
+                n.onload = function () {
+                  s.height = n.naturalHeight, s.width = n.naturalWidth, _this32.thumbnails.push(s), t();
+                }, n.src = s.urlPrefix + s.frames[0].text;
               });
             });
-          }), r(this, "startMove", function (e) {
-            if (i.loaded && J(e) && ["touchmove", "mousemove"].includes(e.type) && i.player.media.duration) {
-              if ("touchmove" === e.type) i.seekTime = i.player.media.duration * (i.player.elements.inputs.seek.value / 100);else {
-                var t = i.player.elements.progress.getBoundingClientRect(),
-                    n = 100 / t.width * (e.pageX - t.left);
-                i.seekTime = i.player.media.duration * (n / 100), i.seekTime < 0 && (i.seekTime = 0), i.seekTime > i.player.media.duration - 1 && (i.seekTime = i.player.media.duration - 1), i.mousePosX = e.pageX, i.elements.thumb.time.innerText = Ze(i.seekTime);
+          }), e(this, "startMove", function (e) {
+            if (_this32.loaded && F(e) && ["touchmove", "mousemove"].includes(e.type) && _this32.player.media.duration) {
+              if ("touchmove" === e.type) _this32.seekTime = _this32.player.media.duration * (_this32.player.elements.inputs.seek.value / 100);else {
+                var _t26 = _this32.player.elements.progress.getBoundingClientRect(),
+                    _i19 = 100 / _t26.width * (e.pageX - _t26.left);
+
+                _this32.seekTime = _this32.player.media.duration * (_i19 / 100), _this32.seekTime < 0 && (_this32.seekTime = 0), _this32.seekTime > _this32.player.media.duration - 1 && (_this32.seekTime = _this32.player.media.duration - 1), _this32.mousePosX = e.pageX, _this32.elements.thumb.time.innerText = He(_this32.seekTime);
               }
-              i.showImageAtCurrentTime();
+
+              _this32.showImageAtCurrentTime();
             }
-          }), r(this, "endMove", function () {
-            i.toggleThumbContainer(!1, !0);
-          }), r(this, "startScrubbing", function (e) {
-            (B(e.button) || !1 === e.button || 0 === e.button) && (i.mouseDown = !0, i.player.media.duration && (i.toggleScrubbingContainer(!0), i.toggleThumbContainer(!1, !0), i.showImageAtCurrentTime()));
-          }), r(this, "endScrubbing", function () {
-            i.mouseDown = !1, Math.ceil(i.lastTime) === Math.ceil(i.player.media.currentTime) ? i.toggleScrubbingContainer(!1) : xe.call(i.player, i.player.media, "timeupdate", function () {
-              i.mouseDown || i.toggleScrubbingContainer(!1);
+          }), e(this, "endMove", function () {
+            _this32.toggleThumbContainer(!1, !0);
+          }), e(this, "startScrubbing", function (e) {
+            (M(e.button) || !1 === e.button || 0 === e.button) && (_this32.mouseDown = !0, _this32.player.media.duration && (_this32.toggleScrubbingContainer(!0), _this32.toggleThumbContainer(!1, !0), _this32.showImageAtCurrentTime()));
+          }), e(this, "endScrubbing", function () {
+            _this32.mouseDown = !1, Math.ceil(_this32.lastTime) === Math.ceil(_this32.player.media.currentTime) ? _this32.toggleScrubbingContainer(!1) : ge.call(_this32.player, _this32.player.media, "timeupdate", function () {
+              _this32.mouseDown || _this32.toggleScrubbingContainer(!1);
             });
-          }), r(this, "listeners", function () {
-            i.player.on("play", function () {
-              i.toggleThumbContainer(!1, !0);
-            }), i.player.on("seeked", function () {
-              i.toggleThumbContainer(!1);
-            }), i.player.on("timeupdate", function () {
-              i.lastTime = i.player.media.currentTime;
+          }), e(this, "listeners", function () {
+            _this32.player.on("play", function () {
+              _this32.toggleThumbContainer(!1, !0);
+            }), _this32.player.on("seeked", function () {
+              _this32.toggleThumbContainer(!1);
+            }), _this32.player.on("timeupdate", function () {
+              _this32.lastTime = _this32.player.media.currentTime;
             });
-          }), r(this, "render", function () {
-            i.elements.thumb.container = ce("div", {
-              class: i.player.config.classNames.previewThumbnails.thumbContainer
-            }), i.elements.thumb.imageContainer = ce("div", {
-              class: i.player.config.classNames.previewThumbnails.imageContainer
-            }), i.elements.thumb.container.appendChild(i.elements.thumb.imageContainer);
-            var e = ce("div", {
-              class: i.player.config.classNames.previewThumbnails.timeContainer
+          }), e(this, "render", function () {
+            _this32.elements.thumb.container = X("div", {
+              class: _this32.player.config.classNames.previewThumbnails.thumbContainer
+            }), _this32.elements.thumb.imageContainer = X("div", {
+              class: _this32.player.config.classNames.previewThumbnails.imageContainer
+            }), _this32.elements.thumb.container.appendChild(_this32.elements.thumb.imageContainer);
+            var e = X("div", {
+              class: _this32.player.config.classNames.previewThumbnails.timeContainer
             });
-            i.elements.thumb.time = ce("span", {}, "00:00"), e.appendChild(i.elements.thumb.time), i.elements.thumb.container.appendChild(e), $(i.player.elements.progress) && i.player.elements.progress.appendChild(i.elements.thumb.container), i.elements.scrubbing.container = ce("div", {
-              class: i.player.config.classNames.previewThumbnails.scrubbingContainer
-            }), i.player.elements.wrapper.appendChild(i.elements.scrubbing.container);
-          }), r(this, "destroy", function () {
-            i.elements.thumb.container && i.elements.thumb.container.remove(), i.elements.scrubbing.container && i.elements.scrubbing.container.remove();
-          }), r(this, "showImageAtCurrentTime", function () {
-            i.mouseDown ? i.setScrubbingContainerSize() : i.setThumbContainerSizeAndPos();
-            var e = i.thumbnails[0].frames.findIndex(function (e) {
-              return i.seekTime >= e.startTime && i.seekTime <= e.endTime;
+            _this32.elements.thumb.time = X("span", {}, "00:00"), e.appendChild(_this32.elements.thumb.time), _this32.elements.thumb.container.appendChild(e), D(_this32.player.elements.progress) && _this32.player.elements.progress.appendChild(_this32.elements.thumb.container), _this32.elements.scrubbing.container = X("div", {
+              class: _this32.player.config.classNames.previewThumbnails.scrubbingContainer
+            }), _this32.player.elements.wrapper.appendChild(_this32.elements.scrubbing.container);
+          }), e(this, "destroy", function () {
+            _this32.elements.thumb.container && _this32.elements.thumb.container.remove(), _this32.elements.scrubbing.container && _this32.elements.scrubbing.container.remove();
+          }), e(this, "showImageAtCurrentTime", function () {
+            _this32.mouseDown ? _this32.setScrubbingContainerSize() : _this32.setThumbContainerSizeAndPos();
+
+            var e = _this32.thumbnails[0].frames.findIndex(function (e) {
+              return _this32.seekTime >= e.startTime && _this32.seekTime <= e.endTime;
             }),
-                t = e >= 0,
-                n = 0;
-            i.mouseDown || i.toggleThumbContainer(t), t && (i.thumbnails.forEach(function (t, a) {
-              i.loadedImages.includes(t.frames[e].text) && (n = a);
-            }), e !== i.showingThumb && (i.showingThumb = e, i.loadImage(n)));
-          }), r(this, "loadImage", function () {
-            var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0,
-                t = i.showingThumb,
-                n = i.thumbnails[e],
-                a = n.urlPrefix,
-                r = n.frames[t],
-                o = n.frames[t].text,
-                s = a + o;
-            if (i.currentImageElement && i.currentImageElement.dataset.filename === o) i.showImage(i.currentImageElement, r, e, t, o, !1), i.currentImageElement.dataset.index = t, i.removeOldImages(i.currentImageElement);else {
-              i.loadingImage && i.usingSprites && (i.loadingImage.onload = null);
-              var l = new Image();
-              l.src = s, l.dataset.index = t, l.dataset.filename = o, i.showingThumbFilename = o, i.player.debug.log("Loading image: ".concat(s)), l.onload = function () {
-                return i.showImage(l, r, e, t, o, !0);
-              }, i.loadingImage = l, i.removeOldImages(l);
-            }
-          }), r(this, "showImage", function (e, t, n, a, r) {
-            var o = !(arguments.length > 5 && void 0 !== arguments[5]) || arguments[5];
-            i.player.debug.log("Showing thumb: ".concat(r, ". num: ").concat(a, ". qual: ").concat(n, ". newimg: ").concat(o)), i.setImageSizeAndOffset(e, t), o && (i.currentImageContainer.appendChild(e), i.currentImageElement = e, i.loadedImages.includes(r) || i.loadedImages.push(r)), i.preloadNearby(a, !0).then(i.preloadNearby(a, !1)).then(i.getHigherQuality(n, e, t, r));
-          }), r(this, "removeOldImages", function (e) {
-            Array.from(i.currentImageContainer.children).forEach(function (t) {
-              if ("img" === t.tagName.toLowerCase()) {
-                var n = i.usingSprites ? 500 : 1e3;
+                t = e >= 0;
 
-                if (t.dataset.index !== e.dataset.index && !t.dataset.deleting) {
-                  t.dataset.deleting = !0;
-                  var a = i.currentImageContainer;
-                  setTimeout(function () {
-                    a.removeChild(t), i.player.debug.log("Removing thumb: ".concat(t.dataset.filename));
-                  }, n);
-                }
+            var i = 0;
+            _this32.mouseDown || _this32.toggleThumbContainer(t), t && (_this32.thumbnails.forEach(function (t, s) {
+              _this32.loadedImages.includes(t.frames[e].text) && (i = s);
+            }), e !== _this32.showingThumb && (_this32.showingThumb = e, _this32.loadImage(i)));
+          }), e(this, "loadImage", function () {
+            var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+            var t = _this32.showingThumb,
+                i = _this32.thumbnails[e],
+                s = i.urlPrefix,
+                n = i.frames[t],
+                a = i.frames[t].text,
+                l = s + a;
+            if (_this32.currentImageElement && _this32.currentImageElement.dataset.filename === a) _this32.showImage(_this32.currentImageElement, n, e, t, a, !1), _this32.currentImageElement.dataset.index = t, _this32.removeOldImages(_this32.currentImageElement);else {
+              _this32.loadingImage && _this32.usingSprites && (_this32.loadingImage.onload = null);
+
+              var _i20 = new Image();
+
+              _i20.src = l, _i20.dataset.index = t, _i20.dataset.filename = a, _this32.showingThumbFilename = a, _this32.player.debug.log("Loading image: " + l), _i20.onload = function () {
+                return _this32.showImage(_i20, n, e, t, a, !0);
+              }, _this32.loadingImage = _i20, _this32.removeOldImages(_i20);
+            }
+          }), e(this, "showImage", function (e, t, i, s, n) {
+            var a = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : !0;
+            _this32.player.debug.log("Showing thumb: ".concat(n, ". num: ").concat(s, ". qual: ").concat(i, ". newimg: ").concat(a)), _this32.setImageSizeAndOffset(e, t), a && (_this32.currentImageContainer.appendChild(e), _this32.currentImageElement = e, _this32.loadedImages.includes(n) || _this32.loadedImages.push(n)), _this32.preloadNearby(s, !0).then(_this32.preloadNearby(s, !1)).then(_this32.getHigherQuality(i, e, t, n));
+          }), e(this, "removeOldImages", function (e) {
+            Array.from(_this32.currentImageContainer.children).forEach(function (t) {
+              if ("img" !== t.tagName.toLowerCase()) return;
+              var i = _this32.usingSprites ? 500 : 1e3;
+
+              if (t.dataset.index !== e.dataset.index && !t.dataset.deleting) {
+                t.dataset.deleting = !0;
+                var _e28 = _this32.currentImageContainer;
+                setTimeout(function () {
+                  _e28.removeChild(t), _this32.player.debug.log("Removing thumb: " + t.dataset.filename);
+                }, i);
               }
             });
-          }), r(this, "preloadNearby", function (e) {
-            var t = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1];
-            return new Promise(function (n) {
+          }), e(this, "preloadNearby", function (e) {
+            var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !0;
+            return new Promise(function (i) {
               setTimeout(function () {
-                var a = i.thumbnails[0].frames[e].text;
+                var s = _this32.thumbnails[0].frames[e].text;
 
-                if (i.showingThumbFilename === a) {
-                  var r;
-                  r = t ? i.thumbnails[0].frames.slice(e) : i.thumbnails[0].frames.slice(0, e).reverse();
-                  var o = !1;
-                  r.forEach(function (e) {
+                if (_this32.showingThumbFilename === s) {
+                  var _n8;
+
+                  _n8 = t ? _this32.thumbnails[0].frames.slice(e) : _this32.thumbnails[0].frames.slice(0, e).reverse();
+
+                  var _a6 = !1;
+
+                  _n8.forEach(function (e) {
                     var t = e.text;
 
-                    if (t !== a && !i.loadedImages.includes(t)) {
-                      o = !0, i.player.debug.log("Preloading thumb filename: ".concat(t));
-                      var r = i.thumbnails[0].urlPrefix + t,
-                          s = new Image();
-                      s.src = r, s.onload = function () {
-                        i.player.debug.log("Preloaded thumb filename: ".concat(t)), i.loadedImages.includes(t) || i.loadedImages.push(t), n();
+                    if (t !== s && !_this32.loadedImages.includes(t)) {
+                      _a6 = !0, _this32.player.debug.log("Preloading thumb filename: " + t);
+
+                      var _e29 = _this32.thumbnails[0].urlPrefix,
+                          _s17 = _e29 + t,
+                          _n9 = new Image();
+
+                      _n9.src = _s17, _n9.onload = function () {
+                        _this32.player.debug.log("Preloaded thumb filename: " + t), _this32.loadedImages.includes(t) || _this32.loadedImages.push(t), i();
                       };
                     }
-                  }), o || n();
+                  }), _a6 || i();
                 }
               }, 300);
             });
-          }), r(this, "getHigherQuality", function (e, t, n, a) {
-            if (e < i.thumbnails.length - 1) {
-              var r = t.naturalHeight;
-              i.usingSprites && (r = n.h), r < i.thumbContainerHeight && setTimeout(function () {
-                i.showingThumbFilename === a && (i.player.debug.log("Showing higher quality thumb for: ".concat(a)), i.loadImage(e + 1));
+          }), e(this, "getHigherQuality", function (e, t, i, s) {
+            if (e < _this32.thumbnails.length - 1) {
+              var _n10 = t.naturalHeight;
+              _this32.usingSprites && (_n10 = i.h), _n10 < _this32.thumbContainerHeight && setTimeout(function () {
+                _this32.showingThumbFilename === s && (_this32.player.debug.log("Showing higher quality thumb for: " + s), _this32.loadImage(e + 1));
               }, 300);
             }
-          }), r(this, "toggleThumbContainer", function () {
-            var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
-                t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-                n = i.player.config.classNames.previewThumbnails.thumbContainerShown;
-            i.elements.thumb.container.classList.toggle(n, e), !e && t && (i.showingThumb = null, i.showingThumbFilename = null);
-          }), r(this, "toggleScrubbingContainer", function () {
-            var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
-                t = i.player.config.classNames.previewThumbnails.scrubbingContainerShown;
-            i.elements.scrubbing.container.classList.toggle(t, e), e || (i.showingThumb = null, i.showingThumbFilename = null);
-          }), r(this, "determineContainerAutoSizing", function () {
-            (i.elements.thumb.imageContainer.clientHeight > 20 || i.elements.thumb.imageContainer.clientWidth > 20) && (i.sizeSpecifiedInCSS = !0);
-          }), r(this, "setThumbContainerSizeAndPos", function () {
-            if (i.sizeSpecifiedInCSS) {
-              if (i.elements.thumb.imageContainer.clientHeight > 20 && i.elements.thumb.imageContainer.clientWidth < 20) {
-                var e = Math.floor(i.elements.thumb.imageContainer.clientHeight * i.thumbAspectRatio);
-                i.elements.thumb.imageContainer.style.width = "".concat(e, "px");
-              } else if (i.elements.thumb.imageContainer.clientHeight < 20 && i.elements.thumb.imageContainer.clientWidth > 20) {
-                var t = Math.floor(i.elements.thumb.imageContainer.clientWidth / i.thumbAspectRatio);
-                i.elements.thumb.imageContainer.style.height = "".concat(t, "px");
+          }), e(this, "toggleThumbContainer", function () {
+            var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
+            var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+            var i = _this32.player.config.classNames.previewThumbnails.thumbContainerShown;
+            _this32.elements.thumb.container.classList.toggle(i, e), !e && t && (_this32.showingThumb = null, _this32.showingThumbFilename = null);
+          }), e(this, "toggleScrubbingContainer", function () {
+            var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : !1;
+            var t = _this32.player.config.classNames.previewThumbnails.scrubbingContainerShown;
+            _this32.elements.scrubbing.container.classList.toggle(t, e), e || (_this32.showingThumb = null, _this32.showingThumbFilename = null);
+          }), e(this, "determineContainerAutoSizing", function () {
+            (_this32.elements.thumb.imageContainer.clientHeight > 20 || _this32.elements.thumb.imageContainer.clientWidth > 20) && (_this32.sizeSpecifiedInCSS = !0);
+          }), e(this, "setThumbContainerSizeAndPos", function () {
+            if (_this32.sizeSpecifiedInCSS) {
+              if (_this32.elements.thumb.imageContainer.clientHeight > 20 && _this32.elements.thumb.imageContainer.clientWidth < 20) {
+                var _e30 = Math.floor(_this32.elements.thumb.imageContainer.clientHeight * _this32.thumbAspectRatio);
+
+                _this32.elements.thumb.imageContainer.style.width = _e30 + "px";
+              } else if (_this32.elements.thumb.imageContainer.clientHeight < 20 && _this32.elements.thumb.imageContainer.clientWidth > 20) {
+                var _e31 = Math.floor(_this32.elements.thumb.imageContainer.clientWidth / _this32.thumbAspectRatio);
+
+                _this32.elements.thumb.imageContainer.style.height = _e31 + "px";
               }
             } else {
-              var n = Math.floor(i.thumbContainerHeight * i.thumbAspectRatio);
-              i.elements.thumb.imageContainer.style.height = "".concat(i.thumbContainerHeight, "px"), i.elements.thumb.imageContainer.style.width = "".concat(n, "px");
+              var _e32 = Math.floor(_this32.thumbContainerHeight * _this32.thumbAspectRatio);
+
+              _this32.elements.thumb.imageContainer.style.height = _this32.thumbContainerHeight + "px", _this32.elements.thumb.imageContainer.style.width = _e32 + "px";
             }
 
-            i.setThumbContainerPos();
-          }), r(this, "setThumbContainerPos", function () {
-            var e = i.player.elements.progress.getBoundingClientRect(),
-                t = i.player.elements.container.getBoundingClientRect(),
-                n = i.elements.thumb.container,
-                a = t.left - e.left + 10,
-                r = t.right - e.left - n.clientWidth - 10,
-                o = i.mousePosX - e.left - n.clientWidth / 2;
-            o < a && (o = a), o > r && (o = r), n.style.left = "".concat(o, "px");
-          }), r(this, "setScrubbingContainerSize", function () {
-            var e = Ct(i.thumbAspectRatio, {
-              width: i.player.media.clientWidth,
-              height: i.player.media.clientHeight
+            _this32.setThumbContainerPos();
+          }), e(this, "setThumbContainerPos", function () {
+            var e = _this32.player.elements.progress.getBoundingClientRect(),
+                t = _this32.player.elements.container.getBoundingClientRect(),
+                i = _this32.elements.thumb.container,
+                s = t.left - e.left + 10,
+                n = t.right - e.left - i.clientWidth - 10;
+
+            var a = _this32.mousePosX - e.left - i.clientWidth / 2;
+            a < s && (a = s), a > n && (a = n), i.style.left = a + "px";
+          }), e(this, "setScrubbingContainerSize", function () {
+            var _ct = ct(_this32.thumbAspectRatio, {
+              width: _this32.player.media.clientWidth,
+              height: _this32.player.media.clientHeight
             }),
-                t = e.width,
-                n = e.height;
-            i.elements.scrubbing.container.style.width = "".concat(t, "px"), i.elements.scrubbing.container.style.height = "".concat(n, "px");
-          }), r(this, "setImageSizeAndOffset", function (e, t) {
-            if (i.usingSprites) {
-              var n = i.thumbContainerHeight / t.h;
-              e.style.height = "".concat(e.naturalHeight * n, "px"), e.style.width = "".concat(e.naturalWidth * n, "px"), e.style.left = "-".concat(t.x * n, "px"), e.style.top = "-".concat(t.y * n, "px");
-            }
+                e = _ct.width,
+                t = _ct.height;
+
+            _this32.elements.scrubbing.container.style.width = e + "px", _this32.elements.scrubbing.container.style.height = t + "px";
+          }), e(this, "setImageSizeAndOffset", function (e, t) {
+            if (!_this32.usingSprites) return;
+            var i = _this32.thumbContainerHeight / t.h;
+            e.style.height = e.naturalHeight * i + "px", e.style.width = e.naturalWidth * i + "px", e.style.left = "-".concat(t.x * i, "px"), e.style.top = "-".concat(t.y * i, "px");
           }), this.player = t, this.thumbnails = [], this.loaded = !1, this.lastMouseMoveTime = Date.now(), this.mouseDown = !1, this.loadedImages = [], this.elements = {
             thumb: {},
             scrubbing: {}
           }, this.load();
         }
 
-        return a(e, [{
+        _createClass(ht, [{
           key: "enabled",
           get: function get() {
             return this.player.isHTML5 && this.player.isVideo && this.player.config.previewThumbnails.enabled;
@@ -3784,10 +3842,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "thumbContainerHeight",
           get: function get() {
-            return this.mouseDown ? Ct(this.thumbAspectRatio, {
-              width: this.player.media.clientWidth,
-              height: this.player.media.clientHeight
-            }).height : this.sizeSpecifiedInCSS ? this.elements.thumb.imageContainer.clientHeight : Math.floor(this.player.media.clientWidth / this.thumbAspectRatio / 4);
+            if (this.mouseDown) {
+              var _ct2 = ct(this.thumbAspectRatio, {
+                width: this.player.media.clientWidth,
+                height: this.player.media.clientHeight
+              }),
+                  _e33 = _ct2.height;
+
+              return _e33;
+            }
+
+            return this.sizeSpecifiedInCSS ? this.elements.thumb.imageContainer.clientHeight : Math.floor(this.player.media.clientWidth / this.thumbAspectRatio / 4);
           }
         }, {
           key: "currentImageElement",
@@ -3797,106 +3862,118 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           set: function set(e) {
             this.mouseDown ? this.currentScrubbingImageElement = e : this.currentThumbnailImageElement = e;
           }
-        }]), e;
-      }(),
-          St = {
+        }]);
+
+        return ht;
+      }();
+
+      var ut = {
         insertElements: function insertElements(e, t) {
-          var n = this;
-          z(t) ? ue(e, this.media, {
+          var _this33 = this;
+
+          L(t) ? J(e, this.media, {
             src: t
-          }) : Q(t) && t.forEach(function (t) {
-            ue(e, n.media, t);
+          }) : j(t) && t.forEach(function (t) {
+            J(e, _this33.media, t);
           });
         },
         change: function change(e) {
-          var t = this;
-          re(e, "sources.length") ? (Fe.cancelRequests.call(this), this.destroy.call(this, function () {
-            t.options.quality = [], de(t.media), t.media = null, $(t.elements.container) && t.elements.container.removeAttribute("class");
-            var n = e.sources,
+          var _this34 = this;
+
+          z(e, "sources.length") ? (xe.cancelRequests.call(this), this.destroy.call(this, function () {
+            _this34.options.quality = [], G(_this34.media), _this34.media = null, D(_this34.elements.container) && _this34.elements.container.removeAttribute("class");
+
+            var t = e.sources,
                 i = e.type,
-                a = l(n, 1)[0],
-                r = a.provider,
-                o = void 0 === r ? ot.html5 : r,
-                s = a.src,
-                c = "html5" === o ? i : "div",
-                u = "html5" === o ? {} : {
-              src: s
+                _t27 = _slicedToArray(t, 1),
+                _t27$ = _t27[0],
+                _t27$$provider = _t27$.provider,
+                s = _t27$$provider === void 0 ? ze.html5 : _t27$$provider,
+                n = _t27$.src,
+                a = "html5" === s ? i : "div",
+                l = "html5" === s ? {} : {
+              src: n
             };
-            Object.assign(t, {
-              provider: o,
+
+            Object.assign(_this34, {
+              provider: s,
               type: i,
-              supported: Ae.check(i, o, t.config.playsinline),
-              media: ce(c, u)
-            }), t.elements.container.appendChild(t.media), K(e.autoplay) && (t.config.autoplay = e.autoplay), t.isHTML5 && (t.config.crossorigin && t.media.setAttribute("crossorigin", ""), t.config.autoplay && t.media.setAttribute("autoplay", ""), te(e.poster) || (t.poster = e.poster), t.config.loop.active && t.media.setAttribute("loop", ""), t.config.muted && t.media.setAttribute("muted", ""), t.config.playsinline && t.media.setAttribute("playsinline", "")), dt.addStyleHook.call(t), t.isHTML5 && St.insertElements.call(t, "source", n), t.config.title = e.title, kt.setup.call(t), t.isHTML5 && Object.keys(e).includes("tracks") && St.insertElements.call(t, "track", e.tracks), (t.isHTML5 || t.isEmbed && !t.supported.ui) && dt.build.call(t), t.isHTML5 && t.media.load(), te(e.previewThumbnails) || (Object.assign(t.config.previewThumbnails, e.previewThumbnails), t.previewThumbnails && t.previewThumbnails.loaded && (t.previewThumbnails.destroy(), t.previewThumbnails = null), t.config.previewThumbnails.enabled && (t.previewThumbnails = new At(t))), t.fullscreen.update();
+              supported: he.check(i, s, _this34.config.playsinline),
+              media: X(a, l)
+            }), _this34.elements.container.appendChild(_this34.media), _(e.autoplay) && (_this34.config.autoplay = e.autoplay), _this34.isHTML5 && (_this34.config.crossorigin && _this34.media.setAttribute("crossorigin", ""), _this34.config.autoplay && _this34.media.setAttribute("autoplay", ""), V(e.poster) || (_this34.poster = e.poster), _this34.config.loop.active && _this34.media.setAttribute("loop", ""), _this34.config.muted && _this34.media.setAttribute("muted", ""), _this34.config.playsinline && _this34.media.setAttribute("playsinline", "")), Je.addStyleHook.call(_this34), _this34.isHTML5 && ut.insertElements.call(_this34, "source", t), _this34.config.title = e.title, lt.setup.call(_this34), _this34.isHTML5 && Object.keys(e).includes("tracks") && ut.insertElements.call(_this34, "track", e.tracks), (_this34.isHTML5 || _this34.isEmbed && !_this34.supported.ui) && Je.build.call(_this34), _this34.isHTML5 && _this34.media.load(), V(e.previewThumbnails) || (Object.assign(_this34.config.previewThumbnails, e.previewThumbnails), _this34.previewThumbnails && _this34.previewThumbnails.loaded && (_this34.previewThumbnails.destroy(), _this34.previewThumbnails = null), _this34.config.previewThumbnails.enabled && (_this34.previewThumbnails = new ht(_this34))), _this34.fullscreen.update();
           }, !0)) : this.debug.warn("Invalid source format");
         }
-      },
-          Pt = function () {
-        function e(t, i) {
-          var a = this;
-          if (n(this, e), r(this, "play", function () {
-            return Y(a.media.play) ? (a.ads && a.ads.enabled && a.ads.managerPromise.then(function () {
-              return a.ads.play();
-            }).catch(function () {
-              return Le(a.media.play());
-            }), a.media.play()) : null;
-          }), r(this, "pause", function () {
-            return a.playing && Y(a.media.pause) ? a.media.pause() : null;
-          }), r(this, "togglePlay", function (e) {
-            return (K(e) ? e : !a.playing) ? a.play() : a.pause();
-          }), r(this, "stop", function () {
-            a.isHTML5 ? (a.pause(), a.restart()) : Y(a.media.stop) && a.media.stop();
-          }), r(this, "restart", function () {
-            a.currentTime = 0;
-          }), r(this, "rewind", function (e) {
-            a.currentTime -= W(e) ? e : a.config.seekTime;
-          }), r(this, "forward", function (e) {
-            a.currentTime += W(e) ? e : a.config.seekTime;
-          }), r(this, "increaseVolume", function (e) {
-            var t = a.media.muted ? 0 : a.volume;
-            a.volume = t + (W(e) ? e : 0);
-          }), r(this, "decreaseVolume", function (e) {
-            a.increaseVolume(-e);
-          }), r(this, "airplay", function () {
-            Ae.airplay && a.media.webkitShowPlaybackTargetPicker();
-          }), r(this, "toggleControls", function (e) {
-            if (a.supported.ui && !a.isAudio) {
-              var t = ye(a.elements.container, a.config.classNames.hideControls),
-                  n = void 0 === e ? void 0 : !e,
-                  i = ge(a.elements.container, a.config.classNames.hideControls, n);
+      };
 
-              if (i && Q(a.config.controls) && a.config.controls.includes("settings") && !te(a.config.settings) && et.toggleMenu.call(a, !1), i !== t) {
-                var r = i ? "controlshidden" : "controlsshown";
-                Ne.call(a, a.media, r);
+      var dt = /*#__PURE__*/function () {
+        function dt(t, i) {
+          var _this35 = this;
+
+          _classCallCheck(this, dt);
+
+          if (e(this, "play", function () {
+            return O(_this35.media.play) ? (_this35.ads && _this35.ads.enabled && _this35.ads.managerPromise.then(function () {
+              return _this35.ads.play();
+            }).catch(function () {
+              return ve(_this35.media.play());
+            }), _this35.media.play()) : null;
+          }), e(this, "pause", function () {
+            return _this35.playing && O(_this35.media.pause) ? _this35.media.pause() : null;
+          }), e(this, "togglePlay", function (e) {
+            return (_(e) ? e : !_this35.playing) ? _this35.play() : _this35.pause();
+          }), e(this, "stop", function () {
+            _this35.isHTML5 ? (_this35.pause(), _this35.restart()) : O(_this35.media.stop) && _this35.media.stop();
+          }), e(this, "restart", function () {
+            _this35.currentTime = 0;
+          }), e(this, "rewind", function (e) {
+            _this35.currentTime -= I(e) ? e : _this35.config.seekTime;
+          }), e(this, "forward", function (e) {
+            _this35.currentTime += I(e) ? e : _this35.config.seekTime;
+          }), e(this, "increaseVolume", function (e) {
+            var t = _this35.media.muted ? 0 : _this35.volume;
+            _this35.volume = t + (I(e) ? e : 0);
+          }), e(this, "decreaseVolume", function (e) {
+            _this35.increaseVolume(-e);
+          }), e(this, "airplay", function () {
+            he.airplay && _this35.media.webkitShowPlaybackTargetPicker();
+          }), e(this, "toggleControls", function (e) {
+            if (_this35.supported.ui && !_this35.isAudio) {
+              var _t28 = ne(_this35.elements.container, _this35.config.classNames.hideControls),
+                  _i21 = void 0 === e ? void 0 : !e,
+                  _s18 = se(_this35.elements.container, _this35.config.classNames.hideControls, _i21);
+
+              if (_s18 && j(_this35.config.controls) && _this35.config.controls.includes("settings") && !V(_this35.config.settings) && Re.toggleMenu.call(_this35, !1), _s18 !== _t28) {
+                var _e34 = _s18 ? "controlshidden" : "controlsshown";
+
+                fe.call(_this35, _this35.media, _e34);
               }
 
-              return !i;
+              return !_s18;
             }
 
             return !1;
-          }), r(this, "on", function (e, t) {
-            Ee.call(a, a.elements.container, e, t);
-          }), r(this, "once", function (e, t) {
-            xe.call(a, a.elements.container, e, t);
-          }), r(this, "off", function (e, t) {
-            Me(a.elements.container, e, t);
-          }), r(this, "destroy", function (e) {
-            var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+          }), e(this, "on", function (e, t) {
+            me.call(_this35, _this35.elements.container, e, t);
+          }), e(this, "once", function (e, t) {
+            ge.call(_this35, _this35.elements.container, e, t);
+          }), e(this, "off", function (e, t) {
+            pe(_this35.elements.container, e, t);
+          }), e(this, "destroy", function (e) {
+            var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : !1;
+            if (!_this35.ready) return;
 
-            if (a.ready) {
-              var n = function n() {
-                document.body.style.overflow = "", a.embed = null, t ? (Object.keys(a.elements).length && (de(a.elements.buttons.play), de(a.elements.captions), de(a.elements.controls), de(a.elements.wrapper), a.elements.buttons.play = null, a.elements.captions = null, a.elements.controls = null, a.elements.wrapper = null), Y(e) && e()) : (Ie.call(a), Fe.cancelRequests.call(a), pe(a.elements.original, a.elements.container), Ne.call(a, a.elements.original, "destroyed", !0), Y(e) && e.call(a.elements.original), a.ready = !1, setTimeout(function () {
-                  a.elements = null, a.media = null;
-                }, 200));
-              };
+            var i = function i() {
+              document.body.style.overflow = "", _this35.embed = null, t ? (Object.keys(_this35.elements).length && (G(_this35.elements.buttons.play), G(_this35.elements.captions), G(_this35.elements.controls), G(_this35.elements.wrapper), _this35.elements.buttons.play = null, _this35.elements.captions = null, _this35.elements.controls = null, _this35.elements.wrapper = null), O(e) && e()) : (be.call(_this35), xe.cancelRequests.call(_this35), ee(_this35.elements.original, _this35.elements.container), fe.call(_this35, _this35.elements.original, "destroyed", !0), O(e) && e.call(_this35.elements.original), _this35.ready = !1, setTimeout(function () {
+                _this35.elements = null, _this35.media = null;
+              }, 200));
+            };
 
-              a.stop(), clearTimeout(a.timers.loading), clearTimeout(a.timers.controls), clearTimeout(a.timers.resized), a.isHTML5 ? (dt.toggleNativeControls.call(a, !0), n()) : a.isYouTube ? (clearInterval(a.timers.buffering), clearInterval(a.timers.playing), null !== a.embed && Y(a.embed.destroy) && a.embed.destroy(), n()) : a.isVimeo && (null !== a.embed && a.embed.unload().then(n), setTimeout(n, 200));
-            }
-          }), r(this, "supports", function (e) {
-            return Ae.mime.call(a, e);
-          }), this.timers = {}, this.ready = !1, this.loading = !1, this.failed = !1, this.touch = Ae.touch, this.media = t, z(this.media) && (this.media = document.querySelectorAll(this.media)), (window.jQuery && this.media instanceof jQuery || X(this.media) || Q(this.media)) && (this.media = this.media[0]), this.config = oe({}, at, e.defaults, i || {}, function () {
+            _this35.stop(), clearTimeout(_this35.timers.loading), clearTimeout(_this35.timers.controls), clearTimeout(_this35.timers.resized), _this35.isHTML5 ? (Je.toggleNativeControls.call(_this35, !0), i()) : _this35.isYouTube ? (clearInterval(_this35.timers.buffering), clearInterval(_this35.timers.playing), null !== _this35.embed && O(_this35.embed.destroy) && _this35.embed.destroy(), i()) : _this35.isVimeo && (null !== _this35.embed && _this35.embed.unload().then(i), setTimeout(i, 200));
+          }), e(this, "supports", function (e) {
+            return he.mime.call(_this35, e);
+          }), this.timers = {}, this.ready = !1, this.loading = !1, this.failed = !1, this.touch = he.touch, this.media = t, L(this.media) && (this.media = document.querySelectorAll(this.media)), (window.jQuery && this.media instanceof jQuery || q(this.media) || j(this.media)) && (this.media = this.media[0]), this.config = K({}, Ue, dt.defaults, i || {}, function () {
             try {
-              return JSON.parse(a.media.getAttribute("data-plyr-config"));
+              return JSON.parse(_this35.media.getAttribute("data-plyr-config"));
             } catch (e) {
               return {};
             }
@@ -3923,60 +4000,58 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }, this.options = {
             speed: [],
             quality: []
-          }, this.debug = new lt(this.config.debug), this.debug.log("Config", this.config), this.debug.log("Support", Ae), !B(this.media) && $(this.media)) {
-            if (this.media.plyr) this.debug.warn("Target already setup");else if (this.config.enabled) {
-              if (Ae.check().api) {
-                var o = this.media.cloneNode(!0);
-                o.autoplay = !1, this.elements.original = o;
-                var s = this.media.tagName.toLowerCase(),
-                    l = null,
-                    c = null;
+          }, this.debug = new Ye(this.config.debug), this.debug.log("Config", this.config), this.debug.log("Support", he), M(this.media) || !D(this.media)) return void this.debug.error("Setup failed: no suitable element passed");
+          if (this.media.plyr) return void this.debug.warn("Target already setup");
+          if (!this.config.enabled) return void this.debug.error("Setup failed: disabled by config");
+          if (!he.check().api) return void this.debug.error("Setup failed: no support");
+          var s = this.media.cloneNode(!0);
+          s.autoplay = !1, this.elements.original = s;
+          var n = this.media.tagName.toLowerCase();
+          var a = null,
+              l = null;
 
-                switch (s) {
-                  case "div":
-                    if (l = this.media.querySelector("iframe"), $(l)) {
-                      if (c = tt(l.getAttribute("src")), this.provider = function (e) {
-                        return /^(https?:\/\/)?(www\.)?(youtube\.com|youtube-nocookie\.com|youtu\.?be)\/.+$/.test(e) ? ot.youtube : /^https?:\/\/player.vimeo.com\/video\/\d{0,9}(?=\b|\/)/.test(e) ? ot.vimeo : null;
-                      }(c.toString()), this.elements.container = this.media, this.media = l, this.elements.container.className = "", c.search.length) {
-                        var u = ["1", "true"];
-                        u.includes(c.searchParams.get("autoplay")) && (this.config.autoplay = !0), u.includes(c.searchParams.get("loop")) && (this.config.loop.active = !0), this.isYouTube ? (this.config.playsinline = u.includes(c.searchParams.get("playsinline")), this.config.youtube.hl = c.searchParams.get("hl")) : this.config.playsinline = !0;
-                      }
-                    } else this.provider = this.media.getAttribute(this.config.attributes.embed.provider), this.media.removeAttribute(this.config.attributes.embed.provider);
-
-                    if (te(this.provider) || !Object.values(ot).includes(this.provider)) return void this.debug.error("Setup failed: Invalid provider");
-                    this.type = "video";
-                    break;
-
-                  case "video":
-                  case "audio":
-                    this.type = s, this.provider = ot.html5, this.media.hasAttribute("crossorigin") && (this.config.crossorigin = !0), this.media.hasAttribute("autoplay") && (this.config.autoplay = !0), (this.media.hasAttribute("playsinline") || this.media.hasAttribute("webkit-playsinline")) && (this.config.playsinline = !0), this.media.hasAttribute("muted") && (this.config.muted = !0), this.media.hasAttribute("loop") && (this.config.loop.active = !0);
-                    break;
-
-                  default:
-                    return void this.debug.error("Setup failed: unsupported type");
+          switch (n) {
+            case "div":
+              if (a = this.media.querySelector("iframe"), D(a)) {
+                if (l = $e(a.getAttribute("src")), this.provider = function (e) {
+                  return /^(https?:\/\/)?(www\.)?(youtube\.com|youtube-nocookie\.com|youtu\.?be)\/.+$/.test(e) ? ze.youtube : /^https?:\/\/player.vimeo.com\/video\/\d{0,9}(?=\b|\/)/.test(e) ? ze.vimeo : null;
+                }(l.toString()), this.elements.container = this.media, this.media = a, this.elements.container.className = "", l.search.length) {
+                  var _e35 = ["1", "true"];
+                  _e35.includes(l.searchParams.get("autoplay")) && (this.config.autoplay = !0), _e35.includes(l.searchParams.get("loop")) && (this.config.loop.active = !0), this.isYouTube ? (this.config.playsinline = _e35.includes(l.searchParams.get("playsinline")), this.config.youtube.hl = l.searchParams.get("hl")) : this.config.playsinline = !0;
                 }
+              } else this.provider = this.media.getAttribute(this.config.attributes.embed.provider), this.media.removeAttribute(this.config.attributes.embed.provider);
 
-                this.supported = Ae.check(this.type, this.provider, this.config.playsinline), this.supported.api ? (this.eventListeners = [], this.listeners = new ht(this), this.storage = new Ye(this), this.media.plyr = this, $(this.elements.container) || (this.elements.container = ce("div", {
-                  tabindex: 0
-                }), se(this.media, this.elements.container)), dt.migrateStyles.call(this), dt.addStyleHook.call(this), kt.setup.call(this), this.config.debug && Ee.call(this, this.elements.container, this.config.events.join(" "), function (e) {
-                  a.debug.log("event: ".concat(e.type));
-                }), this.fullscreen = new ct(this), (this.isHTML5 || this.isEmbed && !this.supported.ui) && dt.build.call(this), this.listeners.container(), this.listeners.global(), this.config.ads.enabled && (this.ads = new Tt(this)), this.isHTML5 && this.config.autoplay && this.once("canplay", function () {
-                  return Le(a.play());
-                }), this.lastSeekTime = 0, this.config.previewThumbnails.enabled && (this.previewThumbnails = new At(this))) : this.debug.error("Setup failed: no support");
-              } else this.debug.error("Setup failed: no support");
-            } else this.debug.error("Setup failed: disabled by config");
-          } else this.debug.error("Setup failed: no suitable element passed");
+              if (V(this.provider) || !Object.values(ze).includes(this.provider)) return void this.debug.error("Setup failed: Invalid provider");
+              this.type = "video";
+              break;
+
+            case "video":
+            case "audio":
+              this.type = n, this.provider = ze.html5, this.media.hasAttribute("crossorigin") && (this.config.crossorigin = !0), this.media.hasAttribute("autoplay") && (this.config.autoplay = !0), (this.media.hasAttribute("playsinline") || this.media.hasAttribute("webkit-playsinline")) && (this.config.playsinline = !0), this.media.hasAttribute("muted") && (this.config.muted = !0), this.media.hasAttribute("loop") && (this.config.loop.active = !0);
+              break;
+
+            default:
+              return void this.debug.error("Setup failed: unsupported type");
+          }
+
+          this.supported = he.check(this.type, this.provider, this.config.playsinline), this.supported.api ? (this.eventListeners = [], this.listeners = new Ge(this), this.storage = new je(this), this.media.plyr = this, D(this.elements.container) || (this.elements.container = X("div", {
+            tabindex: 0
+          }), Y(this.media, this.elements.container)), Je.migrateStyles.call(this), Je.addStyleHook.call(this), lt.setup.call(this), this.config.debug && me.call(this, this.elements.container, this.config.events.join(" "), function (e) {
+            _this35.debug.log("event: " + e.type);
+          }), this.fullscreen = new Qe(this), (this.isHTML5 || this.isEmbed && !this.supported.ui) && Je.build.call(this), this.listeners.container(), this.listeners.global(), this.config.ads.enabled && (this.ads = new ot(this)), this.isHTML5 && this.config.autoplay && this.once("canplay", function () {
+            return ve(_this35.play());
+          }), this.lastSeekTime = 0, this.config.previewThumbnails.enabled && (this.previewThumbnails = new ht(this))) : this.debug.error("Setup failed: no support");
         }
 
-        return a(e, [{
+        _createClass(dt, [{
           key: "toggleCaptions",
-          value: function value(e) {
-            it.toggle.call(this, e, !1);
+          value: function toggleCaptions(e) {
+            Be.toggle.call(this, e, !1);
           }
         }, {
           key: "isHTML5",
           get: function get() {
-            return this.provider === ot.html5;
+            return this.provider === ze.html5;
           }
         }, {
           key: "isEmbed",
@@ -3986,12 +4061,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "isYouTube",
           get: function get() {
-            return this.provider === ot.youtube;
+            return this.provider === ze.youtube;
           }
         }, {
           key: "isVimeo",
           get: function get() {
-            return this.provider === ot.vimeo;
+            return this.provider === ze.vimeo;
           }
         }, {
           key: "isVideo",
@@ -4026,10 +4101,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "currentTime",
           set: function set(e) {
-            if (this.duration) {
-              var t = W(e) && e > 0;
-              this.media.currentTime = t ? Math.min(e, this.duration) : 0, this.debug.log("Seeking to ".concat(this.currentTime, " seconds"));
-            }
+            if (!this.duration) return;
+            var t = I(e) && e > 0;
+            this.media.currentTime = t ? Math.min(e, this.duration) : 0, this.debug.log("Seeking to ".concat(this.currentTime, " seconds"));
           },
           get: function get() {
             return Number(this.media.currentTime);
@@ -4038,7 +4112,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           key: "buffered",
           get: function get() {
             var e = this.media.buffered;
-            return W(e) ? e : e && e.length && this.duration > 0 ? e.end(0) / this.duration : 0;
+            return I(e) ? e : e && e.length && this.duration > 0 ? e.end(0) / this.duration : 0;
           }
         }, {
           key: "seeking",
@@ -4050,14 +4124,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           get: function get() {
             var e = parseFloat(this.config.duration),
                 t = (this.media || {}).duration,
-                n = W(t) && t !== 1 / 0 ? t : 0;
-            return e || n;
+                i = I(t) && t !== 1 / 0 ? t : 0;
+            return e || i;
           }
         }, {
           key: "volume",
           set: function set(e) {
+            var _this$config2;
+
             var t = e;
-            z(t) && (t = Number(t)), W(t) || (t = this.storage.get("volume")), W(t) || (t = this.config.volume), t > 1 && (t = 1), t < 0 && (t = 0), this.config.volume = t, this.media.volume = t, !te(e) && this.muted && t > 0 && (this.muted = !1);
+            L(t) && (t = Number(t)), I(t) || (t = this.storage.get("volume")), I(t) || (_this$config2 = this.config, t = _this$config2.volume, _this$config2), t > 1 && (t = 1), t < 0 && (t = 0), this.config.volume = t, this.media.volume = t, !V(e) && this.muted && t > 0 && (this.muted = !1);
           },
           get: function get() {
             return Number(this.media.volume);
@@ -4066,7 +4142,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           key: "muted",
           set: function set(e) {
             var t = e;
-            K(t) || (t = this.storage.get("muted")), K(t) || (t = this.config.muted), this.config.muted = t, this.media.muted = t;
+            _(t) || (t = this.storage.get("muted")), _(t) || (t = this.config.muted), this.config.muted = t, this.media.muted = t;
           },
           get: function get() {
             return Boolean(this.media.muted);
@@ -4079,18 +4155,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "speed",
           set: function set(e) {
-            var t = this,
-                n = null;
-            W(e) && (n = e), W(n) || (n = this.storage.get("speed")), W(n) || (n = this.config.speed.selected);
+            var _this36 = this;
+
+            var t = null;
+            I(e) && (t = e), I(t) || (t = this.storage.get("speed")), I(t) || (t = this.config.speed.selected);
             var i = this.minimumSpeed,
-                a = this.maximumSpeed;
-            n = function () {
-              var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0,
-                  t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0,
-                  n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 255;
-              return Math.min(Math.max(e, t), n);
-            }(n, i, a), this.config.speed.selected = n, setTimeout(function () {
-              t.media.playbackRate = n;
+                s = this.maximumSpeed;
+            t = function () {
+              var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+              var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+              var i = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 255;
+              return Math.min(Math.max(e, t), i);
+            }(t, i, s), this.config.speed.selected = t, setTimeout(function () {
+              _this36.media.playbackRate = t;
             }, 0);
           },
           get: function get() {
@@ -4099,37 +4176,31 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "minimumSpeed",
           get: function get() {
-            return this.isYouTube ? Math.min.apply(Math, c(this.options.speed)) : this.isVimeo ? .5 : .0625;
+            return this.isYouTube ? Math.min.apply(Math, _toConsumableArray(this.options.speed)) : this.isVimeo ? .5 : .0625;
           }
         }, {
           key: "maximumSpeed",
           get: function get() {
-            return this.isYouTube ? Math.max.apply(Math, c(this.options.speed)) : this.isVimeo ? 2 : 16;
+            return this.isYouTube ? Math.max.apply(Math, _toConsumableArray(this.options.speed)) : this.isVimeo ? 2 : 16;
           }
         }, {
           key: "quality",
           set: function set(e) {
             var t = this.config.quality,
-                n = this.options.quality;
+                i = this.options.quality;
+            if (!i.length) return;
+            var s = [!V(e) && Number(e), this.storage.get("quality"), t.selected, t.default].find(I),
+                n = !0;
 
-            if (n.length) {
-              var i = [!te(e) && Number(e), this.storage.get("quality"), t.selected, t.default].find(W),
-                  a = !0;
+            if (!i.includes(s)) {
+              var _e36 = Te(i, s);
 
-              if (!n.includes(i)) {
-                var r = function (e, t) {
-                  return Q(e) && e.length ? e.reduce(function (e, n) {
-                    return Math.abs(n - t) < Math.abs(e - t) ? n : e;
-                  }) : null;
-                }(n, i);
-
-                this.debug.warn("Unsupported quality option: ".concat(i, ", using ").concat(r, " instead")), i = r, a = !1;
-              }
-
-              t.selected = i, this.media.quality = i, a && this.storage.set({
-                quality: i
-              });
+              this.debug.warn("Unsupported quality option: ".concat(s, ", using ").concat(_e36, " instead")), s = _e36, n = !1;
             }
+
+            t.selected = s, this.media.quality = s, n && this.storage.set({
+              quality: s
+            });
           },
           get: function get() {
             return this.media.quality;
@@ -4137,7 +4208,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "loop",
           set: function set(e) {
-            var t = K(e) ? e : this.config.loop.active;
+            var t = _(e) ? e : this.config.loop.active;
             this.config.loop.active = t, this.media.loop = t;
           },
           get: function get() {
@@ -4146,7 +4217,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "source",
           set: function set(e) {
-            St.change.call(this, e);
+            ut.change.call(this, e);
           },
           get: function get() {
             return this.media.currentSrc;
@@ -4155,15 +4226,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           key: "download",
           get: function get() {
             var e = this.config.urls.download;
-            return ee(e) ? e : this.source;
+            return $(e) ? e : this.source;
           },
           set: function set(e) {
-            ee(e) && (this.config.urls.download = e, et.setDownloadUrl.call(this));
+            $(e) && (this.config.urls.download = e, Re.setDownloadUrl.call(this));
           }
         }, {
           key: "poster",
           set: function set(e) {
-            this.isVideo ? dt.setPoster.call(this, e, !1).catch(function () {}) : this.debug.warn("Poster can only be set for video");
+            this.isVideo ? Je.setPoster.call(this, e, !1).catch(function () {}) : this.debug.warn("Poster can only be set for video");
           },
           get: function get() {
             return this.isVideo ? this.media.getAttribute("poster") || this.media.getAttribute("data-poster") : null;
@@ -4172,16 +4243,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           key: "ratio",
           get: function get() {
             if (!this.isVideo) return null;
-            var e = je(De.call(this));
-            return Q(e) ? e.join(":") : e;
+            var e = Ae(Se.call(this));
+            return j(e) ? e.join(":") : e;
           },
           set: function set(e) {
-            this.isVideo ? z(e) && _e(e) ? (this.config.ratio = e, qe.call(this)) : this.debug.error("Invalid aspect ratio specified (".concat(e, ")")) : this.debug.warn("Aspect ratio can only be set for video");
+            this.isVideo ? L(e) && Ce(e) ? (this.config.ratio = Ae(e), Ee.call(this)) : this.debug.error("Invalid aspect ratio specified (".concat(e, ")")) : this.debug.warn("Aspect ratio can only be set for video");
           }
         }, {
           key: "autoplay",
           set: function set(e) {
-            var t = K(e) ? e : this.config.autoplay;
+            var t = _(e) ? e : this.config.autoplay;
             this.config.autoplay = t;
           },
           get: function get() {
@@ -4190,76 +4261,212 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, {
           key: "currentTrack",
           set: function set(e) {
-            it.set.call(this, e, !1);
+            Be.set.call(this, e, !1);
           },
           get: function get() {
-            var e = this.captions,
-                t = e.toggled,
-                n = e.currentTrack;
-            return t ? n : -1;
+            var _this$captions2 = this.captions,
+                e = _this$captions2.toggled,
+                t = _this$captions2.currentTrack;
+            return e ? t : -1;
           }
         }, {
           key: "language",
           set: function set(e) {
-            it.setLanguage.call(this, e, !1);
+            Be.setLanguage.call(this, e, !1);
           },
           get: function get() {
-            return (it.getCurrentTrack.call(this) || {}).language;
+            return (Be.getCurrentTrack.call(this) || {}).language;
           }
         }, {
           key: "pip",
           set: function set(e) {
-            if (Ae.pip) {
-              var t = K(e) ? e : !this.pip;
-              Y(this.media.webkitSetPresentationMode) && this.media.webkitSetPresentationMode(t ? rt : "inline"), Y(this.media.requestPictureInPicture) && (!this.pip && t ? this.media.requestPictureInPicture() : this.pip && !t && document.exitPictureInPicture());
-            }
+            if (!he.pip) return;
+            var t = _(e) ? e : !this.pip;
+            O(this.media.webkitSetPresentationMode) && this.media.webkitSetPresentationMode(t ? We : "inline"), O(this.media.requestPictureInPicture) && (!this.pip && t ? this.media.requestPictureInPicture() : this.pip && !t && document.exitPictureInPicture());
           },
           get: function get() {
-            return Ae.pip ? te(this.media.webkitPresentationMode) ? this.media === document.pictureInPictureElement : this.media.webkitPresentationMode === rt : null;
+            return he.pip ? V(this.media.webkitPresentationMode) ? this.media === document.pictureInPictureElement : this.media.webkitPresentationMode === We : null;
           }
         }], [{
           key: "supported",
-          value: function value(e, t, n) {
-            return Ae.check(e, t, n);
+          value: function supported(e, t, i) {
+            return he.check(e, t, i);
           }
         }, {
           key: "loadSprite",
-          value: function value(e, t) {
-            return Xe(e, t);
+          value: function loadSprite(e, t) {
+            return De(e, t);
           }
         }, {
           key: "setup",
-          value: function value(t) {
-            var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-                i = null;
-            return z(t) ? i = Array.from(document.querySelectorAll(t)) : X(t) ? i = Array.from(t) : Q(t) && (i = t.filter($)), te(i) ? null : i.map(function (t) {
-              return new e(t, n);
+          value: function setup(e) {
+            var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var i = null;
+            return L(e) ? i = Array.from(document.querySelectorAll(e)) : q(e) ? i = Array.from(e) : j(e) && (i = e.filter(D)), V(i) ? null : i.map(function (e) {
+              return new dt(e, t);
             });
           }
-        }]), e;
+        }]);
+
+        return dt;
       }();
 
-      return Pt.defaults = (vt = at, JSON.parse(JSON.stringify(vt))), Pt;
+      var mt;
+      return dt.defaults = (mt = Ue, JSON.parse(JSON.stringify(mt))), dt;
     }());
-  }).call(this, n(2));
-}, function (e, t, n) {
+  }).call(this, i(3));
+}, function (e, t, i) {
+  i(2), e.exports = i(4);
+}, function (e, t, i) {
   "use strict";
 
-  n.r(t);
-  var i = n(0);
-  new (n.n(i).a)("#player");
+  i.r(t);
+  var s = i(0);
+  new (i.n(s).a)("#player");
 }, function (e, t) {
-  var n;
+  var i;
 
-  n = function () {
+  i = function () {
     return this;
   }();
 
   try {
-    n = n || new Function("return this")();
+    i = i || new Function("return this")();
   } catch (e) {
-    "object" == (typeof window === "undefined" ? "undefined" : _typeof(window)) && (n = window);
+    "object" == (typeof window === "undefined" ? "undefined" : _typeof(window)) && (i = window);
   }
 
-  e.exports = n;
+  e.exports = i;
+}, function (e, t, i) {
+  "use strict";
+
+  var s, n;
+  void 0 === (n = "function" == typeof (s = function s() {
+    function e(e, i) {
+      if (e) {
+        if ("string" == typeof e) return t(e, i);
+        var s = Object.prototype.toString.call(e).slice(8, -1);
+        return "Object" === s && e.constructor && (s = e.constructor.name), "Map" === s || "Set" === s ? Array.from(s) : "Arguments" === s || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(s) ? t(e, i) : void 0;
+      }
+    }
+
+    function t(e, t) {
+      (null == t || t > e.length) && (t = e.length);
+
+      for (var i = 0, s = Array(t); i < t; i++) {
+        s[i] = e[i];
+      }
+
+      return s;
+    }
+
+    function i(t) {
+      if ("undefined" == typeof Symbol || null == t[Symbol.iterator]) {
+        if (Array.isArray(t) || (t = e(t))) {
+          var i = 0,
+              s = function s() {};
+
+          return {
+            s: s,
+            n: function n() {
+              return i >= t.length ? {
+                done: !0
+              } : {
+                done: !1,
+                value: t[i++]
+              };
+            },
+            e: function e(_e37) {
+              throw _e37;
+            },
+            f: s
+          };
+        }
+
+        throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+      }
+
+      var _n11,
+          a = !0,
+          l = !1;
+
+      return {
+        s: function s() {
+          _n11 = t[Symbol.iterator]();
+        },
+        n: function n() {
+          var e = _n11.next();
+
+          return a = e.done, e;
+        },
+        e: function e(_e38) {
+          l = !0;
+        },
+        f: function e() {
+          try {
+            a || null == _n11.return || _n11.return();
+          } finally {
+            if (l) throw e;
+          }
+        }
+      };
+    }
+
+    var s = function s(e) {
+      void 0 !== window.ResizeObserver && new window.ResizeObserver(function (e) {
+        window.requestAnimationFrame(function () {
+          if (Array.isArray(e) && e.length) {
+            var t,
+                s = i(e);
+
+            try {
+              for (s.s(); !(t = s.n()).done;) {
+                var n = t.value;
+                n.contentRect && n.target.style.setProperty("--tt-bind", n.contentRect.width);
+              }
+            } catch (e) {
+              s.e(e);
+            } finally {
+              s.f();
+            }
+          }
+        });
+      }).observe(e);
+    },
+        n = function n(e) {
+      var t = e.base,
+          i = e.scale,
+          s = document.createElement("style");
+      return s.innerHTML = "html{--tt-base: ".concat(t, ";--tt-scale: ").concat(i, ";--tt-ease:linear;--tt-max:1600}*,:before,:after,html{--tt-key:none;animation:var(--tt-key) 1s var(--tt-ease) 1 calc(-1s * var(--tt-bind) / var(--tt-max)) both paused}"), s;
+    };
+
+    window.typetura = window.typetura || {
+      selectors: [".typetura"],
+      base: 20,
+      scale: 1
+    }, function () {
+      var e = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {},
+          t = e.selectors || [".typetura"],
+          i = e.base || 20,
+          a = e.scale || 1;
+      new Promise(function (e) {
+        new window.MutationObserver(function (e) {
+          e.forEach(function (e) {
+            e.addedNodes.forEach(function (e) {
+              e.classList && e.matches(t) && s(e);
+            });
+          });
+        }).observe(document.documentElement, {
+          childList: !0,
+          attributes: !1,
+          subtree: !0
+        });
+        var l = n({
+          base: i,
+          scale: a
+        });
+        s(document.documentElement), document.head.insertBefore(l, document.head.firstChild), e();
+      });
+    }(window.typetura);
+  }) ? s.call(t, i, t, e) : s) || (e.exports = n);
 }]);
