@@ -33,5 +33,3 @@ if(!Object.is(transcriptButton, undefined) && !Object.is(transcriptButton, null)
   toggleHide(label[1], 'inline');
   transcript.classList.toggle('open');
 });
-
-const player = new Plyr('#player');

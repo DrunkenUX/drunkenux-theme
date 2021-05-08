@@ -84,10 +84,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return i.d(t, "a", t), t;
   }, i.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, i.p = "", i(i.s = 0);
+  }, i.p = "", i(i.s = 1);
 }([function (e, t, i) {
-  i(1), e.exports = i(3);
-}, function (e, t, i) {
   (function (t) {
     "object" == (typeof navigator === "undefined" ? "undefined" : _typeof(navigator)) && (e.exports = function () {
       "use strict";
@@ -4316,7 +4314,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       var mt;
       return dt.defaults = (mt = Ue, JSON.parse(JSON.stringify(mt))), dt;
     }());
-  }).call(this, i(2));
+  }).call(this, i(3));
+}, function (e, t, i) {
+  i(2), e.exports = i(4);
+}, function (e, t, i) {
+  "use strict";
+
+  i.r(t);
+  var s = i(0);
+  new (i.n(s).a)("#player");
 }, function (e, t) {
   var i;
 
