@@ -40,7 +40,7 @@
 		<<?php echo $logo_tag; ?> class="screen-reader-text"><?php bloginfo( 'name' ); ?></<?php echo $logo_tag; ?>>
 	</a>
 
-	<a class="button" href="https://link.chtbl.com/ZLx2VcWd?sid=site.subscribe_button">Subscribe</a>
+	<a class="button" rel="external" href="https://link.chtbl.com/ZLx2VcWd?sid=site.subscribe_button">Subscribe</a>
 
 	<button id="menu-toggle" type="button">Menu</button>
 
