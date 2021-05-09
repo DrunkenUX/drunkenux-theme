@@ -6,6 +6,10 @@ body::after {
     top: 2.5rem !important;
 }
 
+[hidden] { 
+    display: none; 
+}
+
 // WordPress default a11y styling
 .screen-reader-text {
     border: 0;

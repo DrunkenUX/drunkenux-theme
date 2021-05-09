@@ -42,13 +42,14 @@
 
 	<a class="button" rel="external" href="https://link.chtbl.com/ZLx2VcWd?sid=site.subscribe_button">Subscribe</a>
 
-	<button id="menu-toggle" type="button">Menu</button>
+	<button id="menu-toggle" type="button" aria-haspopup="true" aria-controls="menu-top-navigation" aria-expanded="false">Menu</button>
 
 	<nav>
 	<?php
 	wp_nav_menu( [
 		'theme_location' => 'header-menu',
-		'container' => false,
+		'container'		 => false,
+		'items_wrap'	 => '<ul id="%1$s" class="%2$s" aria-labelledby="menu-toggle" hidden>%3$s</ul>'
 	] );
 	?>
 	</nav>
