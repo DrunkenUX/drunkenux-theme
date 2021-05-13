@@ -30,7 +30,7 @@ bannerImg && bannerImg.addEventListener("load", function () {
 
 var navButton = document.getElementById('menu-toggle');
 if (!Object.is(navButton, undefined) && !Object.is(navButton, null)) navButton.addEventListener('click', function () {
-  var menu = this.nextElementSibling.querySelector('ul');
+  var menu = document.getElementById('menu-top-navigation');
   toggleHide(menu);
   navButton.setAttribute('aria-expanded', navButton.getAttribute('aria-expanded') == 'true' ? 'false' : 'true');
 }); // Transcript visibility toggle

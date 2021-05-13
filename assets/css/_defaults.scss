@@ -13,13 +13,24 @@ a {
 }
 
 button {
+    @include clip-corners;
+
 	background-color: map-get($colors, red);
 	border: none;
 	color: #fff;
 	cursor: pointer;
 	display: inline;
+    font-family: sans-serif;
+    font-size: 1.6rem;
 	padding: 2rem 3rem;
 	text-decoration: none;
+    transition: clip-path .5s;
+
+    &[aria-expanded=true],
+    &:focus,
+    &:hover {
+        @include clip-corners-alt;
+    }
 }
 
 
@@ -35,6 +46,8 @@ footer {
 }
 
 header {
+    align-content:center;
+    display: grid;
     min-height: 10rem;
 	overflow: visible;
 	position: relative;

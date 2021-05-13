@@ -26,7 +26,7 @@ bannerImg && bannerImg.addEventListener("load", function() { document.body.class
 // Menu visibility toggle
 const navButton = document.getElementById('menu-toggle');
 if(!Object.is(navButton, undefined) && !Object.is(navButton, null)) navButton.addEventListener('click', function() {
-  const menu = this.nextElementSibling.querySelector('ul');
+  const menu = document.getElementById('menu-top-navigation');
   toggleHide(menu);
   navButton.setAttribute('aria-expanded', navButton.getAttribute('aria-expanded') == 'true' ? 'false' : 'true' );
 });

@@ -40,9 +40,11 @@
 		<<?php echo $logo_tag; ?> class="screen-reader-text"><?php bloginfo( 'name' ); ?></<?php echo $logo_tag; ?>>
 	</a>
 
-	<a class="button" rel="external" href="https://link.chtbl.com/ZLx2VcWd?sid=site.subscribe_button">Subscribe</a>
+	<div class="button-nav">
+		<a class="button" rel="external" href="https://link.chtbl.com/ZLx2VcWd?sid=site.subscribe_button" title="Subscribe to The Drunken UX Podcast">Subscribe</a>
 
-	<button id="menu-toggle" type="button" aria-haspopup="true" aria-controls="menu-top-navigation" aria-expanded="false">Menu</button>
+		<button id="menu-toggle" type="button" aria-haspopup="true" aria-controls="menu-top-navigation" aria-expanded="false">Menu</button>
+	</div><!-- .button-nav -->
 
 	<nav>
 	<?php
