@@ -23,6 +23,7 @@ button {
     font-family: sans-serif;
     font-size: 1.6rem;
 	padding: 2rem 3rem;
+    position: relative;
 	text-decoration: none;
     transition: clip-path .5s;
 
@@ -30,6 +31,25 @@ button {
     &:focus,
     &:hover {
         @include clip-corners-alt;
+    }
+
+    &[aria-expanded=true]:before {
+        @include clip-corners-alt;
+
+        background-color: #fff;
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+
+        top: .5rem;
+        right: .5rem;
+        bottom: .5rem;
+        left: .5rem;
+    }
+
+    &[aria-expanded=true] {
+        color: map-get($colors, red);
     }
 }
 

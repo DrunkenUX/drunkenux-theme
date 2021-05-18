@@ -211,8 +211,10 @@ table{border-collapse:collapse;border-spacing:0}
 html{font-size:62.5%}
 body{font-family:sans-serif;font-size:1.6rem;margin:0}
 a{color:#e42920}
-button,.button{-webkit-clip-path:polygon(25% 0,100% 0,100% 90%,75% 100%,0 100%,0 10%);clip-path:polygon(25% 0,100% 0,100% 90%,75% 100%,0 100%,0 10%);background-color:#e42920;border:0;color:#fff;cursor:pointer;display:inline;font-family:sans-serif;font-size:1.6rem;padding:2rem 3rem;text-decoration:none;-webkit-transition:-webkit-clip-path .5s;transition:-webkit-clip-path .5s;transition:clip-path .5s;transition:clip-path .5s,-webkit-clip-path .5s}
+button,.button{-webkit-clip-path:polygon(25% 0,100% 0,100% 90%,75% 100%,0 100%,0 10%);clip-path:polygon(25% 0,100% 0,100% 90%,75% 100%,0 100%,0 10%);background-color:#e42920;border:0;color:#fff;cursor:pointer;display:inline;font-family:sans-serif;font-size:1.6rem;padding:2rem 3rem;position:relative;text-decoration:none;-webkit-transition:-webkit-clip-path .5s;transition:-webkit-clip-path .5s;transition:clip-path .5s;transition:clip-path .5s,-webkit-clip-path .5s}
 button[aria-expanded=true],.button[aria-expanded=true],button:focus,.button:focus,button:hover,.button:hover{-webkit-clip-path:polygon(0 0,90% 0,100% 25%,100% 100%,10% 100%,0 75%);clip-path:polygon(0 0,90% 0,100% 25%,100% 100%,10% 100%,0 75%)}
+button[aria-expanded=true]:before,.button[aria-expanded=true]:before{-webkit-clip-path:polygon(0 0,90% 0,100% 25%,100% 100%,10% 100%,0 75%);clip-path:polygon(0 0,90% 0,100% 25%,100% 100%,10% 100%,0 75%);background-color:#fff;content:'';display:block;position:absolute;z-index:-1;top:.5rem;right:.5rem;bottom:.5rem;left:.5rem}
+button[aria-expanded=true],.button[aria-expanded=true]{color:#e42920}
 footer{padding:5rem auto;text-align:center}
 footer>*{margin:0 auto;max-width:120rem;padding:0 4rem}
 header{-ms-flex-line-pack:center;align-content:center;display:grid;min-height:10rem;overflow:visible;position:relative;text-align:right;z-index:3}
