@@ -13,13 +13,44 @@ a {
 }
 
 button {
+    @include clip-corners;
+
 	background-color: map-get($colors, red);
 	border: none;
 	color: #fff;
 	cursor: pointer;
 	display: inline;
+    font-family: sans-serif;
+    font-size: 1.6rem;
 	padding: 2rem 3rem;
+    position: relative;
 	text-decoration: none;
+    transition: clip-path .5s;
+
+    &[aria-expanded=true],
+    &:focus,
+    &:hover {
+        @include clip-corners-alt;
+    }
+
+    &[aria-expanded=true]:before {
+        @include clip-corners-alt;
+
+        background-color: #fff;
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+
+        top: .5rem;
+        right: .5rem;
+        bottom: .5rem;
+        left: .5rem;
+    }
+
+    &[aria-expanded=true] {
+        color: map-get($colors, red);
+    }
 }
 
 
@@ -35,6 +66,8 @@ footer {
 }
 
 header {
+    align-content:center;
+    display: grid;
     min-height: 10rem;
 	overflow: visible;
 	position: relative;
@@ -53,7 +86,7 @@ img {
 
 nav {
     background-color: #fff;
-    display: none;
+    display: block;
     margin-bottom: -1rem;
     position: absolute;
     text-align: center;

@@ -3,21 +3,31 @@
 /// @param {String} $breakpoint - Breakpoint name
 /// @require $breakpoints
 @mixin respond-to($breakpoint) {
-    // If the key exists in the map
-    @if map-has-key($breakpoints, $breakpoint) {
-      // Prints a media query based on the value
-      @media (min-width: map-get($breakpoints, $breakpoint)) {
-        @content;
-      }
-    }
-   
-    // If the key doesn't exist in the map
-    @else {
-      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
     }
   }
+  
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
 
 @mixin boxshadow() {
-    box-shadow: -5px 5px 15px rgba(0, 0, 0, .5);
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, .5);
+}
+
+@mixin clip-corners() {
+  -webkit-clip-path: polygon(25% 0, 100% 0, 100% 90%, 75% 100%, 0 100%, 0 10%);
+  clip-path: polygon(25% 0, 100% 0, 100% 90%, 75% 100%, 0 100%, 0 10%);
+}
+
+@mixin clip-corners-alt() {
+  -webkit-clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 10% 100%, 0 75%);
+  clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 10% 100%, 0 75%);
 }

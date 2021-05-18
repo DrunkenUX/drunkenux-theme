@@ -40,15 +40,18 @@
 		<<?php echo $logo_tag; ?> class="screen-reader-text"><?php bloginfo( 'name' ); ?></<?php echo $logo_tag; ?>>
 	</a>
 
-	<a class="button" rel="external" href="https://link.chtbl.com/ZLx2VcWd?sid=site.subscribe_button">Subscribe</a>
+	<div class="button-nav">
+		<a class="button" rel="external" href="https://link.chtbl.com/ZLx2VcWd?sid=site.subscribe_button" title="Subscribe to The Drunken UX Podcast">Subscribe</a>
 
-	<button id="menu-toggle" type="button">Menu</button>
+		<button id="menu-toggle" type="button" aria-haspopup="true" aria-controls="menu-top-navigation" aria-expanded="false">Menu</button>
+	</div><!-- .button-nav -->
 
 	<nav>
 	<?php
 	wp_nav_menu( [
 		'theme_location' => 'header-menu',
-		'container' => false,
+		'container'		 => false,
+		'items_wrap'	 => '<ul id="%1$s" class="%2$s" aria-labelledby="menu-toggle" role="menu" hidden>%3$s</ul>'
 	] );
 	?>
 	</nav>
