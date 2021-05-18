@@ -19,21 +19,33 @@ function toggleHide(el) {
   el.hidden = !el.hidden;
 }
 
+/**
+ * Packages up steps required for showing and hiding the main navigation
+ * @author Michael Fienen <fienen@gmail.com>
+ * @external menu
+ * @external navButton
+ */
+function toggleMenu() {
+  menu && toggleHide(menu);
+  navButton.setAttribute('aria-expanded', navButton.getAttribute('aria-expanded') == 'true' ? 'false' : 'true' );
+}
+
 // Pause homepage animation until image is loaded
 const bannerImg = document.querySelector(".banner-image img");
 bannerImg && bannerImg.addEventListener("load", function() { document.body.classList.remove('img-loading') });
 
 // Menu visibility toggle
 const navButton = document.getElementById('menu-toggle');
-if(!Object.is(navButton, undefined) && !Object.is(navButton, null)) navButton.addEventListener('click', function() {
-  const menu = document.getElementById('menu-top-navigation');
-  toggleHide(menu);
-  navButton.setAttribute('aria-expanded', navButton.getAttribute('aria-expanded') == 'true' ? 'false' : 'true' );
+const menu = document.getElementById('menu-top-navigation');
+navButton && navButton.addEventListener('click', toggleMenu);
+navButton && document.addEventListener('keydown', (e) => {
+  if (e.key == 'Escape' && navButton.getAttribute('aria-expanded') == 'true') toggleMenu();
+  return;
 });
 
 // Transcript visibility toggle
 let transcriptButton = document.getElementById('transcript-toggle');
-if(!Object.is(transcriptButton, undefined) && !Object.is(transcriptButton, null)) transcriptButton.addEventListener('click', function() {
+transcriptButton && transcriptButton.addEventListener('click', function() {
   let label = this.getElementsByTagName('span');
   let transcript = document.getElementById('transcript');
   toggleHide(label[0]);
