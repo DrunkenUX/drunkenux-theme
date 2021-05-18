@@ -46,7 +46,8 @@
 		"js-vendors": "gulp vendorsJS",
 		"translate": "gulp translate",
 		"styles-rtl": "gulp stylesRTL",
-		"cache-clear": "gulp clearCache"
+		"cache-clear": "gulp clearCache",
+		"test": "cypress open"
 	},
 	"dependencies": {
 		"plyr": "^3.6.4"
