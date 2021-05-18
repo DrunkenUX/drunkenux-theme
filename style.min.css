@@ -249,7 +249,7 @@ footer>.widgets{grid-column:2 / 3;margin-bottom:5rem}
 .disclaimer{font-style:italic}
 .hide{display:none}
 .img-loading *{-webkit-animation-play-state:paused !important;animation-play-state:paused !important}
-.plyr{--plyr-control-icon-size:4.4rem;grid-column:1 / 4;grid-row:4 / 5}
+.plyr{--plyr-audio-control-color:#000;--plyr-control-icon-size:4.4rem;grid-column:1 / 4;grid-row:4 / 5}
 .plyr .plyr__controls{-webkit-box-shadow:-5px 5px 15px rgba(0,0,0,0.5);box-shadow:-5px 5px 15px rgba(0,0,0,0.5)}
 #logo{background:url("assets/svg/logo.svg") no-repeat;background-size:cover;display:inline-block;height:20rem;left:0;position:absolute;width:20rem}
 #transcript{height:200px;overflow:hidden;position:relative}
