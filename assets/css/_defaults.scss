@@ -26,13 +26,6 @@ a {
 	color: map-get($colors, red);
 }
 
-section {
-    margin: 0 auto;
-    max-width: 120rem;
-    padding: 6rem 4rem;
-}
-
-
 button {
     @include clip-corners;
 
@@ -132,6 +125,17 @@ nav {
 p {
     line-height: 1.2;
     margin-bottom: 2.4rem;
+}
+
+section {
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 6rem 4rem;
+}
+
+summary {
+    cursor: pointer;
+    margin-bottom: 1.6rem;
 }
 
 ul {

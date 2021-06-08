@@ -47,7 +47,7 @@ $ep_banner = get_field('cmb_thst_feature_post_img_id');
 
 	<section>
 		<h2>Episode Synopsis</h2>
-		
+
 		<?php
 		the_content();
 
@@ -57,5 +57,7 @@ $ep_banner = get_field('cmb_thst_feature_post_img_id');
 		<div class="meta">
 			<?php the_tags( 'Tagged with:' ); ?>
 		</div><!-- .meta -->
+
+		<?php get_template_part( 'parts/section', 'comments' ); ?>
 	</section>
 </article><!-- #post-<?php the_ID(); ?> -->
