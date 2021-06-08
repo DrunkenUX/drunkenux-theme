@@ -31,3 +31,15 @@
   -webkit-clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 10% 100%, 0 75%);
   clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 10% 100%, 0 75%);
 }
+
+@mixin main-headings() {
+  --tt-ease: Linear;
+  --tt-key: headline;
+  background-color: #fff;
+  display: inline-block;
+  font-style: italic;
+  margin: 0 0 2rem;
+  max-width: 100%;
+  padding: 2rem 3rem;
+  text-align: left;
+}

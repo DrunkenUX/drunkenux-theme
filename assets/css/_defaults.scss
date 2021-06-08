@@ -6,11 +6,32 @@ body {
 	font-family: sans-serif;
     font-size: 1.6rem;
     margin: 0;
+
+    > header {
+        align-content:center;
+        display: grid;
+        min-height: 10rem;
+        overflow: visible;
+        position: relative;
+        text-align: right;
+        z-index: 3;
+    
+        * {
+            display: inline-block;
+        }
+    }
 }
 
 a {
 	color: map-get($colors, red);
 }
+
+section {
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 6rem 4rem;
+}
+
 
 button {
     @include clip-corners;
@@ -53,6 +74,9 @@ button {
     }
 }
 
+em {
+    font-style: italic;
+}
 
 footer {
     padding: 5rem auto;
@@ -65,23 +89,13 @@ footer {
 	}
 }
 
-header {
-    align-content:center;
-    display: grid;
-    min-height: 10rem;
-	overflow: visible;
-	position: relative;
-	text-align: right;
-	z-index: 3;
-
-	* {
-		display: inline-block;
-	}
-}
-
 img {
     height: auto;
     max-width: 100%;
+}
+
+li {
+    margin-bottom: 1rem;
 }
 
 nav {
@@ -115,8 +129,13 @@ nav {
     }
 }
 
-section {
-    margin: 0 auto;
-    max-width: 120rem;
-    padding: 6rem 4rem;
+p {
+    line-height: 1.2;
+    margin-bottom: 2.4rem;
+}
+
+ul {
+    list-style: circle;
+    margin-bottom: 2.4rem;
+    margin-left: 4.8rem;
 }

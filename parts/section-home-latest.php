@@ -40,7 +40,9 @@ if( !empty( $latest_ep ) ):
         </div><!-- .banner-image -->
 
         <div class="title-group">
-            <div class="label-latest">Latest Episode</div>
+            <div class="label-latest">
+                <span>Latest Episode</span>
+            </div><!-- .label-latest -->
 
             <a href="<?php the_permalink(); ?>" title="View shownotes for <?php the_title(); ?>"><h2><?php the_title(); ?></h2></a>
 		</div><!-- .title-group -->

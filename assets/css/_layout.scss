@@ -3,7 +3,8 @@ footer > .widgets {
 	margin-bottom: 5rem;
 }
 
-#latest-episode {
+#latest-episode,
+.podcast > header {
     overflow: hidden;
 	position: relative;
 
@@ -20,17 +21,10 @@ footer > .widgets {
         }
     }
 
-	h2 {
-        --tt-ease: Linear;
-        --tt-key: headline;
-        background-color: #fff;
+	h1,
+    h2 {
         @include boxshadow();
-        display: inline-block;
-        font-style: italic;
-        margin: 0 0 2rem;
-        max-width: 100%;
-        padding: 2rem 3rem;
-        text-align: left;
+        @include main-headings();
 	}
 
     picture {		
@@ -98,15 +92,19 @@ footer > .widgets {
     }
 
     .label-latest {
-        background-color: map-get($colors, red);
-        color: #fff;
         display: block;
         font-size: 1rem;
         font-style: italic;
         font-weight: bold;
-        padding: .7rem 1rem;
         position: relative;
         width: max-content;
+
+        > * {
+            background-color: map-get($colors, red);
+            color: #fff;
+            display: inline-block;
+            padding: .7rem 1rem;
+        }
     }
 
     .title-group {
@@ -137,3 +135,31 @@ footer > .widgets {
     animation-play-state: paused !important;
 }
   
+.podcast {
+    section {
+        padding-top: 0;
+    }
+
+    h2 {
+        @include main-headings();
+
+        padding: 0 0 0 4rem;
+        position: relative;
+
+        &::before {
+            background-color: #000;
+            content: '';
+            display: block;
+            height: .3rem;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3.5rem;
+        }
+
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
+    }
+}
