@@ -20,11 +20,13 @@ if( $ad ):
 	?>
 
 <div class="ad">
-	<?php echo $ad_content; ?>
+	<section>
+		<?php echo $ad_content; ?>
 
-	<a href="<?php echo $ad_link; ?>" title="<?php the_title( $adObj->ID ); ?>">
-		<?php echo $ad_img; ?>
-	</a>
+		<a href="<?php echo $ad_link; ?>" title="<?php the_title( $adObj->ID ); ?>">
+			<?php echo $ad_img; ?>
+		</a>
+	</section>
 </div><!-- .ad -->
 
 <?php

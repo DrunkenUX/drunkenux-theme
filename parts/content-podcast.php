@@ -46,18 +46,26 @@ $ep_banner = get_field('cmb_thst_feature_post_img_id');
 	</header>
 
 	<section>
+		<p><strong>In this episode:</strong> <?php the_terms(get_the_ID(), 'speaker'); ?></p>
+
 		<h2>Episode Synopsis</h2>
 
-		<?php
-		the_content();
+		<?php the_content(); ?>
+	</section>
 
-		get_template_part( 'parts/section', 'sponsor' );
-		?>
+	<?php get_template_part( 'parts/section', 'sponsor' ); ?>
 
+	<section>
 		<div class="meta">
-			<?php the_tags( 'Tagged with:' ); ?>
-		</div><!-- .meta -->
+			<p><?php the_tags( '<strong>Tagged with:</strong> ' ); ?>
+			<?php 
+			if(isset($ep_banner['description'])): 
+				echo '<br><strong>Image Credit:</strong> ' . $ep_banner['description'];
+			endif;
+			?>
+			</p>
 
-		<?php get_template_part( 'parts/section', 'comments' ); ?>
+			<?php get_template_part( 'parts/section', 'comments' ); ?>
+		</div><!-- .meta -->
 	</section>
 </article><!-- #post-<?php the_ID(); ?> -->

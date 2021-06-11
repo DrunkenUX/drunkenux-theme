@@ -228,14 +228,16 @@ nav li:not(:last-child)::after{background-color:gray;content:' ';display:block;h
 nav li a{display:block;padding:4rem 0;width:100%}
 p{line-height:1.2;margin-bottom:2.4rem}
 section{margin:0 auto;max-width:120rem;padding:6rem 4rem}
+strong{font-weight:bold}
 summary{cursor:pointer;margin-bottom:1.6rem}
 ul{list-style:circle;margin-bottom:2.4rem;margin-left:4.8rem}
 body::after{bottom:auto !important;left:auto !important;right:1rem !important;top:2.5rem !important}
 [hidden]{display:none}
 .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute !important;width:1px;word-wrap:normal !important;word-break:normal}
 .skip-link:focus{background-color:#f1f1f1;border-radius:3px;-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,0.6);box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;-webkit-clip-path:none;clip-path:none;color:#21759b;display:block;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
-.ad{margin:2rem 0 2.4rem;text-align:center}
-.ad img{display:inline;max-width:30rem}
+.ad{background-color:#efefef;margin:2rem 0 2.4rem;padding-bottom:3rem;padding-top:3rem;text-align:center}
+.ad img{background-color:#fff;display:inline;max-width:30rem}
+.ad section{padding-bottom:0}
 footer>.widgets{grid-column:2 / 3;margin-bottom:5rem}
 #latest-episode,.podcast>header{overflow:hidden;position:relative}
 #latest-episode a,.podcast>header a{color:#000;display:block}
