@@ -9,8 +9,8 @@
  * @since Drunken UX Theme 2.0
  */
 ?>
-<section>
-    <h2>From the Blog</h2> 
+<section class="home-blog">
+    <h2>Posts</h2> 
 
     <ul>
     <?php
@@ -28,8 +28,16 @@
             ?>
 
         <li>
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, null, 'This article is written by' . get_the_author_meta( 'display_name' ) ); ?>
-            <a href="<?php echo the_permalink(); ?>" title="Read the post: <?php echo the_title(); ?>"><?php echo the_title(); ?></a>
+            <a href="<?php echo the_permalink(); ?>" title="Read the post: <?php echo the_title(); ?>">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, null, 'This article is written by' . get_the_author_meta( 'display_name' ) ); ?>
+                <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'M j, Y' ); ?></time>
+                <span class="cat">
+                <?php foreach ( get_the_category( $post->ID ) as $category ) {
+                    echo $category->cat_name;
+                } ?>
+                </span>
+                <span><?php echo the_title(); ?></span>
+            </a>
         </li>
 
         <?php

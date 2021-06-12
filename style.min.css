@@ -227,7 +227,7 @@ nav li{display:block;font-size:2rem}
 nav li:not(:last-child)::after{background-color:gray;content:' ';display:block;height:1px;margin:0 auto;width:6rem}
 nav li a{display:block;padding:4rem 0;width:100%}
 p{line-height:1.2;margin-bottom:2.4rem}
-section{margin:0 auto;max-width:120rem;padding:6rem 4rem}
+section{margin:0 auto;max-width:120rem;padding:6rem 4rem;position:relative}
 strong{font-weight:bold}
 summary{cursor:pointer;margin-bottom:1.6rem}
 ul{list-style:circle;margin-bottom:2.4rem;margin-left:4.8rem}
@@ -239,6 +239,7 @@ body::after{bottom:auto !important;left:auto !important;right:1rem !important;to
 .ad img{background-color:#fff;display:inline;max-width:30rem}
 .ad section{padding-bottom:0}
 footer>.widgets{grid-column:2 / 3;margin-bottom:5rem}
+[class^=home-] h2{color:gray;font-size:4.8rem;font-style:italic;font-weight:bold;left:0;position:absolute;top:50%;-webkit-transform:rotate(270deg) translateX(-50%);transform:rotate(270deg) translateX(-50%);-webkit-transform-origin:0 0;transform-origin:0 0}
 #latest-episode,.podcast>header{overflow:hidden;position:relative}
 #latest-episode a,.podcast>header a{color:#000;display:block}
 #latest-episode a:hover h2,#latest-episode a:focus h2,#latest-episode a:active h2,.podcast>header a:hover h2,.podcast>header a:focus h2,.podcast>header a:active h2{outline:solid .5rem #e42920}
@@ -256,6 +257,12 @@ footer>.widgets{grid-column:2 / 3;margin-bottom:5rem}
 .copyright{display:block;grid-column:1 / 2}
 .disclaimer{font-style:italic}
 .hide{display:none}
+.home-blog a{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:-webkit-gradient(linear,left top,right top,color-stop(50%,#fff),color-stop(50%,gray));background:linear-gradient(to right,#fff 50%,gray 50%);background-size:200% 100%;background-position:left bottom;display:-webkit-box;display:-ms-flexbox;display:flex;text-decoration:none;-webkit-transition:all .25s linear;transition:all .25s linear;width:100%}
+.home-blog a:focus,.home-blog a:hover{background-color:gray;background-position:right bottom;color:#fff}
+.home-blog a:focus time,.home-blog a:hover time{color:#fff}
+.home-blog a time{color:#000;margin-right:2rem;min-width:11rem;-webkit-transition:all .25s linear;transition:all .25s linear}
+.home-blog img{border-radius:50%;margin-right:2rem}
+.home-blog ul{list-style:none;margin:0 0 0 4.8rem;padding:0}
 .img-loading *{-webkit-animation-play-state:paused !important;animation-play-state:paused !important}
 .meta{margin-bottom:2rem}
 .podcast section{padding-top:0}
