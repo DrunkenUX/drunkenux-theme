@@ -9,6 +9,8 @@
  * @since Drunken UX Theme 2.0
  */
 
+global $featured_id;
+
 $latest_ep = get_posts( array(
     'numberposts' => 1,
     'orderby'     => 'date',
@@ -20,8 +22,7 @@ $latest_ep = get_posts( array(
 if( !empty( $latest_ep ) ):
     foreach( $latest_ep as $post ):
         $latest_ep_banner = get_field('cmb_thst_feature_post_img_id');
-        //echo $latest_ep_banner;
-        ?>
+?>
 <div id="latest-episode">
     <div class="background-image" style="background-image:url('<?php echo esc_url($latest_ep_banner['url']); ?>');"></div>
 

@@ -24,6 +24,8 @@ get_template_part( 'parts/section', 'home-latest' );
 </section>
 
 <?php
+get_template_part( 'parts/section', 'home-episodes' );
+
 get_template_part( 'parts/section', 'home-blog' );
 
 get_footer();
