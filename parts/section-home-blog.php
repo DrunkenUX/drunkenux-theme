@@ -29,14 +29,14 @@
 
         <li>
             <a href="<?php echo the_permalink(); ?>" title="Read the post: <?php echo the_title(); ?>">
-                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, null, 'This article is written by' . get_the_author_meta( 'display_name' ) ); ?>
-                <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'M j, Y' ); ?></time>
-                <span class="cat">
+                <span class="av"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32, null, 'This article is written by' . get_the_author_meta( 'display_name' ) ); ?></span>
+                <span class="post-title"><?php echo the_title(); ?></span>
+                <span class="cats">
                 <?php foreach ( get_the_category( $post->ID ) as $category ) {
-                    echo $category->cat_name;
+                    echo '<small>' . $category->cat_name . '</small>';
                 } ?>
                 </span>
-                <span><?php echo the_title(); ?></span>
+                <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'M j, Y' ); ?></time>
             </a>
         </li>
 
