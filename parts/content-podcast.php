@@ -26,13 +26,13 @@ $ep_banner = get_field('cmb_thst_feature_post_img_id');
 			</div><!-- .banner-image -->
 
 			<div class="title-group">
-				<div class="label-latest">
+				<div class="tag-label">
 					<time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'F j, Y' ); ?></time>
 				
 					<?php if( $explicit == 'on' ) : ?>
 					<span class="explicit" title="This episode contains some adult language.">Explicit</span>
 					<?php endif; ?>
-				</div>
+				</div><!-- .tag-label -->
 
 				<a href="<?php the_permalink(); ?>" title="View shownotes for <?php the_title(); ?>">
 					<h1><?php the_title(); ?></h1>

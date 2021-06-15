@@ -17,14 +17,10 @@
 get_header();
 
 get_template_part( 'parts/section', 'home-latest' );
-?>
 
-<section>
-    <h2>Your Hosts</h2>
-</section>
-
-<?php
 get_template_part( 'parts/section', 'home-episodes' );
+
+get_template_part( 'parts/section', 'home-hosts' );
 
 get_template_part( 'parts/section', 'home-blog' );
 

@@ -14,6 +14,7 @@ global $featured_id;
 <section class="home-episodes">
     <h2>Episodes</h2> 
 
+    <div class="episode-grid">
     <?php
     $recent_eps = get_posts( array(
         'exclude'     => $featured_id,
@@ -32,7 +33,9 @@ global $featured_id;
 
         <a href="<?php the_permalink(); ?>" title="Listen to: <?php the_title(); ?>">
             <img src="<?php echo $episode_img[0]; ?>" alt="Listen to: <?php the_title(); ?>">
-            <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'M j, Y' ); ?></time>
+            <div class="tag-label">
+                <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'M j, Y' ); ?></time>
+            </div><!-- .tag-label -->
         </a>
 
         <?php
@@ -41,4 +44,9 @@ global $featured_id;
 
     wp_reset_postdata();
     ?>
+    </div><!-- .episode-grid -->
+
+    <p class="alignright">
+        <a href="/podcast/" class="button" title="Browse past episodes">Browse past episodes</a>
+    </p>
 </section>
