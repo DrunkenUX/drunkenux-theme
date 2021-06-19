@@ -18,7 +18,6 @@ context('Template header.php', () => {
         it('has a logo', () => {
             cy.get('@templateHeader')
                 .find('#logo')
-                .should('exist')
                 .should('have.css', 'background-image', 'url("https://drunkenux.local/wp-content/themes/drunken-ux/assets/svg/logo.svg")')
         });
 
