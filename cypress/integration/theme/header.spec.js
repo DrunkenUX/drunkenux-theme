@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Template Header', () => {
+context('Template header.php', () => {
     before(() => {
         cy.visit('https://drunkenux.local');
     });
