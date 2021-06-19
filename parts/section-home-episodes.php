@@ -33,6 +33,7 @@ global $featured_id;
 
         <a href="<?php the_permalink(); ?>" title="Listen to: <?php the_title(); ?>">
             <img src="<?php echo $episode_img[0]; ?>" alt="Listen to: <?php the_title(); ?>">
+            
             <div class="tag-label">
                 <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'M j, Y' ); ?></time>
             </div><!-- .tag-label -->
