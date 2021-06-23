@@ -255,7 +255,7 @@ footer>.widgets{grid-column:2 / 3;margin-bottom:5rem}
 .button-nav{padding-right:2rem}
 .copyright{display:block;grid-column:1 / 2}
 .disclaimer{font-style:italic}
-.episode-grid{display:grid;grid-row-gap:2rem;grid-template-columns:1fr}
+.episode-grid{display:grid;grid-row-gap:4rem;grid-template-columns:1fr}
 .episode-grid>a{display:block}
 .episode-grid>a:hover img{-webkit-transform:scale(1.05);transform:scale(1.05);-webkit-clip-path:polygon(0 0,90% 0,100% 25%,100% 100%,10% 100%,0 75%);clip-path:polygon(0 0,90% 0,100% 25%,100% 100%,10% 100%,0 75%)}
 .episode-grid>a:last-of-type{display:none}
@@ -332,7 +332,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 .plyr--fullscreen-fallback .plyr__captions{font-size:21px;font-size:var(--plyr-font-size-xlarge,21px)}
 #latest-episode .banner,.podcast>header .banner{grid-template-columns:33% 27% 20% 20%;max-height:50rem}
 #latest-episode .banner-image,.podcast>header .banner-image{grid-column:2 / 5}
-.episode-grid{grid-column-gap:2rem;grid-template-columns:1fr 1fr}
+.episode-grid{grid-column-gap:4rem;grid-template-columns:1fr 1fr}
 .episode-grid>a:last-of-type{display:block}
 .plyr{grid-column:1 / 4}
 }@media(max-width:767px){.plyr__time+.plyr__time{display:none}
