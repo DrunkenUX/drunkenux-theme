@@ -39,10 +39,19 @@ context('Template Part parts/section-home-latest.php', () => {
             cy.get('@titleGroup')
                 .find('.tag-label span')
                 .should('have.text', 'Latest Episode');
+        });
 
+        it('retrieves the audio URL', () => {
             cy.get('#player source')
                 .should('have.attr', 'src')
                 .should('contain', '.mp3');
+        });
+
+        it('loads the audio player', () => {
+            cy.get('.plyr')
+                .as('plyr')
+                .find('.plyr__time')
+                .should('not.have.text', '00:00');
         });
     });
 });
