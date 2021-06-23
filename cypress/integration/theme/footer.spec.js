@@ -2,7 +2,7 @@
 
 context('Template footer.php', () => {
     before(() => {
-        cy.visit('https://drunkenux.local');
+        cy.visit('https://' + Cypress.env('HOST'));
     });
 
     beforeEach(() => {

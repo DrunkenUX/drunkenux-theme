@@ -7,7 +7,7 @@ context('Accessibility', () => {
 
     describe('AXE test suite', () => {
         it('homepage passes AXE test suite', () => {
-            cy.visit('https://drunkenux.local');
+            cy.visit('https://' + Cypress.env('HOST'));
             cy.injectAxe();
             cy.checkA11y();
         });

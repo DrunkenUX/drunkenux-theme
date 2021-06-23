@@ -2,7 +2,7 @@
 
 context('Template header.php', () => {
     before(() => {
-        cy.visit('https://drunkenux.local');
+        cy.visit('https://' + Cypress.env('HOST'));
     });
 
     beforeEach(() => {
@@ -18,7 +18,7 @@ context('Template header.php', () => {
         it('has a logo', () => {
             cy.get('@templateHeader')
                 .find('#logo')
-                .should('have.css', 'background-image', 'url("https://drunkenux.local/wp-content/themes/drunken-ux/assets/svg/logo.svg")')
+                .should('have.css', 'background-image', 'url("https://' + Cypress.env('HOST') + '/wp-content/themes/drunken-ux/assets/svg/logo.svg")')
         });
 
         it('has CTA buttons', () => {
