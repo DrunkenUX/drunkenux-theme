@@ -226,7 +226,7 @@ nav{background-color:#fff;display:block;margin-bottom:-1rem;position:absolute;te
 nav li{display:block;font-size:2rem}
 nav li:not(:last-child)::after{background-color:gray;content:' ';display:block;height:1px;margin:0 auto;width:6rem}
 nav li a{display:block;padding:4rem 0;width:100%}
-p{line-height:1.2;margin-bottom:2.4rem}
+p{line-height:1.5;margin-bottom:2.4rem}
 section{clear:both;margin:0 auto;max-width:120rem;padding:6rem 4rem;position:relative}
 strong{font-weight:bold}
 summary{cursor:pointer;margin-bottom:1.6rem}
