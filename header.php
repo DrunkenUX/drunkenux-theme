@@ -51,7 +51,8 @@
 	wp_nav_menu( [
 		'theme_location' => 'header-menu',
 		'container'		 => false,
-		'items_wrap'	 => '<ul id="%1$s" class="%2$s" aria-labelledby="menu-toggle" role="navigation" hidden>%3$s</ul>'
+		'items_wrap'	 => '<ul id="%1$s" class="%2$s" aria-labelledby="menu-toggle" role="menubar" hidden>%3$s</ul>',
+		'walker'         => new Walker_Aria_Nav()
 	] );
 	?>
 	</nav>

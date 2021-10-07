@@ -17,6 +17,8 @@
 
 namespace Dux;
 
+require_once( 'class/walker-aria-nav.php' );
+
 // ***** ACTIONS *****
 add_action( 'wp_body_open', __NAMESPACE__ . '\action_add_gtm_body' );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts' );
