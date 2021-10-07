@@ -5,6 +5,10 @@
     padding-top: 3rem;
 	text-align: center;
 
+    a {
+        color: map-get($colors, a11y-red);
+    }
+
     img {
         background-color: #fff;
         display: inline;

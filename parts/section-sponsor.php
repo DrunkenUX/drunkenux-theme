@@ -14,8 +14,9 @@ $ad = get_field( 'advertiser' );
 if( $ad ):
 	foreach( $ad as $adObj ):
 		$ad_content = apply_filters('the_content', $adObj->post_content);
-		$ad_link = get_field( 'link', $adObj->ID );
-		$ad_img = get_the_post_thumbnail( $adObj->ID, 'full', array( 'title' => 'Visit our sponsor, ' . get_the_title( $adObj->ID ) ) );
+		$ad_link    = get_field( 'link', $adObj->ID );
+		$ad_sponsor = $adObj->post_title;
+		$ad_img     = get_the_post_thumbnail( $adObj->ID, 'full', array( 'alt' => 'Logo of ' . $ad_sponsor ) );
 	endforeach;
 	?>
 
@@ -23,7 +24,7 @@ if( $ad ):
 	<section>
 		<?php echo $ad_content; ?>
 
-		<a href="<?php echo $ad_link; ?>" title="<?php the_title( $adObj->ID ); ?>">
+		<a href="<?php echo $ad_link; ?>" title="Visit our sponsor, <?php echo $ad_sponsor; ?>">
 			<?php echo $ad_img; ?>
 		</a>
 	</section>
