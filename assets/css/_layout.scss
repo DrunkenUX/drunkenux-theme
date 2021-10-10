@@ -262,6 +262,37 @@ footer > .widgets {
     }
 }
 
+.home-hosts {
+    h3 {
+        color: gray;
+        font-size: 3.2rem;
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 1.6rem;
+        padding-top: 6rem;
+    }
+
+    img {
+        background-color: #fff;
+        border: .5rem solid map-get($colors, red);
+        border-radius: 50%;
+        float: left;
+        height: 25rem;
+        margin: 0 6rem 6rem -12rem;
+        padding: 1rem;
+        shape-outside: circle();
+        width: 25rem;
+    }
+
+    .host {
+        padding: 0 0 0 12rem;
+
+        &:first-child {
+            margin-bottom: 4.8rem;
+        }
+    }
+}
+
 .img-loading * {
     animation-play-state: paused !important;
 }
