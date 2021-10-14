@@ -1,30 +1,43 @@
 /* Transcript Reveal */
 #transcript {
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-
-	&::after {
-    background:-webkit-linear-gradient(rgba( 255, 255, 255, 0), rgba(255, 255, 255, 1) ); /* For Safari */
-    background:linear-gradient( rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) );
-    bottom:0;
-    content: ' ';
-    height:50px;
-    position:absolute;
-    width:100%;
-  }
+	@include transcript-base();
 
 	&.open {
-	  height: auto;
+		height: auto;
 
 		&::after {
-		  content: none;
+			content: none;
+		}
+	}
+}
+
+.transcript {
+	summary {
+		@extend button;
+
+		list-style: none;
+
+		&::marker {
+			display: none;
 		}
 	}
 
-	+ p {
-		margin: 1rem 0;
-		text-align: center;
+	&--closed {
+		display: inline;
+	}
+
+	&--open {
+		display: none;
+	}
+
+	&[open] {
+		.transcript--closed {
+			display: none;
+		}
+
+		.transcript--open {
+			display: inline;
+		}
 	}
 }
 

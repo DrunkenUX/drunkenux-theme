@@ -9,9 +9,10 @@
  * @since Drunken UX Theme 2.0
  */
 
-$audio_url = get_post_meta( get_the_ID(), 'audio_file', true );
-$explicit  = get_post_meta( get_the_ID(), 'explicit', true );
-$ep_banner = get_field('cmb_thst_feature_post_img_id');
+$audio_url  = get_post_meta( get_the_ID(), 'audio_file', true );
+$explicit   = get_post_meta( get_the_ID(), 'explicit', true );
+$ep_banner  = get_field('cmb_thst_feature_post_img_id');
+$transcript = get_field('transcript_text');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header>
@@ -50,7 +51,18 @@ $ep_banner = get_field('cmb_thst_feature_post_img_id');
 
 		<h2>Episode Synopsis</h2>
 
-		<?php the_content(); ?>
+		<?php 
+		the_content(); 
+
+		if(isset($transcript)): 
+		?>
+		<details class="transcript">
+			<summary><span class="transcript--closed">Show</span><span class="transcript--open">Hide</span> Transcript</summary>
+			<?php echo $transcript; ?>
+		</details>
+		<?php
+		endif;
+		?>
 	</section>
 
 	<?php get_template_part( 'parts/section', 'sponsor' ); ?>
