@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 /**
  * Take an element, determine it's visibility, and flip it. Based on nefe's
  * vanilla JS alternative to jQuery's toggle()
@@ -55,4 +57,16 @@ transcriptButton && transcriptButton.addEventListener('click', function () {
   toggleHide(label[0]);
   toggleHide(label[1]);
   transcript.classList.toggle('open');
-});
+}); // Generate a transcript preview
+
+var transcriptPeepContent = document.querySelectorAll('.transcript .chat:nth-child(-n+3)');
+
+if (transcriptPeepContent && _typeof(transcriptPeepContent) !== undefined) {
+  var transcriptPeep = document.createElement('div');
+  transcriptPeep.classList.add('transcript-peep');
+  transcriptPeepContent.forEach(function (chat) {
+    var clone = chat.cloneNode(true);
+    transcriptPeep.appendChild(clone);
+  });
+  document.querySelector('.transcript').after(transcriptPeep);
+}

@@ -52,3 +52,16 @@ transcriptButton && transcriptButton.addEventListener('click', function() {
   toggleHide(label[1]);
   transcript.classList.toggle('open');
 });
+
+// Generate a transcript preview
+let transcriptPeepContent = document.querySelectorAll('.transcript .chat:nth-child(-n+3)');
+if(transcriptPeepContent && typeof transcriptPeepContent !== undefined) {
+  let transcriptPeep = document.createElement('div');
+  transcriptPeep.classList.add('transcript-peep');
+  transcriptPeepContent.forEach(chat => {
+    let clone = chat.cloneNode(true);
+    transcriptPeep.appendChild(clone);
+  });
+
+  document.querySelector('.transcript').after(transcriptPeep);
+}

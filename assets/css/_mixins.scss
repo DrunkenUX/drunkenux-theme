@@ -43,3 +43,24 @@
   padding: 2rem 3rem;
   text-align: left;
 }
+
+@mixin transcript-base() {
+  height: 200px;
+	overflow: hidden;
+	position: relative;
+
+	&::after {
+		background:-webkit-linear-gradient(rgba( 255, 255, 255, 0), rgba(255, 255, 255, 1) ); /* For Safari */
+		background:linear-gradient( rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) );
+		bottom:0;
+		content: ' ';
+		height:50px;
+		position:absolute;
+		width:100%;
+	}
+
+	+ p {
+		margin: 1rem 0;
+		text-align: center;
+	}
+}

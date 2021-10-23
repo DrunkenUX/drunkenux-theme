@@ -24,3 +24,4 @@ require_once( 'inc/post-types.php' );
 require_once( 'inc/scripts.php' );
 require_once( 'inc/theme-functions.php' );
 require_once( 'inc/hooks.php' );
+require_once( 'inc/generate-acf-fields.php' );
