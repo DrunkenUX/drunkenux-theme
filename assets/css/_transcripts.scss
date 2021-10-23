@@ -38,7 +38,15 @@
 		.transcript--open {
 			display: inline;
 		}
+
+		+ .transcript-peep {
+			display: none;
+		}
 	}
+}
+
+.transcript-peep {
+	@include transcript-base();
 }
 
 /* Transcript Chat */
@@ -63,10 +71,10 @@
   		bottom: auto;
   		content: ' ';
   		height: 0;
-      left: auto;
-  		position: absolute;
-      right: -20px;
-  	  top: 0;
+		left: auto;
+		position: absolute;
+		right: -20px;
+		top: 0;
   		width: 0;
   	}
   }

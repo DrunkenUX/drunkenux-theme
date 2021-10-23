@@ -54,7 +54,7 @@ $transcript = get_field('transcript_text');
 		<?php 
 		the_content(); 
 
-		if(isset($transcript)): 
+		if(isset($transcript) && strlen($transcript)): 
 		?>
 		<details class="transcript">
 			<summary><span class="transcript--closed">Show</span><span class="transcript--open">Hide</span> Transcript</summary>
