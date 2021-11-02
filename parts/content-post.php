@@ -8,7 +8,9 @@
  * @subpackage drunkenux-theme
  * @since Drunken UX Theme 2.0
  */
+get_header();
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <h1><?php the_title(); ?></h1>
 
@@ -20,3 +22,6 @@
         <?php the_tags( 'Tagged with:' ); ?>
     </div><!-- .meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<?php
+get_footer();

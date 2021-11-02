@@ -1,0 +1,23 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+input[type="file"] {
+    padding: 1.8rem 3rem;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+#searchform {
+    margin-bottom: 2rem;
+}
