@@ -4,9 +4,9 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since 1.0.0
+ * @package Drunken UX
+ * @subpackage drunkenux-theme
+ * @since Drunken UX Theme 2.0
  */
 
 get_header();
