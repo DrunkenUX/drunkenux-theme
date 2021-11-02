@@ -64,6 +64,7 @@ var transcriptPeepContent = document.querySelectorAll('.transcript .chat:nth-chi
 if (transcriptPeepContent && _typeof(transcriptPeepContent) !== undefined) {
   var transcriptPeep = document.createElement('div');
   transcriptPeep.classList.add('transcript-peep');
+  transcriptPeep.setAttribute('aria-hidden', 'true');
   transcriptPeepContent.forEach(function (chat) {
     var clone = chat.cloneNode(true);
     transcriptPeep.appendChild(clone);
