@@ -22,6 +22,7 @@ $latest_ep = get_posts( array(
 if( !empty( $latest_ep ) ):
     foreach( $latest_ep as $post ):
         $latest_ep_banner = get_field('cmb_thst_feature_post_img_id');
+        $latest_ep_explicit  = get_post_meta( get_the_ID(), 'explicit', true );
 ?>
 <div id="latest-episode">
     <div class="background-image" style="background-image:url('<?php echo esc_url($latest_ep_banner['url']); ?>');"></div>
@@ -43,6 +44,10 @@ if( !empty( $latest_ep ) ):
         <div class="title-group">
             <div class="tag-label">
                 <span>Latest Episode</span>
+
+                <?php if( $latest_ep_explicit == 'on' ) : ?>
+                <span class="explicit" title="This episode contains some adult language.">Explicit</span>
+                <?php endif; ?>
             </div><!-- .tag-label -->
 
             <a href="<?php the_permalink(); ?>" title="View shownotes for <?php the_title(); ?>"><h2><?php the_title(); ?></h2></a>

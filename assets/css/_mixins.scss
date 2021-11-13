@@ -32,6 +32,31 @@
   clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 10% 100%, 0 75%);
 }
 
+@mixin content-h2() {
+  h2 {
+    @include main-headings();
+
+    padding: 0 0 0 4rem;
+    position: relative;
+
+    &::before {
+        background-color: #000;
+        content: '';
+        display: block;
+        height: .3rem;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3.5rem;
+    }
+
+    &:not(:first-child) {
+        margin-top: 2rem;
+    }
+  }
+}
+
 @mixin main-headings() {
   --tt-ease: Linear;
   --tt-key: headline;

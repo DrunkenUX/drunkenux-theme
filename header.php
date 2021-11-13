@@ -34,7 +34,7 @@
 
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'drunkenux' ); ?></a>
 
-<header>
+<div class="topbar">
 	<a id="logo" href="/" title="Return to the Drunken UX homepage">
 		<?php $logo_tag = ( is_home() || is_front_page() ) ? 'h1' : 'span'; ?>
 		<<?php echo $logo_tag; ?> class="screen-reader-text"><?php bloginfo( 'name' ); ?></<?php echo $logo_tag; ?>>
@@ -56,6 +56,6 @@
 	] );
 	?>
 	</nav>
-</header>
+</div><!-- .topbar -->
 
-<main id="content">
+<main<?php if( !is_front_page() ): ?> id="content"<?php endif; ?>>

@@ -59,7 +59,7 @@ transcriptButton && transcriptButton.addEventListener('click', function () {
   transcript.classList.toggle('open');
 }); // Generate a transcript preview
 
-var transcriptPeepContent = document.querySelectorAll('.transcript .chat:nth-child(-n+3)');
+var transcriptPeepContent = document.querySelectorAll('#transcript .chat:nth-child(-n+3)');
 
 if (transcriptPeepContent && _typeof(transcriptPeepContent) !== undefined) {
   var transcriptPeep = document.createElement('div');
@@ -69,5 +69,5 @@ if (transcriptPeepContent && _typeof(transcriptPeepContent) !== undefined) {
     var clone = chat.cloneNode(true);
     transcriptPeep.appendChild(clone);
   });
-  document.querySelector('.transcript').after(transcriptPeep);
+  document.getElementById('transcript').after(transcriptPeep);
 }

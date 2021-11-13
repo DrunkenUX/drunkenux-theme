@@ -23,8 +23,16 @@ footer > .widgets {
     }
 }
 
+#content {
+    @include content-h2();
+
+    article > section {
+        padding-top: 0;
+    }
+}
+
 #latest-episode,
-.podcast > header {
+header {
     overflow: hidden;
 	position: relative;
 
@@ -306,28 +314,7 @@ footer > .widgets {
         padding-top: 0;
     }
 
-    h2 {
-        @include main-headings();
-
-        padding: 0 0 0 4rem;
-        position: relative;
-
-        &::before {
-            background-color: #000;
-            content: '';
-            display: block;
-            height: .3rem;
-            left: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 3.5rem;
-        }
-
-        &:not(:first-child) {
-            margin-top: 2rem;
-        }
-    }
+    @include content-h2();
 }
 
 .tag-label {

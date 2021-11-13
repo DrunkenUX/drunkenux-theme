@@ -20,6 +20,8 @@ while ( have_posts() ) :
     get_template_part( 'parts/section', 'banner' ); ?>
 
 <section>
+    <?php the_content(); ?>
+
     <div class="meta">
         <?php 
         if(isset($ep_banner['description'])): 

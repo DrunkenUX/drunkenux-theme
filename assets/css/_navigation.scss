@@ -7,3 +7,20 @@
 	position: absolute;
     width: 20rem;
 }
+
+.topbar {
+    align-content:center;
+    display: grid;
+    min-height: 10rem;
+    overflow: visible;
+    position: relative;
+    text-align: right;
+    z-index: 3;
+
+    nav > ul:not([hidden])::after {
+        background: linear-gradient(180deg, rgba(0,0,0,0.5116247182466737) 12%, rgba(255,255,255,0) 100%);
+        content: '';
+        display: block;
+        height: 2rem;
+    }
+}

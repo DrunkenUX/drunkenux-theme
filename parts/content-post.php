@@ -8,20 +8,23 @@
  * @subpackage drunkenux-theme
  * @since Drunken UX Theme 2.0
  */
-get_header();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <h1><?php the_title(); ?></h1>
-
-    <p>We wrote this on <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'F j, Y' ); ?></time></p>
-
+<section>
     <?php the_content(); ?>
 
     <div class="meta">
-        <?php the_tags( 'Tagged with:' ); ?>
+        <p><?php the_tags( '<strong>Tagged with:</strong> ' ); ?>
+		<?php 
+		if(isset($ep_banner['description'])): 
+			echo '<br><strong>Image Credit:</strong> ' . $ep_banner['description'];
+		endif;
+		?>
+		</p>
+
+        <?php get_template_part( 'parts/section', 'comments' ); ?>
     </div><!-- .meta -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</section>
 
 <?php
 get_footer();

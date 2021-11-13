@@ -6,20 +6,6 @@ body {
 	font-family: sans-serif;
     font-size: 1.6rem;
     margin: 0;
-
-    > header {
-        align-content:center;
-        display: grid;
-        min-height: 10rem;
-        overflow: visible;
-        position: relative;
-        text-align: right;
-        z-index: 3;
-    
-        * {
-            display: inline-block;
-        }
-    }
 }
 
 a {
@@ -66,6 +52,26 @@ button {
     &[aria-expanded=true] {
         color: map-get($colors, red);
     }
+}
+
+code {
+    background-color: #efefef;
+    font-family: monospace;
+    padding: 0 1rem;
+}
+
+dl {
+    margin-bottom: 2.4rem;
+}
+
+dd {
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: .8rem;
 }
 
 em {

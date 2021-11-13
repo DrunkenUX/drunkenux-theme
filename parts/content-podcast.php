@@ -14,42 +14,38 @@ $explicit   = get_post_meta( get_the_ID(), 'explicit', true );
 $ep_banner  = get_field('cmb_thst_feature_post_img_id');
 $transcript = get_field('transcript_text');
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<?php get_template_part( 'parts/section', 'banner' ); ?>
+<section>
+	<p><strong>In this episode:</strong> <?php the_terms(get_the_ID(), 'speaker'); ?></p>
 
-	<section>
-		<p><strong>In this episode:</strong> <?php the_terms(get_the_ID(), 'speaker'); ?></p>
+	<h2>Episode Synopsis</h2>
 
-		<h2>Episode Synopsis</h2>
+	<?php 
+	the_content(); 
 
+	if(isset($transcript) && strlen($transcript)): 
+	?>
+	<details class="transcript">
+		<summary><span class="transcript--closed">Show</span><span class="transcript--open">Hide</span> Transcript</summary>
+		<?php echo $transcript; ?>
+	</details>
+	<?php
+	endif;
+	?>
+</section>
+
+<?php get_template_part( 'parts/section', 'sponsor' ); ?>
+
+<section>
+	<div class="meta">
+		<p><?php the_tags( '<strong>Tagged with:</strong> ' ); ?>
 		<?php 
-		the_content(); 
-
-		if(isset($transcript) && strlen($transcript)): 
-		?>
-		<details class="transcript">
-			<summary><span class="transcript--closed">Show</span><span class="transcript--open">Hide</span> Transcript</summary>
-			<?php echo $transcript; ?>
-		</details>
-		<?php
+		if(isset($ep_banner['description'])): 
+			echo '<br><strong>Image Credit:</strong> ' . $ep_banner['description'];
 		endif;
 		?>
-	</section>
+		</p>
 
-	<?php get_template_part( 'parts/section', 'sponsor' ); ?>
-
-	<section>
-		<div class="meta">
-			<p><?php the_tags( '<strong>Tagged with:</strong> ' ); ?>
-			<?php 
-			if(isset($ep_banner['description'])): 
-				echo '<br><strong>Image Credit:</strong> ' . $ep_banner['description'];
-			endif;
-			?>
-			</p>
-
-			<?php get_template_part( 'parts/section', 'comments' ); ?>
-		</div><!-- .meta -->
-	</section>
-</article><!-- #post-<?php the_ID(); ?> -->
+		<?php get_template_part( 'parts/section', 'comments' ); ?>
+	</div><!-- .meta -->
+</section>

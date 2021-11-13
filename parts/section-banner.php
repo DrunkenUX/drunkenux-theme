@@ -8,7 +8,10 @@
  * @subpackage drunkenux-theme
  * @since Drunken UX Theme 2.0
  */
+
+$explicit  = get_post_meta( get_the_ID(), 'explicit', true );
 ?>
+
 <header>
     <div class="background-image" style="background-image:url('<?php echo esc_url($ep_banner['url']); ?>');"></div>
 
@@ -22,20 +25,22 @@
 
         <div class="title-group">
             <div class="tag-label">
+                <?php if( !is_page() ) : ?>
                 <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'F j, Y' ); ?></time>
-            
+                <?php endif; ?>
+                
                 <?php if( $explicit == 'on' ) : ?>
                 <span class="explicit" title="This episode contains some adult language.">Explicit</span>
                 <?php endif; ?>
             </div><!-- .tag-label -->
 
-            <a href="<?php the_permalink(); ?>" title="View shownotes for <?php the_title(); ?>">
-                <h1><?php the_title(); ?></h1>
-            </a>
+            <h1><?php the_title(); ?></h1>
         </div><!-- .title-group -->
 
+        <?php if( isset( $audio_url ) ): ?>
         <audio id="player" controls>
             <source type="audio/mpeg" src="<?php echo $audio_url; ?>">
         </audio>
+        <?php endif; ?>
     </section><!-- .banner -->
 </header>
