@@ -79,7 +79,8 @@ em {
 }
 
 footer {
-    padding: 5rem auto;
+    background-color: map-get($colors, light-gray);
+    padding: 5rem 0;
 	text-align: center;
 
 	> * {
