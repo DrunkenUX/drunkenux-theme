@@ -11,7 +11,6 @@
 
 $audio_url  = get_post_meta( get_the_ID(), 'audio_file', true );
 $explicit   = get_post_meta( get_the_ID(), 'explicit', true );
-$ep_banner  = get_field('cmb_thst_feature_post_img_id');
 $transcript = get_field('transcript_text');
 ?>
 
@@ -29,9 +28,7 @@ $transcript = get_field('transcript_text');
 		<summary><span class="transcript--closed">Show</span><span class="transcript--open">Hide</span> Transcript</summary>
 		<?php echo $transcript; ?>
 	</details>
-	<?php
-	endif;
-	?>
+	<?php endif; ?>
 </section>
 
 <?php get_template_part( 'parts/section', 'sponsor' ); ?>
