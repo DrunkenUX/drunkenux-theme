@@ -61,7 +61,7 @@ transcriptButton && transcriptButton.addEventListener('click', function () {
 
 var transcriptPeepContent = document.querySelectorAll('#transcript .chat:nth-child(-n+3)');
 
-if (transcriptPeepContent && _typeof(transcriptPeepContent) !== undefined) {
+if (transcriptPeepContent && _typeof(transcriptPeepContent) !== undefined && !document.querySelector('div#transcript')) {
   var transcriptPeep = document.createElement('div');
   transcriptPeep.classList.add('transcript-peep');
   transcriptPeep.setAttribute('aria-hidden', 'true');
