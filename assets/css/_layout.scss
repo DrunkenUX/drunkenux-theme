@@ -26,12 +26,14 @@ footer > .widgets {
 #content {
     @include content-h2();
 
+    > section,
     article > section {
-        padding-top: 0;
+        &:first-of-type {
+            padding-top: 0;
+        }
     }
 }
 
-#latest-episode,
 header {
     overflow: hidden;
 	position: relative;
@@ -98,6 +100,7 @@ header {
 		grid-template-columns: 3% 77% 12% 5% 3%;
 		grid-template-rows: repeat(5, 1fr);
 		height: 56.25vw;
+        padding-top: 0;
         position: relative;
 
         @include respond-to('large') {
