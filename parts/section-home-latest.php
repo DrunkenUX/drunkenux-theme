@@ -10,26 +10,34 @@
  */
 
 global $featured_id;
+global $banner_post;
 
-$latest_ep = get_posts( array(
-    'numberposts' => 1,
-    'orderby'     => 'date',
-    'post_status' => 'publish',
-    'post_type'   => 'podcast',
-    'sort_order'  => 'DESC'
-) );
+if( is_front_page() ) {
+    $latest_ep = get_posts( array(
+        'numberposts' => 1,
+        'orderby'     => 'date',
+        'post_status' => 'publish',
+        'post_type'   => 'podcast',
+        'sort_order'  => 'DESC'
+    ) );
+
+    foreach( $latest_ep as $post ):
+        $banner_post = $post;
+        $featured_id = $post->ID;
+    endforeach;
+} else {
+    $banner_post = $post;
+}
 
 if( !empty( $latest_ep ) ):
     foreach( $latest_ep as $post ):
         $latest_ep_banner = get_field('cmb_thst_feature_post_img_id');
         $latest_ep_explicit  = get_post_meta( get_the_ID(), 'explicit', true );
 ?>
-<div id="latest-episode">
+<header>
     <div class="background-image" style="background-image:url('<?php echo esc_url($latest_ep_banner['url']); ?>');"></div>
 
         <?php
-        setup_postdata( $post );
-        $featured_id = get_the_ID();
         $audio_url   = get_post_meta( $featured_id, 'audio_file', true );
 		?>
 
@@ -57,8 +65,7 @@ if( !empty( $latest_ep ) ):
 			<source type="audio/mpeg" src="<?php echo $audio_url; ?>">
 		</audio>
     </section><!-- .banner -->
-</div><!-- #latest-episode -->
+</header>
     <?php
     endforeach;
 endif;
-wp_reset_postdata();
