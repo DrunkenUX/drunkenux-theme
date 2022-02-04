@@ -9,8 +9,6 @@
  * @since Drunken UX Theme 2.0
  */
 
-$ep_banner  = get_field('cmb_thst_feature_post_img_id');
-
 get_header();
 
 /* Start the Loop */
