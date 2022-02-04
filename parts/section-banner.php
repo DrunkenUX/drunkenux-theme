@@ -9,26 +9,37 @@
  * @since Drunken UX Theme 2.0
  */
 
+$ep_banner = get_field('cmb_thst_feature_post_img_id');
 $explicit  = get_post_meta( get_the_ID(), 'explicit', true );
+
+if( isset( $ep_banner ) ): 
+    $has_banner = true;
+else:
+    $has_banner = false;
+endif;
 ?>
 
-<header>
+<header>        
+    <?php if( $has_banner ): ?>
     <div class="background-image" style="background-image:url('<?php echo esc_url($ep_banner['url']); ?>');"></div>
+    <?php endif; ?>
 
-    <section class="banner">
+    <section class="banner<?php if( $has_banner ): ?> no-banner<?php endif; ?>">
+        <?php if( $has_banner ): ?>
         <div class="banner-image">
             <picture>
                 <source srcset="<?php echo esc_url($ep_banner['url']); ?>" media="all">
                 <img src="<?php echo esc_url($ep_banner['url']); ?>" alt="Listen to <?php the_title(); ?>">
             </picture>
         </div><!-- .banner-image -->
+        <?php endif; ?>
 
         <div class="title-group">
             <div class="tag-label">
                 <?php if( !is_page() ) : ?>
                 <time datetime="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php the_date( 'F j, Y' ); ?></time>
                 <?php endif; ?>
-                
+
                 <?php if( $explicit == 'on' ) : ?>
                 <span class="explicit" title="This episode contains some adult language.">Explicit</span>
                 <?php endif; ?>
